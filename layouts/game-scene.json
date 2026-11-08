@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.2550455473354488,
+    "zoomFactor": 0.35534345588171923,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "embedded-game"
@@ -5426,7 +5426,7 @@
             "",
             "\"\"",
             "\"Pixel Height\"",
-            "360"
+            "270"
           ]
         },
         {
@@ -5448,7 +5448,7 @@
             "",
             "\"\"",
             "\"Dither Strength\"",
-            "0.25"
+            "0.3"
           ]
         },
         {
@@ -5459,7 +5459,7 @@
             "",
             "\"\"",
             "\"Saturation\"",
-            "1.7"
+            "1.5"
           ]
         },
         {
@@ -5470,7 +5470,7 @@
             "",
             "\"\"",
             "\"Contrast\"",
-            "1.25"
+            "1.4"
           ]
         },
         {
@@ -5481,7 +5481,7 @@
             "",
             "\"\"",
             "\"Cel Shading\"",
-            "0.7"
+            "0.75"
           ]
         },
         {
@@ -5492,7 +5492,7 @@
             "",
             "\"\"",
             "\"Cel Bands\"",
-            "6"
+            "5"
           ]
         },
         {
@@ -5503,7 +5503,7 @@
             "",
             "\"\"",
             "\"Cel Softness\"",
-            "0.25"
+            "0.2"
           ]
         },
         {
@@ -5525,7 +5525,7 @@
             "",
             "\"\"",
             "\"Outline\"",
-            "1.3"
+            "1.1"
           ]
         },
         {
@@ -5580,7 +5580,7 @@
             "",
             "\"\"",
             "\"Vignette\"",
-            "0.85"
+            "0.88"
           ]
         },
         {
@@ -5591,7 +5591,7 @@
             "",
             "\"\"",
             "\"Chromatic\"",
-            "0.01"
+            "0.012"
           ]
         }
       ]
@@ -5609,7 +5609,7 @@
       "ambientLightColorR": 200,
       "camera2DPlaneMaxDrawingDistance": 5000,
       "camera3DFarPlaneDistance": 30000,
-      "camera3DFieldOfView": 80,
+      "camera3DFieldOfView": 60,
       "camera3DNearPlaneDistance": 2,
       "cameraType": "perspective",
       "followBaseLayerCamera": false,
@@ -5635,8 +5635,8 @@
           "effectType": "Scene3D::Skybox",
           "name": "Skybox",
           "doubleParameters": {
-            "backgroundIntensity": 0.12,
-            "environmentIntensity": 0.05
+            "backgroundIntensity": 0.1,
+            "environmentIntensity": 0.03
           },
           "stringParameters": {
             "backFaceResourceName": "Stormy Overcast_Back.jpg",
@@ -5654,14 +5654,14 @@
           "name": "sun",
           "doubleParameters": {
             "distanceFromCamera": 1200,
-            "elevation": 14,
+            "elevation": 9,
             "frustumSize": 2500,
-            "intensity": 0.12,
+            "intensity": 0.1,
             "minimumShadowBias": 0.0003,
             "rotation": 70
           },
           "stringParameters": {
-            "color": "120;150;200",
+            "color": "90;110;170",
             "shadowQuality": "high",
             "shadowRenderingMode": "fittedToCameraView",
             "top": "Z+"
@@ -5674,10 +5674,10 @@
           "effectType": "Scene3D::AmbientLight",
           "name": "AmbientLight",
           "doubleParameters": {
-            "intensity": 0.08
+            "intensity": 0.05
           },
           "stringParameters": {
-            "color": "30;40;70"
+            "color": "25;30;60"
           },
           "booleanParameters": {}
         },
@@ -5685,12 +5685,23 @@
           "effectType": "Scene3D::DepthOfField",
           "name": "DepthOfField",
           "doubleParameters": {
-            "focusDistance": 500,
-            "focusRange": 600,
-            "maxBlur": 6,
-            "transitionDistance": 1500
+            "focusDistance": 450,
+            "focusRange": 500,
+            "maxBlur": 3,
+            "transitionDistance": 1200
           },
           "stringParameters": {},
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::ToneMapping",
+          "name": "ToneMapping",
+          "doubleParameters": {
+            "exposure": 0.9
+          },
+          "stringParameters": {
+            "mode": "Neutral"
+          },
           "booleanParameters": {}
         },
         {
@@ -5719,6 +5730,38 @@
             "linkBackgroundRotation": true,
             "showBackground": false
           }
+        },
+        {
+          "disabled": true,
+          "effectType": "Scene3D::VolumetricFog",
+          "name": "VolumetricFog",
+          "doubleParameters": {
+            "density": 0.0003,
+            "height": 0,
+            "heightFalloff": 0.006,
+            "lightShafts": 0.35,
+            "maxDistance": 1800
+          },
+          "stringParameters": {
+            "color": "14;16;32",
+            "quality": "Medium",
+            "top": "Z+"
+          },
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::N8AO",
+          "name": "N8AO",
+          "doubleParameters": {
+            "distanceFalloff": 1,
+            "intensity": 2,
+            "radius": 80
+          },
+          "stringParameters": {
+            "color": "0;0;0",
+            "quality": "Performance"
+          },
+          "booleanParameters": {}
         }
       ]
     },
