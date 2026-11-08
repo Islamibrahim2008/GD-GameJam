@@ -1,0 +1,920 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 287,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": true,
+    "orientation": "landscape",
+    "packageName": "com.example.gamename",
+    "pixelsRounding": true,
+    "projectUuid": "16225b80-c7d7-41db-ac4e-aa8fbe659215",
+    "scaleMode": "nearest",
+    "sizeOnStartupMode": "",
+    "templateSlug": "starting-first-person-horror",
+    "version": "1.0.0",
+    "name": "The Ferry : Late-Autumn",
+    "description": "",
+    "author": "carrot team",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 0,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {
+      "android-icon-144": "",
+      "android-icon-192": "",
+      "android-icon-36": "",
+      "android-icon-48": "",
+      "android-icon-72": "",
+      "android-icon-96": "",
+      "android-windowSplashScreenAnimatedIcon": "",
+      "desktop-icon-512": "",
+      "ios-icon-100": "",
+      "ios-icon-1024": "",
+      "ios-icon-114": "",
+      "ios-icon-120": "",
+      "ios-icon-144": "",
+      "ios-icon-152": "",
+      "ios-icon-167": "",
+      "ios-icon-180": "",
+      "ios-icon-20": "",
+      "ios-icon-29": "",
+      "ios-icon-40": "",
+      "ios-icon-50": "",
+      "ios-icon-57": "",
+      "ios-icon-58": "",
+      "ios-icon-60": "",
+      "ios-icon-72": "",
+      "ios-icon-76": "",
+      "ios-icon-80": "",
+      "ios-icon-87": ""
+    },
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 1.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": true
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [
+      "mobile"
+    ],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/player/Male Casual.glb",
+        "kind": "model3D",
+        "metadata": "{\"gdevelopAssetGuid\":\"40049c89-8924-4153-97df-9f0e47a7be06\",\"assetImportSettings\":{\"importerId\":\"file-basic\",\"options\":{}}}",
+        "name": "Male Casual.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Animated Characters/Character/9e45e58c10682186015966e9739499ac835b807ab0cb20be0f648458ecf44a0d_Male Casual.glb",
+          "name": "Male Casual.glb"
+        }
+      },
+      {
+        "file": "assets/skybox/Stormy Overcast_Front.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stormy Overcast_Front.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Skyboxes/fa47217bf59186f378e0911b6469c66a4096cbde6b8fe6268c7b5de93fe7fa79_Stormy Overcast_Front.jpg",
+          "name": "Stormy Overcast_Front.jpg"
+        }
+      },
+      {
+        "file": "assets/skybox/Stormy Overcast_Back.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stormy Overcast_Back.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Skyboxes/58e46c46116e1555710c8da306487f539e271a8dc636effc0a31d7e1aa89c6d7_Stormy Overcast_Back.jpg",
+          "name": "Stormy Overcast_Back.jpg"
+        }
+      },
+      {
+        "file": "assets/skybox/Stormy Overcast_Left.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stormy Overcast_Left.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Skyboxes/3de6c2eae4fb42699b257a8fd315e5fa14ffa315b15a45390775a205d1efb574_Stormy Overcast_Left.jpg",
+          "name": "Stormy Overcast_Left.jpg"
+        }
+      },
+      {
+        "file": "assets/skybox/Stormy Overcast_Right.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stormy Overcast_Right.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Skyboxes/d90f9ee35579c87686263d3095ab81758932a63ae85610980baa3580108107d7_Stormy Overcast_Right.jpg",
+          "name": "Stormy Overcast_Right.jpg"
+        }
+      },
+      {
+        "file": "assets/skybox/Stormy Overcast_Top.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stormy Overcast_Top.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Skyboxes/4b728d23da0ddea80a13188de6ea374a6486f704fc8029e300feb726198457d0_Stormy Overcast_Top.jpg",
+          "name": "Stormy Overcast_Top.jpg"
+        }
+      },
+      {
+        "file": "assets/skybox/Stormy Overcast_Bottom.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "Stormy Overcast_Bottom.jpg",
+        "smoothed": true,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Skyboxes/3c893be18b1655faf4c82392b3ea0d20c938369cae306cfbcdc8fc7fc30ab586_Stormy Overcast_Bottom.jpg",
+          "name": "Stormy Overcast_Bottom.jpg"
+        }
+      },
+      {
+        "file": "assets/grey.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "grey.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/01-Placeholders/1b4fbbbff8442a832eeb7817195957e584b1da5cda04f398f42878d63326ecbe_grey.png",
+          "name": "grey.png"
+        }
+      },
+      {
+        "file": "Hands.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Hands.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/terrain-grass-001-color.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-grass-001-color.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/adad4efa227acf462688bcf6e25233bf0682353807f91322f0c0eca19e00dd16_terrain-grass-001-color.jpg",
+          "name": "terrain-grass-001-color.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-grass-001-normal.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-grass-001-normal.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/f57cc3c33b29c4a48debc313d9daa23a3b7f992aa374195d2e4150b59b4c22f9_terrain-grass-001-normal.jpg",
+          "name": "terrain-grass-001-normal.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-ground-048-color.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-ground-048-color.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/a0cb5cfd7e832039ea497495ad1555c9023d742c7ba9e71384307d10b21e8fc9_terrain-ground-048-color.jpg",
+          "name": "terrain-ground-048-color.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-ground-048-normal.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-ground-048-normal.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/83641613d7484f89977dd76deafd64f2e5670338615b698e58055dfd35323cba_terrain-ground-048-normal.jpg",
+          "name": "terrain-ground-048-normal.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-rock-036-color.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-rock-036-color.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/f640e17fb06fd0dc3bc1442459d2134cb56111fd060a7ff395dff581a8a5d8a2_terrain-rock-036-color.jpg",
+          "name": "terrain-rock-036-color.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-rock-036-normal.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-rock-036-normal.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/8ed25f8d3a252c53f93f1ebfb33c48755cb81f8506cf1d69f0df3cc73be80ae0_terrain-rock-036-normal.jpg",
+          "name": "terrain-rock-036-normal.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-ground-080-color.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-ground-080-color.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/0dd348f6ed2f6c915e60474c9f11ec60b53e98f107f92a097f476b1334325959_terrain-ground-080-color.jpg",
+          "name": "terrain-ground-080-color.jpg"
+        }
+      },
+      {
+        "file": "assets/terrain-ground-080-normal.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "terrain-ground-080-normal.jpg",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/45064805ad1ce7d044b7fb7971f66c799bfc6bcc91bfa88aa82add8bd205431e_terrain-ground-080-normal.jpg",
+          "name": "terrain-ground-080-normal.jpg"
+        }
+      },
+      {
+        "file": "assets/Palm Tree 1.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Palm Tree 1.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Scattered Models/Trees/4a3fdf0a531f7238a41b5eab4123b18c343e8ceb1508b86d932cb2af0fb45b95_Palm Tree 1.glb",
+          "name": "Palm Tree 1.glb"
+        }
+      },
+      {
+        "file": "assets/Door White Glass.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Door White Glass.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Modular Buildings/Doors/313b71df4a6d29f597532365edc495e75d680c541b39a288dde5ba3724706eac_Door White Glass.glb",
+          "name": "Door White Glass.glb"
+        }
+      },
+      {
+        "file": "assets/blue.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "blue.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/01-Placeholders/93517e555275405940e84957ed49f92de0eac0d7690164a2101c03b6fdd2a1e6_blue.png",
+          "name": "blue.png"
+        }
+      },
+      {
+        "file": "assets/orange.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "orange.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/01-Placeholders/2a32f1a9dcc4101a874e0d6271f1bbaab5ed0984f88ea062a4d994da54fd4841_orange.png",
+          "name": "orange.png"
+        }
+      },
+      {
+        "file": "assets/Lever Single.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Lever Single.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Prototype Kit/Mechanisms/799539abe8460ae01b0c453dd0a310c93ecadf9680644f6b46a5ffc21c4af6b9_Lever Single.glb",
+          "name": "Lever Single.glb"
+        }
+      },
+      {
+        "file": "assets/Zombie A.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Zombie A.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Animated Characters Survivors/6f751275a57912a6a1b589db55de957f87217518d2b92348e5a471d30a86c5eb_Zombie A.glb",
+          "name": "Zombie A.glb"
+        }
+      },
+      {
+        "file": "StartingCapsule.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "StartingCapsule.glb",
+        "userAdded": false
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/game-scene"
+    }
+  ],
+  "layoutsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "itemName": "Game Scene"
+      }
+    ]
+  },
+  "externalEvents": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/player-logic"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/javascript-systems"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/monster"
+    }
+  ],
+  "externalEventsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "itemName": "player logic"
+      },
+      {
+        "itemName": "javascript systems"
+      },
+      {
+        "itemName": "monster"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "description": "Scene loads and portals exist without errors",
+      "lastRunAt": 1793542897216,
+      "lastRunDurationMs": 11182,
+      "lastRunFramesExecuted": 121,
+      "lastRunStatus": "passed",
+      "name": "portal-view-smoke",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(120);",
+        "const blue = harness.getObjects('PortalBlue');",
+        "const orange = harness.getObjects('PortalOrange');",
+        "harness.assert(blue.length > 0, 'PortalBlue exists');",
+        "harness.assert(orange.length > 0, 'PortalOrange exists');",
+        "const logs = harness.getEventLog ? [] : [];",
+        "await harness.takeScreenshot('portal-scene');"
+      ]
+    },
+    {
+      "description": "Place both portals and verify cross-view renders without errors",
+      "lastRunAt": 1792868385214,
+      "lastRunDurationMs": 12165,
+      "lastRunFramesExecuted": 187,
+      "lastRunStatus": "failed",
+      "name": "portal-cross-view",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(60);",
+        "// Place Blue with left click (raycast from camera center)",
+        "harness.setMouseButtonPressed(true, 'left');",
+        "await harness.stepFrames(3);",
+        "harness.setMouseButtonPressed(false, 'left');",
+        "await harness.stepFrames(30);",
+        "// Place Orange with right click",
+        "harness.setMouseButtonPressed(true, 'right');",
+        "await harness.stepFrames(3);",
+        "harness.setMouseButtonPressed(false, 'right');",
+        "await harness.stepFrames(90);",
+        "const blue = harness.getObjects('PortalBlue')[0];",
+        "const orange = harness.getObjects('PortalOrange')[0];",
+        "const bActive = blue ? blue.variables.find(v => v.variableName === 'Active')?.value : undefined;",
+        "const oActive = orange ? orange.variables.find(v => v.variableName === 'Active')?.value : undefined;",
+        "harness.assert(bActive === 1, 'Blue portal became active after left click (Active=' + bActive + ')');",
+        "harness.assert(oActive === 1, 'Orange portal became active after right click (Active=' + oActive + ')');",
+        "await harness.takeScreenshot('both-portals');"
+      ]
+    },
+    {
+      "description": "Verify wall GrabWeight via API",
+      "lastRunAt": 1793542905874,
+      "lastRunDurationMs": 4957,
+      "lastRunFramesExecuted": 63,
+      "lastRunStatus": "stopped",
+      "name": "grabpack-init-check",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(120);",
+        "const walls = harness.getObjects('wall');",
+        "harness.assert(walls.length>=1, 'wall exists');",
+        "const wid = walls[0].id;",
+        "const gv = harness.getObjectVariable(wid, 'GrabWeight');",
+        "harness.assert(gv!==undefined, 'GrabWeight var exists via API, got '+JSON.stringify(gv));",
+        "if (gv) harness.assert(Number(gv.value)===1, 'GrabWeight=1 got '+JSON.stringify(gv));",
+        "const gs = harness.getSceneVariable('GrabState');",
+        "harness.assert(gs && Number(gs.value)===0, 'GrabState 0');",
+        "await harness.takeScreenshot('grabpack-init');"
+      ]
+    },
+    {
+      "description": "Verify heavy horror physics: walking, sprinting and jumping work with the tuned character controller.",
+      "lastRunAt": 1792952761457,
+      "lastRunDurationMs": 4912,
+      "lastRunFramesExecuted": 178,
+      "lastRunStatus": "stopped",
+      "name": "horror-physics-check",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(30);",
+        "const p0 = harness.getObjects('Player')[0];",
+        "harness.assert(!!p0, 'Player exists');",
+        "// Walk forward",
+        "harness.setKeyPressed('w', true);",
+        "const moved = await harness.stepUntil(() => { const p = harness.getObjects('Player')[0]; return p && Math.abs(p.x - p0.x) + Math.abs(p.y - p0.y) > 120; }, { maxFrames: 240 });",
+        "harness.setKeyPressed('w', false);",
+        "await harness.stepFrames(20);",
+        "harness.assert(moved, 'Player walks forward with new physics');",
+        "// Sprint should be faster per second",
+        "const p1 = harness.getObjects('Player')[0];",
+        "harness.setKeyPressed('w', true);",
+        "harness.setKeyPressed('LShift', true);",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('LShift', false);",
+        "harness.setKeyPressed('w', false);",
+        "await harness.stepFrames(20);",
+        "const p2 = harness.getObjects('Player')[0];",
+        "const sprintDist = Math.abs(p2.x - p1.x) + Math.abs(p2.y - p1.y);",
+        "harness.assert(sprintDist > 100, 'Sprint moves player noticeably (dist=' + sprintDist.toFixed(0) + ')');",
+        "// Jump: leaves floor and lands (measure from a standing start)",
+        "await harness.stepFrames(30);",
+        "const before = harness.getObjects('Player')[0];",
+        "harness.setKeyPressed('Space', true);",
+        "await harness.stepFrames(3);",
+        "harness.setKeyPressed('Space', false);",
+        "let maxZ = before.z;",
+        "for (let i = 0; i < 120; i++) { await harness.stepFrames(1); const p = harness.getObjects('Player')[0]; if (p && p.z > maxZ) maxZ = p.z; }",
+        "harness.assert(maxZ > before.z + 10, 'Player jumps (maxZ=' + maxZ.toFixed(0) + ', before=' + before.z.toFixed(0) + ')');",
+        "harness.takeScreenshot('horror-physics');"
+      ]
+    },
+    {
+      "description": "Sprint banking: camera rolls slightly when strafing while sprinting, and returns to level when stopping.",
+      "lastRunAt": 1792952006726,
+      "lastRunDurationMs": 2105,
+      "lastRunFramesExecuted": 1,
+      "lastRunStatus": "stopped",
+      "name": "camera-roll-sprint",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(40);",
+        "// grab pointer lock so mouse look works",
+        "harness.setMouseButtonPressed(true);",
+        "await harness.stepFrames(3);",
+        "harness.setMouseButtonPressed(false);",
+        "await harness.stepFrames(3);",
+        "",
+        "const base = harness.getCameraState('') || harness.getCameraState();",
+        "const rollIdle = base ? base.rotationY : 0;",
+        "harness.assert(Math.abs(rollIdle) < 0.35, `idle roll is ~0 (got ${rollIdle})`);",
+        "",
+        "// sprint forward + strafe right",
+        "harness.setKeyPressed('LShift', true);",
+        "harness.setKeyPressed('w', true);",
+        "harness.setKeyPressed('d', true);",
+        "await harness.stepFrames(70);",
+        "const sprintCam = harness.getCameraState('');",
+        "const rollSprint = sprintCam ? sprintCam.rotationY : 0;",
+        "await harness.takeScreenshot('sprint-roll');",
+        "harness.assert(Math.abs(rollSprint) > 0.8, `camera rolls while sprint-strafing (got ${rollSprint})`);",
+        "harness.assert(Math.abs(rollSprint) < 6, `roll stays subtle, under 6 degrees (got ${rollSprint})`);",
+        "",
+        "// stop strafing, keep sprinting -> roll must come back",
+        "harness.setKeyPressed('d', false);",
+        "await harness.stepFrames(70);",
+        "const straightCam = harness.getCameraState('');",
+        "const rollStraight = straightCam ? straightCam.rotationY : 0;",
+        "harness.assert(Math.abs(rollStraight) < 0.6, `roll returns toward level when going straight (got ${rollStraight})`);",
+        "",
+        "// stop sprinting -> fully level",
+        "harness.setKeyPressed('LShift', false);",
+        "harness.setKeyPressed('w', false);",
+        "await harness.stepFrames(120);",
+        "const idleCam = harness.getCameraState('');",
+        "const rollEnd = idleCam ? idleCam.rotationY : 0;",
+        "harness.assert(Math.abs(rollEnd) < 0.25, `roll is level after stopping (got ${rollEnd})`);",
+        "await harness.takeScreenshot('level-after-stop');",
+        ""
+      ]
+    },
+    {
+      "description": "Lever toggles via E key and via GrabPack cable hit",
+      "lastRunAt": 1792953604725,
+      "lastRunDurationMs": 6105,
+      "lastRunFramesExecuted": 14,
+      "lastRunStatus": "stopped",
+      "name": "lever-grabpack-pull",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(90);",
+        "let levers = harness.getObjects('Lever_Single');",
+        "harness.assert(levers.length > 0, 'Lever_Single exists in scene');",
+        "let lv = levers[0];",
+        "const players = harness.getObjects('Player');",
+        "harness.assert(players.length > 0, 'Player exists');",
+        "// --- E-key path: teleport player next to lever ---",
+        "harness.setObjectPosition(players[0].id, lv.centerX + 100, lv.centerY, lv.centerZ ?? 0);",
+        "await harness.stepFrames(5);",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(2);",
+        "harness.setKeyPressed('e', false);",
+        "await harness.stepFrames(5);",
+        "let v = harness.getObjectVariable(lv.id, 'LeverOn');",
+        "harness.assert(v && v.value === 1, 'E near lever toggles it ON');",
+        "await harness.stepFrames(60);",
+        "harness.setKeyPressed('e', true);",
+        "await harness.stepFrames(2);",
+        "harness.setKeyPressed('e', false);",
+        "await harness.stepFrames(5);",
+        "v = harness.getObjectVariable(lv.id, 'LeverOn');",
+        "harness.assert(v && v.value === 0, 'E again toggles it OFF');",
+        "levers = harness.getObjects('Lever_Single');",
+        "harness.assert(levers[0].animation === 'ToggleOff', 'Lever shows ToggleOff (got ' + levers[0].animation + ')');",
+        "// --- GrabPack cable path: simulate right-hand cable flying at the lever ---",
+        "await harness.stepFrames(60);",
+        "levers = harness.getObjects('Lever_Single');",
+        "lv = levers[0];",
+        "harness.setMouseButtonPressed(true, 'right');",
+        "harness.setSceneVariable('ToolMode', 1);",
+        "harness.setSceneVariable('GrabReleased', 0);",
+        "harness.setSceneVariable('GrabTX', lv.centerX);",
+        "harness.setSceneVariable('GrabTY', lv.centerY);",
+        "harness.setSceneVariable('GrabTZ', lv.centerZ ?? 0);",
+        "harness.setSceneVariable('GrabHX', lv.centerX + 30);",
+        "harness.setSceneVariable('GrabHY', lv.centerY);",
+        "harness.setSceneVariable('GrabHZ', lv.centerZ ?? 0);",
+        "harness.setSceneVariable('GrabKind', 2);",
+        "harness.setSceneVariable('GrabState', 1);",
+        "const pulled = await harness.stepUntil(() => {",
+        "  const vv = harness.getObjectVariable(lv.id, 'LeverOn');",
+        "  return vv && vv.value === 1;",
+        "}, {maxFrames: 300});",
+        "harness.setMouseButtonPressed(false, 'right');",
+        "harness.assert(pulled, 'GrabPack cable pulls the lever ON');",
+        "levers = harness.getObjects('Lever_Single');",
+        "harness.assert(levers[0].animation === 'ToggleOn', 'Lever shows ToggleOn (got ' + levers[0].animation + ')');",
+        "await harness.takeScreenshot('lever-grabpack');"
+      ]
+    },
+    {
+      "description": "Verify zombie anim valid and memory vars exist",
+      "lastRunAt": 1793111790506,
+      "lastRunDurationMs": 11569,
+      "lastRunFramesExecuted": 121,
+      "lastRunStatus": "passed",
+      "name": "monster-ai-cunning",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(120);",
+        "const zombies = harness.getObjects('Zombie');",
+        "harness.assert(zombies.length > 0, 'Zombie exists');",
+        "const z = zombies[0];",
+        "harness.assert(['Idle','Run','Jump'].includes(z.animation), 'Zombie animation is valid model anim, got '+z.animation);",
+        "const memLoaded = harness.getSceneVariable('MemLoaded');",
+        "harness.assert(memLoaded !== undefined, 'MemLoaded variable exists');",
+        "const hot = harness.getSceneVariable('HotScore');",
+        "harness.assert(hot !== undefined, 'HotScore exists');",
+        "await harness.takeScreenshot('monster-check');"
+      ]
+    },
+    {
+      "description": "Groq gpt-oss-120b strategist: persisted memory, real API call, validated decision, FSM execution",
+      "lastRunAt": 1793228139960,
+      "lastRunDurationMs": 15553,
+      "lastRunFramesExecuted": 215,
+      "lastRunStatus": "stopped",
+      "name": "monster-llm-memory",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(8);",
+        "",
+        "const gv = (n) => harness.getSceneVariable(n);",
+        "const nv = (n) => { const v = gv(n); return v ? Number(v.value) : NaN; };",
+        "const sv = (n) => { const v = gv(n); return v ? String(v.value) : ''; };",
+        "",
+        "harness.assert(nv('LLM_Enabled') === 1, 'LLM_Enabled initialised to 1');",
+        "harness.assert(nv('LLM_MemLoaded') === 1, 'persisted memory load pass ran');",
+        "harness.assert(sv('GroqModel') === 'openai/gpt-oss-120b', 'model = ' + sv('GroqModel'));",
+        "",
+        "// teach a hotspot, then bump the escape counter: it forces a memory snapshot + a fresh LLM request",
+        "harness.setSceneVariable('Mem1X', 1200);",
+        "harness.setSceneVariable('Mem1Y', 900);",
+        "harness.setSceneVariable('Mem1W', 3);",
+        "harness.setSceneVariable('EscapeCount', 3);",
+        "await harness.stepFrames(6);",
+        "const memJson = sv('LLM_MemJSON');",
+        "harness.assert(memJson.indexOf('1200') >= 0, 'memory persisted immediately on escape (LLM_MemJSON has the hotspot)');",
+        "harness.assert(memJson.indexOf('\"escape\"') >= 0, 'escape recorded in the memory history');",
+        "",
+        "const answered = await harness.stepUntil(() => Number(harness.getSceneVariable('LLM_Calls').value) > 0, { maxFrames: 900 });",
+        "const errText = sv('LLM_Err');",
+        "harness.assert(answered, 'Groq answered (LLM_Calls>0). error=\"' + errText + '\"');",
+        "if (answered) {",
+        "  const allowed = ['Patrol', 'Investigate', 'Search', 'Ambush', 'Stalk'];",
+        "  harness.assert(allowed.indexOf(sv('LLM_State')) >= 0, 'LLM state whitelisted: ' + sv('LLM_State'));",
+        "  const mul = nv('LLM_SpeedMul');",
+        "  harness.assert(mul >= 0.7 && mul <= 1.4, 'speed multiplier clamped: ' + mul);",
+        "  harness.assert(nv('LLM_Valid') === 1, 'directive valid');",
+        "  console.log('LLM strategy=' + sv('LLM_Strategy') + ' | state=' + sv('LLM_State') + ' | ambushIdx=' + nv('LLM_AmbushIdx') + ' | mul=' + mul + ' | reason=' + sv('LLM_Reason'));",
+        "}",
+        "",
+        "// FSM executes a validated tactic",
+        "harness.setSceneVariable('LLM_Enabled', 0);",
+        "harness.setSceneVariable('MonsterState', 'Patrol');",
+        "harness.setSceneVariable('PlayerVisible', 0);",
+        "harness.setSceneVariable('Suspicion', 0);",
+        "harness.setSceneVariable('AmbushPhase', 0);",
+        "harness.setSceneVariable('LLM_State', 'Ambush');",
+        "harness.setSceneVariable('LLM_AmbushOK', 1);",
+        "harness.setSceneVariable('LLM_AmbushX', 1500);",
+        "harness.setSceneVariable('LLM_AmbushY', 1500);",
+        "harness.setSceneVariable('LLM_Valid', 1);",
+        "harness.setSceneVariable('LLM_Expire', 20);",
+        "harness.setSceneVariable('LLM_SpeedMul', 1.2);",
+        "await harness.stepFrames(30);",
+        "harness.assert(sv('MonsterState') === 'Ambush', 'FSM switched to LLM ambush (state=' + sv('MonsterState') + ')');",
+        "harness.assert(Math.abs(nv('AmbushX') - 1500) < 200, 'ambush point from LLM hotspot (' + nv('AmbushX') + ',' + nv('AmbushY') + ')');",
+        "harness.assert(Math.abs(nv('Cfg_ChaseSpeed') - nv('LLM_BaseChase') * 1.2) < 1, 'chase speed scaled: ' + nv('Cfg_ChaseSpeed'));",
+        "await harness.takeScreenshot('llm-state');",
+        ""
+      ]
+    },
+    {
+      "description": "Groq gpt-oss-120b closed loop: request -> validated plan -> applied to the FSM",
+      "lastRunAt": 1793228734967,
+      "lastRunDurationMs": 9548,
+      "lastRunFramesExecuted": 146,
+      "lastRunStatus": "stopped",
+      "name": "monster-llm-plan-loop",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(5);",
+        "const sv = n => { const v = harness.getSceneVariable(n); return v ? String(v.value) : ''; };",
+        "const nv = n => { const v = harness.getSceneVariable(n); return v ? Number(v.value) : NaN; };",
+        "",
+        "harness.setSceneVariable('Mem1X', 1200);",
+        "harness.setSceneVariable('Mem1Y', 900);",
+        "harness.setSceneVariable('Mem1W', 3);",
+        "harness.setSceneVariable('Mem2X', 600);",
+        "harness.setSceneVariable('Mem2Y', 400);",
+        "harness.setSceneVariable('Mem2W', 2);",
+        "",
+        "const log = [];",
+        "let answered = false;",
+        "for (let i = 0; i < 26; i++) {",
+        "  await harness.stepFrames(6);",
+        "  log.push('f' + ((i + 1) * 6) + ' busy=' + nv('LLM_Busy') + ' req=' + nv('LLM_ReqId') + ' ok=' + nv('LLM_Calls') + ' fail=' + nv('LLM_Fails') + ' err=' + sv('LLM_Err'));",
+        "  if (nv('LLM_Calls') > 0) { answered = true; break; }",
+        "}",
+        "for (const l of log) console.log(l);",
+        "console.log('ERR=' + sv('LLM_Err'));",
+        "console.log('RAW=' + sv('LLM_Text').slice(0, 350));",
+        "console.log('PLAN mode=' + sv('LLM_Mode') + ' strategy=' + sv('LLM_Strategy') + ' aggro=' + nv('LLM_Aggro') + ' mul=' + nv('LLM_SpeedMul') + ' slot=' + nv('LLM_AmbushIdx') + ' reason=' + sv('LLM_Reason'));",
+        "harness.assert(answered, 'Groq answered (calls=' + nv('LLM_Calls') + ', err=\"' + sv('LLM_Err') + '\")');",
+        "if (answered) {",
+        "  const modes = ['hunt', 'stalk', 'ambush', 'patrol', 'intercept', 'feint'];",
+        "  harness.assert(modes.indexOf(sv('LLM_Mode')) >= 0, 'mode validated: ' + sv('LLM_Mode'));",
+        "  harness.assert(nv('LLM_Valid') === 1, 'plan valid');",
+        "  await harness.stepFrames(14);",
+        "  const base = nv('LLM_BaseChase'), mul = nv('LLM_SpeedMul');",
+        "  harness.assert(Math.abs(nv('Cfg_ChaseSpeed') - base * mul) < 2, 'chase speed = base*plan (' + nv('Cfg_ChaseSpeed') + ' vs ' + (base * mul) + ')');",
+        "  const aggroExpect = nv('LLM_BaseSusp') * (0.6 + 0.8 * nv('LLM_Aggro'));",
+        "  harness.assert(Math.abs(nv('Cfg_SuspGain') - aggroExpect) < 0.6, 'suspicion gain modulated by aggro (' + nv('Cfg_SuspGain') + ' vs ' + aggroExpect + ')');",
+        "  harness.assert(sv('LLM_MemJSON').indexOf('\"plan\"') >= 0, 'plan persisted in memory json');",
+        "}",
+        "await harness.takeScreenshot('llm-plan');",
+        ""
+      ]
+    },
+    {
+      "description": "AI answer is parsed into engine structures and executed immediately",
+      "lastRunAt": 1793228943661,
+      "lastRunDurationMs": 8868,
+      "lastRunFramesExecuted": 114,
+      "lastRunStatus": "failed",
+      "name": "monster-llm-execute",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(5);",
+        "const sv = n => { const v = harness.getSceneVariable(n); return v ? String(v.value) : ''; };",
+        "const nv = n => { const v = harness.getSceneVariable(n); return v ? Number(v.value) : NaN; };",
+        "harness.setSceneVariable('Mem1X', 1200);",
+        "harness.setSceneVariable('Mem1Y', 900);",
+        "harness.setSceneVariable('Mem1W', 3);",
+        "harness.setSceneVariable('Mem2X', 600);",
+        "harness.setSceneVariable('Mem2Y', 400);",
+        "harness.setSceneVariable('Mem2W', 2);",
+        "let answered = false;",
+        "const log = [];",
+        "for (let i = 0; i < 18; i++) {",
+        "  await harness.stepFrames(6);",
+        "  log.push('f' + ((i + 1) * 6) + ' req=' + nv('LLM_ReqId') + ' ok=' + nv('LLM_Calls') + ' fail=' + nv('LLM_Fails') + ' valid=' + nv('LLM_Valid') + ' applied=' + nv('LLM_Applied') + ' err=' + sv('LLM_Err'));",
+        "  if (nv('LLM_Calls') > 0) { answered = true; break; }",
+        "}",
+        "for (const l of log) console.log(l);",
+        "console.log('CONTENT=' + sv('LLM_Content').slice(0, 260));",
+        "console.log('MODE=' + sv('LLM_Mode') + ' STRATEGY=' + sv('LLM_Strategy') + ' REASON=' + sv('LLM_Reason'));",
+        "harness.assert(answered, 'Groq answer received (calls=' + nv('LLM_Calls') + ', err=\"' + sv('LLM_Err') + '\")');",
+        "if (answered) {",
+        "  harness.assert(sv('LLM_Content').indexOf('{') >= 0, 'answer converted to plan JSON string');",
+        "  harness.assert(nv('LLM_Applied') >= 1, 'plan executed by the engine immediately (LLM_Applied=' + nv('LLM_Applied') + ')');",
+        "  await harness.stepFrames(10);",
+        "  const base = nv('LLM_BaseChase'), mul = nv('LLM_SpeedMul');",
+        "  harness.assert(Math.abs(nv('Cfg_ChaseSpeed') - base * mul) < 2, 'engine knob follows the plan (' + nv('Cfg_ChaseSpeed') + ' vs ' + (base * mul) + ')');",
+        "}",
+        "await harness.takeScreenshot('ai-executed');",
+        ""
+      ]
+    }
+  ],
+  "testsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "itemName": "portal-view-smoke"
+      },
+      {
+        "itemName": "portal-cross-view"
+      },
+      {
+        "itemName": "grabpack-init-check"
+      },
+      {
+        "itemName": "horror-physics-check"
+      },
+      {
+        "itemName": "camera-roll-sprint"
+      },
+      {
+        "itemName": "lever-grabpack-pull"
+      },
+      {
+        "itemName": "monster-ai-cunning"
+      },
+      {
+        "itemName": "monster-llm-memory"
+      },
+      {
+        "itemName": "monster-llm-plan-loop"
+      },
+      {
+        "itemName": "monster-llm-execute"
+      }
+    ]
+  },
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/physicscharacter3dkeymapper"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/spritemultitouchjoystick"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/firstpersoncamera"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/mousepointerlock"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/spritetoggleswitch"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/raycaster3d"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/a3f"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/light3d"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/pixel3ddither"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/terrain3d"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/calculate3dvector"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/universalinteraction"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/advancedmathtools"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/water3d"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/advancedhttp"
+    }
+  ],
+  "externalLayouts": [],
+  "externalLayoutsFolderStructure": {
+    "folderName": "__ROOT"
+  }
+}

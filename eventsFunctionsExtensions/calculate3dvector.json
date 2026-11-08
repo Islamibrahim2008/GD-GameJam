@@ -1,0 +1,1182 @@
+{
+  "author": "",
+  "category": "General",
+  "dimension": "3D",
+  "extensionNamespace": "",
+  "fullName": "Calculate 3D Vector",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTE2IDI2VjhNMTYgMjZMNiAyME0xNiAyNmwxMC02Ii8+PHBhdGggZD0iTTE2IDhsLTMgM00xNiA4bDMgMyIvPjwvc3ZnPg==",
+  "name": "Calculate3DVector",
+  "previewIconUrl": "",
+  "shortDescription": "3D vector math expressions: build vectors from distance and angles, camera forward/right vectors, normalize, dot/cross product, angles and distances. Designed to work with A3F.",
+  "version": "1.0.0",
+  "description": [
+    "3D vector expressions for GDevelop, consistent with the A3F extension:  ",
+    "- Vec3_X / Vec3_Y / Vec3_Z: vector from distance, Z angle and X angle (camera convention)",
+    "- CameraForward / CameraRight: vectors from the camera rotation, no -90 offset needed",
+    "- Length, Normalize, Distance, Dot, Cross, AngleBetween, AngleZ, AngleX",
+    "- DistanceToPoint: distance from a 3D object to a position (center or origin point)",
+    "",
+    "Angles are in degrees. Z angle: 0 = +X, 90 = +Y. X angle: 0 = down, 90 = horizontal, 180 = up (same as the 3D camera RotationX)."
+  ],
+  "tags": [
+    "3d",
+    "vector",
+    "math",
+    "camera",
+    "direction",
+    "distance",
+    "angle"
+  ],
+  "authorIds": [],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "description": "Returns the X component of a 3D vector built from a distance, a horizontal angle (Z) and a vertical angle (X).",
+      "fullName": "↗️Vector X from distance and angles",
+      "functionType": "Expression",
+      "group": "Spherical vectors",
+      "name": "Vec3_X",
+      "sentence": "↗️Vector X (Distance: _PARAM1_, Z angle: _PARAM2_, X angle: _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('AngleZ')), x=gdjs.toRad(A('AngleX'));",
+            "eventsFunctionContext.returnValue = C(D * Math.sin(x) * Math.cos(z));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Horizontal angle in degrees (Z rotation)",
+          "longDescription": "0 = towards +X, 90 = towards +Y. For a camera pointing forward use CameraRotationZ - 90, or use the Camera forward expressions.",
+          "name": "AngleZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vertical angle in degrees (X rotation, camera convention)",
+          "longDescription": "Same convention as the 3D camera RotationX: 0 = straight down (-Z), 90 = horizontal, 180 = straight up (+Z).",
+          "name": "AngleX",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Y component of a 3D vector built from a distance, a horizontal angle (Z) and a vertical angle (X).",
+      "fullName": "↗️Vector Y from distance and angles",
+      "functionType": "Expression",
+      "group": "Spherical vectors",
+      "name": "Vec3_Y",
+      "sentence": "↗️Vector Y (Distance: _PARAM1_, Z angle: _PARAM2_, X angle: _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('AngleZ')), x=gdjs.toRad(A('AngleX'));",
+            "eventsFunctionContext.returnValue = C(D * Math.sin(x) * Math.sin(z));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Horizontal angle in degrees (Z rotation)",
+          "longDescription": "0 = towards +X, 90 = towards +Y. For a camera pointing forward use CameraRotationZ - 90, or use the Camera forward expressions.",
+          "name": "AngleZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vertical angle in degrees (X rotation, camera convention)",
+          "longDescription": "Same convention as the 3D camera RotationX: 0 = straight down (-Z), 90 = horizontal, 180 = straight up (+Z).",
+          "name": "AngleX",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Z component of a 3D vector built from a distance, a horizontal angle (Z) and a vertical angle (X).",
+      "fullName": "↗️Vector Z from distance and angles",
+      "functionType": "Expression",
+      "group": "Spherical vectors",
+      "name": "Vec3_Z",
+      "sentence": "↗️Vector Z (Distance: _PARAM1_, Z angle: _PARAM2_, X angle: _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('AngleZ')), x=gdjs.toRad(A('AngleX'));",
+            "eventsFunctionContext.returnValue = C(-D * Math.cos(x));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Horizontal angle in degrees (Z rotation)",
+          "longDescription": "0 = towards +X, 90 = towards +Y. For a camera pointing forward use CameraRotationZ - 90, or use the Camera forward expressions.",
+          "name": "AngleZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vertical angle in degrees (X rotation, camera convention)",
+          "longDescription": "Same convention as the 3D camera RotationX: 0 = straight down (-Z), 90 = horizontal, 180 = straight up (+Z).",
+          "name": "AngleX",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the X component of the vector pointing where the camera looks, scaled by Distance. Equivalent to Vec3_X(Distance, CameraRotationZ - 90, CameraRotationX).",
+      "fullName": "🎥Camera forward X",
+      "functionType": "Expression",
+      "group": "Camera",
+      "name": "CameraForward_X",
+      "sentence": "🎥Camera forward X (Distance: _PARAM1_, Camera Z: _PARAM2_, Camera X: _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('CameraRotationZ') - 90), x=gdjs.toRad(A('CameraRotationX'));",
+            "eventsFunctionContext.returnValue = C(D*Math.sin(x)*Math.cos(z));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Camera Z rotation (degrees)",
+          "name": "CameraRotationZ",
+          "type": "expression"
+        },
+        {
+          "description": "Camera X rotation (degrees)",
+          "name": "CameraRotationX",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Y component of the vector pointing where the camera looks, scaled by Distance. Equivalent to Vec3_Y(Distance, CameraRotationZ - 90, CameraRotationX).",
+      "fullName": "🎥Camera forward Y",
+      "functionType": "Expression",
+      "group": "Camera",
+      "name": "CameraForward_Y",
+      "sentence": "🎥Camera forward Y (Distance: _PARAM1_, Camera Z: _PARAM2_, Camera X: _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('CameraRotationZ') - 90), x=gdjs.toRad(A('CameraRotationX'));",
+            "eventsFunctionContext.returnValue = C(D*Math.sin(x)*Math.sin(z));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Camera Z rotation (degrees)",
+          "name": "CameraRotationZ",
+          "type": "expression"
+        },
+        {
+          "description": "Camera X rotation (degrees)",
+          "name": "CameraRotationX",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Z component of the vector pointing where the camera looks, scaled by Distance. Equivalent to Vec3_Z(Distance, CameraRotationZ - 90, CameraRotationX).",
+      "fullName": "🎥Camera forward Z",
+      "functionType": "Expression",
+      "group": "Camera",
+      "name": "CameraForward_Z",
+      "sentence": "🎥Camera forward Z (Distance: _PARAM1_, Camera Z: _PARAM2_, Camera X: _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('CameraRotationZ') - 90), x=gdjs.toRad(A('CameraRotationX'));",
+            "eventsFunctionContext.returnValue = C(-D*Math.cos(x));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Camera Z rotation (degrees)",
+          "name": "CameraRotationZ",
+          "type": "expression"
+        },
+        {
+          "description": "Camera X rotation (degrees)",
+          "name": "CameraRotationX",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the X component of the horizontal vector pointing to the right of the camera, scaled by Distance.",
+      "fullName": "🎥Camera right X",
+      "functionType": "Expression",
+      "group": "Camera",
+      "name": "CameraRight_X",
+      "sentence": "🎥Camera right X (Distance: _PARAM1_, Camera Z: _PARAM2_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('CameraRotationZ'));",
+            "eventsFunctionContext.returnValue = C(D*Math.cos(z));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Camera Z rotation (degrees)",
+          "name": "CameraRotationZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Y component of the horizontal vector pointing to the right of the camera, scaled by Distance.",
+      "fullName": "🎥Camera right Y",
+      "functionType": "Expression",
+      "group": "Camera",
+      "name": "CameraRight_Y",
+      "sentence": "🎥Camera right Y (Distance: _PARAM1_, Camera Z: _PARAM2_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const D=A('Distance'), z=gdjs.toRad(A('CameraRotationZ'));",
+            "eventsFunctionContext.returnValue = C(D*Math.sin(z));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Distance (length of the vector)",
+          "name": "Distance",
+          "type": "expression"
+        },
+        {
+          "description": "Camera Z rotation (degrees)",
+          "name": "CameraRotationZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the length of the vector (X, Y, Z).",
+      "fullName": "📏Vector length",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Length",
+      "sentence": "📏Vector length (_PARAM1_, _PARAM2_, _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "eventsFunctionContext.returnValue = Math.hypot(A('VX'), A('VY'), A('VZ'));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector X",
+          "name": "VX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Y",
+          "name": "VY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Z",
+          "name": "VZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the X component of the vector (X, Y, Z) scaled to length 1 (0 if the vector is null).",
+      "fullName": "↗️Normalized vector X",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Normalize_X",
+      "sentence": "↗️Normalized vector X (_PARAM1_, _PARAM2_, _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const x=A('VX'), y=A('VY'), z=A('VZ'); const L=Math.hypot(x,y,z);",
+            "eventsFunctionContext.returnValue = L === 0 ? 0 : C(x / L);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector X",
+          "name": "VX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Y",
+          "name": "VY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Z",
+          "name": "VZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Y component of the vector (X, Y, Z) scaled to length 1 (0 if the vector is null).",
+      "fullName": "↗️Normalized vector Y",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Normalize_Y",
+      "sentence": "↗️Normalized vector Y (_PARAM1_, _PARAM2_, _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const x=A('VX'), y=A('VY'), z=A('VZ'); const L=Math.hypot(x,y,z);",
+            "eventsFunctionContext.returnValue = L === 0 ? 0 : C(y / L);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector X",
+          "name": "VX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Y",
+          "name": "VY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Z",
+          "name": "VZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Z component of the vector (X, Y, Z) scaled to length 1 (0 if the vector is null).",
+      "fullName": "↗️Normalized vector Z",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Normalize_Z",
+      "sentence": "↗️Normalized vector Z (_PARAM1_, _PARAM2_, _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const x=A('VX'), y=A('VY'), z=A('VZ'); const L=Math.hypot(x,y,z);",
+            "eventsFunctionContext.returnValue = L === 0 ? 0 : C(z / L);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector X",
+          "name": "VX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Y",
+          "name": "VY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Z",
+          "name": "VZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the distance between point A and point B in 3D.",
+      "fullName": "↔️Distance between two points",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Distance",
+      "sentence": "↔️Distance (_PARAM1_, _PARAM2_, _PARAM3_) → (_PARAM4_, _PARAM5_, _PARAM6_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "eventsFunctionContext.returnValue = Math.hypot(A('BX')-A('AX'), A('BY')-A('AY'), A('BZ')-A('AZ'));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector A X",
+          "name": "AX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Y",
+          "name": "AY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Z",
+          "name": "AZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B X",
+          "name": "BX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Y",
+          "name": "BY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Z",
+          "name": "BZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the dot product of vectors A and B.",
+      "fullName": "✖️Dot product",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Dot",
+      "sentence": "✖️Dot product of A and B",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "eventsFunctionContext.returnValue = A('AX')*A('BX') + A('AY')*A('BY') + A('AZ')*A('BZ');"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector A X",
+          "name": "AX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Y",
+          "name": "AY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Z",
+          "name": "AZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B X",
+          "name": "BX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Y",
+          "name": "BY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Z",
+          "name": "BZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the X component of the cross product A × B.",
+      "fullName": "✖️Cross product X",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Cross_X",
+      "sentence": "✖️Cross product X of A × B",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const ax=A('AX'), ay=A('AY'), az=A('AZ'), bx=A('BX'), by=A('BY'), bz=A('BZ');",
+            "eventsFunctionContext.returnValue = ay*bz - az*by;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector A X",
+          "name": "AX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Y",
+          "name": "AY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Z",
+          "name": "AZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B X",
+          "name": "BX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Y",
+          "name": "BY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Z",
+          "name": "BZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Y component of the cross product A × B.",
+      "fullName": "✖️Cross product Y",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Cross_Y",
+      "sentence": "✖️Cross product Y of A × B",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const ax=A('AX'), ay=A('AY'), az=A('AZ'), bx=A('BX'), by=A('BY'), bz=A('BZ');",
+            "eventsFunctionContext.returnValue = az*bx - ax*bz;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector A X",
+          "name": "AX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Y",
+          "name": "AY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Z",
+          "name": "AZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B X",
+          "name": "BX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Y",
+          "name": "BY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Z",
+          "name": "BZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the Z component of the cross product A × B.",
+      "fullName": "✖️Cross product Z",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "Cross_Z",
+      "sentence": "✖️Cross product Z of A × B",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const ax=A('AX'), ay=A('AY'), az=A('AZ'), bx=A('BX'), by=A('BY'), bz=A('BZ');",
+            "eventsFunctionContext.returnValue = ax*by - ay*bx;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector A X",
+          "name": "AX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Y",
+          "name": "AY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Z",
+          "name": "AZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B X",
+          "name": "BX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Y",
+          "name": "BY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Z",
+          "name": "BZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the angle in degrees (0 to 180) between vectors A and B.",
+      "fullName": "📐Angle between two vectors",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "AngleBetween",
+      "sentence": "📐Angle between A and B",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const ax=A('AX'), ay=A('AY'), az=A('AZ'), bx=A('BX'), by=A('BY'), bz=A('BZ');",
+            "const L = Math.hypot(ax,ay,az) * Math.hypot(bx,by,bz);",
+            "eventsFunctionContext.returnValue = L === 0 ? 0 : gdjs.toDegrees(Math.acos(Math.max(-1, Math.min(1, (ax*bx+ay*by+az*bz)/L))));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector A X",
+          "name": "AX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Y",
+          "name": "AY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector A Z",
+          "name": "AZ",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B X",
+          "name": "BX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Y",
+          "name": "BY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector B Z",
+          "name": "BZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the horizontal angle in degrees of the vector (X, Y, Z). Inverse of Vec3_X/Y/Z for the Z angle.",
+      "fullName": "🧭Horizontal angle of a vector (Z)",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "AngleZ",
+      "sentence": "🧭Horizontal angle (Z) of (_PARAM1_, _PARAM2_, _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "eventsFunctionContext.returnValue = C(gdjs.toDegrees(Math.atan2(A('VY'), A('VX'))));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector X",
+          "name": "VX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Y",
+          "name": "VY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Z",
+          "name": "VZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the vertical angle in degrees of the vector (X, Y, Z) using the camera convention (0 = down, 90 = horizontal, 180 = up).",
+      "fullName": "🧭Vertical angle of a vector (X)",
+      "functionType": "Expression",
+      "group": "Vector math",
+      "name": "AngleX",
+      "sentence": "🧭Vertical angle (X) of (_PARAM1_, _PARAM2_, _PARAM3_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const x=A('VX'), y=A('VY'), z=A('VZ'); const L=Math.hypot(x,y,z);",
+            "eventsFunctionContext.returnValue = L === 0 ? 90 : C(gdjs.toDegrees(Math.acos(Math.max(-1, Math.min(1, -z / L)))));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Vector X",
+          "name": "VX",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Y",
+          "name": "VY",
+          "type": "expression"
+        },
+        {
+          "description": "Vector Z",
+          "name": "VZ",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Returns the distance between a 3D object and a position in 3D (scene coordinates). Returns 0 when a 2D object is selected.",
+      "fullName": "↔️Distance from 3D object to a point",
+      "functionType": "Expression",
+      "group": "Position",
+      "name": "DistanceToPoint",
+      "sentence": "↔️Distance from 3D object to point (_PARAM1_, _PARAM2_, X: _PARAM3_, Y: _PARAM4_, Z: _PARAM5_)",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const N = (v) => { v = Number(v); return Number.isFinite(v) ? v : 0; };",
+            "const C = (v) => { v = Math.round(v * 1e10) / 1e10; return v === 0 ? 0 : v; };",
+            "const A = (n) => N(eventsFunctionContext.getArgument(n));",
+            "",
+            "const ObjectPoint = eventsFunctionContext.getArgument(\"ObjectPoint\");",
+            "if (objects.length == 0) {",
+            "    eventsFunctionContext.returnValue = 0;",
+            "    return;",
+            "}",
+            "const O = objects[0];",
+            "if (!O.get3DRendererObject || !O.get3DRendererObject()) {",
+            "    eventsFunctionContext.returnValue = 0;",
+            "    return;",
+            "}",
+            "let px, py, pz;",
+            "if (ObjectPoint === \"Center point\") {",
+            "    px = O.getCenterXInScene(); py = O.getCenterYInScene(); pz = O.getCenterZInScene();",
+            "} else {",
+            "    px = O.getX(); py = O.getY(); pz = O.getZ();",
+            "}",
+            "eventsFunctionContext.returnValue = Math.hypot(px - A('X'), py - A('Y'), pz - A('Z'));"
+          ],
+          "parameterObjects": "Object",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Object",
+          "name": "Object",
+          "type": "objectList"
+        },
+        {
+          "description": "Points of the 3D object",
+          "name": "ObjectPoint",
+          "supplementaryInformation": "[\"Center point\",\"Origin point\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "Target X (scene)",
+          "name": "X",
+          "type": "expression"
+        },
+        {
+          "description": "Target Y (scene)",
+          "name": "Y",
+          "type": "expression"
+        },
+        {
+          "description": "Target Z (scene)",
+          "name": "Z",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "folderName": "Spherical vectors",
+        "children": [
+          {
+            "functionName": "Vec3_X"
+          },
+          {
+            "functionName": "Vec3_Y"
+          },
+          {
+            "functionName": "Vec3_Z"
+          }
+        ]
+      },
+      {
+        "folderName": "Camera",
+        "children": [
+          {
+            "functionName": "CameraForward_X"
+          },
+          {
+            "functionName": "CameraForward_Y"
+          },
+          {
+            "functionName": "CameraForward_Z"
+          },
+          {
+            "functionName": "CameraRight_X"
+          },
+          {
+            "functionName": "CameraRight_Y"
+          }
+        ]
+      },
+      {
+        "folderName": "Vector math",
+        "children": [
+          {
+            "functionName": "Length"
+          },
+          {
+            "functionName": "Normalize_X"
+          },
+          {
+            "functionName": "Normalize_Y"
+          },
+          {
+            "functionName": "Normalize_Z"
+          },
+          {
+            "functionName": "Distance"
+          },
+          {
+            "functionName": "Dot"
+          },
+          {
+            "functionName": "Cross_X"
+          },
+          {
+            "functionName": "Cross_Y"
+          },
+          {
+            "functionName": "Cross_Z"
+          },
+          {
+            "functionName": "AngleBetween"
+          },
+          {
+            "functionName": "AngleZ"
+          },
+          {
+            "functionName": "AngleX"
+          }
+        ]
+      },
+      {
+        "folderName": "Position",
+        "children": [
+          {
+            "functionName": "DistanceToPoint"
+          }
+        ]
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

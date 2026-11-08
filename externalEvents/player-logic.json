@@ -1,0 +1,3998 @@
+{
+  "associatedLayout": "Game Scene",
+  "name": "player logic",
+  "events": [
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "player",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "controls",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"w\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"a\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateLeftKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"s\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateBackwardKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"d\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateRightKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Space\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Walk\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Sprint\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateJumpKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ]
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "sprint",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Sprint intent is just LShift. Speeds are owned by the state machine and smoothed in 'speed smoothing'."
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "crouch",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "KeyFromTextPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "\"c\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "KeyFromTextPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "\"LControl\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CrouchBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(CrouchBlend, 1, 12, 0)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CrouchBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(CrouchBlend, 0, 12, 0)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CrouchBlend",
+                        ">",
+                        "0.5"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Crouched",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Crouched",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "slide",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextJustPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"v\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"LShift\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Sliding",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SlideCooldown",
+                        "<=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Crouched",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+                          },
+                          "parameters": [
+                            "Player",
+                            "PhysicsCharacter3D"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                              },
+                              "parameters": [
+                                "Player",
+                                "PhysicsCharacter3D"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "Sliding",
+                                "=",
+                                "1"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "SlideTime",
+                                "=",
+                                "0.7"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "SlideCooldown",
+                                "=",
+                                "1.4"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Sliding",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Crouched",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "SlideTime",
+                        "-",
+                        "TimeDelta()"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "SlideTime",
+                            "<=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Sliding",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SlideCooldown",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "SlideCooldown",
+                        "-",
+                        "TimeDelta()"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "lean",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"e\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LeanBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(LeanBlend, 1, 10, 0)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"q\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LeanBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(LeanBlend, -1, 10, 0)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LeanBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(LeanBlend, 0, 10, 0)"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "state machine",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Sliding",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Slide\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Air\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Crouched",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchWalk\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchIdle\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"LShift\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Sprint\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Walk\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Idle\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Sprint\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "250"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "200"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "1.6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.25"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Walk\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "140"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "115"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.15"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchWalk\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchIdle\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "70"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "60"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "0.6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Slide\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "120 + 300 * AdvancedMathTools::Ease(\"quadIn\", SlideTime / 0.7)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "60"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "1.3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.04"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Air\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "CurFwd"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "CurSide"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "140"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "115"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.15"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "speed smoothing",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurFwd",
+                    "=",
+                    "140"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurSide",
+                    "=",
+                    "115"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetFwd",
+                    "=",
+                    "140"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSide",
+                    "=",
+                    "115"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetAnim",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "SmoothT",
+                    "=",
+                    "0.15"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurFwd",
+                    "=",
+                    "AdvancedMathTools::SmoothDamp(CurFwd, TargetFwd, \"pFwd\", SmoothT, 0, 0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurSide",
+                    "=",
+                    "AdvancedMathTools::SmoothDamp(CurSide, TargetSide, \"pSide\", SmoothT, 0, 0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurAnim",
+                    "=",
+                    "AdvancedMathTools::SmoothDamp(CurAnim, TargetAnim, \"pAnim\", SmoothT, 0, 0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SetForwardSpeedMax"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D",
+                    "=",
+                    "CurFwd"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SetSidewaysSpeedMax"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D",
+                    "=",
+                    "CurSide"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "CurAnim"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "animation",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Air\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Jump\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchIdle\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Idle\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Walk\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "camera",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "camera feel",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"LShift\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Crouched",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Sliding",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Sprinting",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Sprinting",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Sprinting",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MoveBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(MoveBlend, 1, 8, 0)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MoveBlend",
+                        "=",
+                        "AdvancedMathTools::ExpDecay(MoveBlend, 0, 8, 0)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "MoveBlend",
+                    "=",
+                    "AdvancedMathTools::ExpDecay(MoveBlend, 0, 8, 0)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Sprinting",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobPhase",
+                    "+",
+                    "TimeDelta() * 11"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobAmpT",
+                    "=",
+                    "MoveBlend * 3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Crouched",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobPhase",
+                    "+",
+                    "TimeDelta() * 5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobAmpT",
+                    "=",
+                    "MoveBlend * 1.2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobPhase",
+                    "+",
+                    "TimeDelta() * 8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobAmpT",
+                    "=",
+                    "MoveBlend * 2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "BobAmp",
+                    "=",
+                    "AdvancedMathTools::ExpDecay(BobAmp, BobAmpT, 10, 0)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "WasAirborne",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AirTime",
+                    "+",
+                    "TimeDelta()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "WasAirborne",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "LandDip",
+                        "=",
+                        "AdvancedMathTools::RemapClamped(AirTime, 0.12, 0.9, 3, 15)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AdvancedMathTools::ResetVelocity"
+                      },
+                      "parameters": [
+                        "",
+                        "\"pLand\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "WasAirborne",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AirTime",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LandDip",
+                    "=",
+                    "AdvancedMathTools::Spring(LandDip, 0, \"pLand\", 170, 13, 0)"
+                  ]
+                }
+              ]
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "footsteps",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Footstep",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "MoveBlend",
+                        ">",
+                        "0.5"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "sin(BobPhase)",
+                            ">=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "BobSin",
+                            "<",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Footstep",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "StepAlt",
+                            "=",
+                            "1 - StepAlt"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "sin(BobPhase)",
+                            "<",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "BobSin",
+                            ">=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Footstep",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "StepAlt",
+                            "=",
+                            "1 - StepAlt"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "BobSin",
+                        "=",
+                        "sin(BobPhase)"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "A3F::LerpTowardChild"
+              },
+              "parameters": [
+                "",
+                "HeadPOS",
+                "Object3D",
+                "Player",
+                "Object3D",
+                "\"Head\"",
+                "1 - exp(-25 * TimeDelta())",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "Player"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamFOV",
+                "=",
+                "AdvancedMathTools::SmoothDamp(CamFOV, 80 + Sliding * 15 + Sprinting * 5, \"pFov\", 0.2, 0, 0)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraFov"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamFOV",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraFov"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamFOV - 25",
+                "\"hand\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "MousePointerLock::RequestPointerLock"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamX",
+                "+",
+                "MousePointerLock::MovementX()/10"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamY",
+                "-",
+                "MousePointerLock::MovementY()/10"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "CamX-90"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "HeadPOS.CenterX() + cos(ToRad(CamX)) * (LeanBlend * 40 + cos(BobPhase * 0.5) * BobAmp * 0.6 + cos(TimeFromStart() * 1.1) * (1 - 0.7 * MoveBlend))",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "HeadPOS.CenterY() + sin(ToRad(CamX)) * (LeanBlend * 40 + cos(BobPhase * 0.5) * BobAmp * 0.6 + cos(TimeFromStart() * 1.1) * (1 - 0.7 * MoveBlend))",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraRotationX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "(HeadPOS.Object3D::RotationY()+CamY*3)/4",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraAngle"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamX",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraZ"
+              },
+              "parameters": [
+                "",
+                "=",
+                "(HeadPOS.Object3D::CenterZ() + (Player.Object3D::CenterZ() + 80) * 3) / 4 - AdvancedMathTools::Ease(\"sineInOut\", CrouchBlend) * 45 - abs(LeanBlend) * 5 + sin(BobPhase) * BobAmp + sin(TimeFromStart() * 1.5) * 1.2 * (1 - 0.7 * MoveBlend) - LandDip",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetLayerEffectParameter"
+              },
+              "parameters": [
+                "",
+                "\"hand\"",
+                "\"sun\"",
+                "\"elevation\"",
+                "CamY"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetLayerEffectParameter"
+              },
+              "parameters": [
+                "",
+                "\"hand\"",
+                "\"sun\"",
+                "\"rotation\"",
+                "CamX"
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "camera roll",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Camera banking: strafe roll while sprinting, lean tilt, bob sway, grab/carry sway, plus a turn-bank from mouse yaw speed. CamRoll follows its target with a damped Spring (slight natural overshoot)."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneJustBegins"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamXPrev",
+                    "=",
+                    "CamX"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollStrafe",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"d\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollStrafe",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"a\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollStrafe",
+                    "-",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGDX",
+                    "=",
+                    "GrabHX - CamPX"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGDY",
+                    "=",
+                    "GrabHY - CamPY"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGLen",
+                    "=",
+                    "max(1, sqrt(CamRollGDX*CamRollGDX + CamRollGDY*CamRollGDY))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGLat",
+                    "=",
+                    "(CamRollGDX * cos(ToRad(CamX)) + CamRollGDY * sin(ToRad(CamX))) / CamRollGLen"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGrabAct",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollCarryF",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "GrabState",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGrabAct",
+                    "=",
+                    "0.35"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "GrabState",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollGrabAct",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "GrabState",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollCarryF",
+                    "=",
+                    "min(1, GrabCarryWeight / max(1, GrabMaxWeight))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamTurnRate",
+                    "=",
+                    "AdvancedMathTools::DeltaAngle(CamXPrev, CamX) / max(TimeDelta(), 0.001)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamTurnRoll",
+                    "=",
+                    "AdvancedMathTools::SmoothDamp(CamTurnRoll, clamp(CamTurnRate * 0.008, -2.5, 2.5), \"pTurn\", 0.12, 0, 0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamXPrev",
+                    "=",
+                    "CamX"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRollTarget",
+                    "=",
+                    "CamRollMax * CamRollStrafe * Sprinting * (0.35 + 0.65 * MoveBlend) + LeanBlend * CamRollLean + sin(BobPhase) * 0.35 * MoveBlend * Sprinting + CamRollGrab * CamRollGLat * CamRollGrabAct + CamRollCarry * CamRollCarryF * sin(BobPhase * 0.5) + CamTurnRoll"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CamRoll",
+                    "=",
+                    "AdvancedMathTools::Spring(CamRoll, CamRollTarget, \"pRoll\", 120, 16, 0)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene3D::SetCameraRotationY"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "CamRoll",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Flashlight",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextJustPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"f\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "KeyFromTextJustPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"g\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FlashlightOn",
+                "=",
+                "1 - FlashlightOn"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FlashLevel",
+                "=",
+                "lerp(FlashLevel, FlashlightOn, 1 - exp(-10 * TimeDelta()))"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "FlashlightOn",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "FlashLevel",
+                ">",
+                "0.9"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "RandomFloatInRange(0, 1)",
+                    "<",
+                    "0.008"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Flicker",
+                    "=",
+                    "RandomFloatInRange(0.2, 0.5)"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Flicker",
+                "=",
+                "lerp(Flicker, 0, 1 - exp(-6 * TimeDelta()))"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "light",
+                "=",
+                "Player.CenterX() + 8*cos(ToRad(Player.Angle()-90))",
+                "=",
+                "Player.CenterY() + 8*sin(ToRad(Player.Angle()-90))"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "light",
+                "Object3D",
+                "=",
+                "Player.Object3D::Z() + Player.Object3D::Depth() - 10"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetRotationY"
+              },
+              "parameters": [
+                "light",
+                "Object3D",
+                "=",
+                "90 - Scene3D::CameraRotationX() + 4"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "light",
+                "=",
+                "Player.Angle()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::SpotLight3D::SetIntensity"
+              },
+              "parameters": [
+                "light",
+                "=",
+                "60 * FlashLevel * (1 - Flicker)",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "disabled": true,
+      "name": "grab system",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"e\""
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"GrabCooldown\"",
+                ">",
+                "0.3"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "wall",
+                    "PickUp",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Raycaster3D::RaycastFromCameraCenter"
+                  },
+                  "parameters": [
+                    "",
+                    "wall",
+                    "250",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "A3F::CheckDistanceV2"
+                  },
+                  "parameters": [
+                    "",
+                    "Player",
+                    "Object3D",
+                    "\"Center point\"",
+                    "wall",
+                    "Object3D",
+                    "\"Center point\"",
+                    "\"<\"",
+                    "250",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "wall",
+                    "PickUp",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Physics_Object_Grabing",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetLinearDamping"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetAngularDamping"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetLinearVelocityX"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetLinearVelocityY"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetLinearVelocityZ"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetAngularVelocityX"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetAngularVelocityY"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetAngularVelocityZ"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabDistTarget",
+                    "=",
+                    "160"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabDist",
+                    "=",
+                    "160"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabCharge",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabStuck",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabYawOffset",
+                    "=",
+                    "AdvancedMathTools::DeltaAngle(CamX, wall.Angle())"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AdvancedMathTools::Vec3Set"
+                  },
+                  "parameters": [
+                    "",
+                    "\"gSmooth\"",
+                    "wall.CenterX()",
+                    "wall.CenterY()",
+                    "wall.Object3D::CenterZ()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AdvancedMathTools::Vec3Set"
+                  },
+                  "parameters": [
+                    "",
+                    "\"gSV\"",
+                    "0",
+                    "0",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"GrabCooldown\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "wall",
+                    "PickUp",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "wall",
+                    "PickUp",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Physics_Object_Grabing",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetLinearDamping"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetAngularDamping"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabCharge",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabStuck",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"GrabCooldown\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabCharge",
+                "=",
+                "min(GrabCharge + TimeDelta() / 0.8, 1)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "GrabCharge",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "Physics_Object_Grabing",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetLinearDamping"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetAngularDamping"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabCharge",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabStuck",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GrabCooldown\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::ApplyImpulseTowardPosition"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "clamp(wall.Physics3D::Mass() * 2.5, 5, 60) * (0.5 + 0.5 * AdvancedMathTools::Ease(\"quadOut\", GrabCharge))",
+                "Player.CenterX() + Calculate3DVector::CameraForward_X(500, CamX, Scene3D::CameraRotationX(\"\", 0))",
+                "Player.CenterY() + Calculate3DVector::CameraForward_Y(500, CamX, Scene3D::CameraRotationX(\"\", 0))",
+                "Player.Object3D::CenterZ() + Calculate3DVector::CameraForward_Z(500, CamX, Scene3D::CameraRotationX(\"\", 0))"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "A3F::CheckDistanceV2"
+              },
+              "parameters": [
+                "",
+                "Player",
+                "Object3D",
+                "\"Center point\"",
+                "wall",
+                "Object3D",
+                "\"Center point\"",
+                "\"<\"",
+                "320",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabDistTarget",
+                "=",
+                "clamp(GrabDistTarget + MouseWheelDelta() * 0.1, 90, 250)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabDist",
+                "=",
+                "AdvancedMathTools::ExpDecay(GrabDist, GrabDistTarget, 10, 0)"
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedMathTools::Vec3Set"
+              },
+              "parameters": [
+                "",
+                "\"gTgt\"",
+                "Player.CenterX() + Calculate3DVector::CameraForward_X(GrabDist, CamX, Scene3D::CameraRotationX(\"\", 0))",
+                "Player.CenterY() + Calculate3DVector::CameraForward_Y(GrabDist, CamX, Scene3D::CameraRotationX(\"\", 0))",
+                "Player.Object3D::CenterZ() + clamp(Calculate3DVector::CameraForward_Z(GrabDist, CamX, Scene3D::CameraRotationX(\"\", 0)), -30, 120) + 60"
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedMathTools::Vec3SmoothDamp"
+              },
+              "parameters": [
+                "",
+                "\"gSmooth\"",
+                "\"gTgt\"",
+                "\"gSV\"",
+                "0.06",
+                "0",
+                "0",
+                "\"gSmooth\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedMathTools::Vec3Set"
+              },
+              "parameters": [
+                "",
+                "\"gPos\"",
+                "wall.CenterX()",
+                "wall.CenterY()",
+                "wall.Object3D::CenterZ()"
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedMathTools::Vec3Sub"
+              },
+              "parameters": [
+                "",
+                "\"gSmooth\"",
+                "\"gPos\"",
+                "\"gErr\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabErr",
+                "=",
+                "AdvancedMathTools::Vec3Length(\"gErr\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedMathTools::Vec3Scale"
+              },
+              "parameters": [
+                "",
+                "\"gErr\"",
+                "12",
+                "\"gVel\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedMathTools::Vec3ClampLength"
+              },
+              "parameters": [
+                "",
+                "\"gVel\"",
+                "0",
+                "AdvancedMathTools::RemapClamped(wall.Physics3D::Mass(), 1, 100, 900, 250)",
+                "\"gVel\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetLinearVelocityX"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "AdvancedMathTools::Vec3X(\"gVel\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetLinearVelocityY"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "AdvancedMathTools::Vec3Y(\"gVel\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetLinearVelocityZ"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "AdvancedMathTools::Vec3Z(\"gVel\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetAngularVelocityX"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetAngularVelocityY"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetAngularVelocityZ"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "clamp(AdvancedMathTools::DeltaAngle(wall.Angle(), CamX + GrabYawOffset) * 8, -360, 360)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "GrabErr",
+                    ">",
+                    "150"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabStuck",
+                    "+",
+                    "TimeDelta()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabStuck",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "GrabStuck",
+                    ">",
+                    "0.6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "wall",
+                    "PickUp",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanObjectVariable"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Physics_Object_Grabing",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetLinearDamping"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::Physics3DBehavior::SetAngularDamping"
+                  },
+                  "parameters": [
+                    "wall",
+                    "Physics3D",
+                    "=",
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabCharge",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GrabStuck",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"GrabCooldown\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "Physics_Object_Grabing",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetLinearDamping"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetAngularDamping"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabCharge",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabStuck",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabDist",
+                "=",
+                "160"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabDistTarget",
+                "=",
+                "160"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GrabCooldown\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "A3F::CheckDistanceV2"
+              },
+              "parameters": [
+                "",
+                "Player",
+                "Object3D",
+                "\"Center point\"",
+                "wall",
+                "Object3D",
+                "\"Center point\"",
+                "\">\"",
+                "320",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "wall",
+                "PickUp",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "Player",
+                "Physics_Object_Grabing",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetLinearDamping"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetAngularDamping"
+              },
+              "parameters": [
+                "wall",
+                "Physics3D",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabCharge",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GrabStuck",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GrabCooldown\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  ]
+}

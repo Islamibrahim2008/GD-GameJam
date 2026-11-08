@@ -1,0 +1,2548 @@
+{
+  "author": "",
+  "category": "Game mechanic",
+  "dimension": "",
+  "extensionNamespace": "",
+  "fullName": "Universal interaction system (نظام التفاعل الموحد)",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmM1Y2U3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTkgMTFWNmEzIDMgMCAwIDEgNiAwdjUiLz48cmVjdCB4PSI1IiB5PSIxMSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjEwIiByeD0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTYiIHI9IjEuNSIvPjwvc3ZnPg==",
+  "name": "UniversalInteraction",
+  "previewIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmM1Y2U3IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTkgMTFWNmEzIDMgMCAwIDEgNiAwdjUiLz48cmVjdCB4PSI1IiB5PSIxMSIgd2lkdGg9IjE0IiBoZWlnaHQ9IjEwIiByeD0iMiIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTYiIHI9IjEuNSIvPjwvc3ZnPg==",
+  "shortDescription": "Detect what the player aims at in 3D, show its name / available action, then run the right interaction (door, pickup, inspect, talk...).",
+  "version": "1.0.0",
+  "description": [
+    "One unified system for 3D games: raycast detection (camera center or cursor, with wall occlusion), prompts (built-in overlay or Text object), highlight outline, and ready-made interactions: open/lock doors with keys, pick up items into an inventory, inspect notes, talk to characters, switches and custom interactions.",
+    "",
+    "Uses the Three.js bundled with GDevelop (only stable APIs: Raycaster, BoxHelper), world-scale aware."
+  ],
+  "tags": [
+    "interaction",
+    "raycast",
+    "3d",
+    "door",
+    "pickup",
+    "inventory",
+    "prompt",
+    "npc",
+    "threejs"
+  ],
+  "authorIds": [],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "fullName": "onFirstSceneLoaded",
+      "functionType": "Action",
+      "name": "onFirstSceneLoaded",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "UniversalInteraction::DeclareLibrary"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "onSceneLoaded",
+      "functionType": "Action",
+      "name": "onSceneLoaded",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "const lib = gdjs._universalInteraction; if (lib) lib.getManager(runtimeScene);",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "onScenePreEvents",
+      "functionType": "Action",
+      "name": "onScenePreEvents",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.update(lib.frameSeconds(runtimeScene));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "onScenePostEvents",
+      "functionType": "Action",
+      "name": "onScenePostEvents",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.endFrame();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "onSceneUnloading",
+      "functionType": "Action",
+      "name": "onSceneUnloading",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "lib.getManager(runtimeScene).dispose();",
+            "runtimeScene._universalInteractionManager = null;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Internal: declares the JavaScript library.",
+      "fullName": "Declare the interaction library",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "DeclareLibrary",
+      "private": true,
+      "sentence": "Declare the interaction library",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "// ============================================================================",
+            "// Universal Interaction System - runtime library (declared once, idempotent)",
+            "// Uses only long-stable Three.js APIs (Raycaster, Vector2/3, BoxHelper) so it",
+            "// works with the THREE global bundled by GDevelop (tested against r185 API).",
+            "// ============================================================================",
+            "if (gdjs._universalInteraction) return;",
+            "",
+            "const VERSION = '1.0.0';",
+            "",
+            "// ---- Texts (verbs + messages). Overridable with the \"Set interaction text\" action.",
+            "const TEXTS = {",
+            "  en: {",
+            "    door_open: 'Open', door_close: 'Close', pickup: 'Pick up', inspect: 'Inspect',",
+            "    talk: 'Talk to', use: 'Use', custom: 'Interact',",
+            "    locked: \"It's locked.\", missing_item: 'You need the right key.',",
+            "    unlocked: 'Unlocked.', picked: 'Picked up: ',",
+            "  },",
+            "  ar: {",
+            "    door_open: 'فتح', door_close: 'إغلاق', pickup: 'التقاط', inspect: 'فحص',",
+            "    talk: 'التحدث إلى', use: 'استخدام', custom: 'تفاعل',",
+            "    locked: 'مقفل.', missing_item: 'تحتاج إلى المفتاح المناسب.',",
+            "    unlocked: 'تم فتح القفل.', picked: 'تم التقاط: ',",
+            "  },",
+            "};",
+            "",
+            "// ---- Small helpers",
+            "const toBool = (v) => v === true || v === 'true' || v === 1 || v === '1';",
+            "const toNum = (v, d = 0) => { const n = Number(v); return Number.isFinite(n) ? n : d; };",
+            "const getProp = (b, name, fallback) => {",
+            "  const f = b['_get' + name];",
+            "  if (typeof f !== 'function') return fallback;",
+            "  const v = f.call(b);",
+            "  return v === undefined || v === null ? fallback : v;",
+            "};",
+            "const setProp = (b, name, value) => {",
+            "  const f = b['_set' + name];",
+            "  if (typeof f === 'function') f.call(b, value);",
+            "};",
+            "const parseColor = (value, fallback) => {",
+            "  if (typeof value === 'number') return value;",
+            "  const s = String(value === undefined || value === null ? '' : value).trim();",
+            "  if (/^#?[0-9a-f]{6}$/i.test(s)) return parseInt(s.replace('#', ''), 16);",
+            "  const parts = s.split(';');",
+            "  if (parts.length >= 3) {",
+            "    const c = parts.slice(0, 3).map((x) => Math.max(0, Math.min(255, parseInt(x, 10) || 0)));",
+            "    return (c[0] << 16) | (c[1] << 8) | c[2];",
+            "  }",
+            "  return fallback;",
+            "};",
+            "const cssColor = (hex) => '#' + (hex >>> 0).toString(16).padStart(6, '0');",
+            "const rendererOf = (object) =>",
+            "  object && typeof object.get3DRendererObject === 'function' ? object.get3DRendererObject() : null;",
+            "const sceneOf = (object, fallback) => {",
+            "  const s = object && object.getRuntimeScene ? object.getRuntimeScene() : null;",
+            "  return s || fallback;",
+            "};",
+            "const OK_RESULTS = new Set(['opened', 'closed', 'unlocked', 'picked', 'inspected', 'talking', 'activated', 'deactivated', 'custom']);",
+            "",
+            "// ---- The manager (one per scene)",
+            "class InteractionManager {",
+            "  constructor(scene) {",
+            "    this.scene = scene;",
+            "    this.targets = new Set();",
+            "    this.blockers = new Set();",
+            "    this.inventory = new Map();",
+            "    this.texts = {};",
+            "    this.cfg = {",
+            "      enabled: true, mode: 'center', layer: '', maxDistance: 300, cooldown: 0.25,",
+            "      language: 'en', format: '[{key}] {verb} {name}', key: 'E', refName: '',",
+            "      highlight: true, highlightColor: 0xffd54a,",
+            "      overlay: false, overlayFontSize: 22, overlayColor: 0xffffff, overlayBottom: 90,",
+            "    };",
+            "    this.focus = null;",
+            "    this.cooldownLeft = 0;",
+            "    this.interacted = false;",
+            "    this.last = { kind: '', name: '', message: '', id: '', result: 'none', objectName: '' };",
+            "    this._ray = null; this._ndc = null; this._v3 = null;",
+            "    this._helper = null; this._helperRoot = null; this._helperTop = null;",
+            "    this._overlay = null;",
+            "  }",
+            "",
+            "  // -- registration",
+            "  register(b) { this.targets.add(b); }",
+            "  unregister(b) {",
+            "    this.targets.delete(b);",
+            "    if (this.focus && this.focus.behavior === b) this.focus = null;",
+            "  }",
+            "  registerBlocker(b) { this.blockers.add(b); }",
+            "  unregisterBlocker(b) { this.blockers.delete(b); }",
+            "",
+            "  // -- texts",
+            "  tr(key) {",
+            "    if (this.texts[key] !== undefined) return this.texts[key];",
+            "    const t = TEXTS[this.cfg.language] || TEXTS.en;",
+            "    return t[key] !== undefined ? t[key] : (TEXTS.en[key] || '');",
+            "  }",
+            "",
+            "  // -- inventory",
+            "  addItem(id, n = 1) { if (!id) return; this.inventory.set(id, (this.inventory.get(id) || 0) + n); }",
+            "  removeItem(id, n = 1) {",
+            "    const left = (this.inventory.get(id) || 0) - n;",
+            "    if (left > 0) this.inventory.set(id, left); else this.inventory.delete(id);",
+            "  }",
+            "  hasItem(id, n = 1) { return (this.inventory.get(id) || 0) >= n; }",
+            "  itemCount(id) { return this.inventory.get(id) || 0; }",
+            "  inventoryJSON() { return JSON.stringify(Object.fromEntries(this.inventory)); }",
+            "  loadInventoryJSON(json) {",
+            "    try {",
+            "      const o = JSON.parse(json);",
+            "      this.inventory.clear();",
+            "      Object.keys(o || {}).forEach((k) => { const n = toNum(o[k], 0); if (n > 0) this.inventory.set(k, n); });",
+            "    } catch (e) { console.warn('[UniversalInteraction] Invalid inventory JSON.', e); }",
+            "  }",
+            "",
+            "  // -- description of a target",
+            "  isCandidate(b) {",
+            "    const s = b._universalInteraction;",
+            "    if (!s || !s.object) return false;",
+            "    if (b.activated && !b.activated()) return false;",
+            "    if (!toBool(getProp(b, 'Enabled', true))) return false;",
+            "    if (s.object.isHidden && s.object.isHidden()) return false;",
+            "    return true;",
+            "  }",
+            "  nameOf(b) {",
+            "    const n = String(getProp(b, 'DisplayName', '') || '');",
+            "    return n || b._universalInteraction.object.getName();",
+            "  }",
+            "  kindOf(b) { return String(getProp(b, 'Kind', 'custom')); }",
+            "  verbOf(b) {",
+            "    const custom = String(getProp(b, 'Verb', '') || '');",
+            "    if (custom) return custom;",
+            "    const kind = this.kindOf(b);",
+            "    if (kind === 'door') return this.tr(toBool(getProp(b, 'IsOpen', false)) ? 'door_close' : 'door_open');",
+            "    return this.tr(kind);",
+            "  }",
+            "  statusOf(b) {",
+            "    const kind = this.kindOf(b);",
+            "    if (kind === 'door') return toBool(getProp(b, 'Locked', false)) ? 'locked' : (toBool(getProp(b, 'IsOpen', false)) ? 'open' : 'closed');",
+            "    if (kind === 'use') return toBool(getProp(b, 'Toggled', false)) ? 'on' : 'off';",
+            "    return '';",
+            "  }",
+            "  promptOf(d) {",
+            "    const c = this.cfg;",
+            "    return c.format",
+            "      .replace(/\\{key\\}/g, c.key).replace(/\\{verb\\}/g, d.verb)",
+            "      .replace(/\\{name\\}/g, d.name).replace(/\\{status\\}/g, d.status)",
+            "      .replace(/\\[\\s*\\]/g, '').replace(/\\s+/g, ' ').trim();",
+            "  }",
+            "  describe(b) {",
+            "    const d = { kind: this.kindOf(b), name: this.nameOf(b), verb: this.verbOf(b), status: this.statusOf(b) };",
+            "    d.prompt = this.promptOf(d);",
+            "    return d;",
+            "  }",
+            "",
+            "  // -- reference position (player) used to measure the interaction distance",
+            "  refPosition() {",
+            "    if (!this.cfg.refName) return null;",
+            "    const list = this.scene.getObjects(this.cfg.refName);",
+            "    const o = list && list[0];",
+            "    if (!o) return null;",
+            "    return {",
+            "      x: o.getCenterXInScene ? o.getCenterXInScene() : o.getX(),",
+            "      y: o.getCenterYInScene ? o.getCenterYInScene() : o.getY(),",
+            "      z: o.getCenterZInScene ? o.getCenterZInScene() : (o.getZ ? o.getZ() + (o.getDepth ? o.getDepth() / 2 : 0) : 0),",
+            "    };",
+            "  }",
+            "",
+            "  // -- per-frame detection",
+            "  update(dt) {",
+            "    this.cooldownLeft = Math.max(0, this.cooldownLeft - dt);",
+            "    this.detect();",
+            "    this.updateHighlight();",
+            "    this.updateOverlay();",
+            "  }",
+            "",
+            "  detect() {",
+            "    this.focus = null;",
+            "    const cfg = this.cfg;",
+            "    if (!cfg.enabled || typeof THREE === 'undefined' || this.targets.size === 0) return;",
+            "    const scene = this.scene;",
+            "    const layer = scene.getLayer(cfg.layer);",
+            "    const layerRenderer = layer && layer.getRenderer ? layer.getRenderer() : null;",
+            "    const camera = layerRenderer && layerRenderer.getThreeCamera ? layerRenderer.getThreeCamera() : null;",
+            "    if (!camera) return;",
+            "",
+            "    // World scale (see GDevelop docs: \"Handle 3D renderer world scale\").",
+            "    const inv = scene.getRenderer3DInverseWorldScale ? scene.getRenderer3DInverseWorldScale() : 1;",
+            "    const ws = scene.getRenderer3DWorldScale ? scene.getRenderer3DWorldScale() : 1;",
+            "",
+            "    // Aim point in normalized device coordinates.",
+            "    let nx = 0, ny = 0;",
+            "    if (cfg.mode === 'cursor') {",
+            "      const game = scene.getGame();",
+            "      const input = game.getInputManager();",
+            "      let px = input.getMouseX(), py = input.getMouseY();",
+            "      if (input.getTouchIds && input.getTouchIds().length > 0) {",
+            "        const id = input.getTouchIds()[0];",
+            "        px = input.getTouchX(id); py = input.getTouchY(id);",
+            "      }",
+            "      nx = (px / game.getGameResolutionWidth()) * 2 - 1;",
+            "      ny = -((py / game.getGameResolutionHeight()) * 2 - 1);",
+            "    }",
+            "",
+            "    // Collect renderer objects: interactables AND blockers (walls, closed doors...).",
+            "    const roots = [];",
+            "    const owners = new Map();",
+            "    let farPx = cfg.maxDistance;",
+            "    for (const b of this.targets) {",
+            "      const s = b._universalInteraction;",
+            "      if (!s || !s.object) continue;",
+            "      const root = rendererOf(s.object);",
+            "      if (!root) {",
+            "        if (!s.warned) { s.warned = true; console.warn('[UniversalInteraction] \"' + s.object.getName() + '\" is not a 3D object, it cannot be targeted.'); }",
+            "        continue;",
+            "      }",
+            "      if (s.object.isHidden && s.object.isHidden()) continue;",
+            "      root.updateWorldMatrix(true, true);",
+            "      owners.set(root, { b, root, blocker: false, ok: this.isCandidate(b) });",
+            "      roots.push(root);",
+            "      const d = toNum(getProp(b, 'InteractDistance', 0)); if (d > farPx) farPx = d;",
+            "    }",
+            "    for (const b of this.blockers) {",
+            "      const s = b._universalInteraction;",
+            "      const root = s && rendererOf(s.object);",
+            "      if (!root || (s.object.isHidden && s.object.isHidden())) continue;",
+            "      root.updateWorldMatrix(true, true);",
+            "      owners.set(root, { b, root, blocker: true, ok: false });",
+            "      roots.push(root);",
+            "    }",
+            "    if (roots.length === 0) return;",
+            "",
+            "    const ref = this.refPosition();",
+            "    let camToRef = 0;",
+            "    if (ref) {",
+            "      this._v3 = this._v3 || new THREE.Vector3();",
+            "      camera.getWorldPosition(this._v3);",
+            "      camToRef = Math.hypot(this._v3.x * ws - ref.x, this._v3.y * ws - ref.y, this._v3.z * ws - ref.z);",
+            "    }",
+            "",
+            "    this._ray = this._ray || new THREE.Raycaster();",
+            "    this._ndc = this._ndc || new THREE.Vector2();",
+            "    this._ndc.set(nx, ny);",
+            "    camera.updateMatrixWorld(true);",
+            "    this._ray.setFromCamera(this._ndc, camera);",
+            "    this._ray.near = 0;",
+            "    this._ray.far = (farPx + camToRef) * inv;",
+            "",
+            "    const hits = this._ray.intersectObjects(roots, true);",
+            "    for (const hit of hits) {",
+            "      let o = hit.object, entry = null;",
+            "      while (o && !(entry = owners.get(o))) o = o.parent;",
+            "      if (!entry) continue;",
+            "      if (!entry.ok) return; // the nearest thing is a wall / disabled object: no focus",
+            "      const b = entry.b;",
+            "      const p = hit.point;",
+            "      const point = { x: p.x * ws, y: p.y * ws, z: p.z * ws };",
+            "      const distance = ref ? Math.hypot(point.x - ref.x, point.y - ref.y, point.z - ref.z) : hit.distance * ws;",
+            "      const limit = toNum(getProp(b, 'InteractDistance', 0)) || cfg.maxDistance;",
+            "      if (distance > limit) return;",
+            "      const d = this.describe(b);",
+            "      this.focus = Object.assign(d, { behavior: b, object: b._universalInteraction.object, root: entry.root, distance, point });",
+            "      return;",
+            "    }",
+            "  }",
+            "",
+            "  // -- interaction",
+            "  interact(explicitBehavior) {",
+            "    if (!this.cfg.enabled) return false;",
+            "    let b = explicitBehavior;",
+            "    if (!b) {",
+            "      if (this.cooldownLeft > 0) return false;",
+            "      b = this.focus && this.focus.behavior;",
+            "    }",
+            "    if (!b || !b._universalInteraction || !this.isCandidate(b)) return false;",
+            "",
+            "    const s = b._universalInteraction;",
+            "    const object = s.object;",
+            "    const out = this.resolve(b);",
+            "    this.last = {",
+            "      kind: this.kindOf(b), name: this.nameOf(b), message: out.message, id: out.id,",
+            "      result: out.result, objectName: object.getName(),",
+            "    };",
+            "    this.interacted = true;",
+            "    s.interacted = true;",
+            "    this.cooldownLeft = this.cfg.cooldown;",
+            "",
+            "    if (OK_RESULTS.has(out.result) && toBool(getProp(b, 'SingleUse', false))) setProp(b, 'Enabled', false);",
+            "    if (out.destroy) {",
+            "      this.unregister(b);",
+            "      object.deleteFromScene(sceneOf(object, this.scene));",
+            "    }",
+            "    return true;",
+            "  }",
+            "",
+            "  // Lock logic shared by doors and switches.",
+            "  checkLock(b) {",
+            "    if (!toBool(getProp(b, 'Locked', false))) return null;",
+            "    const need = String(getProp(b, 'RequiredItem', '') || '');",
+            "    const custom = String(getProp(b, 'LockedMessage', '') || '');",
+            "    if (need && this.hasItem(need, 1)) {",
+            "      if (toBool(getProp(b, 'ConsumeItem', false))) this.removeItem(need, 1);",
+            "      setProp(b, 'Locked', false);",
+            "      return { unlocked: true, id: need };",
+            "    }",
+            "    return { unlocked: false, result: need ? 'missing_item' : 'locked', message: custom || this.tr(need ? 'missing_item' : 'locked'), id: need };",
+            "  }",
+            "",
+            "  resolve(b) {",
+            "    const s = b._universalInteraction;",
+            "    const kind = this.kindOf(b);",
+            "    const msg = String(getProp(b, 'Message', '') || '');",
+            "    let id = String(getProp(b, 'ActionId', '') || '');",
+            "    switch (kind) {",
+            "      case 'door': {",
+            "        const lock = this.checkLock(b);",
+            "        if (lock && !lock.unlocked) return { result: lock.result, message: lock.message, id: lock.id };",
+            "        const open = toBool(getProp(b, 'IsOpen', false));",
+            "        if (open && !toBool(getProp(b, 'CanClose', true))) return { result: 'none', message: '', id };",
+            "        setProp(b, 'IsOpen', !open);",
+            "        if (lock && lock.unlocked) return { result: 'unlocked', message: msg || this.tr('unlocked'), id: lock.id };",
+            "        return { result: open ? 'closed' : 'opened', message: msg, id };",
+            "      }",
+            "      case 'pickup': {",
+            "        const item = id || String(getProp(b, 'DisplayName', '') || '') || s.object.getName();",
+            "        this.addItem(item, Math.max(1, Math.floor(toNum(getProp(b, 'Quantity', 1), 1))));",
+            "        return { result: 'picked', message: msg || (this.tr('picked') + this.nameOf(b)), id: item, destroy: !toBool(getProp(b, 'KeepAfterPickup', false)) };",
+            "      }",
+            "      case 'inspect':",
+            "        return { result: 'inspected', message: msg, id };",
+            "      case 'talk':",
+            "        return { result: 'talking', message: msg, id };",
+            "      case 'use': {",
+            "        const lock = this.checkLock(b);",
+            "        if (lock && !lock.unlocked) return { result: lock.result, message: lock.message, id: lock.id };",
+            "        const on = !toBool(getProp(b, 'Toggled', false));",
+            "        setProp(b, 'Toggled', on);",
+            "        return { result: on ? 'activated' : 'deactivated', message: msg, id: lock && lock.unlocked ? lock.id : id };",
+            "      }",
+            "      default:",
+            "        return { result: 'custom', message: msg, id };",
+            "    }",
+            "  }",
+            "",
+            "  endFrame() {",
+            "    if (!this.interacted) return;",
+            "    this.interacted = false;",
+            "    for (const b of this.targets) if (b._universalInteraction) b._universalInteraction.interacted = false;",
+            "  }",
+            "",
+            "  // -- visuals",
+            "  updateHighlight() {",
+            "    const f = this.focus;",
+            "    if (!this.cfg.highlight || !f || typeof THREE === 'undefined' || !THREE.BoxHelper) {",
+            "      if (this._helper) this._helper.visible = false;",
+            "      return;",
+            "    }",
+            "    if (!this._helper || this._helperRoot !== f.root) {",
+            "      this.disposeHelper();",
+            "      let top = f.root; while (top.parent) top = top.parent;",
+            "      const h = new THREE.BoxHelper(f.root, this.cfg.highlightColor);",
+            "      h.material.depthTest = false; h.material.toneMapped = false;",
+            "      h.renderOrder = 999; h.frustumCulled = false;",
+            "      // BoxHelper vertices are in world space; the GDevelop THREE.Scene is scaled by the world scale.",
+            "      const sc = top.scale ? top.scale.x : 1;",
+            "      if (sc && sc !== 1) { h.matrixAutoUpdate = true; h.scale.setScalar(1 / sc); }",
+            "      top.add(h);",
+            "      this._helper = h; this._helperRoot = f.root; this._helperTop = top;",
+            "    }",
+            "    this._helper.material.color.setHex(this.cfg.highlightColor);",
+            "    this._helper.visible = true;",
+            "    this._helper.update();",
+            "  }",
+            "  disposeHelper() {",
+            "    if (!this._helper) return;",
+            "    if (this._helperTop) this._helperTop.remove(this._helper);",
+            "    if (this._helper.geometry) this._helper.geometry.dispose();",
+            "    if (this._helper.material) this._helper.material.dispose();",
+            "    this._helper = null; this._helperRoot = null; this._helperTop = null;",
+            "  }",
+            "  updateOverlay() {",
+            "    if (!this.cfg.overlay || typeof document === 'undefined') { this.removeOverlay(); return; }",
+            "    const game = this.scene.getGame();",
+            "    const renderer = game.getRenderer && game.getRenderer();",
+            "    const canvas = renderer && renderer.getCanvas ? renderer.getCanvas() : null;",
+            "    if (!canvas) return;",
+            "    if (!this._overlay) {",
+            "      const el = document.createElement('div');",
+            "      el.setAttribute('dir', 'auto');",
+            "      Object.assign(el.style, {",
+            "        position: 'fixed', transform: 'translate(-50%, -100%)', pointerEvents: 'none', zIndex: '1000',",
+            "        padding: '6px 14px', borderRadius: '8px', background: 'rgba(0,0,0,0.55)', whiteSpace: 'nowrap',",
+            "        fontFamily: 'system-ui, -apple-system, Segoe UI, Tahoma, sans-serif', textShadow: '0 1px 2px #000', display: 'none',",
+            "      });",
+            "      this._overlay = el;",
+            "    }",
+            "    const fs = document.fullscreenElement;",
+            "    const host = fs && fs.tagName !== 'CANVAS' ? fs : document.body;",
+            "    if (this._overlay.parentNode !== host) host.appendChild(this._overlay);",
+            "    const r = canvas.getBoundingClientRect();",
+            "    const st = this._overlay.style;",
+            "    st.left = r.left + r.width / 2 + 'px';",
+            "    st.top = r.bottom - this.cfg.overlayBottom + 'px';",
+            "    st.fontSize = this.cfg.overlayFontSize + 'px';",
+            "    st.color = cssColor(this.cfg.overlayColor);",
+            "    if (this.focus) { this._overlay.textContent = this.focus.prompt; st.display = 'block'; }",
+            "    else st.display = 'none';",
+            "  }",
+            "  removeOverlay() {",
+            "    if (this._overlay && this._overlay.parentNode) this._overlay.parentNode.removeChild(this._overlay);",
+            "    this._overlay = null;",
+            "  }",
+            "  dispose() {",
+            "    this.disposeHelper();",
+            "    this.removeOverlay();",
+            "    this.targets.clear(); this.blockers.clear(); this.focus = null;",
+            "  }",
+            "}",
+            "",
+            "// ---- Door animation (driven by the IsOpen property, so events can open doors too)",
+            "const stepDoor = (b, dt) => {",
+            "  const s = b._universalInteraction;",
+            "  if (!s || !s.object || String(getProp(b, 'Kind', '')) !== 'door') return;",
+            "  const o = s.object;",
+            "  const target = toBool(getProp(b, 'IsOpen', false)) ? 1 : 0;",
+            "  if (!s.base) {",
+            "    // Doors are authored in their CLOSED pose; a door that starts open snaps to the open pose.",
+            "    s.base = { x: o.getX(), y: o.getY(), z: o.getZ ? o.getZ() : 0, angle: o.getAngle(), w: o.getWidth() };",
+            "    s.progress = target; s.dirty = target === 1;",
+            "  }",
+            "  if (s.progress !== target) {",
+            "    const step = dt / Math.max(0.01, toNum(getProp(b, 'OpenDuration', 0.6), 0.6));",
+            "    s.progress = s.progress < target ? Math.min(target, s.progress + step) : Math.max(target, s.progress - step);",
+            "    s.dirty = true;",
+            "  }",
+            "  if (!s.dirty) return;",
+            "  s.dirty = false;",
+            "  const p = s.progress * s.progress * (3 - 2 * s.progress);",
+            "  const rad = (a) => (a * Math.PI) / 180;",
+            "  const motion = String(getProp(b, 'DoorMotion', 'rotate'));",
+            "  const a0 = s.base.angle;",
+            "  if (motion === 'rotate') {",
+            "    const a1 = a0 + toNum(getProp(b, 'OpenAngle', 90), 90) * p;",
+            "    const side = String(getProp(b, 'HingeSide', 'left'));",
+            "    const h = side === 'left' ? s.base.w / 2 : side === 'right' ? -s.base.w / 2 : 0;",
+            "    o.setAngle(a1);",
+            "    o.setX(s.base.x + h * (Math.cos(rad(a1)) - Math.cos(rad(a0))));",
+            "    o.setY(s.base.y + h * (Math.sin(rad(a1)) - Math.sin(rad(a0))));",
+            "  } else {",
+            "    const dist = toNum(getProp(b, 'SlideDistance', 150), 150) * p;",
+            "    if (motion === 'slide') { o.setX(s.base.x + Math.cos(rad(a0)) * dist); o.setY(s.base.y + Math.sin(rad(a0)) * dist); }",
+            "    else if (o.setZ) o.setZ(s.base.z + dist); // 'lift'",
+            "  }",
+            "};",
+            "",
+            "const getManager = (scene) => {",
+            "  if (!scene._universalInteractionManager) scene._universalInteractionManager = new InteractionManager(scene);",
+            "  return scene._universalInteractionManager;",
+            "};",
+            "const frameSeconds = (scene) => {",
+            "  const ms = scene.getElapsedTime ? scene.getElapsedTime() : (scene.getTimeManager ? scene.getTimeManager().getElapsedTime() : 16);",
+            "  return Math.min(0.1, Math.max(0, (ms || 16) / 1000));",
+            "};",
+            "const ensureState = (b, object) => {",
+            "  b._universalInteraction = b._universalInteraction || { object, base: null, progress: 0, dirty: false, interacted: false };",
+            "  b._universalInteraction.object = object;",
+            "  return b._universalInteraction;",
+            "};",
+            "",
+            "gdjs._universalInteraction = {",
+            "  version: VERSION,",
+            "  getManager,",
+            "  frameSeconds,",
+            "  registerTarget(object, behavior, fallbackScene) { ensureState(behavior, object); getManager(sceneOf(object, fallbackScene)).register(behavior); },",
+            "  unregisterTarget(object, behavior, fallbackScene) { getManager(sceneOf(object, fallbackScene)).unregister(behavior); },",
+            "  registerBlocker(object, behavior, fallbackScene) { ensureState(behavior, object); getManager(sceneOf(object, fallbackScene)).registerBlocker(behavior); },",
+            "  unregisterBlocker(object, behavior, fallbackScene) { getManager(sceneOf(object, fallbackScene)).unregisterBlocker(behavior); },",
+            "  stepTarget(behavior, dt) { stepDoor(behavior, dt); },",
+            "  parseColor,",
+            "  threeRevision() { return typeof THREE !== 'undefined' && THREE.REVISION ? String(THREE.REVISION) : ''; },",
+            "};",
+            ""
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Choose how the target is detected: from the camera center (first/third person) or from the cursor, and the max distance.",
+      "fullName": "Configure detection",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "ConfigureDetection",
+      "sentence": "Detect from _PARAM1_ on layer _PARAM3_, max distance _PARAM2_ px, cooldown _PARAM4_ s",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "const c = mgr.cfg;",
+            "c.mode = String(eventsFunctionContext.getArgument(\"Mode\")) === 'cursor' ? 'cursor' : 'center';",
+            "c.maxDistance = Math.max(0, Number(eventsFunctionContext.getArgument(\"MaxDistance\")) || 0);",
+            "c.layer = String(eventsFunctionContext.getArgument(\"Layer\") || '');",
+            "c.cooldown = Math.max(0, Number(eventsFunctionContext.getArgument(\"Cooldown\")) || 0);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "\"center\"",
+          "description": "Aim mode",
+          "name": "Mode",
+          "supplementaryInformation": "[\"center\", \"cursor\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "defaultValue": "300",
+          "description": "Maximum interaction distance (pixels)",
+          "name": "MaxDistance",
+          "type": "expression"
+        },
+        {
+          "defaultValue": "\"\"",
+          "description": "3D layer (empty = base layer)",
+          "name": "Layer",
+          "optional": true,
+          "type": "layer"
+        },
+        {
+          "defaultValue": "0.25",
+          "description": "Delay between two interactions (seconds)",
+          "name": "Cooldown",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Measure the interaction distance from this object (e.g. the player) instead of the camera. Recommended for third-person games.",
+      "fullName": "Measure distance from an object",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "SetReferenceObject",
+      "sentence": "Measure the interaction distance from _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "const o = eventsFunctionContext.getObjects(\"Object\")[0];",
+            "mgr.cfg.refName = o ? o.getName() : '';"
+          ],
+          "parameterObjects": "Object",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Object (e.g. the player)",
+          "name": "Object",
+          "type": "objectList"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Go back to measuring the interaction distance from the camera.",
+      "fullName": "Measure distance from the camera",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "ClearReferenceObject",
+      "sentence": "Measure the interaction distance from the camera",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.cfg.refName = '';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Prompt template. Placeholders: {key} {verb} {name} {status}. The key is only a label: you bind the real key in your events.",
+      "fullName": "Configure the prompt text",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "ConfigurePrompt",
+      "sentence": "Prompt format _PARAM1_, key label _PARAM2_, language _PARAM3_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.cfg.format = String(eventsFunctionContext.getArgument(\"Format\"));",
+            "mgr.cfg.key = String(eventsFunctionContext.getArgument(\"Key\"));",
+            "mgr.cfg.language = String(eventsFunctionContext.getArgument(\"Language\")) === 'ar' ? 'ar' : 'en';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "\"[{key}] {verb} {name}\"",
+          "description": "Format",
+          "name": "Format",
+          "type": "string"
+        },
+        {
+          "defaultValue": "\"E\"",
+          "description": "Key label shown in the prompt",
+          "name": "Key",
+          "type": "string"
+        },
+        {
+          "defaultValue": "\"en\"",
+          "description": "Built-in language",
+          "name": "Language",
+          "supplementaryInformation": "[\"en\", \"ar\"]",
+          "type": "stringWithSelector"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Override a built-in verb or message (use this to translate to any language).",
+      "fullName": "Set an interaction text",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "SetText",
+      "sentence": "Set text _PARAM1_ to _PARAM2_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.texts[String(eventsFunctionContext.getArgument(\"Which\"))] = String(eventsFunctionContext.getArgument(\"Text\"));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "\"door_open\"",
+          "description": "Text",
+          "name": "Which",
+          "supplementaryInformation": "[\"door_open\", \"door_close\", \"pickup\", \"inspect\", \"talk\", \"use\", \"custom\", \"locked\", \"missing_item\", \"unlocked\", \"picked\"]",
+          "type": "stringWithSelector"
+        },
+        {
+          "description": "New text",
+          "name": "Text",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Draws a box outline (THREE.BoxHelper) around the targeted object.",
+      "fullName": "Configure the highlight outline",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "ConfigureHighlight",
+      "sentence": "Highlight targeted object: _PARAM1_, color _PARAM2_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.cfg.highlight = !!eventsFunctionContext.getArgument(\"Enabled\");",
+            "mgr.cfg.highlightColor = lib.parseColor(eventsFunctionContext.getArgument(\"Color\"), 0xffd54a);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "yes",
+          "description": "Enabled",
+          "name": "Enabled",
+          "type": "yesorno"
+        },
+        {
+          "defaultValue": "\"255;213;74\"",
+          "description": "Color",
+          "name": "Color",
+          "type": "color"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Shows the prompt as an HTML overlay at the bottom of the game. No Text object needed.",
+      "fullName": "Configure the built-in on-screen prompt",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "ConfigureOverlay",
+      "sentence": "Built-in on-screen prompt: _PARAM1_, font size _PARAM2_, color _PARAM3_, offset from bottom _PARAM4_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "const c = mgr.cfg;",
+            "c.overlay = !!eventsFunctionContext.getArgument(\"Enabled\");",
+            "c.overlayFontSize = Number(eventsFunctionContext.getArgument(\"FontSize\")) || 22;",
+            "c.overlayColor = lib.parseColor(eventsFunctionContext.getArgument(\"Color\"), 0xffffff);",
+            "c.overlayBottom = Number(eventsFunctionContext.getArgument(\"Bottom\")) || 0;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "yes",
+          "description": "Enabled",
+          "name": "Enabled",
+          "type": "yesorno"
+        },
+        {
+          "defaultValue": "22",
+          "description": "Font size (px)",
+          "name": "FontSize",
+          "type": "expression"
+        },
+        {
+          "defaultValue": "\"255;255;255\"",
+          "description": "Text color",
+          "name": "Color",
+          "type": "color"
+        },
+        {
+          "defaultValue": "90",
+          "description": "Distance from the bottom of the game (px)",
+          "name": "Bottom",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Pause detection and interactions (cutscenes, menus, dialogues...).",
+      "fullName": "Enable or disable the system",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "SetSystemEnabled",
+      "sentence": "Interaction system enabled: _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.cfg.enabled = !!eventsFunctionContext.getArgument(\"Enabled\");"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "yes",
+          "description": "Enabled",
+          "name": "Enabled",
+          "type": "yesorno"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Runs the interaction of the object the player is aiming at (open, pick up, inspect, talk...).",
+      "fullName": "Interact with the targeted object",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "Interact",
+      "sentence": "Interact with the targeted object",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.interact();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Add items to the inventory",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "AddItem",
+      "sentence": "Add _PARAM2_ of item _PARAM1_ to the inventory",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.addItem(String(eventsFunctionContext.getArgument(\"ItemId\")), Math.max(1, Math.floor(Number(eventsFunctionContext.getArgument(\"Count\")) || 1)));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Item id",
+          "name": "ItemId",
+          "type": "string"
+        },
+        {
+          "defaultValue": "1",
+          "description": "Quantity",
+          "name": "Count",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Remove items from the inventory",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "RemoveItem",
+      "sentence": "Remove _PARAM2_ of item _PARAM1_ from the inventory",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.removeItem(String(eventsFunctionContext.getArgument(\"ItemId\")), Math.max(1, Math.floor(Number(eventsFunctionContext.getArgument(\"Count\")) || 1)));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Item id",
+          "name": "ItemId",
+          "type": "string"
+        },
+        {
+          "defaultValue": "1",
+          "description": "Quantity",
+          "name": "Count",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Clear the inventory",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "ClearInventory",
+      "sentence": "Clear the inventory",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.inventory.clear();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Restores an inventory previously read with InventoryJSON() (save games).",
+      "fullName": "Load the inventory from JSON",
+      "functionType": "Action",
+      "group": "Universal interaction",
+      "name": "LoadInventoryJSON",
+      "sentence": "Load the inventory from _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "mgr.loadInventoryJSON(String(eventsFunctionContext.getArgument(\"Json\")));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "description": "JSON text",
+          "name": "Json",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "True when the player is aiming at an interactable object in range.",
+      "fullName": "Something is targeted",
+      "functionType": "Condition",
+      "group": "Universal interaction",
+      "name": "HasFocus",
+      "sentence": "Something is targeted",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = !!mgr.focus;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Targeted object type",
+      "functionType": "Condition",
+      "group": "Universal interaction",
+      "name": "FocusKindIs",
+      "sentence": "The targeted object is of type _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = !!mgr.focus && mgr.focus.kind === String(eventsFunctionContext.getArgument(\"Kind\"));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "\"door\"",
+          "description": "Type",
+          "name": "Kind",
+          "supplementaryInformation": "[\"door\", \"pickup\", \"inspect\", \"talk\", \"use\", \"custom\"]",
+          "type": "stringWithSelector"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "True during the frame where Interact ran successfully. Put the reaction events BELOW the event containing the Interact action.",
+      "fullName": "An interaction just happened",
+      "functionType": "Condition",
+      "group": "Universal interaction",
+      "name": "Interacted",
+      "sentence": "An interaction just happened",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.interacted;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Last interaction type",
+      "functionType": "Condition",
+      "group": "Universal interaction",
+      "name": "LastKindIs",
+      "sentence": "The last interaction type is _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.interacted && mgr.last.kind === String(eventsFunctionContext.getArgument(\"Kind\"));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "\"door\"",
+          "description": "Type",
+          "name": "Kind",
+          "supplementaryInformation": "[\"door\", \"pickup\", \"inspect\", \"talk\", \"use\", \"custom\"]",
+          "type": "stringWithSelector"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Last interaction result",
+      "functionType": "Condition",
+      "group": "Universal interaction",
+      "name": "LastResultIs",
+      "sentence": "The last interaction result is _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.interacted && mgr.last.result === String(eventsFunctionContext.getArgument(\"Result\"));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "defaultValue": "\"opened\"",
+          "description": "Result",
+          "name": "Result",
+          "supplementaryInformation": "[\"opened\", \"closed\", \"unlocked\", \"locked\", \"missing_item\", \"picked\", \"inspected\", \"talking\", \"activated\", \"deactivated\", \"custom\", \"none\"]",
+          "type": "stringWithSelector"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Has item",
+      "functionType": "Condition",
+      "group": "Universal interaction",
+      "name": "HasItem",
+      "sentence": "The inventory has at least _PARAM2_ of item _PARAM1_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.hasItem(String(eventsFunctionContext.getArgument(\"ItemId\")), Number(eventsFunctionContext.getArgument(\"Count\")) || 1);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Item id",
+          "name": "ItemId",
+          "type": "string"
+        },
+        {
+          "defaultValue": "1",
+          "description": "Quantity",
+          "name": "Count",
+          "type": "expression"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Display name of the targeted object",
+      "fullName": "Targeted object name",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "FocusName",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.name : '';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Action available on the targeted object (Open, Pick up...)",
+      "fullName": "Available action",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "FocusVerb",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.verb : '';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Formatted prompt, e.g. \"[E] Open Door\". Empty when nothing is targeted.",
+      "fullName": "Full prompt text",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "FocusPrompt",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.prompt : '';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "door, pickup, inspect, talk, use or custom",
+      "fullName": "Targeted object type",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "FocusKind",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.kind : '';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "locked/open/closed for doors, on/off for switches",
+      "fullName": "Targeted object status",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "FocusStatus",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.status : '';"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "fullName": "Last interaction type",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "LastKind",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.last.kind;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "opened, closed, unlocked, locked, missing_item, picked, inspected, talking, activated, deactivated, custom",
+      "fullName": "Last interaction result",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "LastResult",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.last.result;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Message to display (inspect text, greeting, locked message...)",
+      "fullName": "Last interaction message",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "LastMessage",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.last.message;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Object name (not the display name)",
+      "fullName": "Last interacted object name",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "LastObjectName",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.last.objectName;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Item id (pickup), dialogue id (talk), custom id, or the required item for locked doors",
+      "fullName": "Last interaction id",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "LastId",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.last.id;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Use it to save the inventory",
+      "fullName": "Inventory as JSON",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "InventoryJSON",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.inventoryJSON();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Revision of the THREE library used by the game (e.g. 185)",
+      "fullName": "Three.js revision",
+      "functionType": "StringExpression",
+      "group": "Universal interaction",
+      "name": "ThreeRevision",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = lib.threeRevision();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "string"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "In pixels",
+      "fullName": "Targeted object distance",
+      "functionType": "Expression",
+      "group": "Universal interaction",
+      "name": "FocusDistance",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.distance : -1;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Scene X of the aimed point",
+      "fullName": "Aimed point X",
+      "functionType": "Expression",
+      "group": "Universal interaction",
+      "name": "FocusPointX",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.point.x : 0;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Scene Y of the aimed point",
+      "fullName": "Aimed point Y",
+      "functionType": "Expression",
+      "group": "Universal interaction",
+      "name": "FocusPointY",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.point.y : 0;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Scene Z of the aimed point",
+      "fullName": "Aimed point Z",
+      "functionType": "Expression",
+      "group": "Universal interaction",
+      "name": "FocusPointZ",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.focus ? mgr.focus.point.z : 0;"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [],
+      "objectGroups": []
+    },
+    {
+      "description": "Quantity of an item in the inventory",
+      "fullName": "Item count",
+      "functionType": "Expression",
+      "group": "Universal interaction",
+      "name": "ItemCount",
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const lib = gdjs._universalInteraction; if (!lib) return;",
+            "const mgr = lib.getManager(runtimeScene);",
+            "eventsFunctionContext.returnValue = mgr.itemCount(String(eventsFunctionContext.getArgument(\"ItemId\")));"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "expressionType": {
+        "type": "expression"
+      },
+      "parameters": [
+        {
+          "description": "Item id",
+          "name": "ItemId",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsFunctionsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "functionName": "onFirstSceneLoaded"
+      },
+      {
+        "functionName": "onSceneLoaded"
+      },
+      {
+        "functionName": "onScenePreEvents"
+      },
+      {
+        "functionName": "onScenePostEvents"
+      },
+      {
+        "functionName": "onSceneUnloading"
+      },
+      {
+        "folderName": "Universal interaction",
+        "children": [
+          {
+            "functionName": "DeclareLibrary"
+          },
+          {
+            "functionName": "ConfigureDetection"
+          },
+          {
+            "functionName": "SetReferenceObject"
+          },
+          {
+            "functionName": "ClearReferenceObject"
+          },
+          {
+            "functionName": "ConfigurePrompt"
+          },
+          {
+            "functionName": "SetText"
+          },
+          {
+            "functionName": "ConfigureHighlight"
+          },
+          {
+            "functionName": "ConfigureOverlay"
+          },
+          {
+            "functionName": "SetSystemEnabled"
+          },
+          {
+            "functionName": "Interact"
+          },
+          {
+            "functionName": "AddItem"
+          },
+          {
+            "functionName": "RemoveItem"
+          },
+          {
+            "functionName": "ClearInventory"
+          },
+          {
+            "functionName": "LoadInventoryJSON"
+          },
+          {
+            "functionName": "HasFocus"
+          },
+          {
+            "functionName": "FocusKindIs"
+          },
+          {
+            "functionName": "Interacted"
+          },
+          {
+            "functionName": "LastKindIs"
+          },
+          {
+            "functionName": "LastResultIs"
+          },
+          {
+            "functionName": "HasItem"
+          },
+          {
+            "functionName": "FocusName"
+          },
+          {
+            "functionName": "FocusVerb"
+          },
+          {
+            "functionName": "FocusPrompt"
+          },
+          {
+            "functionName": "FocusKind"
+          },
+          {
+            "functionName": "FocusStatus"
+          },
+          {
+            "functionName": "LastKind"
+          },
+          {
+            "functionName": "LastResult"
+          },
+          {
+            "functionName": "LastMessage"
+          },
+          {
+            "functionName": "LastObjectName"
+          },
+          {
+            "functionName": "LastId"
+          },
+          {
+            "functionName": "InventoryJSON"
+          },
+          {
+            "functionName": "ThreeRevision"
+          },
+          {
+            "functionName": "FocusDistance"
+          },
+          {
+            "functionName": "FocusPointX"
+          },
+          {
+            "functionName": "FocusPointY"
+          },
+          {
+            "functionName": "FocusPointZ"
+          },
+          {
+            "functionName": "ItemCount"
+          }
+        ]
+      }
+    ]
+  },
+  "eventsBasedBehaviors": [
+    {
+      "description": "Makes a 3D object targetable and interactable: door, pickup, inspectable note, NPC, switch or custom.",
+      "fullName": "Interactable",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Interactable",
+      "objectType": "",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "onCreated",
+          "functionType": "Action",
+          "group": "Universal interaction",
+          "name": "onCreated",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "UniversalInteraction::DeclareLibrary"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "lib.registerTarget(object, behavior, typeof runtimeScene !== 'undefined' ? runtimeScene : null);"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::Interactable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "onDestroy",
+          "functionType": "Action",
+          "group": "Universal interaction",
+          "name": "onDestroy",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "lib.unregisterTarget(object, behavior, typeof runtimeScene !== 'undefined' ? runtimeScene : null);"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::Interactable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "doStepPostEvents",
+          "functionType": "Action",
+          "group": "Universal interaction",
+          "name": "doStepPostEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "lib.stepTarget(behavior, lib.frameSeconds(object.getRuntimeScene()));"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::Interactable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "True when the player is aiming at this object.",
+          "fullName": "Is targeted",
+          "functionType": "Condition",
+          "group": "Universal interaction",
+          "name": "IsFocused",
+          "sentence": "_PARAM0_ is targeted",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "const f = lib.getManager(object.getRuntimeScene()).focus;",
+                "eventsFunctionContext.returnValue = !!f && f.behavior === behavior;"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::Interactable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "True during the frame where this object was interacted with.",
+          "fullName": "Was interacted with",
+          "functionType": "Condition",
+          "group": "Universal interaction",
+          "name": "WasInteractedWith",
+          "sentence": "_PARAM0_ was interacted with",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "eventsFunctionContext.returnValue = !!(behavior._universalInteraction && behavior._universalInteraction.interacted);"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::Interactable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Runs this object's interaction, even if the player is not aiming at it (AI, scripts...).",
+          "fullName": "Interact with this object",
+          "functionType": "Action",
+          "group": "Universal interaction",
+          "name": "InteractWith",
+          "sentence": "Interact with _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "lib.getManager(object.getRuntimeScene()).interact(behavior);"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::Interactable",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "Universal interaction",
+            "children": [
+              {
+                "functionName": "onCreated"
+              },
+              {
+                "functionName": "onDestroy"
+              },
+              {
+                "functionName": "doStepPostEvents"
+              },
+              {
+                "functionName": "IsFocused"
+              },
+              {
+                "functionName": "WasInteractedWith"
+              },
+              {
+                "functionName": "InteractWith"
+              }
+            ]
+          }
+        ]
+      },
+      "propertyDescriptors": [
+        {
+          "value": "door",
+          "type": "Choice",
+          "label": "Interaction type",
+          "description": "What happens when the player interacts.",
+          "group": "Basics",
+          "choices": [
+            {
+              "label": "door",
+              "value": "door"
+            },
+            {
+              "label": "pickup",
+              "value": "pickup"
+            },
+            {
+              "label": "inspect",
+              "value": "inspect"
+            },
+            {
+              "label": "talk",
+              "value": "talk"
+            },
+            {
+              "label": "use",
+              "value": "use"
+            },
+            {
+              "label": "custom",
+              "value": "custom"
+            }
+          ],
+          "name": "Kind"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Display name",
+          "description": "Shown in the prompt. Empty = object name.",
+          "group": "Basics",
+          "name": "DisplayName"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Custom action text",
+          "description": "Overrides the automatic verb (Open, Pick up...).",
+          "group": "Basics",
+          "name": "Verb"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Message",
+          "description": "Inspect text / greeting / any message returned in LastMessage().",
+          "group": "Basics",
+          "name": "Message"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Id",
+          "description": "Item id (pickup), dialogue id (talk) or custom id. Returned by LastId().",
+          "group": "Basics",
+          "name": "ActionId"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Interactable",
+          "group": "Basics",
+          "name": "Enabled"
+        },
+        {
+          "value": "false",
+          "type": "Boolean",
+          "label": "Single use",
+          "description": "Becomes non-interactable after one successful interaction.",
+          "group": "Basics",
+          "name": "SingleUse"
+        },
+        {
+          "value": "0",
+          "type": "Number",
+          "label": "Interaction distance",
+          "description": "0 = use the global distance.",
+          "group": "Basics",
+          "name": "InteractDistance"
+        },
+        {
+          "value": "false",
+          "type": "Boolean",
+          "label": "Locked",
+          "description": "Doors and switches.",
+          "group": "Lock",
+          "name": "Locked"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Required item id",
+          "description": "Inventory item needed to unlock.",
+          "group": "Lock",
+          "name": "RequiredItem"
+        },
+        {
+          "value": "false",
+          "type": "Boolean",
+          "label": "Consume the item when unlocking",
+          "group": "Lock",
+          "name": "ConsumeItem"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Locked message",
+          "description": "Empty = built-in text.",
+          "group": "Lock",
+          "name": "LockedMessage"
+        },
+        {
+          "value": "false",
+          "type": "Boolean",
+          "label": "Door is open",
+          "description": "Author doors in their closed pose.",
+          "group": "Door",
+          "name": "IsOpen"
+        },
+        {
+          "value": "true",
+          "type": "Boolean",
+          "label": "Can be closed again",
+          "group": "Door",
+          "name": "CanClose"
+        },
+        {
+          "value": "rotate",
+          "type": "Choice",
+          "label": "Door motion",
+          "group": "Door",
+          "choices": [
+            {
+              "label": "rotate",
+              "value": "rotate"
+            },
+            {
+              "label": "slide",
+              "value": "slide"
+            },
+            {
+              "label": "lift",
+              "value": "lift"
+            }
+          ],
+          "name": "DoorMotion"
+        },
+        {
+          "value": "left",
+          "type": "Choice",
+          "label": "Hinge side (rotate)",
+          "group": "Door",
+          "choices": [
+            {
+              "label": "left",
+              "value": "left"
+            },
+            {
+              "label": "right",
+              "value": "right"
+            },
+            {
+              "label": "center",
+              "value": "center"
+            }
+          ],
+          "name": "HingeSide"
+        },
+        {
+          "value": "90",
+          "type": "Number",
+          "label": "Open angle (rotate)",
+          "group": "Door",
+          "name": "OpenAngle"
+        },
+        {
+          "value": "150",
+          "type": "Number",
+          "label": "Distance (slide / lift)",
+          "group": "Door",
+          "name": "SlideDistance"
+        },
+        {
+          "value": "0.6",
+          "type": "Number",
+          "label": "Open duration",
+          "group": "Door",
+          "name": "OpenDuration"
+        },
+        {
+          "value": "1",
+          "type": "Number",
+          "label": "Quantity",
+          "description": "Pickup.",
+          "group": "Pickup",
+          "name": "Quantity"
+        },
+        {
+          "value": "false",
+          "type": "Boolean",
+          "label": "Keep the object after pickup",
+          "group": "Pickup",
+          "name": "KeepAfterPickup"
+        },
+        {
+          "value": "false",
+          "type": "Boolean",
+          "label": "Switch is on",
+          "description": "Use.",
+          "group": "Use",
+          "name": "Toggled"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "Basics",
+            "children": [
+              {
+                "propertyName": "Kind"
+              },
+              {
+                "propertyName": "DisplayName"
+              },
+              {
+                "propertyName": "Verb"
+              },
+              {
+                "propertyName": "Message"
+              },
+              {
+                "propertyName": "ActionId"
+              },
+              {
+                "propertyName": "Enabled"
+              },
+              {
+                "propertyName": "SingleUse"
+              },
+              {
+                "propertyName": "InteractDistance"
+              }
+            ]
+          },
+          {
+            "folderName": "Lock",
+            "children": [
+              {
+                "propertyName": "Locked"
+              },
+              {
+                "propertyName": "RequiredItem"
+              },
+              {
+                "propertyName": "ConsumeItem"
+              },
+              {
+                "propertyName": "LockedMessage"
+              }
+            ]
+          },
+          {
+            "folderName": "Door",
+            "children": [
+              {
+                "propertyName": "IsOpen"
+              },
+              {
+                "propertyName": "CanClose"
+              },
+              {
+                "propertyName": "DoorMotion"
+              },
+              {
+                "propertyName": "HingeSide"
+              },
+              {
+                "propertyName": "OpenAngle"
+              },
+              {
+                "propertyName": "SlideDistance"
+              },
+              {
+                "propertyName": "OpenDuration"
+              }
+            ]
+          },
+          {
+            "folderName": "Pickup",
+            "children": [
+              {
+                "propertyName": "Quantity"
+              },
+              {
+                "propertyName": "KeepAfterPickup"
+              }
+            ]
+          },
+          {
+            "folderName": "Use",
+            "children": [
+              {
+                "propertyName": "Toggled"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "description": "Solid object that blocks the aim (walls, furniture...) so interactables behind it cannot be targeted. Closed interactables already block by themselves.",
+      "fullName": "Interaction blocker",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "InteractionBlocker",
+      "objectType": "",
+      "previewIconUrl": "",
+      "eventsFunctions": [
+        {
+          "fullName": "onCreated",
+          "functionType": "Action",
+          "group": "Universal interaction",
+          "name": "onCreated",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "UniversalInteraction::DeclareLibrary"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "lib.registerBlocker(object, behavior, typeof runtimeScene !== 'undefined' ? runtimeScene : null);"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::InteractionBlocker",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "onDestroy",
+          "functionType": "Action",
+          "group": "Universal interaction",
+          "name": "onDestroy",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const object = objects[0];",
+                "const behavior = object.getBehavior(eventsFunctionContext.getBehaviorName(\"Behavior\"));",
+                "const lib = gdjs._universalInteraction; if (!lib) return;",
+                "lib.unregisterBlocker(object, behavior, typeof runtimeScene !== 'undefined' ? runtimeScene : null);"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "UniversalInteraction::InteractionBlocker",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsFunctionsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "Universal interaction",
+            "children": [
+              {
+                "functionName": "onCreated"
+              },
+              {
+                "functionName": "onDestroy"
+              }
+            ]
+          }
+        ]
+      },
+      "propertyDescriptors": [],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT"
+      }
+    }
+  ],
+  "eventsBasedObjects": []
+}
