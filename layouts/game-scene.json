@@ -4534,7 +4534,7 @@
       "effects": [],
       "behaviors": [],
       "content": {
-        "Intensity": 60,
+        "Intensity": 600,
         "ConeAngle": 36,
         "ConeLength": 9000,
         "Smoothing": 0.4,
@@ -4757,17 +4757,6 @@
         }
       ],
       "effects": [
-        {
-          "effectType": "Scene3D::ExponentialFog",
-          "name": "ExponentialFog",
-          "doubleParameters": {
-            "density": 0.008
-          },
-          "stringParameters": {
-            "color": "5;8;15"
-          },
-          "booleanParameters": {}
-        },
         {
           "effectType": "Scene3D::Skybox",
           "name": "Skybox",
