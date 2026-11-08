@@ -4888,6 +4888,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Lantern.glb",
         "originLocation": "ModelOrigin",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"metal\",\"baseColor\":\"200;200;200\",\"metallic\":1,\"roughness\":0.35,\"transmission\":0.9,\"ior\":1.5,\"doubleSided\":true},\"material\":\"physical\",\"targets\":{\"lantern_2\":{\"preset\":\"glass\",\"baseColor\":\"230;240;250\",\"metallic\":0,\"roughness\":0.05,\"transmission\":0.9,\"ior\":1.5,\"doubleSided\":true}}}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -4991,6 +4992,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Campfire Pit.glb",
         "originLocation": "ModelOrigin",
+        "pbrConfig": "",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 0,
@@ -5071,6 +5073,7 @@
     {
       "assetStoreId": "",
       "name": "FireplaceLight",
+      "persistentUuid": "036c059b-07eb-4e66-b2aa-51da6caf457b",
       "type": "Light3D::PointLight3D",
       "variant": "",
       "variables": [],
@@ -5123,6 +5126,7 @@
         "materialType": "Basic",
         "modelResourceName": "Creature.glb",
         "originLocation": "ModelOrigin",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;212;96\",\"metallic\":1,\"roughness\":0.25},\"material\":\"physical\"}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -5345,7 +5349,73 @@
           "parameters": [
             "",
             "\"\"",
-            "\"Pixel Art\""
+            "\"Cartoon\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetToggle"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Outline\"",
+            "yes"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetToggle"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Cel Shading\"",
+            "yes"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetToggle"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Rim Light\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetToggle"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Dither\"",
+            "yes"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetToggle"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Colored Outline\"",
+            "yes"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Pixel Scale\"",
+            "0"
           ]
         },
         {
@@ -5356,7 +5426,7 @@
             "",
             "\"\"",
             "\"Pixel Height\"",
-            "288"
+            "360"
           ]
         },
         {
@@ -5367,7 +5437,7 @@
             "",
             "\"\"",
             "\"Color Levels\"",
-            "20"
+            "64"
           ]
         },
         {
@@ -5378,7 +5448,7 @@
             "",
             "\"\"",
             "\"Dither Strength\"",
-            "0.55"
+            "0.25"
           ]
         },
         {
@@ -5389,7 +5459,7 @@
             "",
             "\"\"",
             "\"Saturation\"",
-            "0.55"
+            "1.7"
           ]
         },
         {
@@ -5410,8 +5480,8 @@
           "parameters": [
             "",
             "\"\"",
-            "\"Vignette\"",
-            "0.55"
+            "\"Cel Shading\"",
+            "0.7"
           ]
         },
         {
@@ -5421,8 +5491,30 @@
           "parameters": [
             "",
             "\"\"",
-            "\"Chromatic\"",
-            "0.006"
+            "\"Cel Bands\"",
+            "6"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Cel Softness\"",
+            "0.25"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Rim\"",
+            "0"
           ]
         },
         {
@@ -5433,7 +5525,18 @@
             "",
             "\"\"",
             "\"Outline\"",
-            "0.35"
+            "1.3"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Outline Thickness\"",
+            "1"
           ]
         },
         {
@@ -5444,7 +5547,7 @@
             "",
             "\"\"",
             "\"Outline Threshold\"",
-            "0.15"
+            "0.12"
           ]
         },
         {
@@ -5455,7 +5558,7 @@
             "",
             "\"\"",
             "\"Outline Distance\"",
-            "0.4"
+            "0.3"
           ]
         },
         {
@@ -5466,7 +5569,29 @@
             "",
             "\"\"",
             "\"Crease Threshold\"",
-            "0.6"
+            "1.2"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Vignette\"",
+            "0.85"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Chromatic\"",
+            "0.01"
           ]
         }
       ]
@@ -5489,7 +5614,7 @@
       "cameraType": "perspective",
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
-      "isLocked": false,
+      "isLocked": true,
       "name": "",
       "renderingType": "",
       "visibility": true,
@@ -5557,7 +5682,6 @@
           "booleanParameters": {}
         },
         {
-          "disabled": true,
           "effectType": "Scene3D::DepthOfField",
           "name": "DepthOfField",
           "doubleParameters": {
@@ -5568,6 +5692,33 @@
           },
           "stringParameters": {},
           "booleanParameters": {}
+        },
+        {
+          "disabled": true,
+          "effectType": "Scene3D::EnvironmentMap",
+          "name": "EnvironmentMap",
+          "doubleParameters": {
+            "backgroundBlurriness": 0,
+            "backgroundIntensity": 1,
+            "environmentIntensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "backFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "equirectangularResourceName": "",
+            "frontFaceResourceName": "",
+            "leftFaceResourceName": "",
+            "quality": "auto",
+            "rightFaceResourceName": "",
+            "source": "cube",
+            "topFaceResourceName": ""
+          },
+          "booleanParameters": {
+            "affectsMaterials": true,
+            "linkBackgroundRotation": true,
+            "showBackground": false
+          }
         }
       ]
     },
@@ -5688,6 +5839,10 @@
       "type": "AnimatableCapability::AnimatableBehavior"
     },
     {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
+    },
+    {
       "name": "Flippable",
       "type": "FlippableCapability::FlippableBehavior"
     },
@@ -5711,6 +5866,10 @@
       "type": "Scene3D::Base3DBehavior"
     },
     {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
       "name": "Physics3D",
       "type": "Physics3D::Physics3DBehavior",
       "gravityX": 0,
@@ -5729,14 +5888,6 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
-    },
-    {
-      "name": "Effect",
-      "type": "EffectCapability::EffectBehavior"
-    },
-    {
-      "name": "Opacity",
-      "type": "OpacityCapability::OpacityBehavior"
     },
     {
       "name": "Text",
