@@ -958,10 +958,10 @@
     },
     {
       "description": "The terrain stays visible while the lantern is held on the hand layer (no opaque hand layer).",
-      "lastRunAt": 1794152747303,
-      "lastRunDurationMs": 1147,
-      "lastRunFramesExecuted": 62,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794164645621,
+      "lastRunDurationMs": 16207,
+      "lastRunFramesExecuted": 4,
+      "lastRunStatus": "stopped",
       "name": "World visible with lantern",
       "type": "gameplay",
       "source": [
@@ -1033,10 +1033,10 @@
     },
     {
       "description": "Ember's Fear rises when the Zombie is near (light turns red, stage goes up), settles slowly when it leaves, rises when the lantern is nearly empty, and calms faster at the Fireplace.",
-      "lastRunAt": 1794157519829,
-      "lastRunDurationMs": 2793,
-      "lastRunFramesExecuted": 1081,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794164097714,
+      "lastRunDurationMs": 783,
+      "lastRunFramesExecuted": 0,
+      "lastRunStatus": "stopped",
       "name": "Ember fear rises and turns the light red",
       "type": "gameplay",
       "source": [
@@ -1099,10 +1099,10 @@
     },
     {
       "description": "Ember stays inside the lantern glass, the inner light is at Ember's position, and Ember faces the camera even while the lantern sways.",
-      "lastRunAt": 1794158017322,
-      "lastRunDurationMs": 2044,
-      "lastRunFramesExecuted": 107,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794164667073,
+      "lastRunDurationMs": 12542,
+      "lastRunFramesExecuted": 62,
+      "lastRunStatus": "failed",
       "name": "Ember sits in the lantern facing the player",
       "type": "gameplay",
       "source": [

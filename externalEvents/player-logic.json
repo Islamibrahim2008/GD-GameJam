@@ -2645,217 +2645,6 @@
       "creationTime": 0,
       "disabled": true,
       "folded": true,
-      "name": "Flashlight",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Or"
-              },
-              "parameters": [],
-              "subInstructions": [
-                {
-                  "type": {
-                    "value": "KeyFromTextJustPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"f\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "KeyFromTextJustPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"g\""
-                  ]
-                }
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "FlashlightOn",
-                "=",
-                "1 - FlashlightOn"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "FlashLevel",
-                "=",
-                "lerp(FlashLevel, FlashlightOn, 1 - exp(-10 * TimeDelta()))"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "FlashlightOn",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "FlashLevel",
-                ">",
-                "0.9"
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "aiGeneratedEventId": "01M6Y1P9HF6MAZMT97MTTG50DM",
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "RandomFloatInRange(0, 1)",
-                    "<",
-                    "0.02"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Flicker",
-                    "=",
-                    "RandomFloatInRange(0.2, 0.5)"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Flicker",
-                "=",
-                "lerp(Flicker, 0, 1 - exp(-6 * TimeDelta()))"
-              ]
-            }
-          ]
-        },
-        {
-          "aiGeneratedEventId": "01M6Y1NM0WV0MFDX465KTMBY82",
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetXY"
-              },
-              "parameters": [
-                "light",
-                "=",
-                "Player.CenterX() + 8*cos(ToRad(Player.Angle()-90))",
-                "=",
-                "Player.CenterY() + 8*sin(ToRad(Player.Angle()-90))"
-              ]
-            },
-            {
-              "type": {
-                "value": "Scene3D::Base3DBehavior::SetZ"
-              },
-              "parameters": [
-                "light",
-                "Object3D",
-                "=",
-                "Player.Object3D::Z() + Player.Object3D::Depth() - 10"
-              ]
-            },
-            {
-              "type": {
-                "value": "Scene3D::Base3DBehavior::SetRotationY"
-              },
-              "parameters": [
-                "light",
-                "Object3D",
-                "=",
-                "90 - Scene3D::CameraRotationX() + 4"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetAngle"
-              },
-              "parameters": [
-                "light",
-                "=",
-                "Player.Angle()"
-              ]
-            },
-            {
-              "type": {
-                "value": "Light3D::SpotLight3D::SetIntensity"
-              },
-              "parameters": [
-                "light",
-                "=",
-                "(1.2 + 22 * FlashLevel) * (1 - Flicker)",
-                ""
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "disabled": true,
-      "folded": true,
       "name": "grab system",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4008,6 +3797,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "player sounds",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6078,7 +5868,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M6Y1Y0QQ449M6GT9CG5372K1",
+          "aiGeneratedEventId": "01M6Y866T06HNSHBPWB6SN3FN7",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -6099,8 +5889,39 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "\"255;\" + ToString(round(lerp(120 + 45 * LanternFlicker, 35, clamp((EmberFear01 - 0.2) / 0.5, 0, 1)))) + \";\" + ToString(round(lerp(35 + 35 * LanternFlicker, 20, clamp((EmberFear01 - 0.2) / 0.5, 0, 1))))",
+                "\"255;\" + ToString(round(lerp(140 + 55 * LanternFlicker, 40, clamp((EmberFear01 - 0.2) / 0.5, 0, 1)))) + \";\" + ToString(round(lerp(45 + 40 * LanternFlicker, 22, clamp((EmberFear01 - 0.2) / 0.5, 0, 1))))",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6Y8NWBQ9H90CGZY8ECTVD91",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetLayerEffectParameter"
+              },
+              "parameters": [
+                "",
+                "\"hand\"",
+                "\"Bloom\"",
+                "\"strength\"",
+                "0.25 + 0.85 * LanternFuel * LanternFlicker + EmberFear01 * 0.3"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetLayerEffectParameter"
+              },
+              "parameters": [
+                "",
+                "\"hand\"",
+                "\"Bloom\"",
+                "\"threshold\"",
+                "0.65 - 0.2 * LanternFuel * LanternFlicker"
               ]
             }
           ]
@@ -6118,7 +5939,7 @@
           "comment": "Light inside the held lantern (lights the lantern itself on the hand layer)."
         },
         {
-          "aiGeneratedEventId": "01M6Y2B2T2VKRV4HFH8075XM1S",
+          "aiGeneratedEventId": "01M6Y811ZHYYZS3RCNK746T1MX",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6164,7 +5985,7 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "6 * LanternFlicker * LanternFuel",
+                "(10 * LanternFlicker * (0.35 + 0.65 * LanternFuel) + EmberFear01 * 4)",
                 ""
               ]
             },
@@ -6175,7 +5996,7 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "160",
+                "220 + 40 * LanternFlicker + EmberFear01 * 80",
                 ""
               ]
             }

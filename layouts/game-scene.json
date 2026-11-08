@@ -21,10 +21,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.35534345588171923,
+    "zoomFactor": 0.7370816317994461,
     "windowMask": false,
     "selectedLayer": "",
-    "gameEditorMode": "embedded-game"
+    "gameEditorMode": "instances-editor"
   },
   "objectsGroups": [
     {
@@ -4360,29 +4360,6 @@
     {
       "angle": 0,
       "customSize": false,
-      "height": 40,
-      "layer": "hand",
-      "name": "LanternFlame",
-      "persistentUuid": "afe601d7-4288-4a42-a987-b1a748bef678",
-      "width": 40,
-      "x": 85,
-      "y": 37,
-      "z": -155,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": [
-        {
-          "name": "IsViewmodel",
-          "persistentUuid": "75ca405f-35df-4967-8598-2df66d641d79",
-          "type": "boolean",
-          "value": true
-        }
-      ]
-    },
-    {
-      "angle": 0,
-      "customSize": false,
       "height": 0,
       "keepRatio": true,
       "layer": "",
@@ -4390,8 +4367,8 @@
       "persistentUuid": "bd6e865e-6614-4670-b5c2-23cce548322f",
       "width": 0,
       "x": 3974,
-      "y": 3206,
-      "z": 700,
+      "y": 3260,
+      "z": 652,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -4475,6 +4452,23 @@
       "width": 300,
       "x": 32,
       "y": 648,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "hand",
+      "name": "LanternFlame",
+      "persistentUuid": "17f09df9-5d93-4510-b8f4-f20e69932f83",
+      "width": 0,
+      "x": 85,
+      "y": 37,
+      "z": -155,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -4888,7 +4882,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Lantern.glb",
         "originLocation": "ModelOrigin",
-        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"metal\",\"baseColor\":\"200;200;200\",\"metallic\":1,\"roughness\":0.35,\"transmission\":0.9,\"ior\":1.5,\"doubleSided\":true},\"material\":\"physical\",\"targets\":{\"lantern_2\":{\"preset\":\"glass\",\"baseColor\":\"230;240;250\",\"metallic\":0,\"roughness\":0.05,\"transmission\":0.9,\"ior\":1.5,\"doubleSided\":true}}}",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"glass\",\"baseColor\":\"230;240;250\",\"metallic\":0,\"roughness\":0.05,\"transmission\":0.9,\"ior\":1.5,\"doubleSided\":true},\"material\":\"physical\",\"targets\":{\"lantern_2\":{\"preset\":\"glass\",\"baseColor\":\"230;240;250\",\"metallic\":0,\"roughness\":0.05,\"transmission\":0.9,\"ior\":1.5,\"doubleSided\":true}}}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -5120,13 +5114,13 @@
         "crossfadeDuration": 0.10000000149011612,
         "depth": 100,
         "height": 100,
-        "isCastingShadow": false,
-        "isReceivingShadow": false,
+        "isCastingShadow": true,
+        "isReceivingShadow": true,
         "keepAspectRatio": true,
-        "materialType": "Basic",
+        "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Creature.glb",
         "originLocation": "ModelOrigin",
-        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;212;96\",\"metallic\":1,\"roughness\":0.25},\"material\":\"physical\"}",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -5784,18 +5778,29 @@
       "cameras": [],
       "effects": [
         {
+          "effectType": "Scene3D::ToneMapping",
+          "name": "ToneMapping",
+          "doubleParameters": {
+            "exposure": 1
+          },
+          "stringParameters": {
+            "mode": "Neutral"
+          },
+          "booleanParameters": {}
+        },
+        {
           "effectType": "Scene3D::DirectionalLight",
           "name": "sun",
           "doubleParameters": {
             "distanceFromCamera": 1200,
-            "elevation": 20,
+            "elevation": 40,
             "frustumSize": 2500,
-            "intensity": 0.08,
-            "minimumShadowBias": 0.0002,
+            "intensity": 0.5,
+            "minimumShadowBias": 0.0003,
             "rotation": 70
           },
           "stringParameters": {
-            "color": "200;130;90",
+            "color": "150;170;220",
             "shadowQuality": "high",
             "shadowRenderingMode": "fittedToCameraView",
             "top": "Z+"
@@ -5805,14 +5810,52 @@
           }
         },
         {
-          "effectType": "Scene3D::AmbientLight",
-          "name": "AmbientLight",
+          "effectType": "Scene3D::DepthOfField",
+          "name": "DepthOfField",
           "doubleParameters": {
-            "intensity": 0.05
+            "focusDistance": 450,
+            "focusRange": 500,
+            "maxBlur": 3,
+            "transitionDistance": 1200
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        },
+        {
+          "effectType": "Scene3D::EnvironmentMap",
+          "name": "EnvironmentMap",
+          "doubleParameters": {
+            "backgroundBlurriness": 0,
+            "backgroundIntensity": 0,
+            "environmentIntensity": 0.75,
+            "rotation": 0
           },
           "stringParameters": {
-            "color": "80; 105; 170"
+            "backFaceResourceName": "Stormy Overcast_Back.jpg",
+            "bottomFaceResourceName": "Stormy Overcast_Bottom.jpg",
+            "equirectangularResourceName": "",
+            "frontFaceResourceName": "Stormy Overcast_Front.jpg",
+            "leftFaceResourceName": "Stormy Overcast_Left.jpg",
+            "quality": "auto",
+            "rightFaceResourceName": "Stormy Overcast_Right.jpg",
+            "source": "cube",
+            "topFaceResourceName": "Stormy Overcast_Top.jpg"
           },
+          "booleanParameters": {
+            "affectsMaterials": true,
+            "linkBackgroundRotation": true,
+            "showBackground": false
+          }
+        },
+        {
+          "effectType": "Scene3D::Bloom",
+          "name": "Bloom",
+          "doubleParameters": {
+            "radius": 0.55,
+            "strength": 1.1,
+            "threshold": 0.45
+          },
+          "stringParameters": {},
           "booleanParameters": {}
         }
       ]
