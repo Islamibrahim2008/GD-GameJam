@@ -58,36 +58,43 @@
   "variables": [
     {
       "name": "HearAcc",
+      "persistentUuid": "81156790-4096-45ca-8e28-efc933f80e30",
       "type": "number",
       "value": 200
     },
     {
       "name": "NoiseBurst",
+      "persistentUuid": "f2e92678-768a-45a9-9908-76057d261d80",
       "type": "number",
       "value": 0
     },
     {
       "name": "NoiseZ",
+      "persistentUuid": "3af8322c-9943-4454-b68c-107d40ca16dc",
       "type": "number",
       "value": 0
     },
     {
       "name": "NoiseY",
+      "persistentUuid": "05027532-ac27-451c-92b9-fbb331b21ad6",
       "type": "number",
       "value": 0
     },
     {
       "name": "NoiseX",
+      "persistentUuid": "fc39d047-642d-428a-a394-c8ced3fa071d",
       "type": "number",
       "value": 0
     },
     {
       "name": "NoiseLevel",
+      "persistentUuid": "c894a94f-3804-4c43-9680-e29828b7ed7d",
       "type": "number",
       "value": 0
     },
     {
       "name": "FootLoop",
+      "persistentUuid": "e3e3217e-4400-4bb0-a4f4-371ea82e7ace",
       "type": "string",
       "value": ""
     },
@@ -4234,22 +4241,6 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 99.94574671840098,
-      "layer": "",
-      "name": "Zombie",
-      "persistentUuid": "065d8b34-6d83-4991-b184-f71f287f4650",
-      "width": 28.949858507327058,
-      "x": 4217,
-      "y": 4167,
-      "z": 541,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
     }
   ],
   "objects": [
@@ -4677,31 +4668,6 @@
   },
   "events": [
     {
-      "aiGeneratedEventId": "01M5QMFN6J1WJ6A4M8W324HBMX",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "SceneJustBegins"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Pixel3DDither::InstallEffect"
-          },
-          "parameters": [
-            "",
-            ""
-          ]
-        }
-      ]
-    },
-    {
       "type": "BuiltinCommonInstructions::Link",
       "include": {
         "includeConfig": 0
@@ -4721,6 +4687,152 @@
         "includeConfig": 0
       },
       "target": "javascript systems"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Pixel3DDither::EnablePixel3D"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Pixel Art\""
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Pixel Height\"",
+            "288"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Color Levels\"",
+            "20"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Dither Strength\"",
+            "0.55"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Saturation\"",
+            "0.55"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Contrast\"",
+            "1.25"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Vignette\"",
+            "0.55"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Chromatic\"",
+            "0.006"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Outline\"",
+            "0.35"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Outline Threshold\"",
+            "0.15"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Outline Distance\"",
+            "0.4"
+          ]
+        },
+        {
+          "type": {
+            "value": "Pixel3DDither::SetNumber"
+          },
+          "parameters": [
+            "",
+            "\"\"",
+            "\"Crease Threshold\"",
+            "0.6"
+          ]
+        }
+      ]
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
