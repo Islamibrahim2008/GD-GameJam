@@ -366,6 +366,70 @@
         "metadata": "",
         "name": "StartingCapsule.glb",
         "userAdded": false
+      },
+      {
+        "file": "assets/Walk_01.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "9e6c1c3f9594ea0796b8bbd636507bfe04625bc14344d5fc2a673e0da51030d7_Walk_01.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/SoundEffects/Nox Footsteps/DirtyGround/Walk/9e6c1c3f9594ea0796b8bbd636507bfe04625bc14344d5fc2a673e0da51030d7_Walk_01.wav",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "file": "assets/Jump_Start_05.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jump_Start_05.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walk_09.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Walk_09.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Tall_Movement_01.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Tall_Movement_01.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jump_Land_01.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jump_Land_01.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/MetalV2_Run_12.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "MetalV2_Run_12.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },
@@ -420,10 +484,10 @@
   "tests": [
     {
       "description": "Scene loads and portals exist without errors",
-      "lastRunAt": 1793542897216,
-      "lastRunDurationMs": 11182,
+      "lastRunAt": 1794155517061,
+      "lastRunDurationMs": 6690,
       "lastRunFramesExecuted": 121,
-      "lastRunStatus": "passed",
+      "lastRunStatus": "failed",
       "name": "portal-view-smoke",
       "type": "gameplay",
       "source": [
@@ -643,8 +707,8 @@
     },
     {
       "description": "Verify zombie anim valid and memory vars exist",
-      "lastRunAt": 1793111790506,
-      "lastRunDurationMs": 11569,
+      "lastRunAt": 1794157294685,
+      "lastRunDurationMs": 9666,
       "lastRunFramesExecuted": 121,
       "lastRunStatus": "passed",
       "name": "monster-ai-cunning",

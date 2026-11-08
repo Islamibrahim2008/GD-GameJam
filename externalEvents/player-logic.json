@@ -643,6 +643,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "state machine",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1219,6 +1220,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "speed smoothing",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1465,6 +1467,7 @@
               ]
             },
             {
+              "aiGeneratedEventId": "01M6Y0093XZX5PZVN43R8Z96W6",
               "type": "BuiltinCommonInstructions::Else",
               "conditions": [],
               "actions": [
@@ -1492,6 +1495,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "camera",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2732,6 +2736,7 @@
           "actions": [],
           "events": [
             {
+              "aiGeneratedEventId": "01M6Y1P9HF6MAZMT97MTTG50DM",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2741,7 +2746,7 @@
                   "parameters": [
                     "RandomFloatInRange(0, 1)",
                     "<",
-                    "0.008"
+                    "0.02"
                   ]
                 }
               ],
@@ -2778,7 +2783,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M5T2F2W8P2RFKJFR0TM2T79J",
+          "aiGeneratedEventId": "01M6Y1NM0WV0MFDX465KTMBY82",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -2833,7 +2838,7 @@
               "parameters": [
                 "light",
                 "=",
-                "60 * FlashLevel * (1 - Flicker)",
+                "(1.2 + 22 * FlashLevel) * (1 - Flicker)",
                 ""
               ]
             }
@@ -3987,6 +3992,1172 @@
               "parameters": [
                 "",
                 "\"GrabCooldown\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M6Y0093XZX5PZVN43R8Z96W6",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "player sounds",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"StepTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BreathTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WasAirborne",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+              },
+              "parameters": [
+                "Player",
+                "PhysicsCharacter3D"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Idle\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Walk\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Sprint\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Jump_Start_05.wav",
+                "no",
+                "75",
+                "0.95 + RandomFloatInRange(0, 0.1)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WasAirborne",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6Y078YZGC7PVACQC9R9VVFT",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Air\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WasAirborne",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SoundPlaying"
+                  },
+                  "parameters": [
+                    "",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "StopSoundChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "FootLoop",
+                    "=",
+                    "\"\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6Y078YZGC7PVACQC9R9VVFT",
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "aiGeneratedEventId": "01M6Y0H72GE0VHZM6TGPPTM10E",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "WasAirborne",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "Jump_Land_01.wav",
+                    "no",
+                    "85",
+                    "0.92 + RandomFloatInRange(0, 0.16)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "WasAirborne",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "NoiseBurst",
+                    "=",
+                    "95"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "NoiseX",
+                    "=",
+                    "Player.CenterX()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "NoiseY",
+                    "=",
+                    "Player.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "NoiseZ",
+                    "=",
+                    "Player.Object3D::Z()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Sprint\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "!=",
+                        "\"run\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "StopSoundChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "MetalV2_Run_12.wav",
+                        "5",
+                        "yes",
+                        "90",
+                        "1.05"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"run\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01M6Y0APVQA0YMRCGPMDW8XKFQ",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSoundChannelVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "5",
+                        "=",
+                        "75 + 25 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSoundChannelPitch"
+                      },
+                      "parameters": [
+                        "",
+                        "5",
+                        "=",
+                        "0.95 + 0.25 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Walk\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "!=",
+                        "\"walk\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "StopSoundChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "Walk_09.wav",
+                        "5",
+                        "yes",
+                        "70",
+                        "0.95"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"walk\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01M6Y0APVQA0YMRCGPMDW8XKFQ",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSoundChannelVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "5",
+                        "=",
+                        "50 + 30 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSoundChannelPitch"
+                      },
+                      "parameters": [
+                        "",
+                        "5",
+                        "=",
+                        "0.85 + 0.2 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchWalk\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Slide\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "!=",
+                        "\"crouch\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "StopSoundChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "Walk_09.wav",
+                        "5",
+                        "yes",
+                        "40",
+                        "0.7"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"crouch\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01M6Y0APVQA0YMRCGPMDW8XKFQ",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSoundChannelVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "5",
+                        "=",
+                        "25 + 20 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSoundChannelPitch"
+                      },
+                      "parameters": [
+                        "",
+                        "5",
+                        "=",
+                        "0.6 + 0.2 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchIdle\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SoundPlaying"
+                      },
+                      "parameters": [
+                        "",
+                        "5"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "StopSoundChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "5"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M6Y1SQGM3TQ9RMGGGGAZP4DQ",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"CrouchIdle\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SoundStopped"
+                  },
+                  "parameters": [
+                    "",
+                    "6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"BreathTimer\"",
+                    ">",
+                    "2.8"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySoundOnChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "Tall_Movement_01.wav",
+                    "6",
+                    "no",
+                    "22",
+                    "0.85 + RandomFloatInRange(0, 0.1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"BreathTimer\""
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M6Y1SQGM3TQ9RMGGGGAZP4DQ",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SoundPlaying"
+                  },
+                  "parameters": [
+                    "",
+                    "6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "!=",
+                    "\"Idle\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "!=",
+                    "\"CrouchIdle\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "StopSoundChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "6"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M6Y0FBNHK89RV75HC48Z7DZS",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SceneJustBegins"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"LandQuiet\""
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01M6Y0FBNHK89RV75HC48Z7DZS",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "player noise emission",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Sprint\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "80 + 20 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Walk\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "45 + 25 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Slide\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "75"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"CrouchWalk\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "18 + 12 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Air\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "12"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "5"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "NoiseBurst",
+                ">",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseBurst",
+                "-",
+                "120 * TimeDelta()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                "=",
+                "max(NoiseLevel, NoiseBurst)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::PhysicsCharacter3D::IsOnFloor"
+              },
+              "parameters": [
+                "Player",
+                "PhysicsCharacter3D"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseBurst",
+                "=",
+                "80"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseX",
+                "=",
+                "Player.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseY",
+                "=",
+                "Player.CenterY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseZ",
+                "=",
+                "Player.Object3D::Z()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "WasAirborne",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"LandQuiet\"",
+                ">",
+                "0.5"
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "NoiseLevel",
+                ">",
+                "20"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseX",
+                "=",
+                "Player.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseY",
+                "=",
+                "Player.CenterY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NoiseZ",
+                "=",
+                "Player.Object3D::Z()"
               ]
             }
           ]

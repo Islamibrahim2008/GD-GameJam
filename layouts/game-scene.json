@@ -32,6 +32,9 @@
       "objects": [
         {
           "name": "TropicalIslandTerrain"
+        },
+        {
+          "name": "PalmTrees"
         }
       ]
     },
@@ -40,17 +43,54 @@
       "objects": [
         {
           "name": "TropicalIslandTerrain"
-        },
+        }
+      ]
+    },
+    {
+      "name": "EnemyTargets",
+      "objects": [
         {
-          "name": "PalmTrees"
-        },
-        {
-          "name": "NewGrass"
+          "name": "Player"
         }
       ]
     }
   ],
   "variables": [
+    {
+      "name": "HearAcc",
+      "type": "number",
+      "value": 200
+    },
+    {
+      "name": "NoiseBurst",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "NoiseZ",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "NoiseY",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "NoiseX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "NoiseLevel",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "FootLoop",
+      "type": "string",
+      "value": ""
+    },
     {
       "name": "HkSlamVZ",
       "persistentUuid": "e17426d6-9b74-4423-bdd2-c2d39b3b1fc5",
@@ -4229,6 +4269,10 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "A3S",
+          "type": "A3F::A3S"
+        },
+        {
           "name": "Physics3D",
           "type": "Physics3D::Physics3DBehavior",
           "object3D": "Object3D",
@@ -4313,6 +4357,7 @@
         "materialType": "KeepOriginal",
         "modelResourceName": "Male Casual.glb",
         "originLocation": "ModelOrigin",
+        "pbrConfig": "",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -4558,6 +4603,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Zombie A.glb",
         "originLocation": "ModelOrigin",
+        "pbrConfig": "",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -4590,7 +4636,9 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "content": {}
+      "content": {
+        "Style": "PixelWater"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -4710,11 +4758,22 @@
       ],
       "effects": [
         {
+          "effectType": "Scene3D::ExponentialFog",
+          "name": "ExponentialFog",
+          "doubleParameters": {
+            "density": 0.008
+          },
+          "stringParameters": {
+            "color": "5;8;15"
+          },
+          "booleanParameters": {}
+        },
+        {
           "effectType": "Scene3D::Skybox",
           "name": "Skybox",
           "doubleParameters": {
-            "backgroundIntensity": 0.7,
-            "environmentIntensity": 0.4
+            "backgroundIntensity": 0.12,
+            "environmentIntensity": 0.05
           },
           "stringParameters": {
             "backFaceResourceName": "Stormy Overcast_Back.jpg",
@@ -4734,12 +4793,12 @@
             "distanceFromCamera": 1200,
             "elevation": 14,
             "frustumSize": 2500,
-            "intensity": 1.1,
+            "intensity": 0.12,
             "minimumShadowBias": 0.0003,
             "rotation": 70
           },
           "stringParameters": {
-            "color": "255;165;80",
+            "color": "120;150;200",
             "shadowQuality": "high",
             "shadowRenderingMode": "fittedToCameraView",
             "top": "Z+"
@@ -4752,14 +4811,15 @@
           "effectType": "Scene3D::AmbientLight",
           "name": "AmbientLight",
           "doubleParameters": {
-            "intensity": 0.65
+            "intensity": 0.08
           },
           "stringParameters": {
-            "color": "60;80;140"
+            "color": "30;40;70"
           },
           "booleanParameters": {}
         },
         {
+          "disabled": true,
           "effectType": "Scene3D::DepthOfField",
           "name": "DepthOfField",
           "doubleParameters": {
@@ -4767,51 +4827,6 @@
             "focusRange": 600,
             "maxBlur": 6,
             "transitionDistance": 1500
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Glitch",
-          "name": "JS_Glitch",
-          "doubleParameters": {
-            "direction": 0,
-            "fillMode": 0,
-            "minSize": 8,
-            "offset": 100,
-            "sampleSize": 512,
-            "seed": 0,
-            "slices": 5
-          },
-          "stringParameters": {},
-          "booleanParameters": {
-            "average": false
-          }
-        },
-        {
-          "effectType": "KawaseBlur",
-          "name": "JS_Blur",
-          "doubleParameters": {
-            "blur": 0,
-            "pixelizeX": 1,
-            "pixelizeY": 1,
-            "quality": 3
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Adjustment",
-          "name": "JS_Adjust",
-          "doubleParameters": {
-            "alpha": 1,
-            "blue": 1,
-            "brightness": 1,
-            "contrast": 1,
-            "gamma": 1,
-            "green": 1,
-            "red": 1,
-            "saturation": 1
           },
           "stringParameters": {},
           "booleanParameters": {}
@@ -4843,7 +4858,7 @@
             "distanceFromCamera": 1200,
             "elevation": 20,
             "frustumSize": 2500,
-            "intensity": 0.4,
+            "intensity": 0.08,
             "minimumShadowBias": 0.0002,
             "rotation": 70
           },
@@ -4861,7 +4876,7 @@
           "effectType": "Scene3D::AmbientLight",
           "name": "AmbientLight",
           "doubleParameters": {
-            "intensity": 0.3
+            "intensity": 0.05
           },
           "stringParameters": {
             "color": "80; 105; 170"
@@ -4909,8 +4924,8 @@
   ],
   "behaviorsSharedData": [
     {
-      "name": "A3CS",
-      "type": "A3F::A3CS"
+      "name": "A3S",
+      "type": "A3F::A3S"
     },
     {
       "name": "Animation",
@@ -4958,10 +4973,6 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
-    },
-    {
-      "name": "Tween",
-      "type": "Tween::TweenBehavior"
     }
   ]
 }

@@ -3,12 +3,141 @@
   "name": "monster",
   "events": [
     {
+      "aiGeneratedEventId": "01M6Y13Q59F76ZA3N36B00AHTP",
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
       "folded": true,
-      "name": "Monster AI Brain",
+      "name": "00 — Init (physics + anim names)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ActivateBehavior"
+              },
+              "parameters": [
+                "Zombie",
+                "Physics3D",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"StuckTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastMoveX",
+                "=",
+                "-99999"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastMoveY",
+                "=",
+                "-99999"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Cfg_PatrolTime",
+                "=",
+                "8"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AnimWalk",
+                "=",
+                "\"Run\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AnimCreep",
+                "=",
+                "\"Run\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AnimSprint",
+                "=",
+                "\"Run\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AnimScream",
+                "=",
+                "\"Run\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AnimAttack",
+                "=",
+                "\"Run\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M6Y0YPM3MFX89PHM5D42WG7H",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "01 — Brain (Perception / Hearing / Memory / FSM)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -25,7 +154,6 @@
           "comment": "MONSTER AI v4 - Animation layer + Cunning + Hotspot Memory. Declare ALL scene variables as Number (except those in variables.txt marked String). Needs: Zombie (3D + NavMeshCharacter + Animation), Player, HeadPOS, scene vars CamX/CamY, MonsterVisionObstacles. Edit Cfg_* in the init event. To use extra animations (Idle/Scream/Attack...) set Cfg_ExtraAnims=1 and make the names in the second init event match your 3D model animations. Hit moment for damage: use condition MonsterAttackNow = 1."
         },
         {
-          "aiGeneratedEventId": "01M5YWFCKJFC0DX8CHKH9WCMCS",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1554,7 +1682,6 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M5YXD2V2SQDHXVFJM4763CRE",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1640,6 +1767,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M6Y11VE9577XMQZ160S7QHQC",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -1649,7 +1777,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "PLAYER VELOCITY"
+          "comment": "— 1.1 Velocity tracking (Player + Zombie)"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1823,6 +1951,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M6Y11VE9577XMQZ160S7QHQC",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -1832,7 +1961,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "COOLDOWNS + ATTACK HIT MOMENT"
+          "comment": "— 1.2 Cooldowns + attack hit moment"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -2034,6 +2163,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M6Y11VE9577XMQZ160S7QHQC",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -2043,7 +2173,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "CUNNING-DERIVED STATS (Cunning 0..1 grows every time the player escapes)"
+          "comment": "— 1.3 Cunning-derived stats (0..1, grows on escape)"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -2125,6 +2255,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M6Y11VE9577XMQZ160S7QHQC",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -2134,7 +2265,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "PERCEPTION"
+          "comment": "— 2. Perception: vision + SMART hearing (NoiseLevel) + suspicion"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -2355,7 +2486,7 @@
           "conditions": [
             {
               "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
+                "value": "NumberVariable"
               },
               "parameters": [
                 "PlayerVisible",
@@ -2365,12 +2496,12 @@
             },
             {
               "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
+                "value": "NumberVariable"
               },
               "parameters": [
-                "PlayerSpeed",
+                "NoiseLevel",
                 ">",
-                "Cfg_HearSpeed"
+                "15"
               ]
             },
             {
@@ -2380,7 +2511,7 @@
               "parameters": [
                 "DistToPlayer",
                 "<",
-                "Cfg_HearRange"
+                "Cfg_HearRange * (0.35 + NoiseLevel / 70) * (1 + 0.3 * Cunning)"
               ]
             }
           ],
@@ -2392,11 +2523,68 @@
               "parameters": [
                 "Suspicion",
                 "+",
-                "12 * TimeDelta()"
+                "(NoiseLevel / 100) * 32 * (1 - DistToPlayer / max(Cfg_HearRange * (0.35 + NoiseLevel / 70) * (1 + 0.3 * Cunning), 1)) * TimeDelta() + 4 * TimeDelta()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HearAcc",
+                "=",
+                "380 - 3.2 * NoiseLevel"
               ]
             }
           ],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "NoiseLevel",
+                    ">",
+                    "75"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "DistToPlayer",
+                    "<",
+                    "Cfg_HearRange * (0.35 + NoiseLevel / 70) * (1 + 0.3 * Cunning) * 0.6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Suspicion",
+                    "+",
+                    "18 * TimeDelta()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "HearAcc",
+                    "=",
+                    "60"
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -2408,7 +2596,7 @@
                     "",
                     "\"HearTimer\"",
                     ">",
-                    "0.5"
+                    "0.9 - clamp(NoiseLevel / 150, 0, 0.65)"
                   ]
                 }
               ],
@@ -2429,7 +2617,7 @@
                   "parameters": [
                     "LastSeenX",
                     "=",
-                    "Player.CenterX() + RandomInRange(-200, 200)"
+                    "clamp(NoiseX + RandomInRange(-HearAcc, HearAcc), Cfg_MapMinX, Cfg_MapMaxX)"
                   ]
                 },
                 {
@@ -2439,7 +2627,7 @@
                   "parameters": [
                     "LastSeenY",
                     "=",
-                    "Player.CenterY() + RandomInRange(-200, 200)"
+                    "clamp(NoiseY + RandomInRange(-HearAcc, HearAcc), Cfg_MapMinY, Cfg_MapMaxY)"
                   ]
                 },
                 {
@@ -2449,7 +2637,27 @@
                   "parameters": [
                     "LastSeenZ",
                     "=",
-                    "Player.Object3D::Z()"
+                    "NoiseZ"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LastSeenVelX",
+                    "=",
+                    "PlayerVelX"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LastSeenVelY",
+                    "=",
+                    "PlayerVelY"
                   ]
                 },
                 {
@@ -2479,7 +2687,7 @@
                   "parameters": [
                     "RecW",
                     "=",
-                    "0.6"
+                    "0.5 + NoiseLevel / 100"
                   ]
                 },
                 {
@@ -2700,6 +2908,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M6Y11VE9577XMQZ160S7QHQC",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -2709,7 +2918,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "HOTSPOT MEMORY: 6 slots (X, Y, Weight). Sightings/noises reinforce nearby slots (learns where the player hangs out), weakest slot gets replaced, weights fade slowly (slower when Cunning is high)."
+          "comment": "— 3. Hotspot memory: 6 slots, sightings + noises"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -4275,6 +4484,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M6Y11VE9577XMQZ160S7QHQC",
           "type": "BuiltinCommonInstructions::Comment",
           "color": {
             "b": 109,
@@ -4284,7 +4494,7 @@
             "textG": 0,
             "textR": 0
           },
-          "comment": "BRAIN 10Hz"
+          "comment": "— 4. Brain 10Hz FSM (Chase / Stalk / Investigate / Search / Ambush / Feint / Patrol)"
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -6443,7 +6653,6 @@
               ]
             },
             {
-              "aiGeneratedEventId": "01M5YXQ6BYQET51HYYEH4F08V8",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -6603,7 +6812,6 @@
                   ]
                 },
                 {
-                  "aiGeneratedEventId": "01M5YXRNN1YBCPHVY3R32TZQN5",
                   "type": "BuiltinCommonInstructions::Else",
                   "conditions": [],
                   "actions": [
@@ -8765,12 +8973,13 @@
       "parameters": []
     },
     {
-      "colorB": 60,
-      "colorG": 200,
-      "colorR": 90,
+      "aiGeneratedEventId": "01M6Y0YPM3MFX89PHM5D42WG7H",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
       "creationTime": 0,
       "folded": true,
-      "name": "Monster Patrol Net (JS waypoint brain)",
+      "name": "02 — Patrol Net (JS waypoints)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -8787,927 +8996,131 @@
           "comment": "PATROL NET (JS). The monster learns WALKABLE waypoints by itself (player trail + its own trail, saved between runs) and also uses any object named PatrolPoint you place in the scene. When the brain asks for a patrol target, this picks the best waypoint: not visited for long, near player hotspots, near the predicted player area (more with Cunning), no U-turns, never the last 4, with a bit of randomness. Unreachable points get penalised and removed. If fewer than 4 waypoints are known, the old random patrol is used."
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "(function () {",
-                "  try {",
-                "    const S = runtimeScene;",
-                "    const vars = S.getVariables();",
-                "    const num = (n) => { try { return vars.get(n).getAsNumber(); } catch (e) { return 0; } };",
-                "    const str = (n) => { try { return vars.get(n).getAsString(); } catch (e) { return \"\"; } };",
-                "    const put = (n, v) => { try { vars.get(n).setNumber(v); } catch (e) {} };",
-                "    const now = S.getTimeManager().getTimeFromStart() / 1000;",
-                "    const zs = S.getObjects(\"Zombie\") || [], ps = S.getObjects(\"Player\") || [];",
-                "    if (!zs.length || !ps.length) return;",
-                "    const z = zs[0], p = ps[0];",
-                "    const zx = z.getCenterX(), zy = z.getCenterY(), px = p.getCenterX(), py = p.getCenterY();",
-                "",
-                "    // ===== PATROL NET: the monster learns WALKABLE ground (player trail + its own trail + optional PatrolPoint objects) =====",
-                "    const KEY = \"monster_patrol_net_v1\", SPACING = 220, MAXN = 160;",
-                "    let net = S._patrolNet;",
-                "    if (!net) {",
-                "      net = S._patrolNet = { nodes: [], cur: null, lastCount: -1, lastStage: 0, sampleT: 0, objT: -99, decT: now, saveT: now, recent: [], hx: 1, hy: 0, picks: 0, fails: 0 };",
-                "      try {",
-                "        const raw = window.localStorage && window.localStorage.getItem(KEY);",
-                "        if (raw) JSON.parse(raw).slice(0, MAXN).forEach((n) => { if (isFinite(n.x) && isFinite(n.y)) net.nodes.push({ x: n.x, y: n.y, vis: -999, fail: 0, src: \"trail\", born: 0 }); });",
-                "      } catch (e) {}",
-                "    }",
-                "    const nearest = (x, y, onlySrc) => {",
-                "      let b = null, bd = 1e9;",
-                "      for (const n of net.nodes) { if (onlySrc && n.src !== onlySrc) continue; const d = Math.hypot(n.x - x, n.y - y); if (d < bd) { bd = d; b = n; } }",
-                "      return { n: b, d: bd };",
-                "    };",
-                "    const addNode = (x, y, src) => {",
-                "      if (src === \"obj\") {",
-                "        if (nearest(x, y, \"obj\").d < 40) return;",
-                "        net.nodes.push({ x, y, vis: now - 60, fail: 0, src: \"obj\", born: now });",
-                "        return;",
-                "      }",
-                "      if (nearest(x, y).d < SPACING) return;",
-                "      net.nodes.push({ x, y, vis: now - 30, fail: 0, src: \"trail\", born: now });",
-                "      if (net.nodes.length > MAXN) {",
-                "        let idx = -1, oldest = 1e12;",
-                "        net.nodes.forEach((n, i) => { if (n.src !== \"obj\" && n !== net.cur && n.born < oldest) { oldest = n.born; idx = i; } });",
-                "        if (idx >= 0) net.nodes.splice(idx, 1);",
-                "      }",
-                "    };",
-                "    const pick = () => {",
-                "      if (net.nodes.length < 4) return null;",
-                "      const cun = num(\"Cunning\"), ppx = px + num(\"PlayerVelX\") * 2, ppy = py + num(\"PlayerVelY\") * 2;",
-                "      const mem = [];",
-                "      for (let i = 1; i <= 6; i++) { const w = num(\"Mem\" + i + \"W\"); if (w > 0.05) mem.push({ x: num(\"Mem\" + i + \"X\"), y: num(\"Mem\" + i + \"Y\"), w }); }",
-                "      let best = null, bs = -1e9;",
-                "      for (const n of net.nodes) {",
-                "        if (n.fail >= 3 || net.recent.indexOf(n) >= 0) continue;",
-                "        const dz = Math.hypot(n.x - zx, n.y - zy);",
-                "        if (dz < 350) continue;",
-                "        let s = Math.min((now - n.vis) / 60, 1.5);                       // not visited for a long time",
-                "        let h = 0; for (const m of mem) h += m.w / (1 + Math.hypot(n.x - m.x, n.y - m.y) / 400);",
-                "        s += 0.5 * Math.min(h, 3);                                        // where the player hangs out",
-                "        s += (0.25 + 0.75 * cun) * (1 - Math.min(Math.hypot(n.x - ppx, n.y - ppy), 3000) / 3000); // predicted player area (grows with cunning)",
-                "        if (n.src === \"obj\") s += 0.25;                                   // hand-placed points are trusted",
-                "        s -= 0.6 * Math.min(dz, 3000) / 3000;                             // prefer not-too-far",
-                "        s += 0.15 * (((n.x - zx) / dz) * net.hx + ((n.y - zy) / dz) * net.hy); // avoid U-turns",
-                "        s -= 0.4 * n.fail;                                                // unreliable point",
-                "        s += Math.random() * 0.35;                                        // unpredictability",
-                "        if (s > bs) { bs = s; best = n; }",
-                "      }",
-                "      return best;",
-                "    };",
-                "",
-                "    // learn walkable ground",
-                "    if (now - net.sampleT > 0.25) { net.sampleT = now; addNode(px, py, \"trail\"); if (num(\"ZSpeed\") > 40) addNode(zx, zy, \"trail\"); }",
-                "    if (now - net.objT > 2) {",
-                "      net.objT = now;",
-                "      try { (S.getObjects(\"PatrolPoint\") || []).forEach((o) => addNode(o.getCenterX(), o.getCenterY(), \"obj\")); } catch (e) {}",
-                "    }",
-                "    if (now - net.decT > 30) { net.decT = now; net.nodes.forEach((n) => { if (n.fail > 0) n.fail--; }); }",
-                "",
-                "    const state = str(\"MonsterState\"), stg = num(\"WdStage\");",
-                "    // watchdog escalated -> the point we were heading to is unreachable: punish it",
-                "    if (stg >= 2 && net.lastStage < 2 && net.cur) {",
-                "      net.cur.fail++; net.cur.vis = now; net.fails++;",
-                "      if (net.cur.fail >= 3 && net.cur.src !== \"obj\") { const i = net.nodes.indexOf(net.cur); if (i >= 0) net.nodes.splice(i, 1); }",
-                "      net.cur = null;",
-                "    }",
-                "    net.lastStage = stg;",
-                "",
-                "    if (state === \"Patrol\") {",
-                "      const cnt = num(\"PatrolCount\");",
-                "      if (cnt !== net.lastCount) {                                        // the brain asked for a new patrol target",
-                "        net.lastCount = cnt;",
-                "        const n = pick();",
-                "        if (n) {",
-                "          net.cur = n; net.picks++;",
-                "          put(\"PatX\", n.x); put(\"PatY\", n.y); put(\"PatReady\", 1);",
-                "          net.recent.push(n); if (net.recent.length > 4) net.recent.shift();",
-                "          const L = Math.max(Math.hypot(n.x - zx, n.y - zy), 1); net.hx = (n.x - zx) / L; net.hy = (n.y - zy) / L;",
-                "        } else net.cur = null;",
-                "      } else if (net.cur) {",
-                "        if (Math.abs(num(\"PatX\") - net.cur.x) > 60 || Math.abs(num(\"PatY\") - net.cur.y) > 60) net.cur = null;   // LLM / watchdog took over",
-                "        else if (Math.hypot(zx - net.cur.x, zy - net.cur.y) < 170) { net.cur.vis = now; net.cur.fail = 0; net.cur = null; } // arrived",
-                "      }",
-                "    } else net.cur = null;",
-                "",
-                "    if (now - net.saveT > 10) {",
-                "      net.saveT = now;",
-                "      try { window.localStorage && window.localStorage.setItem(KEY, JSON.stringify(net.nodes.filter((n) => n.src === \"trail\").map((n) => ({ x: Math.round(n.x), y: Math.round(n.y) })))); } catch (e) {}",
-                "    }",
-                "    put(\"PatNodes\", net.nodes.length); put(\"PatPicks\", net.picks); put(\"PatFails\", net.fails);",
-                "  } catch (e) { try { console.error(\"PatrolNet:\", e); } catch (_) {} }",
-                "})();"
-              ],
-              "parameterObjects": "",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            }
-          ]
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "(function () {",
+            "  try {",
+            "    const S = runtimeScene;",
+            "    const vars = S.getVariables();",
+            "    const num = (n) => { try { return vars.get(n).getAsNumber(); } catch (e) { return 0; } };",
+            "    const str = (n) => { try { return vars.get(n).getAsString(); } catch (e) { return \"\"; } };",
+            "    const put = (n, v) => { try { vars.get(n).setNumber(v); } catch (e) {} };",
+            "    const now = S.getTimeManager().getTimeFromStart() / 1000;",
+            "    const zs = S.getObjects(\"Zombie\") || [], ps = S.getObjects(\"Player\") || [];",
+            "    if (!zs.length || !ps.length) return;",
+            "    const z = zs[0], p = ps[0];",
+            "    const zx = z.getCenterX(), zy = z.getCenterY(), px = p.getCenterX(), py = p.getCenterY();",
+            "",
+            "    // ===== PATROL NET: the monster learns WALKABLE ground (player trail + its own trail + optional PatrolPoint objects) =====",
+            "    const KEY = \"monster_patrol_net_v1\", SPACING = 220, MAXN = 160;",
+            "    let net = S._patrolNet;",
+            "    if (!net) {",
+            "      net = S._patrolNet = { nodes: [], cur: null, lastCount: -1, lastStage: 0, sampleT: 0, objT: -99, decT: now, saveT: now, recent: [], hx: 1, hy: 0, picks: 0, fails: 0 };",
+            "      try {",
+            "        const raw = window.localStorage && window.localStorage.getItem(KEY);",
+            "        if (raw) JSON.parse(raw).slice(0, MAXN).forEach((n) => { if (isFinite(n.x) && isFinite(n.y)) net.nodes.push({ x: n.x, y: n.y, vis: -999, fail: 0, src: \"trail\", born: 0 }); });",
+            "      } catch (e) {}",
+            "    }",
+            "    const nearest = (x, y, onlySrc) => {",
+            "      let b = null, bd = 1e9;",
+            "      for (const n of net.nodes) { if (onlySrc && n.src !== onlySrc) continue; const d = Math.hypot(n.x - x, n.y - y); if (d < bd) { bd = d; b = n; } }",
+            "      return { n: b, d: bd };",
+            "    };",
+            "    const addNode = (x, y, src) => {",
+            "      if (src === \"obj\") {",
+            "        if (nearest(x, y, \"obj\").d < 40) return;",
+            "        net.nodes.push({ x, y, vis: now - 60, fail: 0, src: \"obj\", born: now });",
+            "        return;",
+            "      }",
+            "      if (nearest(x, y).d < SPACING) return;",
+            "      net.nodes.push({ x, y, vis: now - 30, fail: 0, src: \"trail\", born: now });",
+            "      if (net.nodes.length > MAXN) {",
+            "        let idx = -1, oldest = 1e12;",
+            "        net.nodes.forEach((n, i) => { if (n.src !== \"obj\" && n !== net.cur && n.born < oldest) { oldest = n.born; idx = i; } });",
+            "        if (idx >= 0) net.nodes.splice(idx, 1);",
+            "      }",
+            "    };",
+            "    const pick = () => {",
+            "      if (net.nodes.length < 4) return null;",
+            "      const cun = num(\"Cunning\"), ppx = px + num(\"PlayerVelX\") * 2, ppy = py + num(\"PlayerVelY\") * 2;",
+            "      const mem = [];",
+            "      for (let i = 1; i <= 6; i++) { const w = num(\"Mem\" + i + \"W\"); if (w > 0.05) mem.push({ x: num(\"Mem\" + i + \"X\"), y: num(\"Mem\" + i + \"Y\"), w }); }",
+            "      let best = null, bs = -1e9;",
+            "      for (const n of net.nodes) {",
+            "        if (n.fail >= 3 || net.recent.indexOf(n) >= 0) continue;",
+            "        const dz = Math.hypot(n.x - zx, n.y - zy);",
+            "        if (dz < 350) continue;",
+            "        let s = Math.min((now - n.vis) / 60, 1.5);                       // not visited for a long time",
+            "        let h = 0; for (const m of mem) h += m.w / (1 + Math.hypot(n.x - m.x, n.y - m.y) / 400);",
+            "        s += 0.5 * Math.min(h, 3);                                        // where the player hangs out",
+            "        s += (0.25 + 0.75 * cun) * (1 - Math.min(Math.hypot(n.x - ppx, n.y - ppy), 3000) / 3000); // predicted player area (grows with cunning)",
+            "        if (n.src === \"obj\") s += 0.25;                                   // hand-placed points are trusted",
+            "        s -= 0.6 * Math.min(dz, 3000) / 3000;                             // prefer not-too-far",
+            "        s += 0.15 * (((n.x - zx) / dz) * net.hx + ((n.y - zy) / dz) * net.hy); // avoid U-turns",
+            "        s -= 0.4 * n.fail;                                                // unreliable point",
+            "        s += Math.random() * 0.35;                                        // unpredictability",
+            "        if (s > bs) { bs = s; best = n; }",
+            "      }",
+            "      return best;",
+            "    };",
+            "",
+            "    // learn walkable ground",
+            "    if (now - net.sampleT > 0.25) { net.sampleT = now; addNode(px, py, \"trail\"); if (num(\"ZSpeed\") > 40) addNode(zx, zy, \"trail\"); }",
+            "    if (now - net.objT > 2) {",
+            "      net.objT = now;",
+            "      try { (S.getObjects(\"PatrolPoint\") || []).forEach((o) => addNode(o.getCenterX(), o.getCenterY(), \"obj\")); } catch (e) {}",
+            "    }",
+            "    if (now - net.decT > 30) { net.decT = now; net.nodes.forEach((n) => { if (n.fail > 0) n.fail--; }); }",
+            "",
+            "    const state = str(\"MonsterState\"), stg = num(\"WdStage\");",
+            "    // watchdog escalated -> the point we were heading to is unreachable: punish it",
+            "    if (stg >= 2 && net.lastStage < 2 && net.cur) {",
+            "      net.cur.fail++; net.cur.vis = now; net.fails++;",
+            "      if (net.cur.fail >= 3 && net.cur.src !== \"obj\") { const i = net.nodes.indexOf(net.cur); if (i >= 0) net.nodes.splice(i, 1); }",
+            "      net.cur = null;",
+            "    }",
+            "    net.lastStage = stg;",
+            "",
+            "    if (state === \"Patrol\") {",
+            "      const cnt = num(\"PatrolCount\");",
+            "      if (cnt !== net.lastCount) {                                        // the brain asked for a new patrol target",
+            "        net.lastCount = cnt;",
+            "        const n = pick();",
+            "        if (n) {",
+            "          net.cur = n; net.picks++;",
+            "          put(\"PatX\", n.x); put(\"PatY\", n.y); put(\"PatReady\", 1);",
+            "          net.recent.push(n); if (net.recent.length > 4) net.recent.shift();",
+            "          const L = Math.max(Math.hypot(n.x - zx, n.y - zy), 1); net.hx = (n.x - zx) / L; net.hy = (n.y - zy) / L;",
+            "        } else net.cur = null;",
+            "      } else if (net.cur) {",
+            "        if (Math.abs(num(\"PatX\") - net.cur.x) > 60 || Math.abs(num(\"PatY\") - net.cur.y) > 60) net.cur = null;   // LLM / watchdog took over",
+            "        else if (Math.hypot(zx - net.cur.x, zy - net.cur.y) < 170) { net.cur.vis = now; net.cur.fail = 0; net.cur = null; } // arrived",
+            "      }",
+            "    } else net.cur = null;",
+            "",
+            "    if (now - net.saveT > 10) {",
+            "      net.saveT = now;",
+            "      try { window.localStorage && window.localStorage.setItem(KEY, JSON.stringify(net.nodes.filter((n) => n.src === \"trail\").map((n) => ({ x: Math.round(n.x), y: Math.round(n.y) })))); } catch (e) {}",
+            "    }",
+            "    put(\"PatNodes\", net.nodes.length); put(\"PatPicks\", net.picks); put(\"PatFails\", net.fails);",
+            "  } catch (e) { try { console.error(\"PatrolNet:\", e); } catch (_) {} }",
+            "})();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
         }
       ],
       "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M5YWFZZ1ZXA9EAMA9A9XP7K0",
+      "aiGeneratedEventId": "01M6Y0YPM3MFX89PHM5D42WG7H",
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
       "folded": true,
-      "name": "Monster Pro Animation Polish",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
-              },
-              "parameters": [
-                "Zombie",
-                "Animation",
-                "=",
-                "clamp(0.6 + ZSpeed / 120, 0.6, 2.2)"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "StringVariable"
-              },
-              "parameters": [
-                "MonsterState",
-                "=",
-                "\"Ambush\""
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
-              },
-              "parameters": [
-                "AmbushPhase",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Scene3D::Base3DBehavior::SetScaleZ"
-              },
-              "parameters": [
-                "Zombie",
-                "Object3D",
-                "=",
-                "0.82"
-              ]
-            },
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
-              },
-              "parameters": [
-                "Zombie",
-                "Animation",
-                "=",
-                "0.35"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Else",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "Scene3D::Base3DBehavior::SetScaleZ"
-              },
-              "parameters": [
-                "Zombie",
-                "Object3D",
-                "=",
-                "1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
-              },
-              "parameters": [
-                "OneShotTime",
-                ">",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "StringVariable"
-              },
-              "parameters": [
-                "OneShotAnim",
-                "=",
-                "AnimAttack"
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "  const z = objects[0];",
-                "if (!z || typeof z.setRotationX !== \"function\") return;",
-                "  const t = runtimeScene.getTimeManager().getTimeFromStart() / 1000;",
-                "  z.setRotationX(-12 + Math.sin(t * 30) * 4);"
-              ],
-              "parameterObjects": "Zombie",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Else",
-          "conditions": [
-            {
-              "type": {
-                "value": "StringVariable"
-              },
-              "parameters": [
-                "MonsterState",
-                "=",
-                "\"Chase\""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "  const z = objects[0];",
-                "if (!z || typeof z.setRotationX !== \"function\") return;",
-                "  const t = runtimeScene.getTimeManager().getTimeFromStart() / 1000;",
-                "  z.setRotationX(Math.sin(t * 9) * 3);"
-              ],
-              "parameterObjects": "Zombie",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Else",
-          "conditions": [],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::JsCode",
-              "inlineCode": [
-                "  if (!objects.length || typeof objects[0].setRotationX !== \"function\") return;",
-                "objects[0].setRotationX(0);"
-              ],
-              "parameterObjects": "Zombie",
-              "useStrict": true,
-              "eventsSheetExpanded": false
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "aiGeneratedEventId": "01M5YWH90V0DH6BYJPHWFTA1AK",
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Monster Persistent Memory (SaveState)",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SceneJustBegins"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SaveState::SetSceneDataSaveConfiguration"
-              },
-              "parameters": [
-                "",
-                "\"Game Scene\"",
-                "yes",
-                "\"monster\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SaveState::RestoreGameSaveStateFromStorage"
-              },
-              "parameters": [
-                "",
-                "\"monster_memory\"",
-                "\"monster\"",
-                "no"
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"MonsterSave\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SaveState::LoadJustSucceeded"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "MemLoaded",
-                "=",
-                "1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CompareTimer"
-              },
-              "parameters": [
-                "",
-                "\"MonsterSave\"",
-                ">",
-                "8"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
-              },
-              "parameters": [
-                "MemLoaded",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"MonsterSave\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SaveState::CreateGameSaveStateInStorage"
-              },
-              "parameters": [
-                "",
-                "\"monster_memory\"",
-                "\"monster\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "StringVariable"
-              },
-              "parameters": [
-                "MonsterState",
-                "=",
-                "\"Search\""
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
-              },
-              "parameters": [
-                "MemLoaded",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "CompareTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"MonsterSave\"",
-                    ">",
-                    "3"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"MonsterSave\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SaveState::CreateGameSaveStateInStorage"
-                  },
-                  "parameters": [
-                    "",
-                    "\"monster_memory\"",
-                    "\"monster\""
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "FIX: a loaded save could restore a frozen/jumpscare state or a stale move target (monster stands still). Reset the runtime state after every load."
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SaveState::LoadJustSucceeded"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "LastMoveX",
-                "=",
-                "-99999"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "LastMoveY",
-                "=",
-                "-99999"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "MonsterState",
-                "=",
-                "\"Patrol\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "PrevState",
-                "=",
-                "\"Patrol\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetStringVariable"
-              },
-              "parameters": [
-                "CurAnim",
-                "=",
-                "\"\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "PatReady",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "SearchArrived",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "SearchWait",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "AmbushPhase",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "NeedPick",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "AttackPending",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "OneShotTime",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "AnimLock",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Suspicion",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "StareTime",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "TargetSpeed",
-                "=",
-                "Cfg_PatrolSpeed"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_Active",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_Done",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_GameOver",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_T",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_Fade",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_Impact",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "JS_Scream",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "LLM_Busy",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "WdIdleT",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "WdStage",
-                "=",
-                "0"
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "aiGeneratedEventId": "01M5YWHSMK47GM7W7HNDFTTJB8",
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Monster Memory First-Run Fix",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SaveState::LoadJustFailed"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "MemLoaded",
-                "=",
-                "1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "SaveState::SaveJustSucceeded"
-              },
-              "parameters": [
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "MemLoaded",
-                "=",
-                "1"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "CompareTimer"
-              },
-              "parameters": [
-                "",
-                "\"MonsterSave\"",
-                ">",
-                "8"
-              ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::CompareNumbers"
-              },
-              "parameters": [
-                "MemLoaded",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SaveState::TimeSinceLastLoad"
-              },
-              "parameters": [
-                "",
-                ">",
-                "3"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"MonsterSave\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SaveState::CreateGameSaveStateInStorage"
-              },
-              "parameters": [
-                "",
-                "\"monster_memory\"",
-                "\"monster\""
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "aiGeneratedEventId": "01M5YWKSSHS9ADEZ4HWM6938ZM",
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Monster Cunning Brain (JS hotspot + hide)",
+      "name": "03 — Cunning (JS hotspot + hide)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -9885,67 +9298,13 @@
       "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M5YXDM4Z87DY7YGWEBMTHM0H",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "SceneJustBegins"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "ActivateBehavior"
-          },
-          "parameters": [
-            "Zombie",
-            "Physics3D",
-            "no"
-          ]
-        },
-        {
-          "type": {
-            "value": "ResetTimer"
-          },
-          "parameters": [
-            "",
-            "\"StuckTimer\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "LastMoveX",
-            "=",
-            "-99999"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "LastMoveY",
-            "=",
-            "-99999"
-          ]
-        }
-      ]
-    },
-    {
-      "colorB": 60,
-      "colorG": 110,
-      "colorR": 255,
+      "aiGeneratedEventId": "01M6Y1006HGTMABW27TWFF5EBT",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
       "creationTime": 0,
       "folded": true,
-      "name": "Monster Never-Idle Watchdog (FIX)",
+      "name": "04 — Watchdog (Never-Idle FIX)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -11107,223 +10466,947 @@
       "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M5YXQSC9F17QCA4PXVNHBYZZ",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "aiGeneratedEventId": "01M6Y0YPM3MFX89PHM5D42WG7H",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "05 — Animation Polish",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "SceneJustBegins"
-          },
-          "parameters": [
-            ""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+              },
+              "parameters": [
+                "Zombie",
+                "Animation",
+                "=",
+                "clamp(0.6 + ZSpeed / 120, 0.6, 2.2)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "MonsterState",
+                "=",
+                "\"Ambush\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "AmbushPhase",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetScaleZ"
+              },
+              "parameters": [
+                "Zombie",
+                "Object3D",
+                "=",
+                "0.82"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+              },
+              "parameters": [
+                "Zombie",
+                "Animation",
+                "=",
+                "0.35"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetScaleZ"
+              },
+              "parameters": [
+                "Zombie",
+                "Object3D",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "OneShotTime",
+                ">",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "OneShotAnim",
+                "=",
+                "AnimAttack"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "  const z = objects[0];",
+                "if (!z || typeof z.setRotationX !== \"function\") return;",
+                "  const t = runtimeScene.getTimeManager().getTimeFromStart() / 1000;",
+                "  z.setRotationX(-12 + Math.sin(t * 30) * 4);"
+              ],
+              "parameterObjects": "Zombie",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "MonsterState",
+                "=",
+                "\"Chase\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "  const z = objects[0];",
+                "if (!z || typeof z.setRotationX !== \"function\") return;",
+                "  const t = runtimeScene.getTimeManager().getTimeFromStart() / 1000;",
+                "  z.setRotationX(Math.sin(t * 9) * 3);"
+              ],
+              "parameterObjects": "Zombie",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "  if (!objects.length || typeof objects[0].setRotationX !== \"function\") return;",
+                "objects[0].setRotationX(0);"
+              ],
+              "parameterObjects": "Zombie",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "SetNumberVariable"
-          },
-          "parameters": [
-            "Cfg_PatrolTime",
-            "=",
-            "8"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetStringVariable"
-          },
-          "parameters": [
-            "AnimWalk",
-            "=",
-            "\"Run\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetStringVariable"
-          },
-          "parameters": [
-            "AnimCreep",
-            "=",
-            "\"Run\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetStringVariable"
-          },
-          "parameters": [
-            "AnimSprint",
-            "=",
-            "\"Run\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetStringVariable"
-          },
-          "parameters": [
-            "AnimScream",
-            "=",
-            "\"Run\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetStringVariable"
-          },
-          "parameters": [
-            "AnimAttack",
-            "=",
-            "\"Run\""
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M5YXQSC9F17QCA4PXVNHBYZZ",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "aiGeneratedEventId": "01M6Y0YPM3MFX89PHM5D42WG7H",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "06 — Persistent Memory (SaveState)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "BuiltinCommonInstructions::CompareNumbers"
-          },
-          "parameters": [
-            "ZSpeed",
-            ">=",
-            "Cfg_IdleSpeed"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SaveState::SetSceneDataSaveConfiguration"
+              },
+              "parameters": [
+                "",
+                "\"Game Scene\"",
+                "yes",
+                "\"monster\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SaveState::RestoreGameSaveStateFromStorage"
+              },
+              "parameters": [
+                "",
+                "\"monster_memory\"",
+                "\"monster\"",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"MonsterSave\""
+              ]
+            }
           ]
         },
         {
-          "type": {
-            "value": "BuiltinCommonInstructions::CompareNumbers"
-          },
-          "parameters": [
-            "ZSpeed",
-            "<",
-            "RunT"
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
-          },
-          "parameters": [
-            "Zombie",
-            "Animation",
-            "=",
-            "0.55"
-          ]
-        }
-      ]
-    },
-    {
-      "aiGeneratedEventId": "01M5YXQSC9F17QCA4PXVNHBYZZ",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::CompareNumbers"
-          },
-          "parameters": [
-            "ZSpeed",
-            ">=",
-            "RunT"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SaveState::LoadJustSucceeded"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MemLoaded",
+                "=",
+                "1"
+              ]
+            }
           ]
         },
         {
-          "type": {
-            "value": "BuiltinCommonInstructions::CompareNumbers"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"MonsterSave\"",
+                ">",
+                "8"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "MemLoaded",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"MonsterSave\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SaveState::CreateGameSaveStateInStorage"
+              },
+              "parameters": [
+                "",
+                "\"monster_memory\"",
+                "\"monster\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "MonsterState",
+                "=",
+                "\"Search\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "MemLoaded",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"MonsterSave\"",
+                    ">",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"MonsterSave\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SaveState::CreateGameSaveStateInStorage"
+                  },
+                  "parameters": [
+                    "",
+                    "\"monster_memory\"",
+                    "\"monster\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
           },
-          "parameters": [
-            "ZSpeed",
-            "<",
-            "SprintT"
+          "comment": "FIX: a loaded save could restore a frozen/jumpscare state or a stale move target (monster stands still). Reset the runtime state after every load."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SaveState::LoadJustSucceeded"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastMoveX",
+                "=",
+                "-99999"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastMoveY",
+                "=",
+                "-99999"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "MonsterState",
+                "=",
+                "\"Patrol\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "PrevState",
+                "=",
+                "\"Patrol\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "CurAnim",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PatReady",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SearchArrived",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SearchWait",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AmbushPhase",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "NeedPick",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AttackPending",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "OneShotTime",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AnimLock",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Suspicion",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "StareTime",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TargetSpeed",
+                "=",
+                "Cfg_PatrolSpeed"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_Active",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_Done",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_GameOver",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_T",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_Fade",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_Impact",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "JS_Scream",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LLM_Busy",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WdIdleT",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WdStage",
+                "=",
+                "0"
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
-          },
-          "parameters": [
-            "Zombie",
-            "Animation",
-            "=",
-            "1"
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M5YXQSC9F17QCA4PXVNHBYZZ",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "aiGeneratedEventId": "01M6Y0YPM3MFX89PHM5D42WG7H",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "07 — Memory First-Run Fix",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "BuiltinCommonInstructions::CompareNumbers"
-          },
-          "parameters": [
-            "ZSpeed",
-            ">=",
-            "SprintT"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SaveState::LoadJustFailed"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MemLoaded",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SaveState::SaveJustSucceeded"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "MemLoaded",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"MonsterSave\"",
+                ">",
+                "8"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "MemLoaded",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SaveState::TimeSinceLastLoad"
+              },
+              "parameters": [
+                "",
+                ">",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"MonsterSave\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SaveState::CreateGameSaveStateInStorage"
+              },
+              "parameters": [
+                "",
+                "\"monster_memory\"",
+                "\"monster\""
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
-          },
-          "parameters": [
-            "Zombie",
-            "Animation",
-            "=",
-            "1.35"
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M5YXQSC9F17QCA4PXVNHBYZZ",
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "aiGeneratedEventId": "01M6Y1006HGTMABW27TWFF5EBT",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "05b — Animation Speed Scale",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "BuiltinCommonInstructions::CompareNumbers"
-          },
-          "parameters": [
-            "ZSpeed",
-            "<",
-            "Cfg_IdleSpeed"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ZSpeed",
+                ">=",
+                "Cfg_IdleSpeed"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ZSpeed",
+                "<",
+                "RunT"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+              },
+              "parameters": [
+                "Zombie",
+                "Animation",
+                "=",
+                "0.55"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ZSpeed",
+                ">=",
+                "RunT"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ZSpeed",
+                "<",
+                "SprintT"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+              },
+              "parameters": [
+                "Zombie",
+                "Animation",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ZSpeed",
+                ">=",
+                "SprintT"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+              },
+              "parameters": [
+                "Zombie",
+                "Animation",
+                "=",
+                "1.35"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ZSpeed",
+                "<",
+                "Cfg_IdleSpeed"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
+              },
+              "parameters": [
+                "Zombie",
+                "Animation",
+                "=",
+                "1"
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::SetSpeedScale"
-          },
-          "parameters": [
-            "Zombie",
-            "Animation",
-            "=",
-            "1"
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
       "colorB": 60,
       "colorG": 60,
       "colorR": 220,
       "creationTime": 0,
-      "name": "Monster Jumpscare v6 PRO (v3 cinematic + parasite squeeze + neck snap)",
+      "folded": true,
+      "name": "Monster Jumpscare ",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -15286,11 +15369,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ]
 }
