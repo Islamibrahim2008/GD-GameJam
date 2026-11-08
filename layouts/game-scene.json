@@ -4093,6 +4093,72 @@
       "persistentUuid": "c9e75c32-66c7-4e9d-b174-bdb715524a4c",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "EmberMonsterNear",
+      "persistentUuid": "69e88a37-5ecb-4b7d-b947-ac26637cd1f1",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "EmberFear01",
+      "persistentUuid": "b9cf7c2a-1ba2-4e93-8a4c-f44691b611f6",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberFearTarget",
+      "persistentUuid": "7db90757-c946-49ba-9dad-a0a078bd8bf7",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberFearStage",
+      "persistentUuid": "9f07319d-7671-45c6-ac33-08d3d362505b",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "LanternFuel",
+      "persistentUuid": "911c22ab-e72a-4921-a7f1-8da9fe79c410",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "LanternWarmth",
+      "persistentUuid": "aff49d27-853b-4280-aa36-4d868a66daca",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "LanternSwayY",
+      "persistentUuid": "1bf779a6-e382-4afa-8e80-97db8f13bddf",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "LanternSwayX",
+      "persistentUuid": "252582c0-1ff0-4195-b3f3-33c2aafbdd41",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "LanternDip",
+      "persistentUuid": "c0141a6f-3448-4ac9-b36f-1e5952bf413f",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "LanternNoise",
+      "persistentUuid": "87744420-cb4d-44da-99b1-d541e6a04258",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "LanternFlicker",
+      "persistentUuid": "6608e79f-5425-452c-bd22-706f1ad551cd",
+      "type": "number",
+      "value": 1
     }
   ],
   "instances": [
@@ -4163,24 +4229,6 @@
       "initialVariables": []
     },
     {
-      "angle": 49,
-      "customSize": false,
-      "height": 40,
-      "layer": "",
-      "name": "light",
-      "persistentUuid": "36be9047-427e-4b69-b713-badfe1663491",
-      "rotationX": 359,
-      "rotationY": 9,
-      "width": 40,
-      "x": 3977,
-      "y": 3207,
-      "z": 701,
-      "zOrder": 0,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
       "angle": 0,
       "customSize": false,
       "height": 32,
@@ -4237,6 +4285,196 @@
       "x": 935,
       "y": 546,
       "z": 95,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 56.21746632938381,
+      "layer": "",
+      "name": "Fireplace",
+      "persistentUuid": "80320864-fd37-4864-bb78-c9aebc516a44",
+      "width": 58,
+      "x": 4524,
+      "y": 3228,
+      "z": 540.9991291868398,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 40,
+      "layer": "",
+      "name": "FireplaceLight",
+      "persistentUuid": "1b665463-4dd4-41d1-9dba-4d8ec3fe90b2",
+      "width": 40,
+      "x": 4517,
+      "y": 3226,
+      "z": 556.5685661128973,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 32,
+      "height": 32,
+      "layer": "",
+      "name": "FireplaceFlames",
+      "persistentUuid": "a25a5699-ba04-4148-ab6a-aa799351f076",
+      "width": 32,
+      "x": 4508,
+      "y": 3224,
+      "z": 561.2982653094618,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 90,
+      "height": 61,
+      "layer": "hand",
+      "name": "Lantern",
+      "persistentUuid": "3420dd38-2339-4ca4-8c63-05729197f04f",
+      "rotationX": 90,
+      "width": 61,
+      "x": 85,
+      "y": 32,
+      "z": -200,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 40,
+      "layer": "hand",
+      "name": "LanternFlame",
+      "persistentUuid": "afe601d7-4288-4a42-a987-b1a748bef678",
+      "width": 40,
+      "x": 85,
+      "y": 37,
+      "z": -155,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "IsViewmodel",
+          "persistentUuid": "75ca405f-35df-4967-8598-2df66d641d79",
+          "type": "boolean",
+          "value": true
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "LanternFlame",
+      "persistentUuid": "bd6e865e-6614-4670-b5c2-23cce548322f",
+      "width": 0,
+      "x": 3974,
+      "y": 3206,
+      "z": 700,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 24,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "LanternBar",
+      "persistentUuid": "ff5281d1-e279-4697-b78a-be57077f7054",
+      "width": 300,
+      "x": 32,
+      "y": 668,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 18,
+      "height": 18,
+      "layer": "hand",
+      "name": "Ember",
+      "persistentUuid": "694edbb2-c5d9-4ba7-9930-9eceb7b7a338",
+      "rotationX": 90,
+      "rotationY": 151.3,
+      "width": 18,
+      "x": 85,
+      "y": 40,
+      "z": -155,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 18,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "FearText",
+      "persistentUuid": "c300def9-8c8f-416c-b513-5d166aeea742",
+      "width": 300,
+      "x": 32,
+      "y": 598,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 24,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "FearBar",
+      "persistentUuid": "e9d4bc79-1e57-48a1-adc0-4f168b31b3a9",
+      "width": 300,
+      "x": 32,
+      "y": 618,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 18,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "BrightnessText",
+      "persistentUuid": "e41997c6-69c7-4338-b482-04b87c45588c",
+      "width": 300,
+      "x": 32,
+      "y": 648,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -4630,6 +4868,375 @@
       "content": {
         "Style": "PixelWater"
       }
+    },
+    {
+      "assetStoreId": "fc69fd19403952533de5a4aa23653e291e4ae594a7272c8d6894d1a31eb94872",
+      "name": "Lantern",
+      "persistentUuid": "f5a384d5-db58-43d0-b2db-ab631e994edc",
+      "type": "Scene3D::Model3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 111,
+        "height": 111,
+        "isCastingShadow": false,
+        "isReceivingShadow": true,
+        "keepAspectRatio": true,
+        "materialType": "StandardWithoutMetalness",
+        "modelResourceName": "Lantern.glb",
+        "originLocation": "ModelOrigin",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 90,
+        "width": 111,
+        "animations": []
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "LanternFlame",
+      "persistentUuid": "cf089ac6-fc6c-4220-8df4-6413fa46d520",
+      "type": "Light3D::PointLight3D",
+      "variant": "",
+      "variables": [
+        {
+          "name": "FearCalmPerSecond",
+          "persistentUuid": "217feb08-6655-488e-a96c-d1b924faef32",
+          "type": "number",
+          "value": 6
+        },
+        {
+          "name": "FearRisePerSecond",
+          "persistentUuid": "05b0f96f-024c-428b-8a26-1a651be576af",
+          "type": "number",
+          "value": 20
+        },
+        {
+          "name": "MaxFear",
+          "persistentUuid": "5e247d0f-62cb-42dd-b49d-773cfc76cfed",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "Fear",
+          "persistentUuid": "4bbd030d-6e16-42ed-8fa5-ae535135ea81",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MaxStrength",
+          "persistentUuid": "9f49883a-d52b-4efe-8045-b64d3544b80c",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "IsViewmodel",
+          "persistentUuid": "75ca405f-35df-4967-8598-2df66d641d79",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Strength",
+          "persistentUuid": "b1f237f2-bf4e-4a35-8adb-f1a7ec50897f",
+          "type": "number",
+          "value": 100
+        },
+        {
+          "name": "DrainPerSecond",
+          "persistentUuid": "68eadf35-b11b-4f9d-b115-e5ab90eaaa6f",
+          "type": "number",
+          "value": 5
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Color": "255;150;60",
+        "Intensity": 20,
+        "Decay": 1,
+        "Range": 900,
+        "IsCastingShadow": false
+      }
+    },
+    {
+      "assetStoreId": "e7433b1830e0b96d0ad93eebc23538e13c8fe8288441970e06bb2e6b8977ba11",
+      "name": "Fireplace",
+      "persistentUuid": "95d480e4-265c-4f69-9034-42fe8da63b41",
+      "type": "Scene3D::Model3DObject",
+      "variables": [
+        {
+          "name": "RechargePerSecond",
+          "type": "number",
+          "value": 25
+        },
+        {
+          "name": "WarmthRadius",
+          "type": "number",
+          "value": 450
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 58,
+        "height": 58,
+        "isCastingShadow": true,
+        "isReceivingShadow": true,
+        "keepAspectRatio": true,
+        "materialType": "StandardWithoutMetalness",
+        "modelResourceName": "Campfire Pit.glb",
+        "originLocation": "ModelOrigin",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 0,
+        "width": 58,
+        "animations": []
+      }
+    },
+    {
+      "assetStoreId": "f8f7c0b698eec8fc045df25478493a1c806019250c0c32cfcda4dac5e1beecc2",
+      "name": "FireplaceFlames",
+      "persistentUuid": "1290bc76-3946-48a8-834a-7b49e9e8c268",
+      "type": "ParticleEmitter3D::ParticleEmitter3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Duration": 0,
+        "ShouldAutodestruct": false,
+        "AreParticlesRelative": false,
+        "GravityTop": "Z+",
+        "Gravity": -80,
+        "ZoneRadius": 26,
+        "EndScale": 0.15,
+        "RenderMode": "Billboard",
+        "Blending": "Additive",
+        "StartColor": "255;170;70",
+        "EndColor": "200;30;0",
+        "EndOpacity": 0,
+        "StartSizeMin": 30,
+        "StartSizeMax": 55,
+        "Flow": 220,
+        "LifespanMin": 0.5,
+        "LifespanMax": 1,
+        "StartSpeedMin": 40,
+        "StartSpeedMax": 120,
+        "SpayConeAngle": 12,
+        "StartOpacity": 200
+      },
+      "childrenContent": {
+        "Particle": {
+          "adaptCollisionMaskAutomatically": true,
+          "updateIfNotVisible": false,
+          "animations": [
+            {
+              "name": "Image",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "LightGlow.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "FireplaceLight",
+      "type": "Light3D::PointLight3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Color": "255;130;50",
+        "Intensity": 40,
+        "Decay": 1,
+        "Range": 1200,
+        "IsCastingShadow": false
+      }
+    },
+    {
+      "assetStoreId": "4dc1c2480b60a91dfc2c8d19942df4b567316ae4b0d3f46749d220d0b2cfc1e5",
+      "name": "LanternBar",
+      "persistentUuid": "d977764b-d554-4be3-a333-4363c5a919af",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "Rounded Square Yellow Bar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "InitialValue": 100,
+        "MaxValue": 100,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0,
+        "EasingDuration": 0.15
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Ember",
+      "persistentUuid": "ad1615f0-e397-4d8b-b648-8c0a2e347d4c",
+      "type": "Scene3D::Model3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 100,
+        "height": 100,
+        "isCastingShadow": false,
+        "isReceivingShadow": false,
+        "keepAspectRatio": true,
+        "materialType": "Basic",
+        "modelResourceName": "Creature.glb",
+        "originLocation": "ModelOrigin",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 90,
+        "width": 100,
+        "animations": []
+      }
+    },
+    {
+      "assetStoreId": "d742c81e110cbe06d259ca6956169c87fcdb84afc3a8cc09d094fe3b83a5ed85",
+      "name": "FearBar",
+      "persistentUuid": "ba4ac0eb-a8ba-46ad-b829-c0afb7968c1e",
+      "type": "PanelSpriteContinuousBar::PanelSpriteContinuousBar",
+      "variant": "Rounded Square Red Bar",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "InitialValue": 0,
+        "MaxValue": 100,
+        "BarTopPadding": 8,
+        "BarRightPadding": 10,
+        "BarBottomPadding": 8,
+        "BarLeftPadding": 10,
+        "PreviousHighValueDuration": 0,
+        "EasingDuration": 0.15,
+        "ShowLabel": true
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "BrightnessText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "BRIGHTNESS",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 15,
+      "color": {
+        "b": 140,
+        "g": 220,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 3,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "BRIGHTNESS",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 15,
+        "lineHeight": 0,
+        "color": "255;220;140"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "FearText",
+      "persistentUuid": "d5daf256-d22b-4d4f-972d-684a5094186b",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "FEAR",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 15,
+      "color": {
+        "b": 110,
+        "g": 120,
+        "r": 255
+      },
+      "content": {
+        "bold": true,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "0;0;0",
+        "outlineThickness": 3,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "FEAR",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 15,
+        "lineHeight": 0,
+        "color": "255;120;110"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -4663,6 +5270,36 @@
       },
       {
         "objectName": "PalmTrees"
+      },
+      {
+        "objectName": "Lantern"
+      },
+      {
+        "objectName": "LanternFlame"
+      },
+      {
+        "objectName": "Fireplace"
+      },
+      {
+        "objectName": "FireplaceFlames"
+      },
+      {
+        "objectName": "FireplaceLight"
+      },
+      {
+        "objectName": "LanternBar"
+      },
+      {
+        "objectName": "Ember"
+      },
+      {
+        "objectName": "FearBar"
+      },
+      {
+        "objectName": "BrightnessText"
+      },
+      {
+        "objectName": "FearText"
       }
     ]
   },
@@ -5021,6 +5658,24 @@
       "visibility": true,
       "cameras": [],
       "effects": []
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera2DPlaneMaxDrawingDistance": 5000,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "HUD",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
     }
   ],
   "behaviorsSharedData": [
@@ -5074,6 +5729,18 @@
     {
       "name": "Scale",
       "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
     }
   ]
 }

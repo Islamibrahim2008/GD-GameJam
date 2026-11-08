@@ -2643,6 +2643,8 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "disabled": true,
+      "folded": true,
       "name": "Flashlight",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2853,6 +2855,7 @@
       "colorR": 74,
       "creationTime": 0,
       "disabled": true,
+      "folded": true,
       "name": "grab system",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5158,6 +5161,1129 @@
                 "NoiseZ",
                 "=",
                 "Player.Object3D::Z()"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M6XS9ZV19R9S4WQMQ8ZR8BYZ",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Lantern",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Viewmodel lantern on the 'hand' layer. That layer camera is pinned at the origin looking down -Z: screen right = +X, screen up = -Y, farther = more negative Z."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "0",
+                "\"hand\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "0",
+                "\"hand\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraZ"
+              },
+              "parameters": [
+                "",
+                "=",
+                "0",
+                "\"hand\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraRotationX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "0",
+                "\"hand\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraRotationY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "0",
+                "\"hand\"",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraAngle"
+              },
+              "parameters": [
+                "",
+                "=",
+                "0",
+                "\"hand\"",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Sway: the lantern lags behind mouse look and bobs with the walk cycle."
+        },
+        {
+          "aiGeneratedEventId": "01M6Y2D6WSZ8XTZ7TDAR264VQA",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternSwayX",
+                "=",
+                "lerp(LanternSwayX, clamp(-MousePointerLock::MovementX() * 0.6, -25, 25), 1 - exp(-6 * TimeDelta()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternSwayY",
+                "=",
+                "lerp(LanternSwayY, clamp(-MousePointerLock::MovementY() * 0.6, -20, 20), 1 - exp(-6 * TimeDelta()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "Lantern",
+                "=",
+                "85 + LanternSwayX + cos(BobPhase * 0.5) * BobAmp * 3 + clamp((EmberFear01 - 0.6) / 0.4, 0, 1) * 1.6 * sin(TimeFromStart() * 47)",
+                "=",
+                "32 + LanternSwayY + clamp((EmberFear01 - 0.6) / 0.4, 0, 1) * 1.2 * cos(TimeFromStart() * 53) + abs(sin(BobPhase * 0.5)) * BobAmp * 3 + sin(TimeFromStart() * 1.4) * 1.5 + LandDip * 0.8"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "Lantern",
+                "Object3D",
+                "=",
+                "-200"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetRotationY"
+              },
+              "parameters": [
+                "Lantern",
+                "Object3D",
+                "=",
+                "ToDeg(atan2(-Lantern.X(), -Lantern.Object3D::Z())) + LanternSwayX * 0.6 + sin(BobPhase * 0.5) * BobAmp * 2.5 + sin(TimeFromStart() * 0.9) * 1.5"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6Y2BCAF63W71HFEPGZSH0KR",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Ember sits inside the lantern glass, bobbing gently (and shivering with Fear), and always turns to face the player: the hand-layer camera is at the origin, so his yaw is 180 + the angle toward it."
+        },
+        {
+          "aiGeneratedEventId": "01M6Y2D6WSZ8XTZ7TDAR264VQA",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "Ember",
+                "=",
+                "Lantern.X() + sin(TimeFromStart() * 2.3) * 0.6 + EmberFear01 * 0.5 * sin(TimeFromStart() * 61)",
+                "=",
+                "Lantern.Y() + 14 + sin(TimeFromStart() * 1.7) * 0.8"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "Ember",
+                "Object3D",
+                "=",
+                "Lantern.Object3D::Z() + 51"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetRotationX"
+              },
+              "parameters": [
+                "Ember",
+                "Object3D",
+                "=",
+                "90"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetRotationY"
+              },
+              "parameters": [
+                "Ember",
+                "Object3D",
+                "=",
+                "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "Ember",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6XYNBHKSS2FPFWSQ3TNBPD2",
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Ember Brightness",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Strength drains at DrainPerSecond. Within a Fireplace's WarmthRadius it recharges instead: 25% of the fire's RechargePerSecond at the edge of the radius, 100% right at the fire."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LanternWarmth",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "Fireplace",
+                    "Player.CenterX()",
+                    "Player.CenterY()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "Player.Distance(Fireplace)",
+                    "<",
+                    "Fireplace.WarmthRadius"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LanternWarmth",
+                    "=",
+                    "clamp(1 - Player.Distance(Fireplace) / Fireplace.WarmthRadius, 0, 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Strength",
+                    "+",
+                    "Fireplace.RechargePerSecond * (0.25 + 0.75 * LanternWarmth) * TimeDelta()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "LanternWarmth",
+                    "<=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Strength",
+                    "-",
+                    "LanternFlame.DrainPerSecond * TimeDelta()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Strength",
+                    "=",
+                    "clamp(LanternFlame.Strength, 0, LanternFlame.MaxStrength)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LanternFuel",
+                    "=",
+                    "LanternFlame.Strength / max(LanternFlame.MaxStrength, 1)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "HUD bar mirrors Strength."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
+                  },
+                  "parameters": [
+                    "LanternBar",
+                    "=",
+                    "LanternFlame.MaxStrength",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+                  },
+                  "parameters": [
+                    "LanternBar",
+                    "=",
+                    "LanternFlame.Strength",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "aiGeneratedEventId": "01M6Y1WBK8BA5NMB11B5BQWWZC",
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Ember Fear",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Ember's Fear (0..MaxFear). Each frame a target is built from what scares him: the nearest Zombie (up to +70, from 1200px away to 200px) and a fading light (up to +30 below 40% Strength). Being near a Fireplace lowers the target. Fear climbs toward the target at FearRisePerSecond and settles at FearCalmPerSecond (twice as fast by a fire). A Zombie first coming within 500px adds an instant +15 spike (re-armed once it is back beyond 800px)."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearTarget",
+                    "=",
+                    "30 * clamp((0.4 - LanternFuel) / 0.4, 0, 1)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "Zombie",
+                    "Player.CenterX()",
+                    "Player.CenterY()",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearTarget",
+                    "+",
+                    "70 * clamp((1200 - Player.Distance(Zombie)) / 1000, 0, 1)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "Zombie",
+                    "Player.CenterX()",
+                    "Player.CenterY()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "Player.Distance(Zombie)",
+                    "<",
+                    "500"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "EmberMonsterNear",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "EmberMonsterNear",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Fear",
+                    "+",
+                    "15"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "Zombie",
+                    "Player.CenterX()",
+                    "Player.CenterY()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "Player.Distance(Zombie)",
+                    ">",
+                    "800"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "EmberMonsterNear",
+                    "False",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearTarget",
+                    "=",
+                    "EmberFearTarget * (1 - 0.6 * LanternWarmth)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "LanternFlame.Fear",
+                    "<",
+                    "EmberFearTarget"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Fear",
+                    "=",
+                    "min(LanternFlame.Fear + LanternFlame.FearRisePerSecond * TimeDelta(), EmberFearTarget)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "LanternFlame.Fear",
+                    ">",
+                    "EmberFearTarget"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Fear",
+                    "=",
+                    "max(LanternFlame.Fear - LanternFlame.FearCalmPerSecond * (1 + LanternWarmth) * TimeDelta(), EmberFearTarget)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Fear",
+                    "=",
+                    "clamp(LanternFlame.Fear, 0, LanternFlame.MaxFear)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFear01",
+                    "=",
+                    "LanternFlame.Fear / max(LanternFlame.MaxFear, 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearStage",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Stages: 0 Calm, 1 Uneasy (30%+), 2 Afraid (60%+), 3 Terrified (85%+)."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFear01",
+                    ">=",
+                    "0.3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearStage",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFear01",
+                    ">=",
+                    "0.6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearStage",
+                    "=",
+                    "2"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFear01",
+                    ">=",
+                    "0.85"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearStage",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M6Y2J2JJ7BMY6AVJPHV35368",
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "HUD bar mirrors Fear."
+            },
+            {
+              "aiGeneratedEventId": "01M6Y2J2JJ7BMY6AVJPHV35368",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetMaxValue"
+                  },
+                  "parameters": [
+                    "FearBar",
+                    "=",
+                    "LanternFlame.MaxFear",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteContinuousBar::PanelSpriteContinuousBar::SetValue"
+                  },
+                  "parameters": [
+                    "FearBar",
+                    "=",
+                    "LanternFlame.Fear",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Flame flicker: layered sines + smoothed noise + occasional gutter dips."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternNoise",
+                "=",
+                "lerp(LanternNoise, RandomFloatInRange(-1, 1), 1 - exp(-14 * TimeDelta()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternDip",
+                "=",
+                "lerp(LanternDip, 0, 1 - exp(-4 * TimeDelta()))"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6Y1WTFBKNVADBBKH8NM829K",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "RandomFloat(1)",
+                "<",
+                "TimeDelta() * (0.35 + 1.5 * (1 - LanternFuel) + 1.2 * EmberFear01)"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternDip",
+                "=",
+                "RandomFloatInRange(0.2, 0.45)"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M6Y1Y0QQ449M6GT9CG5372K1",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternFlicker",
+                "=",
+                "clamp(0.88 + 0.06 * sin(TimeFromStart() * 9.3) + 0.04 * sin(TimeFromStart() * 21.7 + 1.3) + 0.03 * sin(TimeFromStart() * 4.1 + 0.4) + 0.12 * (1 + 1.5 * EmberFear01) * LanternNoise + 0.1 * EmberFear01 * sin(TimeFromStart() * 27) - LanternDip, 0.25, 1.15)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetColor"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "\"255;\" + ToString(round(lerp(120 + 45 * LanternFlicker, 35, clamp((EmberFear01 - 0.2) / 0.5, 0, 1)))) + \";\" + ToString(round(lerp(35 + 35 * LanternFlicker, 20, clamp((EmberFear01 - 0.2) / 0.5, 0, 1))))",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Light inside the held lantern (lights the lantern itself on the hand layer)."
+        },
+        {
+          "aiGeneratedEventId": "01M6Y2B2T2VKRV4HFH8075XM1S",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "IsViewmodel",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "Ember.X()",
+                "=",
+                "Ember.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Object3D",
+                "=",
+                "Ember.Object3D::Z()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetIntensity"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "6 * LanternFlicker * LanternFuel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetRange"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "160",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Matching light in the world, at the lantern's spot relative to the player camera (lights the scene)."
+        },
+        {
+          "aiGeneratedEventId": "01M6XYNR65MJ3PXWYK8VM1BX02",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "IsViewmodel",
+                "False",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "CameraCenterX(\"\") + 35 * Scene3D::CameraRightX(\"\") + 60 * Scene3D::CameraForwardX(\"\") - 30 * Scene3D::CameraUpX(\"\")",
+                "=",
+                "CameraCenterY(\"\") + 35 * Scene3D::CameraRightY(\"\") + 60 * Scene3D::CameraForwardY(\"\") - 30 * Scene3D::CameraUpY(\"\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Object3D",
+                "=",
+                "Scene3D::CameraZ(\"\") + 35 * Scene3D::CameraRightZ(\"\") + 60 * Scene3D::CameraForwardZ(\"\") - 30 * Scene3D::CameraUpZ(\"\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetIntensity"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "20 * LanternFlicker * LanternFuel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetRange"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "(750 + 150 * LanternFlicker) * (0.35 + 0.65 * LanternFuel)",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M6XYNBHKSS2FPFWSQ3TNBPD2",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Fireplace Light Source",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "aiGeneratedEventId": "01M6XYQ52NXW4PCN4P4JTENS8D",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetIntensity"
+              },
+              "parameters": [
+                "FireplaceLight",
+                "=",
+                "22 * (0.85 + 0.08 * sin(TimeFromStart() * 7.1) + 0.06 * sin(TimeFromStart() * 15.3 + 2) + 0.05 * sin(TimeFromStart() * 3.3 + 1))",
+                ""
               ]
             }
           ]

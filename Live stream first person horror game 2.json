@@ -430,6 +430,83 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/Lantern.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Lantern.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D RPG Tools/Prop/46c34110cf22ff0f53a959dd0c3cce8e88f230d87896096c0e9c24f41638a28b_Lantern.glb",
+          "name": "Lantern.glb"
+        }
+      },
+      {
+        "file": "assets/Campfire Pit.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Campfire Pit.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Survival/Camp/42fce2f7ae0b4d0f4fb2182fdfcf369db1d2c76cb9fd12f6f96586e3395d8fc7_Campfire Pit.glb",
+          "name": "Campfire Pit.glb"
+        }
+      },
+      {
+        "file": "assets/LightGlow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "LightGlow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Particles/c17e2d500015e598624b763f4942b26e3aac96efca094cd20257a61e15b27fcb_LightGlow.png",
+          "name": "LightGlow.png"
+        }
+      },
+      {
+        "file": "assets/Rounded Square Red Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Rounded Square Red Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/Kenney/6c24bc12b470979e1cf0d049652439a6d922a619cb9ff96724244e0c100cfbcb_Rounded Square Red Fill Bar.png",
+          "name": "Rounded Square Red Fill Bar.png"
+        }
+      },
+      {
+        "file": "assets/Rounded Square Transparent Border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Rounded Square Transparent Border.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/Kenney/c46289cfc281466abbbcc54ed9fdf27435171f135ca45e3bc4da5ef6f9ac9ef4_Rounded Square Transparent Border.png",
+          "name": "Rounded Square Transparent Border.png"
+        }
+      },
+      {
+        "file": "assets/Rounded Square Yellow Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Rounded Square Yellow Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Resource bars/Kenney/787adbbfd4d93e6a2f33d7b20115926d950e35c177ca2e699370ec02504c53be_Rounded Square Yellow Fill Bar.png",
+          "name": "Rounded Square Yellow Fill Bar.png"
+        }
+      },
+      {
+        "file": "Creature.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Creature.glb",
+        "userAdded": false
       }
     ]
   },
@@ -878,6 +955,214 @@
         "await harness.takeScreenshot('ai-executed');",
         ""
       ]
+    },
+    {
+      "description": "The terrain stays visible while the lantern is held on the hand layer (no opaque hand layer).",
+      "lastRunAt": 1794152747303,
+      "lastRunDurationMs": 1147,
+      "lastRunFramesExecuted": 62,
+      "lastRunStatus": "passed",
+      "name": "World visible with lantern",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "harness.setMouseButtonPressed(true); await harness.stepFrames(1);",
+        "harness.setMouseButtonPressed(false); await harness.stepFrames(60);",
+        "await harness.takeScreenshot('world + lantern');",
+        "// Pixels in the upper-left area of the screen should not be a flat light grey/white:",
+        "const canvas = harness.getRuntimeGame().getRenderer().getCanvas();",
+        "const tr = harness.getRuntimeGame().getRenderer().getThreeRenderer();",
+        "const gl = tr.getContext();",
+        "harness.getCurrentRuntimeScene().render();",
+        "const px = new Uint8Array(4);",
+        "gl.readPixels(Math.floor(canvas.width * 0.3), Math.floor(canvas.height * 0.3), 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);",
+        "console.log('pixel at 30%/30%', Array.from(px).join(','));",
+        "harness.assert(!(px[0] > 180 && px[1] > 180 && px[2] > 180), 'lower-left world area is not covered by a white/grey sheet');"
+      ]
+    },
+    {
+      "description": "Lantern Strength drains away from fires, refills near the Fireplace, and the HUD bar follows it.",
+      "lastRunAt": 1794154121839,
+      "lastRunDurationMs": 5348,
+      "lastRunFramesExecuted": 648,
+      "lastRunStatus": "passed",
+      "name": "Lantern drains and recharges at fireplace",
+      "type": "gameplay",
+      "source": [
+        "harness.setMaxScreenshots(4);",
+        "await harness.goToScene('Game Scene');",
+        "harness.setMouseButtonPressed(true); await harness.stepFrames(1);",
+        "harness.setMouseButtonPressed(false); await harness.stepFrames(1);",
+        "const flames = () => harness.getObjects('LanternFlame');",
+        "const strengthOf = (f) => f.variables.find(v => v.name === 'Strength').value;",
+        "const drain = flames()[0].variables.find(v => v.name === 'DrainPerSecond').value;",
+        "const s0 = strengthOf(flames()[0]);",
+        "const player = harness.getObjects('Player')[0];",
+        "const fire = harness.getObjects('Fireplace')[0];",
+        "console.log('start strength', s0, 'drain/s', drain, 'player->fire dist', Math.hypot(player.centerX - fire.centerX, player.centerY - fire.centerY).toFixed(0));",
+        "await harness.stepFrames(180); // 3 s away from the fire",
+        "const s1 = strengthOf(flames()[0]);",
+        "const bar1 = harness.getObjects('LanternBar')[0].state.Value;",
+        "console.log('after 3s away', s1.toFixed(2), 'bar', bar1);",
+        "harness.assert(Math.abs((s0 - s1) - drain * 3) < drain * 0.3, 'drains ~DrainPerSecond away from fire (lost ' + (s0 - s1).toFixed(2) + ')');",
+        "harness.assert(Math.abs(bar1 - s1) < 1, 'HUD bar value follows Strength');",
+        "// Low-fuel look",
+        "harness.getRuntimeObject(flames()[0].id);",
+        "for (const f of flames()) harness.setObjectVariable(f.id, 'Strength', 15);",
+        "await harness.stepFrames(20);",
+        "await harness.takeScreenshot('low strength (15)');",
+        "// Walk up to the fire: teleport next to it and hold it there",
+        "const p = harness.getObjects('Player')[0];",
+        "const target = { x: fire.centerX - 110, y: fire.centerY, z: fire.z + 5 };",
+        "harness.setObjectPosition(p.id, target.x - (p.centerX - p.x), target.y - (p.centerY - p.y), target.z);",
+        "await harness.stepFrames(10);",
+        "const sNear0 = strengthOf(flames()[0]);",
+        "await harness.stepFrames(120, { onFrame: () => {} });",
+        "const sNear1 = strengthOf(flames()[0]);",
+        "const pl = harness.getObjects('Player')[0];",
+        "console.log('near fire dist', Math.hypot(pl.centerX - fire.centerX, pl.centerY - fire.centerY).toFixed(0), 'warmth', harness.getSceneVariable('LanternWarmth').value.toFixed(2), 'strength', sNear0.toFixed(2), '->', sNear1.toFixed(2));",
+        "harness.assert(sNear1 > sNear0 + 10, 'Strength recharges near the fireplace');",
+        "await harness.lookTowardWithMouseDelta('Player', { name: 'Fireplace' }, { yawOnly: true });",
+        "await harness.stepFrames(5);",
+        "await harness.takeScreenshot('at the fireplace, recharging');",
+        "await harness.stepFrames(300);",
+        "const sFull = strengthOf(flames()[0]);",
+        "console.log('after 5 more s', sFull.toFixed(2), 'bar', harness.getObjects('LanternBar')[0].state.Value);",
+        "harness.assert(sFull <= 100 + 1e-6, 'Strength is capped at MaxStrength');"
+      ]
+    },
+    {
+      "description": "Ember's Fear rises when the Zombie is near (light turns red, stage goes up), settles slowly when it leaves, rises when the lantern is nearly empty, and calms faster at the Fireplace.",
+      "lastRunAt": 1794157519829,
+      "lastRunDurationMs": 2793,
+      "lastRunFramesExecuted": 1081,
+      "lastRunStatus": "passed",
+      "name": "Ember fear rises and turns the light red",
+      "type": "gameplay",
+      "source": [
+        "harness.setMaxScreenshots(4);",
+        "await harness.goToScene('Game Scene');",
+        "harness.setMouseButtonPressed(true); await harness.stepFrames(1);",
+        "harness.setMouseButtonPressed(false); await harness.stepFrames(1);",
+        "const fear = () => harness.getObjects('LanternFlame')[0].variables.find(v => v.name === 'Fear').value;",
+        "const color = () => harness.getObjects('LanternFlame').map(f => f.state.Color).join(' | ');",
+        "const stage = () => harness.getSceneVariable('EmberFearStage').value;",
+        "const setAll = (name, val) => { for (const f of harness.getObjects('LanternFlame')) harness.setObjectVariable(f.id, name, val); };",
+        "const zid = harness.getObjects('Zombie')[0].id;",
+        "const holdZombie = (dx) => () => { const p = harness.getObjects('Player')[0]; harness.setObjectPosition(zid, p.x + dx, p.y, p.z); };",
+        "",
+        "// 1. Monster far away: calm",
+        "await harness.stepFrames(60, { onFrame: holdZombie(3000) });",
+        "setAll('Fear', 0); setAll('Strength', 100);",
+        "await harness.stepFrames(30, { onFrame: holdZombie(3000) });",
+        "console.log('calm: fear', fear().toFixed(1), 'stage', stage(), 'color', color());",
+        "harness.assert(fear() < 5 && stage() === 0, 'Ember is calm with the monster far away');",
+        "await harness.takeScreenshot('calm (orange)');",
+        "",
+        "// 2. Monster 250px away for 5 s",
+        "let maxFear = 0;",
+        "await harness.stepFrames(300, { onFrame: () => { holdZombie(250)(); setAll('Strength', 100); maxFear = Math.max(maxFear, fear()); } });",
+        "console.log('monster near: fear', fear().toFixed(1), 'max', maxFear.toFixed(1), 'stage', stage(), 'color', color());",
+        "harness.assert(fear() > 60 && stage() >= 2, 'Fear rises to Afraid or worse with the monster close');",
+        "const g = +harness.getObjects('LanternFlame')[0].state.Color.split(';')[1];",
+        "harness.assert(g < 90, 'light turned red (green channel ' + g + ')');",
+        "await harness.lookTowardWithMouseDelta('Player', { name: 'Zombie' }, { yawOnly: true });",
+        "await harness.stepFrames(2, { onFrame: holdZombie(250) });",
+        "await harness.takeScreenshot('monster close (red)');",
+        "",
+        "// 3. Monster leaves: slow settle",
+        "const before = fear();",
+        "await harness.stepFrames(240, { onFrame: () => { holdZombie(3000)(); setAll('Strength', 100); } });",
+        "console.log('4s after monster left: fear', before.toFixed(1), '->', fear().toFixed(1), 'stage', stage());",
+        "harness.assert(fear() < before - 15 && fear() > 25, 'Fear settles slowly after the monster leaves');",
+        "",
+        "// 4. Nearly empty lantern, no monster",
+        "setAll('Fear', 0);",
+        "await harness.stepFrames(180, { onFrame: () => { holdZombie(3000)(); setAll('Strength', 5); } });",
+        "console.log('empty lantern: fear', fear().toFixed(1), 'target', harness.getSceneVariable('EmberFearTarget').value.toFixed(1));",
+        "harness.assert(fear() > 20, 'a nearly empty lantern frightens Ember');",
+        "",
+        "// 5. At the fireplace: calms faster than in the open",
+        "setAll('Fear', 60);",
+        "await harness.stepFrames(120, { onFrame: () => { holdZombie(3000)(); setAll('Strength', 100); } });",
+        "const openDrop = 60 - fear();",
+        "const fire = harness.getObjects('Fireplace')[0];",
+        "const p = harness.getObjects('Player')[0];",
+        "harness.setObjectPosition(p.id, fire.centerX - 110 - (p.centerX - p.x), fire.centerY - (p.centerY - p.y), fire.z + 5);",
+        "await harness.stepFrames(10, { onFrame: holdZombie(3000) });",
+        "setAll('Fear', 60);",
+        "await harness.stepFrames(120, { onFrame: holdZombie(3000) });",
+        "const fireDrop = 60 - fear();",
+        "console.log('2s calm drop: open', openDrop.toFixed(1), 'at fire', fireDrop.toFixed(1), 'warmth', harness.getSceneVariable('LanternWarmth').value.toFixed(2));",
+        "harness.assert(fireDrop > openDrop * 1.4, 'Ember calms faster at the fireplace');"
+      ]
+    },
+    {
+      "description": "Ember stays inside the lantern glass, the inner light is at Ember's position, and Ember faces the camera even while the lantern sways.",
+      "lastRunAt": 1794158017322,
+      "lastRunDurationMs": 2044,
+      "lastRunFramesExecuted": 107,
+      "lastRunStatus": "passed",
+      "name": "Ember sits in the lantern facing the player",
+      "type": "gameplay",
+      "source": [
+        "harness.setMaxScreenshots(4);",
+        "await harness.goToScene('Game Scene');",
+        "harness.setMouseButtonPressed(true); await harness.stepFrames(1);",
+        "harness.setMouseButtonPressed(false); await harness.stepFrames(60);",
+        "const check = (label) => {",
+        "  const e = harness.getObjects('Ember')[0];",
+        "  const l = harness.getObjects('Lantern')[0];",
+        "  const eb = harness.getRenderedBounds(e.id), lb = harness.getRenderedBounds(l.id);",
+        "  const light = harness.getObjects('LanternFlame').find(f => f.layer === 'hand');",
+        "  const ecx = (eb.minX + eb.maxX) / 2, ecy = (eb.minY + eb.maxY) / 2, ecz = (eb.minZ + eb.maxZ) / 2;",
+        "  const yawToCam = Math.atan2(-e.x, -e.z) * 180 / Math.PI;",
+        "  console.log(label, 'ember', JSON.stringify(eb), 'lantern', JSON.stringify(lb), 'light', light.x.toFixed(1), light.y.toFixed(1), light.z.toFixed(1), 'ember origin', e.x.toFixed(1), e.y.toFixed(1), e.z.toFixed(1), 'rotY', e.rotationY.toFixed(1), 'expected', (180 + yawToCam).toFixed(1));",
+        "  harness.assert(eb.minX > lb.minX && eb.maxX < lb.maxX && eb.minY > lb.minY && eb.maxY < lb.maxY && eb.minZ > lb.minZ && eb.maxZ < lb.maxZ, label + ': Ember is inside the lantern');",
+        "  harness.assert(Math.hypot(light.x - e.x, light.y - e.y, light.z - e.z) < 1, label + ': the light comes from Ember');",
+        "  harness.assert(Math.abs(e.rotationY - (180 + yawToCam)) < 0.5, label + ': Ember faces the player');",
+        "};",
+        "check('still');",
+        "await harness.takeScreenshot('Ember in the lantern', { fullResolution: true });",
+        "await harness.stepFrames(15, { onFrame: () => harness.setMouseDelta(60, 15) });",
+        "check('swaying');",
+        "await harness.takeScreenshot('Ember while the lantern swings');",
+        "for (const f of harness.getObjects('LanternFlame')) harness.setObjectVariable(f.id, 'Fear', 90);",
+        "await harness.stepFrames(30);",
+        "await harness.takeScreenshot('Ember terrified (red light)', { fullResolution: true });"
+      ]
+    },
+    {
+      "description": "The Fear bar (above) follows Ember's Fear, the Brightness bar follows Strength, and both have their text labels.",
+      "lastRunAt": 1794158183624,
+      "lastRunDurationMs": 1483,
+      "lastRunFramesExecuted": 303,
+      "lastRunStatus": "passed",
+      "name": "HUD shows Fear and Brightness bars",
+      "type": "gameplay",
+      "source": [
+        "harness.setMaxScreenshots(3);",
+        "await harness.goToScene('Game Scene');",
+        "harness.setMouseButtonPressed(true); await harness.stepFrames(1);",
+        "harness.setMouseButtonPressed(false); await harness.stepFrames(1);",
+        "const zid = harness.getObjects('Zombie')[0].id;",
+        "const hold = (dx) => () => { const p = harness.getObjects('Player')[0]; harness.setObjectPosition(zid, p.x + dx, p.y, p.z); };",
+        "await harness.stepFrames(60, { onFrame: hold(3000) });",
+        "const fb = () => harness.getObjects('FearBar')[0], lb = () => harness.getObjects('LanternBar')[0];",
+        "const flame = () => harness.getObjects('LanternFlame')[0];",
+        "const v = (o, n) => o.variables.find(x => x.name === n).value;",
+        "console.log('calm: fear bar', fb().state.Value.toFixed(1), 'fear', v(flame(), 'Fear').toFixed(1), 'brightness bar', lb().state.Value.toFixed(1), 'strength', v(flame(), 'Strength').toFixed(1));",
+        "await harness.stepFrames(240, { onFrame: hold(250) });",
+        "const f = v(flame(), 'Fear');",
+        "console.log('scared: fear bar', fb().state.Value.toFixed(1), 'fear', f.toFixed(1));",
+        "harness.assert(f > 50 && Math.abs(fb().state.Value - f) < 2, 'Fear bar follows Fear');",
+        "harness.assert(Math.abs(lb().state.Value - v(flame(), 'Strength')) < 2, 'Brightness bar follows Strength');",
+        "const ft = harness.getObjects('FearText')[0], bt = harness.getObjects('BrightnessText')[0];",
+        "console.log('labels', JSON.stringify([ft.text, ft.y, bt.text, bt.y]), 'fear bar y', fb().y, 'brightness bar y', lb().y);",
+        "harness.assert(ft.text === 'FEAR' && bt.text === 'BRIGHTNESS', 'both bars have their labels');",
+        "harness.assert(ft.y < fb().y && fb().y < bt.y && bt.y < lb().y, 'Fear bar sits above the Brightness bar, each under its label');",
+        "await harness.takeScreenshot('HUD', { fullResolution: true });"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -912,6 +1197,21 @@
       },
       {
         "itemName": "monster-llm-execute"
+      },
+      {
+        "itemName": "World visible with lantern"
+      },
+      {
+        "itemName": "Lantern drains and recharges at fireplace"
+      },
+      {
+        "itemName": "Ember fear rises and turns the light red"
+      },
+      {
+        "itemName": "Ember sits in the lantern facing the player"
+      },
+      {
+        "itemName": "HUD shows Fear and Brightness bars"
       }
     ]
   },
@@ -975,6 +1275,14 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/advancedhttp"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/particleemitter3d"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspritecontinuousbar"
     }
   ],
   "externalLayouts": [],
