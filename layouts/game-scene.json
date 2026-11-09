@@ -21,10 +21,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7370816317994461,
+    "zoomFactor": 0.6897782140104901,
     "windowMask": false,
     "selectedLayer": "",
-    "gameEditorMode": "instances-editor"
+    "gameEditorMode": "embedded-game"
   },
   "objectsGroups": [
     {
@@ -56,6 +56,126 @@
     }
   ],
   "variables": [
+    {
+      "name": "Cfg_SeaZ",
+      "type": "number",
+      "value": 450
+    },
+    {
+      "name": "Cfg_ShoreOut",
+      "type": "number",
+      "value": 2900
+    },
+    {
+      "name": "Cfg_ShoreIn",
+      "type": "number",
+      "value": 1500
+    },
+    {
+      "name": "Cfg_IslCY",
+      "type": "number",
+      "value": 4012
+    },
+    {
+      "name": "Cfg_IslCX",
+      "type": "number",
+      "value": 4155
+    },
+    {
+      "name": "Cfg_SeaBoost",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "Cfg_AmbDuck",
+      "type": "number",
+      "value": 5
+    },
+    {
+      "name": "Cfg_AmbBase",
+      "type": "number",
+      "value": 13
+    },
+    {
+      "name": "AmbVolS",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "SeaGain01",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "SeaProxS",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "SeaProx",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "AudCurPitch",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "AudOldVol",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "AudCurVol",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "AudTargetPitch",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "AudTargetVol",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "AudFadeTime",
+      "type": "number",
+      "value": 0.22
+    },
+    {
+      "name": "AudMix",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "AudNewCh",
+      "type": "number",
+      "value": 7
+    },
+    {
+      "name": "AudOldCh",
+      "type": "number",
+      "value": 5
+    },
+    {
+      "name": "AudActiveCh",
+      "type": "number",
+      "value": 5
+    },
+    {
+      "name": "AudPlay",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "AudWant",
+      "type": "string",
+      "value": ""
+    },
     {
       "name": "HearAcc",
       "persistentUuid": "81156790-4096-45ca-8e28-efc933f80e30",

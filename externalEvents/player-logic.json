@@ -3797,12 +3797,12 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "player sounds",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "aiGeneratedEventId": "01M6YTWW14ZHXGXJAFY1VNBQAY",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3841,6 +3841,106 @@
                 "WasAirborne",
                 "=",
                 "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AudWant",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AudPlay",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "FootLoop",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudActiveCh",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudMix",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudFadeTime",
+                "=",
+                "0.22"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudCurVol",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudCurPitch",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudTargetVol",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudTargetPitch",
+                "=",
+                "1"
               ]
             }
           ]
@@ -3931,7 +4031,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M6Y078YZGC7PVACQC9R9VVFT",
+          "aiGeneratedEventId": "01M6YTWW14ZHXGXJAFY1VNBQAY",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3955,42 +4055,25 @@
                 "=",
                 "1"
               ]
-            }
-          ],
-          "events": [
+            },
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "SoundPlaying"
-                  },
-                  "parameters": [
-                    "",
-                    "5"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "StopSoundChannel"
-                  },
-                  "parameters": [
-                    "",
-                    "5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "FootLoop",
-                    "=",
-                    "\"\""
-                  ]
-                }
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "AudWant",
+                "=",
+                "\"\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AudTargetVol",
+                "=",
+                "0"
               ]
             }
           ]
@@ -4082,6 +4165,7 @@
               ]
             },
             {
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -4095,90 +4179,42 @@
                   ]
                 }
               ],
-              "actions": [],
-              "events": [
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "StringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "!=",
-                        "\"run\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "StopSoundChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "5"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlaySoundOnChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "MetalV2_Run_12.wav",
-                        "5",
-                        "yes",
-                        "90",
-                        "1.05"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetStringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "=",
-                        "\"run\""
-                      ]
-                    }
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "AudWant",
+                    "=",
+                    "\"run\""
                   ]
                 },
                 {
-                  "aiGeneratedEventId": "01M6Y0APVQA0YMRCGPMDW8XKFQ",
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetSoundChannelVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "5",
-                        "=",
-                        "75 + 25 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetSoundChannelPitch"
-                      },
-                      "parameters": [
-                        "",
-                        "5",
-                        "=",
-                        "0.95 + 0.25 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
-                      ]
-                    }
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetVol",
+                    "=",
+                    "75 + 25 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetPitch",
+                    "=",
+                    "0.95 + 0.25 * clamp(Player.Physics3D::LinearVelocityLength() / 300, 0, 1)"
                   ]
                 }
               ]
             },
             {
-              "type": "BuiltinCommonInstructions::Else",
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
@@ -4191,90 +4227,42 @@
                   ]
                 }
               ],
-              "actions": [],
-              "events": [
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "StringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "!=",
-                        "\"walk\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "StopSoundChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "5"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlaySoundOnChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "Walk_09.wav",
-                        "5",
-                        "yes",
-                        "70",
-                        "0.95"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetStringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "=",
-                        "\"walk\""
-                      ]
-                    }
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "AudWant",
+                    "=",
+                    "\"walk\""
                   ]
                 },
                 {
-                  "aiGeneratedEventId": "01M6Y0APVQA0YMRCGPMDW8XKFQ",
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetSoundChannelVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "5",
-                        "=",
-                        "50 + 30 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetSoundChannelPitch"
-                      },
-                      "parameters": [
-                        "",
-                        "5",
-                        "=",
-                        "0.85 + 0.2 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
-                      ]
-                    }
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetVol",
+                    "=",
+                    "50 + 30 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetPitch",
+                    "=",
+                    "0.85 + 0.2 * clamp(Player.Physics3D::LinearVelocityLength() / 160, 0, 1)"
                   ]
                 }
               ]
             },
             {
-              "type": "BuiltinCommonInstructions::Else",
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
@@ -4305,90 +4293,42 @@
                   ]
                 }
               ],
-              "actions": [],
-              "events": [
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "StringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "!=",
-                        "\"crouch\""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "StopSoundChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "5"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "PlaySoundOnChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "Walk_09.wav",
-                        "5",
-                        "yes",
-                        "40",
-                        "0.7"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetStringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "=",
-                        "\"crouch\""
-                      ]
-                    }
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "AudWant",
+                    "=",
+                    "\"crouch\""
                   ]
                 },
                 {
-                  "aiGeneratedEventId": "01M6Y0APVQA0YMRCGPMDW8XKFQ",
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetSoundChannelVolume"
-                      },
-                      "parameters": [
-                        "",
-                        "5",
-                        "=",
-                        "25 + 20 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetSoundChannelPitch"
-                      },
-                      "parameters": [
-                        "",
-                        "5",
-                        "=",
-                        "0.6 + 0.2 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
-                      ]
-                    }
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetVol",
+                    "=",
+                    "25 + 20 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetPitch",
+                    "=",
+                    "0.6 + 0.2 * clamp(Player.Physics3D::LinearVelocityLength() / 80, 0, 1)"
                   ]
                 }
               ]
             },
             {
-              "type": "BuiltinCommonInstructions::Else",
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
@@ -4419,47 +4359,45 @@
                   ]
                 }
               ],
-              "actions": [],
-              "events": [
+              "actions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "SoundPlaying"
-                      },
-                      "parameters": [
-                        "",
-                        "5"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "StopSoundChannel"
-                      },
-                      "parameters": [
-                        "",
-                        "5"
-                      ]
-                    }
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "AudWant",
+                    "=",
+                    "\"\""
                   ]
                 },
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetStringVariable"
-                      },
-                      "parameters": [
-                        "FootLoop",
-                        "=",
-                        "\"\""
-                      ]
-                    }
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetVol",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudTargetPitch",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "FootLoop",
+                    "=",
+                    "\"\""
                   ]
                 }
               ]
@@ -4524,10 +4462,10 @@
                   },
                   "parameters": [
                     "",
-                    "Tall_Movement_01.wav",
+                    "islam.wav",
                     "6",
                     "no",
-                    "22",
+                    "100",
                     "0.85 + RandomFloatInRange(0, 0.1)"
                   ]
                 },
@@ -4587,6 +4525,515 @@
                   ]
                 }
               ]
+            },
+            {
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "AudWant",
+                    "!=",
+                    "AudPlay"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "AudMix",
+                    ">=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudOldVol",
+                    "=",
+                    "AudCurVol"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudOldCh",
+                    "=",
+                    "AudActiveCh"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudNewCh",
+                    "=",
+                    "12 - AudActiveCh"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudMix",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "AudWant",
+                        "=",
+                        "\"run\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "sprint.wav",
+                        "AudNewCh",
+                        "yes",
+                        "0",
+                        "AudTargetPitch"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudActiveCh",
+                        "=",
+                        "AudNewCh"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "AudPlay",
+                        "=",
+                        "\"run\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"run\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "AudWant",
+                        "=",
+                        "\"walk\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "walking.mp3",
+                        "AudNewCh",
+                        "yes",
+                        "0",
+                        "AudTargetPitch"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudActiveCh",
+                        "=",
+                        "AudNewCh"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "AudPlay",
+                        "=",
+                        "\"walk\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"walk\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "AudWant",
+                        "=",
+                        "\"crouch\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "walking.mp3",
+                        "AudNewCh",
+                        "yes",
+                        "0",
+                        "AudTargetPitch"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudActiveCh",
+                        "=",
+                        "AudNewCh"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "AudPlay",
+                        "=",
+                        "\"crouch\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"crouch\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "AudPlay",
+                        "=",
+                        "\"\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "FootLoop",
+                        "=",
+                        "\"\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "AudMix",
+                    "<",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "AudMix",
+                    "=",
+                    "min(1, AudMix + TimeDelta() / max(0.05, AudFadeTime))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSoundChannelVolume"
+                  },
+                  "parameters": [
+                    "",
+                    "AudOldCh",
+                    "=",
+                    "AudOldVol * cos(AudMix * 1.5707963)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSoundChannelPitch"
+                  },
+                  "parameters": [
+                    "",
+                    "AudOldCh",
+                    "=",
+                    "AudCurPitch"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "AudPlay",
+                        "!=",
+                        "\"\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSoundChannelVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "AudActiveCh",
+                        "=",
+                        "AudTargetVol * sin(AudMix * 1.5707963)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSoundChannelPitch"
+                      },
+                      "parameters": [
+                        "",
+                        "AudActiveCh",
+                        "=",
+                        "AudCurPitch + (AudTargetPitch - AudCurPitch) * (1 - exp(-10 * TimeDelta()))"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "AudMix",
+                        ">=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "StopSoundChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "AudOldCh"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudCurVol",
+                        "=",
+                        "AudTargetVol"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudCurPitch",
+                        "=",
+                        "AudTargetPitch"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "AudPlay",
+                            "=",
+                            "\"\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "AudCurVol",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M6YTW6YJAZSDFB0QGA9H1E53",
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "AudPlay",
+                        "!=",
+                        "\"\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudCurVol",
+                        "=",
+                        "AudCurVol + (AudTargetVol - AudCurVol) * (1 - exp(-8 * TimeDelta()))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "AudCurPitch",
+                        "=",
+                        "AudCurPitch + (AudTargetPitch - AudCurPitch) * (1 - exp(-10 * TimeDelta()))"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSoundChannelVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "AudActiveCh",
+                        "=",
+                        "AudCurVol"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSoundChannelPitch"
+                      },
+                      "parameters": [
+                        "",
+                        "AudActiveCh",
+                        "=",
+                        "AudCurPitch"
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -4624,6 +5071,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "player noise emission",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4964,6 +5412,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Lantern",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6087,6 +6536,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Fireplace Light Source",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6106,6 +6556,285 @@
                 "22 * (0.85 + 0.08 * sin(TimeFromStart() * 7.1) + 0.06 * sin(TimeFromStart() * 15.3 + 2) + 0.05 * sin(TimeFromStart() * 3.3 + 1))",
                 ""
               ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M6YV924ZY20PPV4NST006T96",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "sea ambience",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusicOnChannel"
+              },
+              "parameters": [
+                "",
+                "island-waves.mp3",
+                "1",
+                "yes",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SeaProxS",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SeaGain01",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AmbVolS",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "  const scene = runtimeScene; if (scene._seaNodes && scene._seaNodes.g) { try { scene._seaNodes.g.gain.value = 0; } catch (e) {} } return;",
+                "  try {",
+                "    const AC = new (window.AudioContext || window.webkitAudioContext)();",
+                "    const len = AC.sampleRate * 4;",
+                "    const buf = AC.createBuffer(1, len, AC.sampleRate);",
+                "    const d = buf.getChannelData(0);",
+                "    let last = 0;",
+                "    for (let i = 0; i < len; i++) { const w = Math.random() * 2 - 1; last = (last + 0.02 * w) / 1.02; d[i] = last * 3.2; }",
+                "    const src = AC.createBufferSource(); src.buffer = buf; src.loop = true;",
+                "    const lp = AC.createBiquadFilter(); lp.type = \"lowpass\"; lp.frequency.value = 520; lp.Q.value = 0.4;",
+                "    const g = AC.createGain(); g.gain.value = 0;",
+                "    src.connect(lp); lp.connect(g); g.connect(AC.destination); src.start();",
+                "    scene._seaNodes = { AC: AC, g: g, lp: lp, t0: AC.currentTime };",
+                "  } catch (e) {}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "MusicPlaying"
+              },
+              "parameters": [
+                "",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayMusicOnChannel"
+              },
+              "parameters": [
+                "",
+                "island-waves.mp3",
+                "1",
+                "yes",
+                "AmbVolS",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "DistC",
+                "=",
+                "sqrt((Player.CenterX() - Cfg_IslCX) * (Player.CenterX() - Cfg_IslCX) + (Player.CenterY() - Cfg_IslCY) * (Player.CenterY() - Cfg_IslCY))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShoreT",
+                "=",
+                "clamp((DistC - Cfg_ShoreIn) / max(1, Cfg_ShoreOut - Cfg_ShoreIn), 0, 1)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShoreS",
+                "=",
+                "ShoreT * ShoreT * (3 - 2 * ShoreT)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HeightT",
+                "=",
+                "clamp((Cfg_SeaZ - Player.Object3D::Z()) / max(1, Cfg_SeaZ), 0, 1)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "HeightS",
+                "=",
+                "HeightT * HeightT * (3 - 2 * HeightT)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SeaProx",
+                "=",
+                "max(ShoreS, HeightS * 0.85)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SeaProxS",
+                "=",
+                "SeaProxS + (SeaProx - SeaProxS) * (1 - exp(-1.5 * TimeDelta()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "SeaGain01",
+                "=",
+                "pow(SeaProxS, 1.6) * Cfg_SeaBoost"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "AmbVolS",
+                "=",
+                "AmbVolS + ((Cfg_AmbBase + 50 * SeaProxS) - AmbVolS) * (1 - exp(-1.2 * TimeDelta()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetMusicChannelVolume"
+              },
+              "parameters": [
+                "",
+                "1",
+                "=",
+                "AmbVolS"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetMusicChannelPitch"
+              },
+              "parameters": [
+                "",
+                "1",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "  return;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "variables": [
+            {
+              "name": "DistC",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "ShoreT",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "ShoreS",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "HeightT",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "HeightS",
+              "type": "number",
+              "value": 0
             }
           ]
         }

@@ -507,6 +507,56 @@
         "metadata": "",
         "name": "Creature.glb",
         "userAdded": false
+      },
+      {
+        "file": "walking.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "walking.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "sprint.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "sprint.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "islam.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "islam.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Abstract Anxiety.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Abstract Anxiety.aac",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/island-waves.mp3",
+        "kind": "audio",
+        "metadata": "{\"extension\":\"\"}",
+        "name": "island-waves.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },
