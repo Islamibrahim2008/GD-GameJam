@@ -10,6 +10,7 @@
     "adaptGameResolutionAtRuntime": true,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
+    "areEffectsHiddenInEditor": true,
     "folderProject": true,
     "orientation": "landscape",
     "packageName": "com.example.gamename",
@@ -1045,10 +1046,10 @@
     },
     {
       "description": "Verify zombie anim valid and memory vars exist",
-      "lastRunAt": 1794157294685,
-      "lastRunDurationMs": 9666,
-      "lastRunFramesExecuted": 121,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794323419303,
+      "lastRunDurationMs": 11495,
+      "lastRunFramesExecuted": 1,
+      "lastRunStatus": "stopped",
       "name": "monster-ai-cunning",
       "type": "gameplay",
       "source": [
@@ -1219,9 +1220,9 @@
     },
     {
       "description": "The terrain stays visible while the lantern is held on the hand layer (no opaque hand layer).",
-      "lastRunAt": 1794320719895,
-      "lastRunDurationMs": 21121,
-      "lastRunFramesExecuted": 4,
+      "lastRunAt": 1794323201845,
+      "lastRunDurationMs": 13874,
+      "lastRunFramesExecuted": 1,
       "lastRunStatus": "stopped",
       "name": "World visible with lantern",
       "type": "gameplay",
@@ -1579,6 +1580,18 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/camerashake"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/fsr1"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/lod3d"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/fps"
     }
   ],
   "externalLayouts": [],

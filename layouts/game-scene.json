@@ -4835,6 +4835,22 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "FPSText",
+      "persistentUuid": "92c7aa7f-63c5-4769-8836-6dbe5cf7a07d",
+      "width": 0,
+      "x": 1050,
+      "y": 20,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -6156,6 +6172,58 @@
         "Intensity": 3,
         "Range": 1500
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "FPSText",
+      "persistentUuid": "bc746659-28dc-47ee-a820-830574265691",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FPSDisplayer",
+          "type": "FPS::FPSDisplayer",
+          "Text": "Text",
+          "prefix": "FPS: ",
+          "DecimalDigits": 0
+        }
+      ],
+      "string": "60 FPS",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 22,
+      "color": {
+        "b": 0,
+        "g": 255,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": true,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "60 FPS",
+        "font": "",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 22,
+        "lineHeight": 0,
+        "color": "0;255;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -6246,6 +6314,9 @@
       },
       {
         "objectName": "RocketGlow"
+      },
+      {
+        "objectName": "FPSText"
       }
     ]
   },
@@ -6543,6 +6614,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Rocket Intro (Three.js JS) v5 Horror",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -9740,6 +9812,156 @@
       "parameters": []
     },
     {
+      "aiGeneratedEventId": "01M72ZX9ZZXZMKPJY938Y0FMCN",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Performance FSR + LOD (Adaptive)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FSR1::EnablePerformanceMode"
+              },
+              "parameters": [
+                "",
+                "\"Balanced\"",
+                "0.7",
+                "no",
+                "\"Auto\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FSR1::EnableFSRAllLayers"
+              },
+              "parameters": [
+                "",
+                "\"Balanced\"",
+                "0.7",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "LOD3D::EnableLOD"
+              },
+              "parameters": [
+                "",
+                "\"Balanced\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "LOD3D::SetBudget"
+              },
+              "parameters": [
+                "",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "LOD3D::SetTerrainLOD"
+              },
+              "parameters": [
+                "",
+                "yes",
+                "2.4",
+                "46",
+                "4",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "(function(){",
+            "const FSR=gdjs.__fsr1,LOD=gdjs.__lod3d;",
+            "if(!FSR||FSR.noThree||!LOD||LOD.noThree)return;",
+            "const scene=runtimeScene,now=performance.now();",
+            "const LADDER=[{s:1,sh:0.55,dn:false,b:1.3,sp:10,te:1.4,ts:24},{s:0.88,sh:0.62,dn:false,b:1.15,sp:12,te:1.7,ts:30},{s:0.77,sh:0.68,dn:false,b:1,sp:14,te:2,ts:38},{s:0.67,sh:0.74,dn:false,b:0.9,sp:17,te:2.4,ts:46},{s:0.59,sh:0.8,dn:true,b:0.8,sp:21,te:2.9,ts:56},{s:0.5,sh:0.85,dn:true,b:0.68,sp:27,te:3.5,ts:68},{s:0.5,sh:0.85,dn:true,b:0.5,sp:36,te:4.4,ts:84}];",
+            "const STD=[30,48,60,72,75,90,100,120,144,165,240];",
+            "const MAXS=LADDER.length-1;",
+            "let C=gdjs.__perfCtl;",
+            "if(!C||C.v!==2){C=gdjs.__perfCtl={v:2,stage:3,last:now,buf:new Float32Array(120),n:0,i:0,ema:16.7,hz:60,hzUp:0,starved:0,settle:45,lastEval:now,lastChange:0,bad:0,good:0,upWait:5000,probe:null,budget:-1,applied:-1,tries:0,scene:null};}",
+            "if(C.scene!==scene){C.scene=scene;C.settle=45;C.applied=-1;C.tries=0;C.n=0;C.i=0;C.bad=0;C.good=0;C.probe=null;C.last=now;return;}",
+            "const dt=now-C.last;C.last=now;",
+            "if(!(dt>0&&dt<=250)||document.hidden){C.bad=0;C.good=0;return;}",
+            "const apply=function(){",
+            "  const L=LADDER[C.stage];let layers=0;",
+            "  const m=scene.__fsr1;",
+            "  if(m&&m.forEach){m.forEach(function(st,name){",
+            "    if(!st||!st.enabled)return;",
+            "    layers++;",
+            "    if(st.dyn&&st.dyn.on)st.dyn.on=false;",
+            "    if(Math.abs(st.scale-L.s)>0.004)FSR.setRenderScale(scene,name,L.s);",
+            "    FSR.setSharpness(scene,name,L.sh);",
+            "    FSR.setDenoise(scene,name,L.dn);",
+            "  });}",
+            "  LOD.setBias(scene,L.b);",
+            "  LOD.setShadowPixels(scene,L.sp);",
+            "  LOD.setTerrainLOD(scene,true,L.te,L.ts,4);",
+            "  if(layers>0||C.tries>=60)C.applied=C.stage;",
+            "};",
+            "if(C.settle>0){C.settle--;if(C.settle>40)return;}",
+            "if(C.applied!==C.stage&&C.tries<150){C.tries++;apply();}",
+            "if(C.settle>0)return;",
+            "C.buf[C.i]=dt;C.i=(C.i+1)%120;if(C.n<120)C.n++;",
+            "C.ema+=(dt-C.ema)*0.08;",
+            "if(now-C.lastEval<250||C.n<40)return;",
+            "C.lastEval=now;",
+            "const len=C.n,a=C.buf.slice(0,len).sort();",
+            "const p95=a[Math.min(len-1,Math.floor(len*0.95))],p10=a[Math.floor(len*0.1)];",
+            "let cand=STD[0],bd=1e9;const raw=1000/Math.max(p10,2);",
+            "for(let k=0;k<STD.length;k++){const d=Math.abs(STD[k]-raw);if(d<bd){bd=d;cand=STD[k];}}",
+            "if(cand>C.hz){if(++C.hzUp>=4){C.hz=cand;C.hzUp=0;}}else C.hzUp=0;",
+            "const B=1000/C.hz;",
+            "const over=C.ema>B*1.08||p95>B*1.6,healthy=C.ema<B*1.04&&p95<B*1.3,severe=C.ema>B*1.5;",
+            "if(over){C.bad++;C.good=0;if(C.stage>=MAXS){C.starved+=250;if(C.starved>8000){C.hz=Math.max(30,Math.min(C.hz,cand));C.starved=0;}}}",
+            "else{C.bad=0;C.starved=0;if(healthy)C.good+=250;}",
+            "if(C.probe&&now-C.probe.t>8000){C.probe=null;C.upWait=Math.max(5000,C.upWait*0.7);}",
+            "const change=function(ns){ns=Math.max(0,Math.min(MAXS,ns));if(ns===C.stage)return;C.stage=ns;C.lastChange=now;C.settle=14;C.n=0;C.i=0;C.bad=0;C.good=0;C.ema=B;C.tries=0;apply();};",
+            "if(C.bad>=(severe?1:2)&&C.stage<MAXS&&now-C.lastChange>700){",
+            "  if(C.probe&&now-C.probe.t<6000)C.upWait=Math.min(C.upWait*2,60000);",
+            "  C.probe=null;",
+            "  change(C.stage+(severe?2:1));",
+            "}else if(C.good>=C.upWait&&C.stage>0&&now-C.lastChange>3000){",
+            "  C.probe={t:now};",
+            "  change(C.stage-1);",
+            "}",
+            "const ms=over?0.4:(LOD.isBusy(scene)?1.5:1);",
+            "if(ms!==C.budget){LOD.setBudget(scene,ms);C.budget=ms;}",
+            "})();"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": []
+    },
+    {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": []
@@ -10063,6 +10285,10 @@
     {
       "name": "Effect",
       "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "FPSDisplayer",
+      "type": "FPS::FPSDisplayer"
     },
     {
       "name": "Flippable",
