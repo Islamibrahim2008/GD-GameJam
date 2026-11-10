@@ -10,6 +10,7 @@
     "adaptGameResolutionAtRuntime": true,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
+    "areEffectsHiddenInEditor": true,
     "folderProject": true,
     "orientation": "landscape",
     "packageName": "com.example.gamename",
@@ -553,6 +554,85 @@
         "kind": "audio",
         "metadata": "{\"extension\":\"\"}",
         "name": "island-waves.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Rocket Fuel A.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Rocket Fuel A.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Space Kit/Buildings/aa6e8a83b773cc515c6641a98254243d1572f4adbb2d77430f1140f791fd51d7_Rocket Fuel A.glb",
+          "name": "Rocket Fuel A.glb"
+        }
+      },
+      {
+        "file": "assets/Fireball.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Fireball.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Particles/3f0bfe8948f6b8fa1f240fcbd50c095d9c827f5e14b6ad92397b6d0d9bef8f71_Fireball.png",
+          "name": "Fireball.png"
+        }
+      },
+      {
+        "file": "assets/Smoke.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Smoke.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Particles/c6479e049d43b93766abc853f4d7949f533e9b0b6a1b3394fc8a62f4dbca6caf_Smoke.png",
+          "name": "Smoke.png"
+        }
+      },
+      {
+        "file": "assets/SoftDot.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SoftDot.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Particles/256d43039af1b47a15b811d4eb84219335f35f7b7e9c69a59c7e4365e1a26bf0_SoftDot.png",
+          "name": "SoftDot.png"
+        }
+      },
+      {
+        "file": "assets/pixel-black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "pixel-black.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Development Essentials/1×1 Pixels/c2115e6faf4d536788aa81b846076a4d034c4989439977e8c2af89a23c67c413_pixel-black.png",
+          "name": "pixel-black.png"
+        }
+      },
+      {
+        "file": "assets/Hard_Jump_Land_02.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Hard_Jump_Land_01.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Hard_Jump_Land_03.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Hard_Jump_Land_02.wav",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -1213,6 +1293,34 @@
         "harness.assert(ft.y < fb().y && fb().y < bt.y && bt.y < lb().y, 'Fear bar sits above the Brightness bar, each under its label');",
         "await harness.takeScreenshot('HUD', { fullResolution: true });"
       ]
+    },
+    {
+      "description": "Intro visuals: fade overlay and letterbox bars actually fade, and the shots show the world.",
+      "lastRunAt": 1794284753815,
+      "lastRunDurationMs": 9705,
+      "lastRunFramesExecuted": 511,
+      "lastRunStatus": "failed",
+      "name": "rocket-crash-intro",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(150);",
+        "await harness.takeScreenshot('shot1-sky');",
+        "const overlayMid = harness.getObjects('FadeOverlay')[0];",
+        "console.log('overlay opacity mid:', overlayMid && overlayMid.opacity);",
+        "await harness.stepFrames(240);",
+        "await harness.takeScreenshot('shot2-ground');",
+        "await harness.stepUntil(() => {",
+        "  const v = harness.getSceneVariable('IntroDone');",
+        "  return v && v.value === 1;",
+        "}, { maxFrames: 900 });",
+        "await harness.stepFrames(120);",
+        "await harness.takeScreenshot('after-intro');",
+        "const overlay = harness.getObjects('FadeOverlay')[0];",
+        "harness.assert(overlay && overlay.opacity < 30, 'Fade overlay transparent after intro, opacity=' + (overlay && overlay.opacity));",
+        "const bars = harness.getObjects('CineBarTop')[0];",
+        "harness.assert(bars && bars.opacity < 30, 'Letterbox bars faded, opacity=' + (bars && bars.opacity));"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -1262,6 +1370,9 @@
       },
       {
         "itemName": "HUD shows Fear and Brightness bars"
+      },
+      {
+        "itemName": "rocket-crash-intro"
       }
     ]
   },
@@ -1333,6 +1444,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspritecontinuousbar"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/camerashake"
     }
   ],
   "externalLayouts": [],

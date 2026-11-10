@@ -1495,7 +1495,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "camera",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1505,7 +1504,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "camera feel",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2087,8 +2085,20 @@
           "parameters": []
         },
         {
+          "aiGeneratedEventId": "01M71TT2VCS3NDXET2QXA0VCFM",
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "1"
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
@@ -2151,8 +2161,20 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M71TT2VCS3NDXET2QXA0VCFM",
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "1"
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
@@ -2256,8 +2278,20 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M71TT2VCS3NDXET2QXA0VCFM",
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "1"
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
@@ -3797,6 +3831,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "player sounds",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6568,6 +6603,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "sea ambience",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",

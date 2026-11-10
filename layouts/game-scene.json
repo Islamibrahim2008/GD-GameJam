@@ -57,122 +57,200 @@
   ],
   "variables": [
     {
+      "name": "Unit",
+      "persistentUuid": "67a903c8-4929-497a-923b-006b67a4f86d",
+      "type": "number",
+      "value": 60
+    },
+    {
+      "name": "GroundZ",
+      "persistentUuid": "5b125f01-b4ec-41c6-9ff1-adf943132dd1",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "RocketFallV",
+      "persistentUuid": "ed34e9fc-71d7-4f73-becc-2b1188ef016d",
+      "type": "number",
+      "value": 300
+    },
+    {
+      "name": "GetUpT",
+      "persistentUuid": "97449c8b-82c4-404a-9c9a-d6ce74391670",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CrashZ",
+      "persistentUuid": "531f498f-9464-4ead-bfe2-08360d712052",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CrashY",
+      "persistentUuid": "e318fc97-59dc-45f0-9f12-60a14cc4f390",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CrashX",
+      "persistentUuid": "8f324820-1c6e-4edd-a5af-914db231f870",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "IntroDone",
+      "persistentUuid": "fd2debcf-f17f-4a8f-bc10-ac6e932ae396",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "IntroPhase",
+      "persistentUuid": "abe9f1e5-8214-4a2f-a021-f8e0684f7dfe",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "Cfg_SeaZ",
+      "persistentUuid": "7515921a-db86-4923-ab6a-89d6b7877e14",
       "type": "number",
       "value": 450
     },
     {
       "name": "Cfg_ShoreOut",
+      "persistentUuid": "8762e688-6e8f-46e1-9dae-d4a7919bf18c",
       "type": "number",
       "value": 2900
     },
     {
       "name": "Cfg_ShoreIn",
+      "persistentUuid": "2ae853c6-9407-4619-b8ae-9afb5f9c6e63",
       "type": "number",
       "value": 1500
     },
     {
       "name": "Cfg_IslCY",
+      "persistentUuid": "ff95f19d-9044-4abe-88a7-57c68418dc27",
       "type": "number",
       "value": 4012
     },
     {
       "name": "Cfg_IslCX",
+      "persistentUuid": "b40ffaa5-a180-4a6c-8dbc-30337c5e9c9c",
       "type": "number",
       "value": 4155
     },
     {
       "name": "Cfg_SeaBoost",
+      "persistentUuid": "8a35d5cc-85b0-4e5c-8947-689a3977dff3",
       "type": "number",
       "value": 1
     },
     {
       "name": "Cfg_AmbDuck",
+      "persistentUuid": "fa19b075-b785-4f70-822b-160732df190d",
       "type": "number",
       "value": 5
     },
     {
       "name": "Cfg_AmbBase",
+      "persistentUuid": "08183540-2504-41ac-9d83-80d55be62a57",
       "type": "number",
       "value": 13
     },
     {
       "name": "AmbVolS",
+      "persistentUuid": "9cae6278-ed4d-48fe-b277-66c2873867bf",
       "type": "number",
       "value": 0
     },
     {
       "name": "SeaGain01",
+      "persistentUuid": "0726de12-a53b-4597-9af7-ac7aa2466214",
       "type": "number",
       "value": 0
     },
     {
       "name": "SeaProxS",
+      "persistentUuid": "aa252d56-9b2d-4032-822b-64e12c9433e1",
       "type": "number",
       "value": 0
     },
     {
       "name": "SeaProx",
+      "persistentUuid": "fc640fb7-9279-4290-9da0-d56c9e34299c",
       "type": "number",
       "value": 0
     },
     {
       "name": "AudCurPitch",
+      "persistentUuid": "45d07a92-54d7-4e45-b9a8-5411d6b5af6d",
       "type": "number",
       "value": 1
     },
     {
       "name": "AudOldVol",
+      "persistentUuid": "87eda8d8-3240-4b80-ad45-763e5a6e1e9e",
       "type": "number",
       "value": 0
     },
     {
       "name": "AudCurVol",
+      "persistentUuid": "dd844867-bfa9-49ff-af05-70fdcc65f1ac",
       "type": "number",
       "value": 0
     },
     {
       "name": "AudTargetPitch",
+      "persistentUuid": "c5fd8cb3-0580-466f-a058-d11d7c17a2af",
       "type": "number",
       "value": 1
     },
     {
       "name": "AudTargetVol",
+      "persistentUuid": "b104e9e0-43bf-4590-b53b-73d8ac36e5d2",
       "type": "number",
       "value": 0
     },
     {
       "name": "AudFadeTime",
+      "persistentUuid": "5a3b2486-c786-4990-9275-6b58f0030d26",
       "type": "number",
       "value": 0.22
     },
     {
       "name": "AudMix",
+      "persistentUuid": "18444f15-3ecb-4fcf-8e61-40b68fb3a51d",
       "type": "number",
       "value": 1
     },
     {
       "name": "AudNewCh",
+      "persistentUuid": "55e5ea49-3452-47d0-9fc3-bdfb5c539942",
       "type": "number",
       "value": 7
     },
     {
       "name": "AudOldCh",
+      "persistentUuid": "f6e23635-6da9-40ab-b2ac-bb523410864a",
       "type": "number",
       "value": 5
     },
     {
       "name": "AudActiveCh",
+      "persistentUuid": "8a475752-fdfc-4872-9006-40a44a1af3ad",
       "type": "number",
       "value": 5
     },
     {
       "name": "AudPlay",
+      "persistentUuid": "e50cbd70-8b6b-41ed-9937-85eaac568724",
       "type": "string",
       "value": ""
     },
     {
       "name": "AudWant",
+      "persistentUuid": "dfbb7edb-ee6c-4781-b9e3-173a91137498",
       "type": "string",
       "value": ""
     },
@@ -4279,6 +4357,77 @@
       "persistentUuid": "6608e79f-5425-452c-bd22-706f1ad551cd",
       "type": "number",
       "value": 1
+    },
+    {
+      "name": "GetUpGroundZ",
+      "persistentUuid": "d2a9a920-6acd-4e44-bc08-bff28e36a382",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpS1",
+      "persistentUuid": "dc9abef7-d46f-4faa-a552-0e82663841ce",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpS2",
+      "persistentUuid": "c6b6c8b7-1ea3-4a22-8eeb-d1adaa3d5bdf",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpS3",
+      "persistentUuid": "5e4e39a6-1f55-4709-8307-880a681a9286",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpE",
+      "persistentUuid": "e4102c3f-3b09-4fc0-86d5-78d4c3d5d83c",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpEye",
+      "persistentUuid": "7b948837-eb31-4fb0-9f33-86f9fbb9b301",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpOffZ",
+      "persistentUuid": "1b100c81-f751-4c25-ad49-1c6614b36c60",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpPitch",
+      "persistentUuid": "6bf6f13b-d090-4bf3-898e-194410196c9e",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpSway",
+      "persistentUuid": "4727eb4c-724e-4834-90db-492717ef230c",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpRoll",
+      "persistentUuid": "431a669f-dec3-4188-a3d7-8a639ff15385",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpBeat",
+      "persistentUuid": "f2277218-c137-45cf-a29f-432ba18d36ea",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GetUpLook",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -4397,13 +4546,13 @@
     {
       "angle": 0,
       "customSize": true,
-      "height": 8242,
+      "height": 33677,
       "layer": "",
       "name": "NewWater",
       "persistentUuid": "f98bab09-664a-4778-9caf-ab73fc371e70",
-      "width": 6789,
-      "x": 935,
-      "y": 546,
+      "width": 29718,
+      "x": -8285,
+      "y": -14980,
       "z": 95,
       "zOrder": 0,
       "numberProperties": [],
@@ -4589,6 +4738,73 @@
       "x": 85,
       "y": 37,
       "z": -155,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 15,
+      "customSize": true,
+      "depth": 144,
+      "height": 576,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Rocket",
+      "persistentUuid": "5c06b8da-9216-40a7-b1bb-3c7d93c57f81",
+      "rotationX": 25,
+      "width": 720,
+      "x": 3946,
+      "y": 2874,
+      "z": 81,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 70,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "CineBarTop",
+      "persistentUuid": "b13f9264-2a7a-4fec-a081-62b214d32696",
+      "width": 1280,
+      "x": 0,
+      "y": 0,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 70,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "CineBarBottom",
+      "persistentUuid": "ba4cd539-355c-459b-bfeb-81dbfa50a2d8",
+      "width": 1280,
+      "x": 0,
+      "y": 650,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 720,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "FadeOverlay",
+      "persistentUuid": "fd39e831-f886-4436-b81f-32590d2b3cd4",
+      "width": 1280,
+      "x": 0,
+      "y": 0,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -5355,6 +5571,498 @@
         "lineHeight": 0,
         "color": "255;120;110"
       }
+    },
+    {
+      "assetStoreId": "789584738bec913a695fb9bf51557ee2a0d82feb9f9fac8e6c840061a9fe6114",
+      "name": "Rocket",
+      "persistentUuid": "3d0c3b99-3878-4c2d-8df2-a397feb5a1dc",
+      "type": "Scene3D::Model3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Physics3D",
+          "type": "Physics3D::Physics3DBehavior",
+          "object3D": "Object3D",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "shape": "Box",
+          "meshShapeResourceName": "",
+          "shapeOrientation": "Z",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeDimensionC": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "shapeOffsetZ": 0,
+          "massCenterOffsetX": 0,
+          "massCenterOffsetY": 0,
+          "massCenterOffsetZ": 0,
+          "massOverride": 0,
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 17,
+          "masks": 17
+        }
+      ],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 152,
+        "height": 152,
+        "isCastingShadow": true,
+        "isReceivingShadow": true,
+        "keepAspectRatio": true,
+        "materialType": "StandardWithoutMetalness",
+        "modelResourceName": "Rocket Fuel A.glb",
+        "originLocation": "ModelOrigin",
+        "pbrConfig": "",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 0,
+        "width": 152,
+        "animations": []
+      }
+    },
+    {
+      "assetStoreId": "20e7916c3b89f0642baf38138bb4361bbc7342f30c57ddde01f279d30cb3bdef",
+      "name": "CrashExplosion",
+      "persistentUuid": "713624a0-d66d-4dcd-8517-3a8fe7a336dc",
+      "type": "ParticleEmitter3D::ParticleEmitter3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Duration": 0.08,
+        "ShouldAutodestruct": true,
+        "AreParticlesRelative": false,
+        "GravityTop": "Z+",
+        "Gravity": 0,
+        "ZoneRadius": 0,
+        "EndScale": 2.2,
+        "RenderMode": "Billboard",
+        "Blending": "Additive",
+        "StartColor": "255;210;120",
+        "EndColor": "230;60;0",
+        "StartOpacity": 255,
+        "EndOpacity": 0,
+        "StartSizeMin": 80,
+        "StartSizeMax": 130,
+        "Flow": 1500,
+        "LifespanMin": 0.5,
+        "LifespanMax": 0.9,
+        "StartSpeedMin": 100,
+        "StartSpeedMax": 320,
+        "SpayConeAngle": 0
+      },
+      "childrenContent": {
+        "Particle": {
+          "adaptCollisionMaskAutomatically": true,
+          "updateIfNotVisible": false,
+          "animations": [
+            {
+              "name": "Image",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Fireball.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assetStoreId": "20e7916c3b89f0642baf38138bb4361bbc7342f30c57ddde01f279d30cb3bdef",
+      "name": "CrashExplosion2",
+      "persistentUuid": "54ff18a4-28a5-4b39-8a1a-f58c7f4f46c2",
+      "type": "ParticleEmitter3D::ParticleEmitter3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Duration": 0.15,
+        "ShouldAutodestruct": true,
+        "AreParticlesRelative": false,
+        "GravityTop": "Z+",
+        "Gravity": -20,
+        "ZoneRadius": 0,
+        "EndScale": 4,
+        "RenderMode": "Billboard",
+        "Blending": "Normal",
+        "StartColor": "75;70;65",
+        "EndColor": "150;145;140",
+        "StartOpacity": 140,
+        "EndOpacity": 0,
+        "StartSizeMin": 40,
+        "StartSizeMax": 70,
+        "Flow": 400,
+        "LifespanMin": 2,
+        "LifespanMax": 3,
+        "StartSpeedMin": 180,
+        "StartSpeedMax": 300,
+        "SpayConeAngle": 30
+      },
+      "childrenContent": {
+        "Particle": {
+          "adaptCollisionMaskAutomatically": true,
+          "updateIfNotVisible": false,
+          "animations": [
+            {
+              "name": "Image",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Smoke.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assetStoreId": "20e7916c3b89f0642baf38138bb4361bbc7342f30c57ddde01f279d30cb3bdef",
+      "name": "CrashExplosion3",
+      "persistentUuid": "26a94a19-4460-4ce8-b909-1d0b429d7752",
+      "type": "ParticleEmitter3D::ParticleEmitter3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Duration": 0.04,
+        "ShouldAutodestruct": true,
+        "AreParticlesRelative": false,
+        "GravityTop": "Z+",
+        "Gravity": 700,
+        "ZoneRadius": 0,
+        "EndScale": 1,
+        "RenderMode": "Trail",
+        "Blending": "Additive",
+        "StartColor": "255;230;150",
+        "EndColor": "255;100;20",
+        "StartOpacity": 255,
+        "EndOpacity": 0,
+        "StartSizeMin": 6,
+        "StartSizeMax": 9,
+        "Flow": 4000,
+        "LifespanMin": 0.5,
+        "LifespanMax": 1,
+        "StartSpeedMin": 400,
+        "StartSpeedMax": 800,
+        "SpayConeAngle": 80,
+        "TrailStartLengthMin": 4,
+        "TrailStartLengthMax": 6,
+        "TrailEndWidthRatio": 0
+      },
+      "childrenContent": {
+        "Particle": {
+          "adaptCollisionMaskAutomatically": true,
+          "updateIfNotVisible": false,
+          "animations": [
+            {
+              "name": "Image",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "SoftDot.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "ImpactLight",
+      "type": "Light3D::PointLight3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "17de84de31f99a29c35da65c0731547b6cf2441b5cffdc359ea0b50a4909a22c",
+      "name": "CineBarTop",
+      "persistentUuid": "cf716624-6389-43c7-bf6d-96f765f575f0",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "pixel-black.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1,
+                        "y": 0
+                      },
+                      {
+                        "x": 1,
+                        "y": 1
+                      },
+                      {
+                        "x": 0,
+                        "y": 1
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "17de84de31f99a29c35da65c0731547b6cf2441b5cffdc359ea0b50a4909a22c",
+      "name": "CineBarBottom",
+      "persistentUuid": "99c14ecc-b728-4a14-929b-fbf4c0777dfe",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "pixel-black.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1,
+                        "y": 0
+                      },
+                      {
+                        "x": 1,
+                        "y": 1
+                      },
+                      {
+                        "x": 0,
+                        "y": 1
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "17de84de31f99a29c35da65c0731547b6cf2441b5cffdc359ea0b50a4909a22c",
+      "name": "FadeOverlay",
+      "persistentUuid": "5d6b8162-3f83-46fb-bd65-3ae0ec5b678e",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "pixel-black.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 1,
+                        "y": 0
+                      },
+                      {
+                        "x": 1,
+                        "y": 1
+                      },
+                      {
+                        "x": 0,
+                        "y": 1
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "RocketGlow",
+      "type": "Light3D::PointLight3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Color": "255;170;60",
+        "Intensity": 3,
+        "Range": 1500
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -5418,6 +6126,33 @@
       },
       {
         "objectName": "FearText"
+      },
+      {
+        "objectName": "Rocket"
+      },
+      {
+        "objectName": "CrashExplosion"
+      },
+      {
+        "objectName": "CrashExplosion2"
+      },
+      {
+        "objectName": "CrashExplosion3"
+      },
+      {
+        "objectName": "ImpactLight"
+      },
+      {
+        "objectName": "CineBarTop"
+      },
+      {
+        "objectName": "CineBarBottom"
+      },
+      {
+        "objectName": "FadeOverlay"
+      },
+      {
+        "objectName": "RocketGlow"
       }
     ]
   },
@@ -5711,6 +6446,2751 @@
       ]
     },
     {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Rocket Intro (Three.js JS) v5 Horror",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "aiGeneratedEventId": "01M71Z4GJ3BHP849N57XKP3F1H",
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const S = runtimeScene.__rocketIntro;",
+                "if (S && S.release && !S.state.released) { console.log(\"[RocketIntro] force release\"); S.release(); }"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "FadeOverlay",
+                    "Opacity",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "CineBarTop",
+                    "Opacity",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "OpacityCapability::OpacityBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "CineBarBottom",
+                    "Opacity",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "===== CINEMATIC INTRO v4 (Three.js r185.1): rocket crash at X3328 Y2302 Z450, player frozen then restored ====="
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Init: GDevelop actions + JS builds rocket / FX / camera takeover. JS freezes the Player and hides Lantern/Ember; restores them at the end (runs once)"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpT",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamX",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Cinematic\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::Physics3DBehavior::SetGravityScale"
+              },
+              "parameters": [
+                "Rocket",
+                "Physics3D",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "Rocket"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpGroundZ",
+                "=",
+                "-100000"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween3"
+              },
+              "parameters": [
+                "FadeOverlay",
+                "Tween",
+                "Opacity",
+                "\"introFadeIn\"",
+                "0",
+                "\"linear\"",
+                "0.8",
+                "no"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/* v8 — Slow cinematic pacing: fallTime 26s, longer shots/blends, extended slow-mo & wreck */",
+                "/* =====================================================================",
+                "   🚀 النسخة 7 — Cinematic Director + Scene-aware Camera + Pro Audio",
+                "   الجديد في v7:",
+                "   • الكاميرا بتقرا الـ Scene: Terrain الحقيقي (TropicalIslandTerrain) + جذوع وسعف النخيل + المخيّم + سطح البحر",
+                "     → Collision كامل + Line-of-sight (مفيش حاجة بتحجب الصاروخ) + اختيار أماكن الكاميرات الأرضية تلقائيًا.",
+                "   • 6 لقطات: Fly-by → Chase → Rear-tracking → Telephoto Dolly-zoom → Worm's-eye + Impact kick → Wreck crane/orbit",
+                "   • Hit-stop لحظة الاصطدام + Camera kick + Lens flare أنامورفيك + Film grain + نبض القلب على الـ Vignette",
+                "   • صوت احترافي: Compressor + Reverb + Doppler/Pan + نبض قلب + Engine sputter/backfire + أنين معدن + تكسير زجاج",
+                "     + Riser + هدوء قبل العاصفة + Boom متعدد الطبقات + رنين أذن (Tinnitus) + طقطقة نار + Fade-out",
+                "   ===================================================================== */",
+                "/* =====================================================================",
+                "   🚀 مشهد سقوط وتحطم الصاروخ — النسخة 6 (Horror + Cinematic Cameras) — Three.js r185.1",
+                "   الصق الكود ده كامل جوّه حدث JS الخاص بـ SceneJustBegins (بدل القديم).",
+                "",
+                "   الجديد في v6:",
+                "   • مخرج كاميرا كامل: 5 لقطات (Fly-by / Rear-tracking / Telephoto / Worm's-eye / Wreck reveal)",
+                "   • انتقالات سموث (Blend بـ smootherstep + Slerp) بدل الـ Cut والفلاش",
+                "   • Dutch angle + Heartbeat FOV + Dolly-back بعد الاصطدام + Crane reveal للحطام",
+                "   • Slow-mo أبكر وأطول + الصوت بيهدّى لحظة قبل الاصطدام",
+                "",
+                "   (باقي المميزات زي v4/v5: الصاروخ بيقع على X=3328 Y=2302 Z=450، اللاعب بيتجمّد ويرجع بنفس مكانه،",
+                "    Takeover على كاميرا Three وبنرجّعها، Lantern/Ember بيتخفّوا وبيظهروا، زجاج كريستال، ضباب رعب، WebGPU-safe)",
+                "   ===================================================================== */",
+                "",
+                "// ============================ الإعدادات ============================",
+                "const CFG = {",
+                "  layer: \"\",                 // اسم الـ Layer (الفاضي = الأساسي)",
+                "  rocketObject: \"Rocket\",    // كائن الصاروخ القديم: بيتخفّى",
+                "  playerObject: \"Player\",",
+                "  playerBehavior: \"PhysicsCharacter3D\",",
+                "  lanternObject: \"Lantern\",  // بيظهر تاني لما المشهد يخلص",
+                "  emberObject: \"Ember\",      // بيظهر تاني لما المشهد يخلص",
+                "  guardFrames: 45,           // عدد فريمات الحماية بعد رجوع اللاعب (لو وقع تحت Z المحفوظ بيتعدّل)",
+                "  guardDrop: 25,             // لو Z نزل أكتر من كده عن المحفوظ = وقع",
+                "",
+                "  terrainObject: \"TropicalIslandTerrain\",         // اسم كائن الـ Terrain (الأفضل تكتبه). الفاضي = بنجرّب الأسماء اللي تحت",
+                "  terrainNames: [\"Terrain\", \"terrain\", \"Ground\", \"Floor\"],",
+                "  terrainMinSize: 3000,",
+                "  terrainMaxThickness: 1500,",
+                "",
+                "  terrainBox: { x: 1155, y: 1012, z: 0, w: 6000, h: 6000, depth: 600, originCenter: false },",
+                "  edgeMargin: 700,",
+                "",
+                "  // ---------- نقطة السقوط (من الـ Editor) ----------",
+                "  crashX: 3328,",
+                "  crashY: 2302,",
+                "  crashZ: 450,",
+                "  snapCrashToTerrain: false, // true = Z ياخد من Raycast على الـ Terrain بدل 450",
+                "",
+                "  unit: 60,                  // كل 1 متر = 60 بكسل",
+                "  startAltitude: 4200,       // ارتفاع بداية السقوط (قصير عشان العالم تحت يفضل الـ Terrain بس)",
+                "  approachDist: 2600,",
+                "  approachAngle: null,       // null = تلقائي: الصاروخ بييجي من ناحية نص الـ Terrain (فوق الأرض دايمًا)",
+                "  impactAngle: 62,",
+                "  fallTime: 26,",
+                "  tumbleDeg: 150,",
+                "  lookPitch: 12,",
+                "  fov: 72,",
+                "  wreckShotTime: 14,",
+                "  leanDeg: 20,",
+                "  sinkPx: 70,",
+                "  near: 3,",
+                "  far: 6000,                 // مدى الرؤية القصير",
+                "  speedRef: 8,              // م/ث = سرعة 100% للمؤثرات والصوت",
+                "",
+                "  // ---------- ضباب / رؤية قصيرة ----------",
+                "  haze: { enabled: true, color: 0x131316, near: 1200, far: 5200, background: true },   // سماء رعب معتمة",
+                "",
+                "  sceneLights: true,",
+                "  audio: true,",
+                "  cockpitImpact: false,",
+                "  slowMo: true,",
+                "  camShake: 1,",
+                "  preSlow: 0.55,             // (v8.2) قوة البطء قبل الاصطدام (0 = مفيش)",
+                "  slamBoost: 1.6,            // (v8.2) تسارع الصاروخ في آخر لحظة قبل الخبطة",
+                "  hitStop: 0.12,            // (v8.2) مدة تجمّد الصورة لحظة الاصطدام (ث)",
+                "  quake: 1,                  // (v8.2) قوة الزلزال بعد الاصطدام (0 = إيقاف)",
+                "  chaseEnd: 0.36,",
+                "  groundCamStart: 0.70,",
+                "  groundCamAhead: 2100,",
+                "  groundCamSide: 1300,",
+                "  groundCamHeight: 200,",
+                "",
+                "  // ---------- مخرج الكاميرا (جديد v6) ----------",
+                "  flyEnd: 0.17,              // نهاية لقطة الـ Fly-by الافتتاحية",
+                "  cockpitEnd: 0.64,          // نهاية لقطة الكابينة",
+                "  teleEnd: 0.85,             // نهاية لقطة التيليفوتو الأرضية (بعدها اللقطة المنخفضة القريبة)",
+                "  closeSide: 650,            // بُعد الكاميرا القريبة جانبيًا عن نقطة الاصطدام",
+                "  closeAhead: 250,           // وإزاحتها قدّام نقطة الاصطدام",
+                "  closeHeight: 70,           // ارتفاعها عن الأرض (لقطة Worm's-eye)",
+                "",
+                "  terrainGrid: 21,",
+                "",
+                "  // ---------- (v7) تصادم الكاميرا + تأثيرات ----------",
+                "  camClear: 45,                              // نصف قطر الكاميرا للتصادم مع النخيل/المخيّم",
+                "  obstacleObjects: [\"PalmTrees\", \"Fireplace\"],   // الكائنات اللي الكاميرا مبتخترقهاش",
+                "  waterObject: \"NewWater\", seaVar: \"Cfg_SeaZ\",   // الكاميرا مبتنزلش تحت سطح البحر",
+                "  grain: 0.06,                               // Film grain (0 = إيقاف)",
+                "  terrainRadius: 3000,",
+                "  wreckAmbient: 0.35",
+                "};",
+                "",
+                "// ============================ فحوصات أولية ============================",
+                "const setVar = (n, v) => { const x = runtimeScene.getVariables().get(n); if (x) x.setNumber(v); };",
+                "const getVar = (n) => { const x = runtimeScene.getVariables().get(n); return x ? x.getAsNumber() : 0; };",
+                "",
+                "const layerObj = runtimeScene.getLayer(CFG.layer);",
+                "const lr = layerObj && layerObj.getRenderer ? layerObj.getRenderer() : null;",
+                "const scene3 = lr && (lr.getThreeScene ? lr.getThreeScene() : lr._threeScene);",
+                "const cam3 = lr && (lr.getThreeCamera ? lr.getThreeCamera() : lr._threeCamera);",
+                "if (typeof THREE === \"undefined\" || !scene3 || !cam3 || !cam3.isPerspectiveCamera) {",
+                "  console.error(\"[RocketIntro] مفيش three.js / Layer 3D / كاميرا Perspective — هتتخطى المقدمة.\");",
+                "  setVar(\"IntroPhase\", 5);",
+                "  return;",
+                "}",
+                "",
+                "// ============================ أدوات رياضية ============================",
+                "const V3 = THREE.Vector3, Q = THREE.Quaternion, M4 = THREE.Matrix4, Col = THREE.Color, Eul = THREE.Euler;",
+                "const DEG = Math.PI / 180, U = CFG.unit;",
+                "const Z_AXIS = new V3(0, 0, 1);",
+                "const clamp = (x, a, b) => Math.min(b, Math.max(a, x));",
+                "const lerp = (a, b, t) => a + (b - a) * t;",
+                "const sstep = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };",
+                "const nz = (t, s) => Math.sin(t + s * 12.9) * 0.5 + Math.sin(t * 2.3 + s * 7.1) * 0.3 + Math.sin(t * 4.1 + s * 3.7) * 0.2;",
+                "const rnd = (a, b) => a + Math.random() * (b - a);",
+                "const wrapPi = (a) => Math.atan2(Math.sin(a), Math.cos(a));",
+                "function dampS(o, target, st_, dt) {",
+                "  if (st_ <= 1e-4 || dt <= 0) { o.v = target; o.vel = 0; return; }",
+                "  const om = 2 / st_, x = om * dt, e = 1 / (1 + x + 0.48 * x * x + 0.235 * x * x * x);",
+                "  const ch = o.v - target, tmp = (o.vel + om * ch) * dt;",
+                "  o.vel = (o.vel - om * tmp) * e; o.v = target + (ch + tmp) * e;",
+                "}",
+                "function dampV(cur, vel, tgt, st_, dt) {",
+                "  if (st_ <= 1e-4 || dt <= 0) { cur.copy(tgt); vel.set(0, 0, 0); return cur; }",
+                "  const om = 2 / st_, x = om * dt, e = 1 / (1 + x + 0.48 * x * x + 0.235 * x * x * x);",
+                "  for (const k of [\"x\", \"y\", \"z\"]) {",
+                "    const ch = cur[k] - tgt[k], tmp = (vel[k] + om * ch) * dt;",
+                "    vel[k] = (vel[k] - om * tmp) * e; cur[k] = tgt[k] + (ch + tmp) * e;",
+                "  }",
+                "  return cur;",
+                "}",
+                "// متغيّرات الـ Get-up (بنضمن إنها موجودة)",
+                "try {",
+                "  const VC = runtimeScene.getVariables();",
+                "  for (const n of [\"GetUpT\", \"GetUpS1\", \"GetUpS2\", \"GetUpS3\", \"GetUpE\", \"GetUpEye\", \"GetUpOffZ\", \"GetUpPitch\", \"GetUpSway\", \"GetUpRoll\", \"GetUpBeat\", \"GetUpLook\", \"GetUpGroundZ\"]) {",
+                "    if (!VC.has(n)) VC.add(n, new gdjs.Variable());",
+                "  }",
+                "  VC.get(\"GetUpGroundZ\").setNumber(-100000);",
+                "} catch (e) { console.warn(\"[RocketIntro] GetUp vars:\", e); }",
+                "const objs = (n) => { try { return runtimeScene.getObjects(n) || []; } catch (e) { return []; } };",
+                "",
+                "// ============================ حدود الـ Terrain ونقطة الاصطدام ============================",
+                "const TB = CFG.terrainBox;",
+                "const tMinX = TB.originCenter ? TB.x - TB.w / 2 : TB.x;",
+                "const tMinY = TB.originCenter ? TB.y - TB.h / 2 : TB.y;",
+                "const tMaxX = tMinX + TB.w, tMaxY = tMinY + TB.h;",
+                "const tCenterX = (tMinX + tMaxX) / 2, tCenterY = (tMinY + tMaxY) / 2;",
+                "const mg = Math.min(CFG.edgeMargin, TB.w / 2 - 100, TB.h / 2 - 100);",
+                "const insideT = (x, y, m) => x > tMinX + m && x < tMaxX - m && y > tMinY + m && y < tMaxY - m;",
+                "",
+                "const rObj = objs(CFG.rocketObject)[0];",
+                "const pObj = objs(CFG.playerObject)[0];",
+                "let cx = tCenterX, cy = tCenterY;",
+                "if (CFG.crashX !== null && CFG.crashY !== null) { cx = CFG.crashX; cy = CFG.crashY; }",
+                "else if (rObj) { cx = rObj.getCenterX(); cy = rObj.getCenterY(); }",
+                "else if (pObj) { cx = pObj.getCenterX() + 500; cy = pObj.getCenterY(); }",
+                "{",
+                "  const ox = cx, oy = cy;",
+                "  cx = clamp(cx, tMinX + mg, tMaxX - mg); cy = clamp(cy, tMinY + mg, tMaxY - mg);",
+                "  if (ox !== cx || oy !== cy) console.warn(\"[RocketIntro] نقطة الاصطدام كانت برّه الـ Terrain — اتنقلت لـ\", cx.toFixed(0), cy.toFixed(0));",
+                "}",
+                "if (rObj && rObj.hide) rObj.hide(true);",
+                "",
+                "// ============================ تجميد اللاعب + إخفاء Lantern/Ember ============================",
+                "// بنحفظ حالة اللاعب الأصلية، بنجمّده، وبنرجّعه بالظبط لما المشهد يخلص.",
+                "const pBeh = (() => { try { return pObj && pObj.getBehavior ? pObj.getBehavior(CFG.playerBehavior) : null; } catch (e) { return null; } })();",
+                "const saved = pObj ? {",
+                "  x: pObj.getX(), y: pObj.getY(),",
+                "  z: pObj.getZ ? pObj.getZ() : 0,",
+                "  angle: pObj.getAngle ? pObj.getAngle() : 0,",
+                "  rx: pObj.getRotationX ? pObj.getRotationX() : 0,",
+                "  ry: pObj.getRotationY ? pObj.getRotationY() : 0,",
+                "  hidden: pObj.isHidden ? pObj.isHidden() : false",
+                "} : null;",
+                "const lanternObjs = objs(CFG.lanternObject), emberObjs = objs(CFG.emberObject);",
+                "function freezePlayer() {",
+                "  if (!pObj) return;",
+                "  try { if (pBeh && pBeh.activated && pBeh.activated()) pBeh.activate(false); } catch (e) { }",
+                "  try { pObj.hide(true); } catch (e) { }",
+                "}",
+                "function pinPlayer() {",
+                "  if (!pObj || !saved) return;",
+                "  try {",
+                "    if (pObj.getX() !== saved.x || pObj.getY() !== saved.y || (pObj.getZ && pObj.getZ() !== saved.z)) {",
+                "      pObj.setPosition(saved.x, saved.y); if (pObj.setZ) pObj.setZ(saved.z);",
+                "    }",
+                "  } catch (e) { }",
+                "}",
+                "function restorePlayer() {",
+                "  if (!pObj || !saved) return;",
+                "  try {",
+                "    pObj.setPosition(saved.x, saved.y); if (pObj.setZ) pObj.setZ(saved.z);",
+                "    if (pObj.setAngle) pObj.setAngle(saved.angle);",
+                "    if (pObj.setRotationX) pObj.setRotationX(saved.rx);",
+                "    if (pObj.setRotationY) pObj.setRotationY(saved.ry);",
+                "    pObj.hide(saved.hidden);",
+                "    if (pBeh && pBeh.activate) pBeh.activate(true);        // بعد ما الموضع اتظبط",
+                "  } catch (e) { console.warn(\"[RocketIntro] restorePlayer:\", e); }",
+                "  st.guard = CFG.guardFrames;",
+                "  console.log(\"[RocketIntro] اللاعب رجع لـ\", saved.x.toFixed(1), saved.y.toFixed(1), saved.z.toFixed(1));",
+                "}",
+                "function guardPlayer() {                 // أمان: لو الفيزياء وقّعته بعد الرجوع، نرجّعه لنفس الموضع المحفوظ",
+                "  if (!st.released || st.guard <= 0 || !pObj || !saved) return;",
+                "  st.guard--;",
+                "  try {",
+                "    if (pObj.getZ && pObj.getZ() < saved.z - CFG.guardDrop) {",
+                "      pObj.setPosition(saved.x, saved.y); pObj.setZ(saved.z);",
+                "      if (pBeh && pBeh.activate) { pBeh.activate(false); pBeh.activate(true); }",
+                "      console.warn(\"[RocketIntro] اللاعب وقع بعد الرجوع — اتعاد لموضعه المحفوظ\");",
+                "    }",
+                "  } catch (e) { }",
+                "}",
+                "function showWorldObjects() {",
+                "  for (const o of lanternObjs.concat(emberObjs)) { try { o.hide(false); } catch (e) { } }",
+                "}",
+                "freezePlayer();",
+                "for (const o of lanternObjs.concat(emberObjs)) { try { o.hide(true); } catch (e) { } }",
+                "",
+                "// ============================ الحاوية الرئيسية ============================",
+                "const world = new THREE.Group();",
+                "world.name = \"RocketIntroWorld\";",
+                "if (lr.add3DRendererObject) lr.add3DRendererObject(world); else scene3.add(world);",
+                "scene3.updateMatrixWorld(true);",
+                "const MIR = world.matrixWorld.determinant() < 0;",
+                "",
+                "// ============================ ضباب + رؤية قصيرة (بنرجّعها بعد المشهد) ============================",
+                "const sceneBackup = { fog: scene3.fog, background: scene3.background };",
+                "if (CFG.haze.enabled) {",
+                "  scene3.fog = new THREE.Fog(CFG.haze.color, CFG.haze.near, CFG.haze.far);",
+                "  if (CFG.haze.background) scene3.background = new THREE.Color(CFG.haze.color);",
+                "}",
+                "",
+                "// ============================ الـ Terrain (Raycast + شبكة ارتفاعات) ============================",
+                "const terrainMeshes = [];",
+                "(function collectTerrain() {",
+                "  const excluded = new Set();",
+                "  for (const o of [rObj, pObj]) {",
+                "    const r = o && (o.get3DRendererObject ? o.get3DRendererObject() : (o.getRendererObject ? o.getRendererObject() : null));",
+                "    if (r && r.isObject3D) excluded.add(r);",
+                "  }",
+                "  const roots = [];",
+                "  const names = CFG.terrainObject ? [CFG.terrainObject] : CFG.terrainNames;",
+                "  for (const nm of names) {",
+                "    const list = objs(nm);",
+                "    for (const o of list) {",
+                "      const r = o.get3DRendererObject ? o.get3DRendererObject() : null;",
+                "      if (r && r.isObject3D) roots.push(r);",
+                "    }",
+                "    if (roots.length) { console.log(\"[RocketIntro] Terrain object:\", nm); break; }",
+                "  }",
+                "  const explicit = roots.length > 0;",
+                "  if (!explicit) roots.push(scene3);",
+                "  const bb = new THREE.Box3(), sz = new V3();",
+                "  const walk = (o, isRoot) => {",
+                "    if (o === world || excluded.has(o)) return;",
+                "    if (!isRoot && o.visible === false) return;",
+                "    if (o.isMesh && o.geometry) {",
+                "      if (explicit) terrainMeshes.push(o);",
+                "      else {",
+                "        bb.setFromObject(o);",
+                "        if (!bb.isEmpty()) {",
+                "          bb.getSize(sz);",
+                "          if (Math.max(sz.x, sz.y) >= CFG.terrainMinSize && sz.z <= CFG.terrainMaxThickness) terrainMeshes.push(o);",
+                "        }",
+                "      }",
+                "    }",
+                "    for (const c of o.children) walk(c, false);",
+                "  };",
+                "  for (const r of roots) walk(r, true);",
+                "  for (const m of terrainMeshes) m.userData.__bb = new THREE.Box3().setFromObject(m);",
+                "})();",
+                "const hasTerrain = terrainMeshes.length > 0;",
+                "const fallbackZ = CFG.crashZ !== null ? CFG.crashZ : TB.z + TB.depth;",
+                "if (!hasTerrain) console.warn(\"[RocketIntro] مفيش Terrain Mesh اتلقى — هستخدم Z = \" + fallbackZ + \". اكتب اسم الكائن في CFG.terrainObject.\");",
+                "",
+                "const ray = new THREE.Raycaster(); ray.camera = cam3;",
+                "const _ro = new V3(), _rd = new V3(), _pp = new V3(), _inv = new M4(), probeN = new V3(0, 0, 1);",
+                "function probe(x, y) {                       // ارتفاع الأرض عند (x,y) أو null",
+                "  if (!hasTerrain) return null;",
+                "  _ro.set(x, y, 100000); world.localToWorld(_ro);",
+                "  _rd.set(0, 0, -1).transformDirection(world.matrixWorld);",
+                "  const cand = [];",
+                "  for (const m of terrainMeshes) {",
+                "    const b = m.userData.__bb;",
+                "    if (_ro.x >= b.min.x && _ro.x <= b.max.x && _ro.y >= b.min.y && _ro.y <= b.max.y) cand.push(m);",
+                "  }",
+                "  if (!cand.length) return null;",
+                "  ray.set(_ro, _rd); ray.far = 400000;",
+                "  const hits = ray.intersectObjects(cand, false);",
+                "  if (!hits.length) return null;",
+                "  const h = hits[0]; _pp.copy(h.point); world.worldToLocal(_pp);",
+                "  if (h.face) {",
+                "    probeN.copy(h.face.normal).transformDirection(h.object.matrixWorld);",
+                "    _inv.copy(world.matrixWorld).invert(); probeN.transformDirection(_inv);",
+                "    if (probeN.z < 0) probeN.negate();",
+                "  }",
+                "  return _pp.z;",
+                "}",
+                "",
+                "// نقطة الاصطدام: X,Y,Z زي ما حددتهم بالظبط",
+                "const C = new V3(cx, cy, fallbackZ);",
+                "let topSrc = CFG.crashZ !== null ? \"CFG.crashZ\" : \"box\";",
+                "{",
+                "  const z0 = probe(cx, cy);",
+                "  if (z0 !== null) {",
+                "    if (CFG.crashZ === null || CFG.snapCrashToTerrain) { C.z = z0; topSrc = \"Raycast\"; }",
+                "    else if (Math.abs(z0 - C.z) > 2) console.warn(\"[RocketIntro] سطح الـ Terrain عند نقطة الاصطدام Z=\" + z0.toFixed(1) + \" والصاروخ متثبّت على Z=\" + C.z + \" زي ما طلبت (لو عاوزه يلزق بالـ Terrain خلّي snapCrashToTerrain = true)\");",
+                "  }",
+                "}",
+                "console.log(\"[RocketIntro] نقطة الاصطدام:\", C.x.toFixed(0), C.y.toFixed(0), C.z.toFixed(1), \"(\" + topSrc + \")\");",
+                "if (pObj) {",
+                "  const dP = Math.hypot(pObj.getCenterX() - C.x, pObj.getCenterY() - C.y);",
+                "  if (dP < 600) console.warn(\"[RocketIntro] اللاعب قريب جدًا من نقطة الاصطدام (\" + dP.toFixed(0) + \"px).\");",
+                "}",
+                "",
+                "const GN = Math.max(5, CFG.terrainGrid | 0), GR = CFG.terrainRadius, GC = (2 * GR) / (GN - 1);",
+                "const gH = new Float32Array(GN * GN).fill(NaN);",
+                "const gOrder = [];",
+                "for (let j = 0; j < GN; j++) for (let i = 0; i < GN; i++) gOrder.push(j * GN + i);",
+                "gOrder.sort((a, b) => {",
+                "  const ax = (a % GN) - (GN - 1) / 2, ay = Math.floor(a / GN) - (GN - 1) / 2, bx = (b % GN) - (GN - 1) / 2, by = Math.floor(b / GN) - (GN - 1) / 2;",
+                "  return ax * ax + ay * ay - (bx * bx + by * by);",
+                "});",
+                "let gNext = 0, gDone = !hasTerrain;",
+                "function buildGrid(budgetMs) {               // بنبني الشبكة على فريمات عشان مفيش تهنيج",
+                "  if (gDone) return;",
+                "  const t0 = performance.now();",
+                "  while (gNext < gOrder.length) {",
+                "    const idx = gOrder[gNext++], i = idx % GN, j = Math.floor(idx / GN);",
+                "    const z = probe(C.x - GR + i * GC, C.y - GR + j * GC);",
+                "    if (z !== null) gH[idx] = z;",
+                "    if (performance.now() - t0 > budgetMs) break;",
+                "  }",
+                "  if (gNext >= gOrder.length) gDone = true;",
+                "}",
+                "function cell(i, j) { const v = gH[j * GN + i]; return v === v ? v : C.z; }",
+                "function groundAt(x, y) {                    // ارتفاع الأرض (من الشبكة) — رخيص",
+                "  if (!hasTerrain) return C.z;",
+                "  const fx = (x - (C.x - GR)) / GC, fy = (y - (C.y - GR)) / GC;",
+                "  const i0 = clamp(Math.floor(fx), 0, GN - 2), j0 = clamp(Math.floor(fy), 0, GN - 2);",
+                "  const tx = clamp(fx - i0, 0, 1), ty = clamp(fy - j0, 0, 1);",
+                "  const a = lerp(cell(i0, j0), cell(i0 + 1, j0), tx), b = lerp(cell(i0, j0 + 1), cell(i0 + 1, j0 + 1), tx);",
+                "  return lerp(a, b, ty);",
+                "}",
+                "function groundExact(x, y) { const z = probe(x, y); return z !== null ? z : groundAt(x, y); }",
+                "function groundN(x, y, out) {",
+                "  const e = GC * 0.5;",
+                "  return out.set(-(groundAt(x + e, y) - groundAt(x - e, y)) / (2 * e), -(groundAt(x, y + e) - groundAt(x, y - e)) / (2 * e), 1).normalize();",
+                "}",
+                "buildGrid(45);",
+                "const crashN = new V3(0, 0, 1);",
+                "",
+                "// ============================ Textures (Canvas) ============================",
+                "function canvasTex(w, h, draw) {",
+                "  const c = document.createElement(\"canvas\"); c.width = w; c.height = h;",
+                "  const g = c.getContext(\"2d\"); draw(g, w, h);",
+                "  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;",
+                "  t._g = g; return t;",
+                "}",
+                "function puffs(g, w, h, n, a, spread) {",
+                "  for (let i = 0; i < n; i++) {",
+                "    const x = w * (0.5 + (Math.random() - 0.5) * spread), y = h * (0.5 + (Math.random() - 0.5) * spread);",
+                "    const r = w * rnd(0.12, 0.3), gr = g.createRadialGradient(x, y, 0, x, y, r);",
+                "    gr.addColorStop(0, \"rgba(255,255,255,\" + a + \")\"); gr.addColorStop(1, \"rgba(255,255,255,0)\");",
+                "    g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "  }",
+                "}",
+                "const texGlow = canvasTex(128, 128, (g, w, h) => {",
+                "  const gr = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);",
+                "  gr.addColorStop(0, \"rgba(255,255,255,1)\"); gr.addColorStop(0.25, \"rgba(255,255,255,0.55)\"); gr.addColorStop(1, \"rgba(255,255,255,0)\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "});",
+                "const texSmoke = canvasTex(128, 128, (g, w, h) => puffs(g, w, h, 14, 0.38, 0.5));",
+                "const texCloud = canvasTex(256, 256, (g, w, h) => puffs(g, w, h, 30, 0.22, 0.7));",
+                "const texStreak = canvasTex(256, 512, (g, w, h) => {",
+                "  g.fillStyle = \"#000\"; g.fillRect(0, 0, w, h);",
+                "  for (let i = 0; i < 90; i++) {",
+                "    const x = Math.random() * w, y = Math.random() * h, l = rnd(80, 400), a = rnd(0.15, 0.9);",
+                "    const gr = g.createLinearGradient(0, y, 0, y + l);",
+                "    gr.addColorStop(0, \"rgba(255,255,255,0)\"); gr.addColorStop(0.5, \"rgba(255,255,255,\" + a + \")\"); gr.addColorStop(1, \"rgba(255,255,255,0)\");",
+                "    g.fillStyle = gr; g.fillRect(x, y, rnd(2, 9), l);",
+                "  }",
+                "});",
+                "texStreak.wrapS = texStreak.wrapT = THREE.RepeatWrapping; texStreak.repeat.set(3, 1);",
+                "const texFlame = canvasTex(64, 256, (g, w, h) => {",
+                "  const gr = g.createLinearGradient(0, h, 0, 0);",
+                "  gr.addColorStop(0, \"rgba(255,255,255,0.95)\"); gr.addColorStop(0.2, \"rgba(255,225,160,0.75)\");",
+                "  gr.addColorStop(0.55, \"rgba(255,120,30,0.35)\"); gr.addColorStop(1, \"rgba(255,60,0,0)\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "});",
+                "const texHeat = canvasTex(8, 256, (g, w, h) => {",
+                "  const gr = g.createLinearGradient(0, 0, 0, h);",
+                "  gr.addColorStop(0, \"#ffffff\"); gr.addColorStop(0.3, \"#9a7a5a\"); gr.addColorStop(1, \"#000000\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "});",
+                "const texVig = canvasTex(256, 256, (g, w, h) => {",
+                "  const gr = g.createRadialGradient(w / 2, h / 2, w * 0.22, w / 2, h / 2, w * 0.72);",
+                "  gr.addColorStop(0, \"rgba(255,255,255,0)\"); gr.addColorStop(1, \"rgba(255,255,255,1)\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "});",
+                "const texScorch = canvasTex(256, 256, (g, w, h) => {",
+                "  const gr = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);",
+                "  gr.addColorStop(0, \"rgba(6,5,4,0.95)\"); gr.addColorStop(0.45, \"rgba(10,8,6,0.8)\"); gr.addColorStop(1, \"rgba(10,8,6,0)\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "  for (let i = 0; i < 30; i++) {",
+                "    const a = rnd(0, 6.283), r = rnd(0.25, 0.85) * w / 2, x = w / 2 + Math.cos(a) * r, y = h / 2 + Math.sin(a) * r, rr = rnd(8, 34);",
+                "    const b = g.createRadialGradient(x, y, 0, x, y, rr);",
+                "    b.addColorStop(0, \"rgba(8,6,5,0.55)\"); b.addColorStop(1, \"rgba(8,6,5,0)\");",
+                "    g.fillStyle = b; g.fillRect(0, 0, w, h);",
+                "  }",
+                "});",
+                "const texEmber = canvasTex(256, 256, (g, w, h) => {",
+                "  const gr = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);",
+                "  gr.addColorStop(0, \"rgba(255,200,90,0.9)\"); gr.addColorStop(0.35, \"rgba(255,90,20,0.55)\"); gr.addColorStop(1, \"rgba(120,20,0,0)\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "  g.strokeStyle = \"rgba(255,230,160,0.7)\"; g.lineCap = \"round\";",
+                "  for (let k = 0; k < 16; k++) {",
+                "    let a = rnd(0, 6.283), x = w / 2, y = h / 2; g.lineWidth = rnd(1, 2.4); g.beginPath(); g.moveTo(x, y);",
+                "    for (let j = 0; j < 6; j++) { a += rnd(-0.5, 0.5); const l = rnd(10, 26); x += Math.cos(a) * l; y += Math.sin(a) * l; g.lineTo(x, y); }",
+                "    g.stroke();",
+                "  }",
+                "});",
+                "",
+                "// (v7) Film grain + Anamorphic streak",
+                "const texGrain = canvasTex(128, 128, (g, w, h) => {",
+                "  const id = g.createImageData(w, h);",
+                "  for (let i = 0; i < w * h; i++) { const v = (Math.random() * 255) | 0; id.data[i * 4] = v; id.data[i * 4 + 1] = v; id.data[i * 4 + 2] = v; id.data[i * 4 + 3] = 255; }",
+                "  g.putImageData(id, 0, 0);",
+                "});",
+                "texGrain.wrapS = texGrain.wrapT = THREE.RepeatWrapping; texGrain.repeat.set(4, 2.5);",
+                "const texFlareH = canvasTex(512, 64, (g, w, h) => {",
+                "  g.save(); g.translate(w / 2, h / 2); g.scale(1, 0.1);",
+                "  const gr = g.createRadialGradient(0, 0, 0, 0, 0, w / 2);",
+                "  gr.addColorStop(0, \"rgba(255,255,255,1)\"); gr.addColorStop(0.3, \"rgba(255,200,140,0.5)\"); gr.addColorStop(1, \"rgba(255,140,60,0)\");",
+                "  g.fillStyle = gr; g.fillRect(-w / 2, -h * 5, w, h * 10); g.restore();",
+                "});",
+                "// ---- خريطة بيئة (Equirect) للانعكاسات على الزجاج والمعدن ----",
+                "const texEnv = canvasTex(512, 256, (g, w, h) => {",
+                "  const gr = g.createLinearGradient(0, 0, 0, h);",
+                "  gr.addColorStop(0, \"#07080b\"); gr.addColorStop(0.42, \"#23262c\"); gr.addColorStop(0.495, \"#3a3d44\");",
+                "  gr.addColorStop(0.52, \"#14110e\"); gr.addColorStop(1, \"#050403\");",
+                "  g.fillStyle = gr; g.fillRect(0, 0, w, h);",
+                "  const sun = g.createRadialGradient(w * 0.3, h * 0.2, 0, w * 0.3, h * 0.2, 46);",
+                "  sun.addColorStop(0, \"rgba(215,228,255,0.9)\"); sun.addColorStop(0.4, \"rgba(170,190,230,0.45)\"); sun.addColorStop(1, \"rgba(150,170,210,0)\");",
+                "  g.fillStyle = sun; g.fillRect(0, 0, w, h);",
+                "  for (let i = 0; i < 16; i++) {               // لمعات حادّة = Facets الكريستال",
+                "    g.fillStyle = \"rgba(200,215,240,\" + rnd(0.15, 0.5) + \")\";",
+                "    g.fillRect(Math.random() * w, rnd(h * 0.08, h * 0.46), rnd(6, 34), rnd(2, 9));",
+                "  }",
+                "});",
+                "texEnv.mapping = THREE.EquirectangularReflectionMapping;",
+                "// ---- Facets كريستال (Bump) ----",
+                "const texFacet = canvasTex(256, 256, (g, w, h) => {",
+                "  g.fillStyle = \"#808080\"; g.fillRect(0, 0, w, h);",
+                "  for (let i = 0; i < 46; i++) {",
+                "    const x = Math.random() * w, y = Math.random() * h, v = Math.floor(rnd(60, 200));",
+                "    g.fillStyle = \"rgb(\" + v + \",\" + v + \",\" + v + \")\"; g.beginPath(); g.moveTo(x, y);",
+                "    for (let k = 0; k < 3; k++) g.lineTo(x + rnd(-60, 60), y + rnd(-60, 60));",
+                "    g.closePath(); g.fill();",
+                "  }",
+                "});",
+                "texFacet.colorSpace = THREE.NoColorSpace;",
+                "texFacet.wrapS = texFacet.wrapT = THREE.RepeatWrapping;",
+                "",
+                "// ============================ الصاروخ (بالكامل بالكود) ============================",
+                "const H_TOT = 12.4, R0 = 1.5;",
+                "const L_PX = H_TOT * U;",
+                "function hullR(h) {",
+                "  if (h < 0.7) return 1.15 + (h / 0.7) * 0.35;",
+                "  if (h < 8.4) return R0;",
+                "  const t = (h - 8.4) / (H_TOT - 8.4);",
+                "  return Math.max(0.05, R0 * Math.sqrt(1 - t * t * 0.98));",
+                "}",
+                "const texHull = canvasTex(1024, 1280, (g, w, h) => {",
+                "  const Y = (hh) => (1 - hh / H_TOT) * h;",
+                "  const bg = g.createLinearGradient(0, 0, w, 0);",
+                "  bg.addColorStop(0, \"#d3d8dd\"); bg.addColorStop(0.5, \"#eceff2\"); bg.addColorStop(1, \"#d0d5da\");",
+                "  g.fillStyle = bg; g.fillRect(0, 0, w, h);",
+                "  const band = (a, b, c) => { g.fillStyle = c; g.fillRect(0, Y(b), w, Y(a) - Y(b)); };",
+                "  band(11.2, 12.4, \"#b3261e\"); band(10.7, 10.85, \"#202428\"); band(7.3, 7.75, \"#b3261e\"); band(0.7, 1.9, \"#3a4047\");",
+                "  g.save(); g.beginPath(); g.rect(0, Y(3.5), w, Y(3.1) - Y(3.5)); g.clip();",
+                "  g.fillStyle = \"#e8b923\"; g.fillRect(0, Y(3.5), w, Y(3.1) - Y(3.5)); g.fillStyle = \"#111\";",
+                "  for (let x = -200; x < w + 200; x += 48) { g.beginPath(); g.moveTo(x, Y(3.1)); g.lineTo(x + 24, Y(3.1)); g.lineTo(x + 104, Y(3.5)); g.lineTo(x + 80, Y(3.5)); g.fill(); }",
+                "  g.restore();",
+                "  g.strokeStyle = \"rgba(40,45,50,0.55)\"; g.lineWidth = 2; g.fillStyle = \"rgba(60,64,70,0.8)\";",
+                "  for (let hh = 1.9; hh < 8.5; hh += 1.1) {",
+                "    g.beginPath(); g.moveTo(0, Y(hh)); g.lineTo(w, Y(hh)); g.stroke();",
+                "    for (let x = 6; x < w; x += 22) { g.beginPath(); g.arc(x, Y(hh) + 7, 2, 0, 6.3); g.fill(); }",
+                "  }",
+                "  for (let x = 0; x < w; x += 128) { g.beginPath(); g.moveTo(x, Y(8.4)); g.lineTo(x, Y(1.9)); g.stroke(); }",
+                "  g.save(); g.translate(768, Y(5.2)); g.rotate(-Math.PI / 2); if (MIR) g.scale(-1, 1);",
+                "  g.fillStyle = \"#1b2a4a\"; g.font = \"bold 150px Arial\"; g.textAlign = \"center\"; g.fillText(\"ARES-7\", 0, 50); g.restore();",
+                "  g.beginPath(); g.arc(512, Y(6.6), 62, 0, 6.3); g.fillStyle = \"#1c3f94\"; g.fill();",
+                "  g.lineWidth = 8; g.strokeStyle = \"#fff\"; g.stroke();",
+                "  const sg = g.createLinearGradient(0, Y(4.5), 0, h);",
+                "  sg.addColorStop(0, \"rgba(20,15,10,0)\"); sg.addColorStop(1, \"rgba(20,15,10,0.78)\");",
+                "  g.fillStyle = sg; g.fillRect(0, Y(4.5), w, h - Y(4.5));",
+                "  const hg = g.createLinearGradient(0, 0, 0, Y(9.2));",
+                "  hg.addColorStop(0, \"rgba(30,20,12,0.5)\"); hg.addColorStop(1, \"rgba(30,20,12,0)\");",
+                "  g.fillStyle = hg; g.fillRect(0, 0, w, Y(9.2));",
+                "  for (let i = 0; i < 90; i++) {",
+                "    g.fillStyle = Math.random() < 0.5 ? \"rgba(35,30,28,\" + rnd(0.06, 0.2) + \")\" : \"rgba(120,70,40,\" + rnd(0.05, 0.14) + \")\";",
+                "    g.fillRect(Math.random() * w, Math.random() * h, rnd(2, 6), rnd(60, 260));",
+                "  }",
+                "});",
+                "const texInterior = canvasTex(512, 256, (g, w, h) => {",
+                "  g.fillStyle = \"#2a3038\"; g.fillRect(0, 0, w, h);",
+                "  g.strokeStyle = \"rgba(0,0,0,0.6)\"; g.lineWidth = 3;",
+                "  for (let x = 0; x < w; x += 64) { g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }",
+                "  for (let y = 0; y < h; y += 64) { g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); }",
+                "  g.fillStyle = \"rgba(255,255,255,0.12)\";",
+                "  for (let i = 0; i < 40; i++) g.fillRect(Math.random() * w, Math.random() * h, rnd(6, 30), 2);",
+                "});",
+                "const texCracks = canvasTex(512, 256, () => { });",
+                "function drawCracks(stage) {",
+                "  const g = texCracks._g; g.clearRect(0, 0, 512, 256);",
+                "  g.strokeStyle = \"rgba(235,245,255,0.9)\"; g.lineCap = \"round\";",
+                "  const seeds = [[0.62, 0.4], [0.28, 0.62], [0.5, 0.5]];",
+                "  for (let s = 0; s < Math.min(stage, 3); s++) {",
+                "    const px = seeds[s][0] * 512, py = seeds[s][1] * 256, n = 6 + s * 2;",
+                "    for (let k = 0; k < n; k++) {",
+                "      let a = (k / n) * 6.283 + rnd(-0.3, 0.3), x = px, y = py;",
+                "      g.lineWidth = rnd(1, 2.6); g.beginPath(); g.moveTo(x, y);",
+                "      for (let j = 0; j < 5; j++) { a += rnd(-0.35, 0.35); const l = rnd(18, 55) * (s === 2 ? 1.3 : 1); x += Math.cos(a) * l; y += Math.sin(a) * l; g.lineTo(x, y); }",
+                "      g.stroke();",
+                "    }",
+                "    g.lineWidth = 1; g.beginPath(); g.arc(px, py, 26 + s * 14, 0, 6.3); g.stroke();",
+                "  }",
+                "  texCracks.needsUpdate = true;",
+                "}",
+                "drawCracks(0);",
+                "const texHud = canvasTex(512, 256, () => { });",
+                "const hudInfo = { alt: 0, spd: 0, vs: 0, pitch: 0, roll: 0, warn: 0, t: 0 };",
+                "function drawHud() {",
+                "  const g = texHud._g, w = 512, h = 256;",
+                "  g.save(); if (MIR) { g.translate(w, 0); g.scale(-1, 1); }",
+                "  g.fillStyle = \"#03121a\"; g.fillRect(0, 0, w, h);",
+                "  g.strokeStyle = \"rgba(60,255,170,0.12)\"; g.lineWidth = 1;",
+                "  for (let y = 0; y < h; y += 6) { g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); }",
+                "  g.save(); g.translate(110, 128); g.beginPath(); g.arc(0, 0, 86, 0, 6.283); g.clip();",
+                "  g.rotate(-hudInfo.roll); const py = clamp(hudInfo.pitch, -1.5, 1.5) * 90;",
+                "  g.fillStyle = \"#1d5d8f\"; g.fillRect(-110, -220 + py, 220, 220); g.fillStyle = \"#6b4a2a\"; g.fillRect(-110, py, 220, 220);",
+                "  g.strokeStyle = \"#fff\"; g.lineWidth = 3; g.beginPath(); g.moveTo(-110, py); g.lineTo(110, py); g.stroke(); g.restore();",
+                "  g.strokeStyle = \"#7ff\"; g.lineWidth = 3; g.beginPath(); g.arc(110, 128, 86, 0, 6.283); g.stroke();",
+                "  g.beginPath(); g.moveTo(80, 128); g.lineTo(140, 128); g.moveTo(110, 118); g.lineTo(110, 128); g.stroke();",
+                "  g.fillStyle = \"#4dffb0\"; g.font = \"bold 30px monospace\";",
+                "  g.fillText(\"ALT \" + Math.max(0, Math.round(hudInfo.alt)) + \" m\", 225, 70);",
+                "  g.fillText(\"SPD \" + Math.round(hudInfo.spd) + \" m/s\", 225, 112);",
+                "  g.fillText(\"V/S \" + Math.round(hudInfo.vs), 225, 154);",
+                "  if (hudInfo.warn > 0 && Math.floor(hudInfo.t * 3) % 2 === 0) {",
+                "    g.fillStyle = \"#ff2a1a\"; g.fillRect(215, 178, 285, 58); g.fillStyle = \"#200\"; g.font = \"bold 34px monospace\";",
+                "    g.fillText(hudInfo.warn > 1 ? \"PULL UP!\" : \"WARNING\", 238, 220);",
+                "  }",
+                "  g.restore(); texHud.needsUpdate = true;",
+                "}",
+                "drawHud();",
+                "",
+                "// ---- بناء الصاروخ ----",
+                "const rocket = new THREE.Group(); rocket.name = \"Rocket3D\"; rocket.scale.setScalar(U);",
+                "world.add(rocket);",
+                "const matHull = new THREE.MeshStandardMaterial({ map: texHull, roughness: 0.42, metalness: 0.3, envMap: texEnv, envMapIntensity: 0.8, emissive: new Col(0xff5a10), emissiveMap: texHeat, emissiveIntensity: 0 });",
+                "const matDark = new THREE.MeshStandardMaterial({ color: 0x2a2c31, roughness: 0.55, metalness: 0.35 });",
+                "const matFin = new THREE.MeshStandardMaterial({ color: 0xa8261f, roughness: 0.5, metalness: 0.3 });",
+                "const matShell = new THREE.MeshStandardMaterial({ map: texInterior, roughness: 0.8, metalness: 0.2, side: THREE.BackSide });",
+                "const matConsole = new THREE.MeshStandardMaterial({ color: 0x20242b, roughness: 0.6, metalness: 0.3 });",
+                "",
+                "{",
+                "  const pts = []; for (let i = 0; i <= 124; i++) { const h = i * 0.1; pts.push(new THREE.Vector2(hullR(h), h)); }",
+                "  const g = new THREE.LatheGeometry(pts, 56); g.rotateX(Math.PI / 2);",
+                "  rocket.add(new THREE.Mesh(g, matHull));",
+                "  const tip = new THREE.Mesh(new THREE.SphereGeometry(0.22, 12, 8), matDark); tip.position.z = H_TOT; rocket.add(tip);",
+                "  for (const hh of [2.0, 4.6, 7.0]) {",
+                "    const r = new THREE.Mesh(new THREE.TorusGeometry(R0 + 0.01, 0.045, 8, 48), matDark); r.position.z = hh; rocket.add(r);",
+                "  }",
+                "  const bp = [[0.97, -1.2], [0.9, -0.9], [0.78, -0.5], [0.62, -0.1], [0.52, 0.4], [0.5, 0.9]].map(a => new THREE.Vector2(a[0], a[1]));",
+                "  const bg = new THREE.LatheGeometry(bp, 32); bg.rotateX(Math.PI / 2);",
+                "  rocket.add(new THREE.Mesh(bg, new THREE.MeshStandardMaterial({ color: 0x2a2a2e, roughness: 0.5, metalness: 0.4, side: THREE.DoubleSide })));",
+                "  const sh = new THREE.Shape(); sh.moveTo(1.4, 4.2); sh.lineTo(3.0, 1.4); sh.lineTo(3.0, 0.0); sh.lineTo(1.4, 0.5); sh.closePath();",
+                "  const fg = new THREE.ExtrudeGeometry(sh, { depth: 0.16, bevelEnabled: false }); fg.translate(0, 0, -0.08); fg.rotateX(Math.PI / 2);",
+                "  for (let k = 0; k < 4; k++) { const f = new THREE.Mesh(fg, matFin); f.rotation.z = k * Math.PI / 2; rocket.add(f); }",
+                "  const ant = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.03, 1.4, 6), matDark); ant.rotation.x = Math.PI / 2; ant.position.set(-1.1, 0.9, 9.0); ant.rotation.y = 0.5; rocket.add(ant);",
+                "}",
+                "const engGlow = new THREE.Sprite(new THREE.SpriteMaterial({ map: texGlow, color: 0xffa040, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));",
+                "engGlow.position.z = -1.5; engGlow.scale.set(5, 5, 1); rocket.add(engGlow);",
+                "const flame = new THREE.Group(); flame.position.z = -1.1; rocket.add(flame);",
+                "function coneFlame(r, len, color) {",
+                "  const g = new THREE.ConeGeometry(r, len, 24, 1, true); g.rotateX(-Math.PI / 2); g.translate(0, 0, -len / 2);",
+                "  const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ map: texFlame, color, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false, toneMapped: false }));",
+                "  m.frustumCulled = false; return m;",
+                "}",
+                "const flameOut = coneFlame(0.92, 7.5, 0xffffff), flameIn = coneFlame(0.45, 4.6, 0xfff0c0);",
+                "flame.add(flameOut, flameIn);",
+                "const heatHalo = new THREE.Sprite(new THREE.SpriteMaterial({ map: texGlow, color: 0xff7a30, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, fog: false }));",
+                "heatHalo.position.z = 9.5; heatHalo.scale.set(16, 16, 1); rocket.add(heatHalo);",
+                "",
+                "// ---- الكابينة (زجاج كريستال) ----",
+                "const W = 140 * DEG, TH0 = Math.PI / 2 - W / 2;",
+                "function cylSeg(r, z0, z1, ts, tl, mat) {",
+                "  const g = new THREE.CylinderGeometry(r, r, z1 - z0, 48, 1, true, ts, tl); g.rotateX(Math.PI / 2); g.translate(0, 0, (z0 + z1) / 2);",
+                "  return new THREE.Mesh(g, mat);",
+                "}",
+                "const cabin = new THREE.Group(); rocket.add(cabin);",
+                "cabin.add(cylSeg(1.38, 5.4, 5.9, 0, Math.PI * 2, matShell));",
+                "cabin.add(cylSeg(1.38, 8.5, 8.7, 0, Math.PI * 2, matShell));",
+                "cabin.add(cylSeg(1.38, 5.9, 8.5, TH0 + W, Math.PI * 2 - W, matShell));",
+                "// زجاج كريستال: انعكاسات بيئة + Facets + Iridescence + توهّج حرارة",
+                "const glassMat = new THREE.MeshPhysicalMaterial({",
+                "  color: 0xbfe6f5, transparent: true, opacity: 0.22, roughness: 0.03, metalness: 0,",
+                "  clearcoat: 1, clearcoatRoughness: 0.02, ior: 1.5, iridescence: 0.9, iridescenceIOR: 1.35,",
+                "  envMap: texEnv, envMapIntensity: 3.0, bumpMap: texFacet, bumpScale: 0.8,",
+                "  emissive: new Col(1, 0.35, 0.1), emissiveIntensity: 0, side: THREE.DoubleSide, depthWrite: false",
+                "});",
+                "cabin.add(cylSeg(1.41, 5.9, 8.5, TH0, W, glassMat));",
+                "const crackMesh = cylSeg(1.4, 5.9, 8.5, TH0, W, new THREE.MeshBasicMaterial({ map: texCracks, transparent: true, depthWrite: false, side: THREE.DoubleSide }));",
+                "cabin.add(crackMesh);",
+                "rocket.add(cylSeg(1.515, 5.9, 8.5, TH0, W, new THREE.MeshPhysicalMaterial({ color: 0x9fd2e6, transparent: true, opacity: 0.18, roughness: 0.02, metalness: 0.2, clearcoat: 1, envMap: texEnv, envMapIntensity: 2.6, iridescence: 1, iridescenceIOR: 1.3, side: THREE.FrontSide, depthWrite: false })));",
+                "rocket.add(cylSeg(1.52, 5.85, 5.95, TH0, W, matDark)); rocket.add(cylSeg(1.52, 8.45, 8.55, TH0, W, matDark));",
+                "for (const s of [-1, 1]) {",
+                "  const a = s * 62 * DEG, p = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.14, 2.7), matDark);",
+                "  p.position.set(1.36 * Math.cos(a), 1.36 * Math.sin(a), 7.2); p.rotation.z = a; cabin.add(p);",
+                "}",
+                "for (const z of [5.4, 8.6]) { const d = new THREE.Mesh(new THREE.CircleGeometry(1.4, 32), matConsole); d.position.z = z; d.material.side = THREE.DoubleSide; cabin.add(d); }",
+                "const panel = new THREE.Group(); panel.position.set(0.9, 0, 6.45); panel.rotation.y = -0.95; cabin.add(panel);",
+                "panel.add(new THREE.Mesh(new THREE.BoxGeometry(0.62, 1.9, 0.08), matConsole));",
+                "const base = new THREE.Mesh(new THREE.BoxGeometry(0.7, 1.9, 0.9), matConsole); base.position.set(1.0, 0, 5.95); cabin.add(base);",
+                "const scrMain = new THREE.Mesh(new THREE.PlaneGeometry(0.9, 0.45), new THREE.MeshBasicMaterial({ map: texHud, toneMapped: false }));",
+                "scrMain.rotation.z = -Math.PI / 2; scrMain.position.set(0.03, 0.3, 0.05); panel.add(scrMain);",
+                "const scrSub = new THREE.Mesh(new THREE.PlaneGeometry(0.5, 0.26), new THREE.MeshBasicMaterial({ color: 0x0c5a3a, toneMapped: false }));",
+                "scrSub.rotation.z = -Math.PI / 2; scrSub.position.set(0.03, -0.55, 0.05); panel.add(scrSub);",
+                "const btns = [];",
+                "for (let i = 0; i < 8; i++) {",
+                "  const m = new THREE.MeshBasicMaterial({ color: 0x00ff66, toneMapped: false });",
+                "  const b = new THREE.Mesh(new THREE.BoxGeometry(0.07, 0.07, 0.04), m); b.position.set(-0.22, -0.85 + i * 0.24, 0.06); panel.add(b); btns.push(m);",
+                "}",
+                "const lampMat = new THREE.MeshBasicMaterial({ color: 0xff2010, toneMapped: false });",
+                "const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), lampMat); lamp.position.set(0.28, 0.78, 0.07); panel.add(lamp);",
+                "for (const yy of [-0.2, -0.05]) {",
+                "  const n = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.012, 0.01), new THREE.MeshBasicMaterial({ color: 0xffe08a })); n.position.set(0.3, yy, 0.07); panel.add(n); lamp.userData.needles = (lamp.userData.needles || []).concat(n);",
+                "}",
+                "const lAlarm = new THREE.PointLight(0xff2010, 0, 5 * U, 0); lAlarm.position.set(0.2, 0, 8.0); cabin.add(lAlarm);",
+                "const lCabin = new THREE.PointLight(0xcfe3ff, 0.9, 5 * U, 0); lCabin.position.set(-0.3, 0, 8.2); cabin.add(lCabin);",
+                "const lPlasma = new THREE.PointLight(0xff7a30, 0, 6 * U, 0); lPlasma.position.set(0.6, 0, 7.0); cabin.add(lPlasma);",
+                "const lEngine = new THREE.PointLight(0xff7a30, 0, 14 * U, 0); lEngine.position.set(0, 0, -2); rocket.add(lEngine);   // نار الموتور بتنوّر الصاروخ في الضلمة",
+                "",
+                "// ---- شظايا الزجاج (بتتفجّر مع كل مرحلة تشقّق) ----",
+                "const shardGeo = (() => {",
+                "  const g = new THREE.BufferGeometry();",
+                "  g.setAttribute(\"position\", new THREE.BufferAttribute(new Float32Array([0, 0, 0, 0.09, 0.02, 0.01, 0.03, 0.11, -0.01]), 3));",
+                "  g.computeVertexNormals(); return g;",
+                "})();",
+                "const shardMat = new THREE.MeshPhysicalMaterial({ color: 0xcfefff, transparent: true, opacity: 0.85, roughness: 0.04, metalness: 0.1, clearcoat: 1, envMap: texEnv, envMapIntensity: 2.4, iridescence: 1, iridescenceIOR: 1.4, side: THREE.DoubleSide, depthWrite: false });",
+                "const shards = [];",
+                "for (let i = 0; i < 48; i++) {",
+                "  const m = new THREE.Mesh(shardGeo, shardMat); m.visible = false; m.frustumCulled = false;",
+                "  m.userData = { alive: false, age: 0, life: 1, v: new V3(), w: new V3() };",
+                "  cabin.add(m); shards.push(m);",
+                "}",
+                "function spawnShards(n) {",
+                "  let k = 0;",
+                "  for (const m of shards) {",
+                "    const u = m.userData; if (u.alive) continue;",
+                "    const a = rnd(-1.1, 1.1);",
+                "    m.position.set(1.34 * Math.cos(a), 1.34 * Math.sin(a), rnd(5.95, 8.45)); m.scale.setScalar(rnd(0.6, 1.8));",
+                "    u.v.set(-rnd(0.3, 1.4), rnd(-0.6, 0.6), rnd(-0.8, 0.5)); u.w.set(rnd(-6, 6), rnd(-6, 6), rnd(-6, 6));",
+                "    u.alive = true; u.age = 0; u.life = rnd(1.8, 3.2); m.visible = true;",
+                "    if (++k >= n) break;",
+                "  }",
+                "}",
+                "function tickShards(dt) {",
+                "  for (const m of shards) {",
+                "    const u = m.userData; if (!u.alive) continue;",
+                "    u.age += dt; if (u.age > u.life) { u.alive = false; m.visible = false; continue; }",
+                "    m.position.addScaledVector(u.v, dt); u.v.multiplyScalar(Math.max(0, 1 - 0.5 * dt));",
+                "    m.rotation.x += u.w.x * dt; m.rotation.y += u.w.y * dt; m.rotation.z += u.w.z * dt;",
+                "  }",
+                "}",
+                "",
+                "const sheathMat = new THREE.MeshBasicMaterial({ map: texStreak, color: 0xff7a30, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false });",
+                "{",
+                "  const pts = []; for (let i = 0; i <= 62; i++) { const h = i * 0.2 - 1.2; pts.push(new THREE.Vector2(hullR(clamp(h, 0, H_TOT)) + 0.9 + (h < 0 ? -h * 0.2 : 0) - (h > 8.4 ? (h - 8.4) * 0.12 : 0), h)); }",
+                "  const g = new THREE.LatheGeometry(pts, 32); g.rotateX(Math.PI / 2);",
+                "  const m = new THREE.Mesh(g, sheathMat); m.frustumCulled = false; rocket.add(m);",
+                "}",
+                "const EYE_L = new V3(-0.15, 0, 6.95);",
+                "",
+                "// ============================ إضاءة المشهد المؤقتة ============================",
+                "const introLights = [];",
+                "if (CFG.sceneLights) {",
+                "  const hemi = new THREE.HemisphereLight(0x4a5260, 0x0d0a08, 0.45);",
+                "  const sun = new THREE.DirectionalLight(0xb8c4d8, 0.7); sun.position.set(2000, -3000, 6000);",
+                "  world.add(hemi, sun); introLights.push(hemi, sun);",
+                "}",
+                "introLights.push(lAlarm, lCabin, lPlasma, lEngine);",
+                "",
+                "// ذرات غبار جوّه الكابينة",
+                "const MOTES = 70, mPos = new Float32Array(MOTES * 3), mBase = [];",
+                "for (let i = 0; i < MOTES; i++) {",
+                "  const b = [rnd(-1.1, 1.1), rnd(-1.1, 1.1), rnd(5.6, 8.4)];",
+                "  mBase.push(b); mPos.set(b, i * 3);",
+                "}",
+                "const mGeo = new THREE.BufferGeometry(); mGeo.setAttribute(\"position\", new THREE.BufferAttribute(mPos, 3));",
+                "const motes = new THREE.Points(mGeo, new THREE.PointsMaterial({ color: 0xfff2dd, size: 0.025, transparent: true, opacity: 0.55, depthWrite: false, fog: false }));",
+                "motes.frustumCulled = false; rocket.add(motes);",
+                "function tickMotes(t, trauma) {",
+                "  for (let i = 0; i < MOTES; i++) {",
+                "    const b = mBase[i], j = 0.04 + 0.25 * trauma;",
+                "    mPos[i * 3] = b[0] + nz(t * 1.5 + i, 31) * j;",
+                "    mPos[i * 3 + 1] = b[1] + nz(t * 1.3 + i, 32) * j;",
+                "    mPos[i * 3 + 2] = b[2] + nz(t * 1.1 + i, 33) * j + Math.sin(t * 0.4 + i) * 0.05;",
+                "  }",
+                "  mGeo.attributes.position.needsUpdate = true;",
+                "}",
+                "",
+                "// ============================ الباتيكلز ============================",
+                "function mkPool(n, additive, tex) {",
+                "  const arr = [];",
+                "  for (let i = 0; i < n; i++) {",
+                "    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, fog: false, blending: additive ? THREE.AdditiveBlending : THREE.NormalBlending }));",
+                "    s.visible = false; s.frustumCulled = false;",
+                "    s.userData = { alive: false, age: 0, life: 1, v: new V3(), s0: 1, s1: 1, c0: new Col(), c1: new Col(), a0: 1, g: 0, d: 0, fade: 1, rv: 0, bounce: 0, ground: false, gz: 0 };",
+                "    world.add(s); arr.push(s);",
+                "  }",
+                "  return { arr, i: 0 };",
+                "}",
+                "const fireP = mkPool(380, true, texGlow), smokeP = mkPool(420, false, texSmoke);",
+                "function spawn(pool, px, py, pz, vx, vy, vz, o) {",
+                "  const s = pool.arr[pool.i]; pool.i = (pool.i + 1) % pool.arr.length;",
+                "  const u = s.userData; u.alive = true; u.age = 0; u.life = o.life; u.v.set(vx, vy, vz);",
+                "  u.s0 = o.s0; u.s1 = o.s1; u.c0.set(o.c0); u.c1.set(o.c1); u.a0 = o.a0; u.g = o.g || 0; u.d = o.d || 0; u.fade = o.fade || 1.3; u.bounce = o.bounce || 0; u.rv = rnd(-1, 1);",
+                "  u.ground = !!o.ground; u.gz = u.ground ? (pz - groundAt(px, py)) : 0;",
+                "  s.position.set(px, py, pz); s.visible = true; s.material.rotation = rnd(0, 6.3); s.material.opacity = o.a0; s.material.color.copy(u.c0);",
+                "}",
+                "function tickPool(pool, dt) {",
+                "  for (const s of pool.arr) {",
+                "    const u = s.userData; if (!u.alive) continue;",
+                "    u.age += dt; const k = u.age / u.life;",
+                "    if (k >= 1) { u.alive = false; s.visible = false; continue; }",
+                "    if (u.ground) {",
+                "      s.position.x += u.v.x * dt; s.position.y += u.v.y * dt; u.gz += u.v.z * dt;",
+                "      s.position.z = groundAt(s.position.x, s.position.y) + u.gz;",
+                "    } else s.position.addScaledVector(u.v, dt);",
+                "    u.v.multiplyScalar(Math.max(0, 1 - u.d * dt)); u.v.z -= u.g * dt;",
+                "    if (u.bounce) {",
+                "      const gz = groundAt(s.position.x, s.position.y) + 3;",
+                "      if (s.position.z < gz) { s.position.z = gz; u.v.z = Math.abs(u.v.z) * 0.4; u.v.x *= 0.6; u.v.y *= 0.6; }",
+                "    }",
+                "    const sc = lerp(u.s0, u.s1, Math.sqrt(k));",
+                "    s.scale.set(sc, sc, 1); s.material.opacity = u.a0 * Math.pow(1 - k, u.fade);",
+                "    s.material.color.copy(u.c0).lerp(u.c1, k); s.material.rotation += u.rv * dt;",
+                "  }",
+                "}",
+                "const NS = 240, sPos = new Float32Array(NS * 6), sHead = [];",
+                "const sGeo = new THREE.BufferGeometry(); sGeo.setAttribute(\"position\", new THREE.BufferAttribute(sPos, 3));",
+                "const sMat = new THREE.LineBasicMaterial({ color: 0xcfe6ff, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, fog: false });",
+                "const sLines = new THREE.LineSegments(sGeo, sMat); sLines.frustumCulled = false; world.add(sLines);",
+                "for (let i = 0; i < NS; i++) sHead.push(new V3(1e9, 1e9, 1e9));",
+                "const clouds = [];",
+                "const chunkGeo = new THREE.BoxGeometry(1, 1, 1);",
+                "const chunkMats = [0x3a3a3e, 0x6a6e74, 0x8c2a22, 0x4a3b2c, 0x6b5a46].map(c => new THREE.MeshStandardMaterial({ color: c, roughness: 0.75, metalness: c < 0x700000 ? 0.1 : 0.3 }));",
+                "const chunks = [];",
+                "const ringMesh = new THREE.Mesh(new THREE.RingGeometry(0.85, 1, 72), new THREE.MeshBasicMaterial({ color: 0xffd9a0, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false }));",
+                "ringMesh.visible = true; ringMesh.scale.set(0.001, 0.001, 1); ringMesh.position.copy(C); world.add(ringMesh);",
+                "const scorch = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: texScorch, transparent: true, opacity: 0, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2, fog: false }));",
+                "scorch.scale.set(0.001, 0.001, 1); scorch.position.copy(C); scorch.frustumCulled = false; world.add(scorch);",
+                "const embers = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: texEmber, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -3, polygonOffsetUnits: -3, fog: false }));",
+                "embers.scale.set(0.001, 0.001, 1); embers.position.copy(C); embers.frustumCulled = false; world.add(embers);",
+                "const blob = new THREE.Mesh(new THREE.CircleGeometry(1, 28), new THREE.MeshBasicMaterial({ map: texGlow, color: 0x000000, transparent: true, opacity: 0, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2, fog: false }));",
+                "blob.scale.set(0.001, 0.001, 1); blob.position.copy(C); blob.frustumCulled = false; world.add(blob);",
+                "const impactLight = new THREE.PointLight(0xffa040, 0, 3500, 0); world.add(impactLight);",
+                "const fireLight = new THREE.PointLight(0xff7a2a, 0, 1500, 0); world.add(fireLight);",
+                "function drapedGeo(radius, seg, lift) {   // مستوى بينحني مع الأرض",
+                "  const g = new THREE.PlaneGeometry(radius * 2, radius * 2, seg, seg), p = g.attributes.position;",
+                "  for (let i = 0; i < p.count; i++) p.setZ(i, groundAt(C.x + p.getX(i), C.y + p.getY(i)) - C.z + lift);",
+                "  g.computeBoundingSphere(); return g;",
+                "}",
+                "",
+                "// ============================ (v7) عوائق الكاميرا: نخيل + نار المخيّم + مستوى البحر ============================",
+                "// الكاميرا بقت \"عارفة\" الـ Scene: مبتدخلش في جذع نخلة / سعف / المخيّم، مبتنزلش تحت الأرض ولا تحت سطح البحر،",
+                "// ومبتقفش ورا عائق بيحجب الصاروخ (بتطلع فوقه أو بتتحرك لقدّامه).",
+                "const obsBoxes = [];",
+                "let seaZ = -1e9;",
+                "function rendObj(o) { try { return o ? (o.get3DRendererObject ? o.get3DRendererObject() : (o.getRendererObject ? o.getRendererObject() : null)) : null; } catch (e) { return null; } }",
+                "const _bx = new THREE.Box3(), _bm = new M4(), _bc = new V3();",
+                "function toLocalAABB(b) {",
+                "  const o = { x0: 1e9, y0: 1e9, z0: 1e9, x1: -1e9, y1: -1e9, z1: -1e9 };",
+                "  for (let i = 0; i < 8; i++) {",
+                "    _bc.set(i & 1 ? b.max.x : b.min.x, i & 2 ? b.max.y : b.min.y, i & 4 ? b.max.z : b.min.z); world.worldToLocal(_bc);",
+                "    o.x0 = Math.min(o.x0, _bc.x); o.y0 = Math.min(o.y0, _bc.y); o.z0 = Math.min(o.z0, _bc.z);",
+                "    o.x1 = Math.max(o.x1, _bc.x); o.y1 = Math.max(o.y1, _bc.y); o.z1 = Math.max(o.z1, _bc.z);",
+                "  }",
+                "  return o;",
+                "}",
+                "function addObstacle(a, tree) {",
+                "  const sx = a.x1 - a.x0, sy = a.y1 - a.y0, sz = a.z1 - a.z0;",
+                "  if (!(sx > 0 && sy > 0 && sz > 0) || !isFinite(sx + sy + sz)) return true;",
+                "  if (sx > 1200 || sy > 1200) return false;                                   // مش عائق مفرد (ميش مدمج)",
+                "  if (Math.hypot((a.x0 + a.x1) / 2 - C.x, (a.y0 + a.y1) / 2 - C.y) > GR * 1.6) return true;   // بعيد عن المشهد",
+                "  if (obsBoxes.length > 6000) return true;",
+                "  if (tree && sz > 120) {",
+                "    const cxm = (a.x0 + a.x1) / 2, cym = (a.y0 + a.y1) / 2, tr = clamp(Math.max(sx, sy) * 0.09, 14, 38);",
+                "    obsBoxes.push({ x0: cxm - tr, y0: cym - tr, z0: a.z0, x1: cxm + tr, y1: cym + tr, z1: a.z1 });      // الجذع",
+                "    obsBoxes.push({ x0: a.x0, y0: a.y0, z0: a.z0 + sz * 0.62, x1: a.x1, y1: a.y1, z1: a.z1 });          // السعف (الجزء العلوي)",
+                "  } else obsBoxes.push(a);",
+                "  return true;",
+                "}",
+                "(function collectObstacles() {",
+                "  let merged = 0;",
+                "  for (const nm of CFG.obstacleObjects) {",
+                "    for (const o of objs(nm)) {",
+                "      const root = rendObj(o); if (!root) continue;",
+                "      try { root.updateWorldMatrix(true, true); } catch (e) { }",
+                "      root.traverse((m) => {",
+                "        if (!m.geometry || !(m.isMesh || m.isInstancedMesh)) return;",
+                "        if (!m.geometry.boundingBox) m.geometry.computeBoundingBox();",
+                "        const gb = m.geometry.boundingBox; if (!gb) return;",
+                "        if (m.isInstancedMesh) {",
+                "          for (let i = 0; i < m.count; i++) {",
+                "            m.getMatrixAt(i, _bm); _bm.premultiply(m.matrixWorld); _bx.copy(gb).applyMatrix4(_bm);",
+                "            if (!addObstacle(toLocalAABB(_bx), nm === \"PalmTrees\")) merged++;",
+                "          }",
+                "        } else { _bx.copy(gb).applyMatrix4(m.matrixWorld); if (!addObstacle(toLocalAABB(_bx), nm === \"PalmTrees\")) merged++; }",
+                "      });",
+                "    }",
+                "  }",
+                "  // مستوى البحر: من الـ Mesh نفسه لو منطقي، وإلا من المتغيّر Cfg_SeaZ",
+                "  const wv = getVar(CFG.seaVar); seaZ = wv;",
+                "  const wr = rendObj(objs(CFG.waterObject)[0]);",
+                "  if (wr) {",
+                "    try {",
+                "      wr.updateWorldMatrix(true, true); const b = new THREE.Box3().setFromObject(wr);",
+                "      if (!b.isEmpty()) { _bc.set((b.min.x + b.max.x) / 2, (b.min.y + b.max.y) / 2, b.max.z); world.worldToLocal(_bc); if (isFinite(_bc.z) && (b.max.x - b.min.x) > 5000 && Math.abs(_bc.z - wv) < 400) seaZ = _bc.z; }",
+                "    } catch (e) { }",
+                "  }",
+                "  console.log(\"[RocketIntro v8.2] عوائق الكاميرا:\", obsBoxes.length, \"صندوق | مستوى البحر Z =\", seaZ.toFixed(1), merged ? \"| (تحذير: \" + merged + \" Mesh مدمج اتجاهل)\" : \"\");",
+                "})();",
+                "",
+                "// أرضية الكاميرا: Terrain + سطح البحر",
+                "function clampPt(p, m) {",
+                "  let g = -1e9;",
+                "  if (hasTerrain) { g = groundAt(p.x, p.y); if (p.z - g < 350) g = Math.max(g, groundExact(p.x, p.y)); }",
+                "  if (seaZ > -1e8) g = Math.max(g, seaZ + 4);",
+                "  if (g > -1e8 && p.z < g + m) { p.z = g + m; return true; }",
+                "  return false;",
+                "}",
+                "function pushObs(p, r) {                      // بيطلّع النقطة بره أي صندوق عائق (أقل مسافة)",
+                "  let moved = false;",
+                "  for (let it = 0; it < 3; it++) {",
+                "    let any = false;",
+                "    for (const b of obsBoxes) {",
+                "      if (p.x < b.x0 - r || p.x > b.x1 + r || p.y < b.y0 - r || p.y > b.y1 + r || p.z < b.z0 - r || p.z > b.z1 + r) continue;",
+                "      const dx0 = p.x - (b.x0 - r), dx1 = (b.x1 + r) - p.x, dy0 = p.y - (b.y0 - r), dy1 = (b.y1 + r) - p.y, dz1 = (b.z1 + r) - p.z;",
+                "      const mn = Math.min(dx0, dx1, dy0, dy1, dz1);",
+                "      if (mn === dz1) p.z = b.z1 + r; else if (mn === dx0) p.x = b.x0 - r; else if (mn === dx1) p.x = b.x1 + r; else if (mn === dy0) p.y = b.y0 - r; else p.y = b.y1 + r;",
+                "      any = moved = true;",
+                "    }",
+                "    if (!any) break;",
+                "  }",
+                "  return moved;",
+                "}",
+                "let _t0 = 0, _t1 = 1, _hIn = -1, _hOut = -1;",
+                "function slab(p, d, lo, hi) {",
+                "  if (Math.abs(d) < 1e-6) return p >= lo && p <= hi;",
+                "  let ta = (lo - p) / d, tb = (hi - p) / d; if (ta > tb) { const q = ta; ta = tb; tb = q; }",
+                "  if (ta > _t0) _t0 = ta; if (tb < _t1) _t1 = tb; return _t0 <= _t1;",
+                "}",
+                "function segHit(a, b, r) {                    // أول عائق على الخط a→b: بيرجّع t (أو -1) و _hOut = خروجه",
+                "  _hIn = -1; _hOut = -1; if (!obsBoxes.length) return -1;",
+                "  const dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z; let best = 2;",
+                "  for (const o of obsBoxes) {",
+                "    _t0 = 0; _t1 = 1;",
+                "    if (!slab(a.x, dx, o.x0 - r, o.x1 + r) || !slab(a.y, dy, o.y0 - r, o.y1 + r) || !slab(a.z, dz, o.z0 - r, o.z1 + r)) continue;",
+                "    if (_t0 < best) { best = _t0; _hIn = _t0; _hOut = _t1; }",
+                "  }",
+                "  return best <= 1 ? best : -1;",
+                "}",
+                "function terrBlocks(a, b) {                   // التضاريس (تلّ) بتحجب الرؤية؟",
+                "  if (!hasTerrain) return false;",
+                "  for (let i = 1; i < 12; i++) { const t = i / 12; if (a.z + (b.z - a.z) * t < groundAt(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t) + 20) return true; }",
+                "  return false;",
+                "}",
+                "function losOK(a, b, r) { return segHit(a, b, r) < 0 && !terrBlocks(a, b); }",
+                "const _fa = new V3();",
+                "function fixEye(eye, tgt, m, cockpit) {       // Collision + Line-of-sight للكاميرا",
+                "  let ch = clampPt(eye, m);",
+                "  if (cockpit) return ch;",
+                "  const r = CFG.camClear;",
+                "  if (pushObs(eye, r)) { ch = true; clampPt(eye, m); }",
+                "  if (tgt) {",
+                "    const t = segHit(eye, tgt, r * 0.5), tOut = _hOut, tb = terrBlocks(eye, tgt);",
+                "    if (t >= 0 || tb) {",
+                "      let ok = false;",
+                "      for (const dz of [140, 300, 520]) {",
+                "        _fa.copy(eye); _fa.z += dz; pushObs(_fa, r);",
+                "        if (segHit(_fa, tgt, r * 0.5) < 0 && !terrBlocks(_fa, tgt)) { eye.copy(_fa); ok = true; break; }",
+                "      }",
+                "      if (!ok && t >= 0) { eye.lerp(tgt, clamp(tOut + 0.06, 0, 0.9)); pushObs(eye, r); clampPt(eye, m); ok = true; }",
+                "      ch = true;",
+                "    }",
+                "  }",
+                "  return ch;",
+                "}",
+                "",
+                "// ============================ (v7) اختيار أماكن الكاميرات الأرضية بذكاء ============================",
+                "const camSpots = { tele: null, low: null, wreck: null };",
+                "const _s1 = new V3(), _s2 = new V3(), _s3 = new V3(), _s4 = new V3();",
+                "function trajTargets(xs) {                    // مواضع منتصف الصاروخ على المسار + نقطة الاصطدام",
+                "  const arr = [];",
+                "  for (const xx of xs) {",
+                "    const u = 0.35 * xx + 0.65 * xx * xx; bez(u, _s3); bezD(u, _s4).normalize();",
+                "    arr.push(new V3().copy(_s3).addScaledVector(_s4, L_PX * 0.5));",
+                "  }",
+                "  arr.push(new V3(C.x, C.y, C.z + 260));",
+                "  return arr;",
+                "}",
+                "function pickGroundCam(o) {",
+                "  if (!gDone) buildGrid(14);",
+                "  let best = null, bs = -1e9, ba = 0;",
+                "  for (let di = 0; di < o.dists.length; di++) for (let ai = 0; ai < o.angs.length; ai++) {",
+                "    const az = (hAng + o.angs[ai]) * DEG, d = o.dists[di], x = C.x + Math.cos(az) * d, y = C.y + Math.sin(az) * d;",
+                "    if (!insideT(x, y, 220)) continue;",
+                "    const g = hasTerrain ? groundExact(x, y) : C.z;",
+                "    _s1.set(x, y, Math.max(g, seaZ + 4) + o.h);",
+                "    let sc = -di * 10 - ai * 4;",
+                "    if (g < seaZ + 10) sc -= 300;                                  // مش واقفين في الميّه",
+                "    _s2.copy(_s1); if (pushObs(_s2, CFG.camClear * 1.5)) sc -= 500;  // مش جوّه نخلة",
+                "    for (const t of o.tgts) if (!losOK(_s1, t, 25)) sc -= 140;     // الصاروخ ظاهر طول اللقطة",
+                "    if (sc > bs) { bs = sc; best = _s1.clone(); ba = o.angs[ai]; }",
+                "  }",
+                "  return best ? { pos: best, ang: ba, score: bs } : null;",
+                "}",
+                "function pickTele() {",
+                "  const r = pickGroundCam({ angs: [75, -75, 105, -105, 50, -50, 130, -130], dists: [1900, 2300, 1500], h: CFG.groundCamHeight, tgts: trajTargets([0.62, 0.72, 0.82, 0.92]) });",
+                "  console.log(\"[RocketIntro v8.2] كاميرا التيليفوتو:\", r ? r.pos.x.toFixed(0) + \",\" + r.pos.y.toFixed(0) + \",\" + r.pos.z.toFixed(0) + \" (score \" + r.score + \")\" : \"fallback\");",
+                "  return r || { pos: gcPos.clone(), ang: 90, score: 0 };",
+                "}",
+                "function pickLow() {",
+                "  const s = camSpots.tele && camSpots.tele.ang < 0 ? 1 : -1;       // الجنب المعاكس للتيليفوتو = زاوية مختلفة",
+                "  const r = pickGroundCam({ angs: [s * 80, s * 110, s * 55, -s * 80, -s * 110, s * 140, -s * 55], dists: [CFG.closeSide, CFG.closeSide * 1.4, CFG.closeSide * 0.7], h: CFG.closeHeight, tgts: trajTargets([0.86, 0.94, 0.99]) });",
+                "  console.log(\"[RocketIntro v8.2] الكاميرا المنخفضة:\", r ? r.pos.x.toFixed(0) + \",\" + r.pos.y.toFixed(0) + \",\" + r.pos.z.toFixed(0) + \" (score \" + r.score + \")\" : \"fallback\");",
+                "  return r || { pos: gcClose.clone(), ang: 90, score: 0 };",
+                "}",
+                "function pickWreck() {                        // مدار لقطة الحطام: نختار الزاوية والاتجاه اللي مفيهمش عوائق",
+                "  let best = { off: 140, dir: 1 }, bs = -1e9;",
+                "  for (const off of [140, -140, 110, -110, 170, -170, 90, -90]) for (const dir of [1, -1]) {",
+                "    let sc = 0;",
+                "    for (const e of [0, 0.5, 1]) {",
+                "      const az = (hAng + off) * DEG + dir * e * 0.9, dist = lerp(640, 1550, e), x = C.x + Math.cos(az) * dist, y = C.y + Math.sin(az) * dist;",
+                "      if (!insideT(x, y, 150)) { sc -= 400; continue; }",
+                "      const g = hasTerrain ? groundAt(x, y) : C.z;",
+                "      _s1.set(x, y, Math.max(g + 70, C.z + lerp(70, 520, e)));",
+                "      if (g < seaZ + 5) sc -= 120;",
+                "      _s2.copy(_s1); if (pushObs(_s2, CFG.camClear * 1.5)) sc -= 300;",
+                "      _s4.set(C.x, C.y, C.z + 120); if (!losOK(_s1, _s4, 25)) sc -= 160;",
+                "    }",
+                "    sc -= Math.abs(off - 140) * 0.1;",
+                "    if (sc > bs) { bs = sc; best = { off, dir }; }",
+                "  }",
+                "  console.log(\"[RocketIntro v8.2] مدار لقطة الحطام: زاوية\", best.off, \"اتجاه\", best.dir);",
+                "  return best;",
+                "}",
+                "function ensureSpots(x) {                     // حساب واحد في الفريم عشان مفيش تهنيج",
+                "  if (!camSpots.tele && x > 0.25) camSpots.tele = pickTele();",
+                "  else if (!camSpots.low && camSpots.tele && x > 0.38) camSpots.low = pickLow();",
+                "  else if (!camSpots.wreck && camSpots.low && x > 0.5) camSpots.wreck = pickWreck();",
+                "}",
+                "",
+                "// ============================ كاميرا (Rig + Takeover + Blend) ============================",
+                "const rig = { active: false, shot: \"\", snap: true, eye: new V3(), look: new V3(), up: new V3(0, 0, 1), relv: new V3(0, 0, -1000), fovS: { v: CFG.fov, vel: 0 }, fov: CFG.fov, vEye: new V3(), vLook: new V3(), vUp: new V3(), vRel: new V3() };",
+                "const des = { eye: new V3(), look: new V3(), up: new V3(0, 0, 1), fov: CFG.fov, sEye: 0, sLook: 0.1, sUp: 0.1, sFov: 0.3, rel: false, shake: 0, hz: 2, useTrauma: true, shakeScale: 1 };",
+                "const fx = { a: 0, col: new Col(0, 0, 0), vig: 0, vcol: new Col(0, 0, 0) };",
+                "const _r = new V3();",
+                "",
+                "// ---- (جديد v6) Roll + Out pose + Blend: الانتقال السموث بين اللقطات ----",
+                "des.roll = 0;",
+                "rig.rollS = { v: 0, vel: 0 }; rig.roll = 0;",
+                "// الـ \"out\" = اللقطة اللي بتتعرض فعلًا (بعد الـ Blend). الـ Blend = انتقال سموث بين لقطتين من غير Cut.",
+                "const out = { eye: new V3(), look: new V3(), up: new V3(0, 0, 1), fov: CFG.fov, roll: 0 };",
+                "const blend = { on: false, k: 1, dur: 1, eye: new V3(), dir: new V3(0, 0, -1), up: new V3(0, 0, 1), fov: CFG.fov, roll: 0 };",
+                "const _d1 = new V3(), _d2 = new V3(), _qb1 = new Q(), _qb2 = new Q();",
+                "",
+                "function rigStep(dt) {",
+                "  const cock = false, m = 55;",
+                "  fixEye(des.eye, des.look, m, cock);",
+                "  if (rig.snap) {",
+                "    rig.eye.copy(des.eye); rig.look.copy(des.look); rig.up.copy(des.up); rig.relv.copy(des.look).sub(des.eye);",
+                "    rig.fovS.v = des.fov; rig.fovS.vel = 0; rig.rollS.v = des.roll; rig.rollS.vel = 0;",
+                "    rig.vEye.set(0, 0, 0); rig.vLook.set(0, 0, 0); rig.vUp.set(0, 0, 0); rig.vRel.set(0, 0, 0);",
+                "    fixEye(rig.eye, des.look, m, cock);",
+                "    rig.snap = false;",
+                "  } else {",
+                "    dampV(rig.eye, rig.vEye, des.eye, des.sEye, dt);",
+                "    if (fixEye(rig.eye, des.look, m, cock) && rig.vEye.z < 0) rig.vEye.z = 0;",
+                "    if (des.rel) { _r.copy(des.look).sub(des.eye); dampV(rig.relv, rig.vRel, _r, des.sLook, dt); rig.look.copy(rig.eye).add(rig.relv); }",
+                "    else dampV(rig.look, rig.vLook, des.look, des.sLook, dt);",
+                "    dampV(rig.up, rig.vUp, des.up, des.sUp, dt); rig.up.normalize();",
+                "    dampS(rig.fovS, des.fov, des.sFov, dt);",
+                "    dampS(rig.rollS, des.roll, 0.5, dt);",
+                "  }",
+                "  rig.fov = rig.fovS.v; rig.roll = rig.rollS.v;",
+                "",
+                "  // ---- الإخراج النهائي + Blend (smootherstep) ----",
+                "  out.eye.copy(rig.eye);",
+                "  _d1.copy(rig.look).sub(rig.eye); if (_d1.lengthSq() < 1e-6) _d1.set(1, 0, 0); _d1.normalize();",
+                "  out.up.copy(rig.up); out.fov = rig.fov; out.roll = rig.roll;",
+                "  if (blend.on) {",
+                "    blend.k += dt / Math.max(blend.dur, 1e-3);",
+                "    const k = clamp(blend.k, 0, 1), e = k * k * k * (k * (k * 6 - 15) + 10);",
+                "    out.eye.lerpVectors(blend.eye, rig.eye, e);",
+                "    _qb1.setFromUnitVectors(blend.dir, _d1); _qb2.identity().slerp(_qb1, e);   // دوران الكاميرا بـ Slerp = بدون تقطيع",
+                "    _d1.copy(blend.dir).applyQuaternion(_qb2);",
+                "    out.up.lerpVectors(blend.up, rig.up, e).normalize();",
+                "    out.fov = lerp(blend.fov, rig.fov, e); out.roll = lerp(blend.roll, rig.roll, e);",
+                "    fixEye(out.eye, rig.look, m, cock);",
+                "    if (k >= 1) blend.on = false;",
+                "  }",
+                "  out.look.copy(out.eye).addScaledVector(_d1, 1000);",
+                "}",
+                "",
+                "// نسخة احتياطية من كاميرا Three: بنرجّعها زي ما كانت بالظبط (كاميرا GDevelop نفسها مبنلمسهاش)",
+                "const camBackup = { near: cam3.near, far: cam3.far, fov: cam3.fov, sx: cam3.scale.x, sy: cam3.scale.y, sz: cam3.scale.z };",
+                "const hadOwnUMW = Object.prototype.hasOwnProperty.call(cam3, \"updateMatrixWorld\");",
+                "const origUMW = cam3.updateMatrixWorld;",
+                "const _e = new V3(), _t = new V3(), _u = new V3(), _f = new V3(), _m = new M4(), _so = new V3(), _es = new Eul(), _qs = new Q();",
+                "function mkOverlay(tex, color) {",
+                "  const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: tex || null, color, transparent: true, opacity: 0, depthTest: false, depthWrite: false, toneMapped: false, fog: false }));",
+                "  m.frustumCulled = false; m.visible = false; scene3.add(m); return m;",
+                "}",
+                "const overlay = mkOverlay(null, 0x000000); overlay.renderOrder = 10000;",
+                "const vig = mkOverlay(texVig, 0x000000); vig.renderOrder = 9999;",
+                "const grain = mkOverlay(texGrain, 0xffffff); grain.renderOrder = 9998;",
+                "const flareS = mkOverlay(texFlareH, 0xffb878); flareS.renderOrder = 9997; flareS.material.blending = THREE.AdditiveBlending;",
+                "const flareG = mkOverlay(texGlow, 0xff9a50); flareG.renderOrder = 9997; flareG.material.blending = THREE.AdditiveBlending;",
+                "const _lp = new V3(), _lf = new V3();",
+                "function lensFx(cam, aspect) {                 // Lens flare أنامورفيك على مصدر النار (محرّك / نقطة الاصطدام)",
+                "  let k = 0;",
+                "  if (st.phase === \"fall\" && st.engine) { rp(0, 0, -1.6, _lp); k = st.flareK; }",
+                "  else if ((st.phase === \"crash\" || st.phase === \"wreck\") && st.wI < 2.6) { _lp.set(C.x, C.y, C.z + 150); k = Math.exp(-st.wI * 1.5) * 1.2; }",
+                "  if (k < 0.03) { flareS.visible = false; flareG.visible = false; return; }",
+                "  world.localToWorld(_lp);",
+                "  _lf.copy(_lp).sub(cam.position); const d = _lf.length(); _lf.normalize();",
+                "  const fw = _lf.dot(_f);",
+                "  if (fw < 0.35) { flareS.visible = false; flareG.visible = false; return; }",
+                "  if (st.phase === \"fall\") k *= clamp(1.15 - d / 4200, 0.12, 1);",
+                "  const pd = CFG.near * 3.2, hhP = 2 * pd * Math.tan(out.fov * DEG / 2), fl = 0.8 + 0.2 * nz(st.wt * 30, 41), pp = pd / fw;",
+                "  flareS.position.copy(cam.position).addScaledVector(_lf, pp); flareS.quaternion.copy(cam.quaternion);",
+                "  flareS.scale.set(hhP * aspect * (0.5 + 0.5 * k), hhP * 0.05 * (0.6 + k), 1);",
+                "  flareS.material.opacity = clamp(k * 0.8 * fl, 0, 1); flareS.visible = true; flareS.updateMatrixWorld(true);",
+                "  flareG.position.copy(flareS.position); flareG.quaternion.copy(cam.quaternion);",
+                "  flareG.scale.set(hhP * (0.22 + 0.3 * k), hhP * (0.22 + 0.3 * k), 1);",
+                "  flareG.material.opacity = clamp(0.55 * k * fl, 0, 1); flareG.visible = true; flareG.updateMatrixWorld(true);",
+                "}",
+                "cam3.updateMatrixWorld = function (force) {",
+                "  if (rig.active) {",
+                "    world.updateWorldMatrix(true, false);",
+                "    _e.copy(out.eye); world.localToWorld(_e);",
+                "    _t.copy(out.look); world.localToWorld(_t);",
+                "    _u.copy(out.eye).add(out.up); world.localToWorld(_u); _u.sub(_e).normalize();",
+                "    if (out.roll) { _f.copy(_t).sub(_e).normalize(); _u.applyAxisAngle(_f, out.roll * DEG); }   // Dutch angle",
+                "    this.position.copy(_e);",
+                "    _m.lookAt(_e, _t, _u); this.quaternion.setFromRotationMatrix(_m);",
+                "    const sa = clamp(des.shake + (des.useTrauma ? st.trauma : 0), 0, 1), amp = sa * sa * CFG.camShake * des.shakeScale;",
+                "    if (amp > 1e-5) {",
+                "      const w = st.wt * des.hz;",
+                "      _es.set(nz(w, 11) * 0.05 * amp, nz(w * 1.13, 12) * 0.05 * amp, nz(w * 0.9, 13) * 0.07 * amp);",
+                "      _qs.setFromEuler(_es); this.quaternion.multiply(_qs);",
+                "      _so.set(nz(w * 1.3, 14), nz(w * 1.2, 15), nz(w * 1.1, 16)).multiplyScalar(6 * amp).applyQuaternion(this.quaternion);",
+                "      this.position.add(_so);",
+                "    }",
+                "    this.scale.set(1, 1, 1);",
+                "    if (this.fov !== out.fov || this.near !== CFG.near || this.far !== CFG.far) { this.fov = out.fov; this.near = CFG.near; this.far = CFG.far; this.updateProjectionMatrix(); }",
+                "    _f.set(0, 0, -1).applyQuaternion(this.quaternion);",
+                "    const hh1 = 2 * CFG.near * 3 * Math.tan(out.fov * DEG / 2) * 1.08, aspect = this.aspect || 1.78;",
+                "    if (fx.a > 0.003) {",
+                "      overlay.position.copy(this.position).addScaledVector(_f, CFG.near * 3); overlay.quaternion.copy(this.quaternion); overlay.scale.set(hh1 * aspect, hh1, 1);",
+                "      overlay.material.opacity = fx.a; overlay.material.color.copy(fx.col); overlay.visible = true; overlay.updateMatrixWorld(true);",
+                "    } else overlay.visible = false;",
+                "    if (fx.vig > 0.01) {",
+                "      vig.position.copy(this.position).addScaledVector(_f, CFG.near * 2.5); vig.quaternion.copy(this.quaternion);",
+                "      const hh2 = hh1 * (2.5 / 3); vig.scale.set(hh2 * aspect, hh2, 1);",
+                "      vig.material.opacity = fx.vig; vig.material.color.copy(fx.vcol); vig.visible = true; vig.updateMatrixWorld(true);",
+                "    } else vig.visible = false;",
+                "    if (CFG.grain > 0) {                                   // (v7) Film grain",
+                "      const hh3 = hh1 * (2.2 / 3);",
+                "      grain.position.copy(this.position).addScaledVector(_f, CFG.near * 2.2); grain.quaternion.copy(this.quaternion); grain.scale.set(hh3 * aspect, hh3, 1);",
+                "      texGrain.offset.set(Math.random(), Math.random()); grain.material.opacity = CFG.grain * (1 + 0.8 * st.trauma); grain.visible = true; grain.updateMatrixWorld(true);",
+                "    }",
+                "    lensFx(this, aspect);",
+                "  }",
+                "  origUMW.call(this, force);",
+                "};",
+                "",
+                "// نهاية المشهد: نرجّع الكاميرا، الضباب، الخلفية، اللاعب، و Lantern/Ember",
+                "function releaseCam() {",
+                "  if (st.released) return; st.released = true; rig.active = false;",
+                "  if (hadOwnUMW) cam3.updateMatrixWorld = origUMW; else delete cam3.updateMatrixWorld;",
+                "  cam3.near = camBackup.near; cam3.far = camBackup.far; cam3.fov = camBackup.fov; cam3.scale.set(camBackup.sx, camBackup.sy, camBackup.sz); cam3.updateProjectionMatrix();",
+                "  scene3.fog = sceneBackup.fog; scene3.background = sceneBackup.background;",
+                "  overlay.visible = false; vig.visible = false; grain.visible = false; flareS.visible = false; flareG.visible = false;",
+                "  for (const l of introLights) l.intensity = 0;     // بنطفّيهم (مش بنشيلهم) عشان مفيش تهنيج إعادة تجميع Shaders",
+                "  blob.visible = false;",
+                "  heatHalo.material.opacity = 0; sheathMat.opacity = 0; sMat.opacity = 0;",
+                "  for (const m of shards) { m.visible = false; m.userData.alive = false; }",
+                "  if (audio) audio.stop();",
+                "  restorePlayer();",
+                "  showWorldObjects();",
+                "}",
+                "",
+                "// ============================ الصوت (WebAudio) ============================",
+                "const audio = (function () {",
+                "  // ===== (v7) محرّك صوت سينمائي: Compressor + Reverb + Doppler/Pan + Heartbeat + Tinnitus + طبقات اصطدام =====",
+                "  if (!CFG.audio) return null;",
+                "  const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return null;",
+                "  let ac; try { ac = new AC(); } catch (e) { return null; }",
+                "  let dead = false, tPrev = ac.currentTime, hbPrev = 0, pwPrev = 1, nextGroan = 0, nextCrack = 0, holdMuffle = 0;",
+                "  const rr = (a, b) => a + Math.random() * (b - a);",
+                "  const T = () => ac.currentTime;",
+                "",
+                "  // --- السلسلة الرئيسية ---",
+                "  const master = ac.createGain(); master.gain.value = 0.0001; master.gain.setTargetAtTime(0.6, ac.currentTime, 1.5);",
+                "  const comp = ac.createDynamicsCompressor(); comp.threshold.value = -20; comp.knee.value = 16; comp.ratio.value = 6; comp.attack.value = 0.003; comp.release.value = 0.25;",
+                "  const muffle = ac.createBiquadFilter(); muffle.type = \"lowpass\"; muffle.frequency.value = 18000; muffle.Q.value = 0.5;",
+                "  master.connect(muffle); muffle.connect(comp); comp.connect(ac.destination);",
+                "  const verb = ac.createConvolver();",
+                "  { const L = (ac.sampleRate * 3.4) | 0, b = ac.createBuffer(2, L, ac.sampleRate); for (let c = 0; c < 2; c++) { const d = b.getChannelData(c); for (let i = 0; i < L; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / L, 2.4); } verb.buffer = b; }",
+                "  const verbIn = ac.createGain(); verbIn.gain.value = 0.2; const verbOut = ac.createGain(); verbOut.gain.value = 0.55;",
+                "  verbIn.connect(verb); verb.connect(verbOut); verbOut.connect(master);",
+                "  const bus = ac.createGain(); bus.gain.value = 1; bus.connect(master); bus.connect(verbIn);",
+                "  const shaper = ac.createWaveShaper();",
+                "  { const n = 1024, c = new Float32Array(n); for (let i = 0; i < n; i++) { const x = i * 2 / n - 1; c[i] = Math.tanh(x * 4); } shaper.curve = c; shaper.connect(bus); }",
+                "",
+                "  // --- بافرات الضوضاء ---",
+                "  const mkBuf = (brown) => { const L = ac.sampleRate * 2, b = ac.createBuffer(1, L, ac.sampleRate), d = b.getChannelData(0); let l = 0; for (let i = 0; i < L; i++) { const w = Math.random() * 2 - 1; if (brown) { l = (l + 0.02 * w) / 1.02; d[i] = l * 3.5; } else d[i] = w; } return b; };",
+                "  const nbW = mkBuf(false), nbB = mkBuf(true);",
+                "  const loopNoise = (b) => { const s = ac.createBufferSource(); s.buffer = b; s.loop = true; s.start(0, Math.random() * 1.5); return s; };",
+                "",
+                "  // --- أصوات مستمرة ---",
+                "  const wind = loopNoise(nbW), wf = ac.createBiquadFilter(), wg = ac.createGain();",
+                "  wf.type = \"bandpass\"; wf.frequency.value = 500; wf.Q.value = 0.6; wg.gain.value = 0; wind.connect(wf); wf.connect(wg); wg.connect(bus);",
+                "  const pan = ac.createStereoPanner ? ac.createStereoPanner() : null;",
+                "  const engBus = ac.createGain(); engBus.gain.value = 0; if (pan) { engBus.connect(pan); pan.connect(bus); } else engBus.connect(bus);",
+                "  const en = loopNoise(nbB), ef = ac.createBiquadFilter(); ef.type = \"lowpass\"; ef.frequency.value = 400; ef.Q.value = 1.2; en.connect(ef); ef.connect(engBus);",
+                "  const eo1 = ac.createOscillator(), eo2 = ac.createOscillator(), eof = ac.createBiquadFilter(), eog = ac.createGain();",
+                "  eo1.type = \"sawtooth\"; eo2.type = \"sawtooth\"; eo1.frequency.value = 58; eo2.frequency.value = 87; eof.type = \"lowpass\"; eof.frequency.value = 320; eog.gain.value = 0.22;",
+                "  eo1.connect(eof); eo2.connect(eof); eof.connect(eog); eog.connect(engBus); eo1.start(); eo2.start();",
+                "  const rn = loopNoise(nbB), rf = ac.createBiquadFilter(), rg = ac.createGain(); rf.type = \"lowpass\"; rf.frequency.value = 110; rg.gain.value = 0; rn.connect(rf); rf.connect(rg); rg.connect(bus);",
+                "  const al = ac.createOscillator(), ag = ac.createGain(), alf = ac.createBiquadFilter(); al.type = \"square\"; al.frequency.value = 920; ag.gain.value = 0; alf.type = \"lowpass\"; alf.frequency.value = 2600; al.connect(alf); alf.connect(ag); ag.connect(bus); al.start();",
+                "  const dr1 = ac.createOscillator(), dr2 = ac.createOscillator(), drf = ac.createBiquadFilter(), drg = ac.createGain();",
+                "  dr1.type = \"sawtooth\"; dr2.type = \"sawtooth\"; dr1.frequency.value = 55; dr2.frequency.value = 55.7; drf.type = \"lowpass\"; drf.frequency.value = 260; drg.gain.value = 0;",
+                "  dr1.connect(drf); dr2.connect(drf); drf.connect(drg); drg.connect(bus); dr1.start(); dr2.start();",
+                "  const rs = loopNoise(nbW), rsf = ac.createBiquadFilter(), rsg = ac.createGain(); rsf.type = \"bandpass\"; rsf.frequency.value = 300; rsf.Q.value = 2.2; rsg.gain.value = 0; rs.connect(rsf); rsf.connect(rsg); rsg.connect(bus);",
+                "  const ti1 = ac.createOscillator(), ti2 = ac.createOscillator(), tig = ac.createGain(); ti1.frequency.value = 7400; ti2.frequency.value = 5200; tig.gain.value = 0; ti1.connect(tig); ti2.connect(tig); tig.connect(master); ti1.start(); ti2.start();",
+                "  const fb = loopNoise(nbW), fbf = ac.createBiquadFilter(), fbg = ac.createGain(); fbf.type = \"bandpass\"; fbf.frequency.value = 900; fbf.Q.value = 0.5; fbg.gain.value = 0; fb.connect(fbf); fbf.connect(fbg); fbg.connect(bus);",
+                "",
+                "  // --- أدوات الأصوات القصيرة ---",
+                "  function burst(buf, t0, dur, f0, f1, type, q, peak, dest, att) {",
+                "    const s = ac.createBufferSource(); s.buffer = buf; const f = ac.createBiquadFilter(), g = ac.createGain();",
+                "    f.type = type; f.Q.value = q; f.frequency.setValueAtTime(Math.max(20, f0), t0); f.frequency.exponentialRampToValueAtTime(Math.max(20, f1), t0 + dur);",
+                "    g.gain.setValueAtTime(0.0001, t0); g.gain.linearRampToValueAtTime(peak, t0 + (att || 0.004)); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);",
+                "    s.connect(f); f.connect(g); g.connect(dest || bus); s.start(t0, Math.random() * 1.4); s.stop(t0 + dur + 0.05);",
+                "  }",
+                "  function tone(type, t0, dur, f0, f1, peak, dest, att) {",
+                "    const o = ac.createOscillator(), g = ac.createGain(); o.type = type;",
+                "    o.frequency.setValueAtTime(Math.max(10, f0), t0); o.frequency.exponentialRampToValueAtTime(Math.max(10, f1), t0 + dur);",
+                "    g.gain.setValueAtTime(0.0001, t0); g.gain.linearRampToValueAtTime(peak, t0 + (att || 0.005)); g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);",
+                "    o.connect(g); g.connect(dest || bus); o.start(t0); o.stop(t0 + dur + 0.05);",
+                "  }",
+                "  function thump(v) { const t = T(); tone(\"sine\", t, 0.2, 68, 34, v, bus, 0.006); tone(\"sine\", t + 0.16, 0.18, 60, 32, v * 0.6, bus, 0.006); }",
+                "  function groan(v) {",
+                "    const t = T(), d = rr(1.1, 2.2), o = ac.createOscillator(), f = ac.createBiquadFilter(), g = ac.createGain(), l = ac.createOscillator(), lg = ac.createGain();",
+                "    o.type = \"sawtooth\"; o.frequency.setValueAtTime(rr(90, 150), t); o.frequency.exponentialRampToValueAtTime(rr(38, 70), t + d);",
+                "    f.type = \"bandpass\"; f.frequency.value = rr(180, 420); f.Q.value = 6; l.frequency.value = rr(5, 11); lg.gain.value = v * 0.4; l.connect(lg); lg.connect(g.gain);",
+                "    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(v * 0.6, t + d * 0.35); g.gain.exponentialRampToValueAtTime(0.0001, t + d);",
+                "    o.connect(f); f.connect(g); g.connect(bus); l.start(t); o.start(t); l.stop(t + d + 0.1); o.stop(t + d + 0.1);",
+                "  }",
+                "  function glass(n) {",
+                "    const t = T(); burst(nbW, t, 0.18, 6500, 2500, \"highpass\", 0.7, 0.35); burst(nbW, t, 0.07, 1800, 900, \"bandpass\", 1.2, 0.5);",
+                "    for (let i = 0; i < n; i++) tone(\"sine\", t + rr(0.02, 0.5), rr(0.08, 0.25), rr(3200, 7800), rr(2500, 5000), rr(0.02, 0.06));",
+                "  }",
+                "  function backfire() { const t = T(); burst(nbB, t, 0.28, 700, 80, \"lowpass\", 0.8, 0.7); burst(nbW, t, 0.09, 3000, 500, \"bandpass\", 0.9, 0.25); tone(\"sine\", t, 0.25, 90, 40, 0.5); }",
+                "  function whoosh(v, dur) { burst(nbW, T(), dur, 300, 4000, \"bandpass\", 1.4, v, bus, dur * 0.6); }",
+                "  function braam(v) {",
+                "    const t = T();",
+                "    for (const f of [55, 55.9, 82.4]) {",
+                "      const o = ac.createOscillator(), fl = ac.createBiquadFilter(), g = ac.createGain(); o.type = \"sawtooth\"; o.frequency.value = f;",
+                "      fl.type = \"lowpass\"; fl.frequency.setValueAtTime(120, t); fl.frequency.exponentialRampToValueAtTime(1400, t + 0.5); fl.frequency.exponentialRampToValueAtTime(150, t + 2.0);",
+                "      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(v, t + 0.35); g.gain.exponentialRampToValueAtTime(0.0001, t + 2.2);",
+                "      o.connect(fl); fl.connect(g); g.connect(bus); o.start(t); o.stop(t + 2.3);",
+                "    }",
+                "  }",
+                "  function pad(v) {",
+                "    const t = T();",
+                "    for (const f of [110, 164.8, 220]) {",
+                "      const o = ac.createOscillator(), g = ac.createGain(); o.type = \"sine\"; o.frequency.value = f;",
+                "      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(v, t + 2.0); g.gain.exponentialRampToValueAtTime(0.0001, t + 6.5);",
+                "      o.connect(g); g.connect(bus); o.start(t); o.stop(t + 6.6);",
+                "    }",
+                "  }",
+                "  function crackle() {",
+                "    const t = T() + rr(0, 0.02);",
+                "    burst(nbW, t, rr(0.01, 0.035), rr(2500, 7000), rr(1200, 3000), \"bandpass\", 3, rr(0.05, 0.22));",
+                "    if (Math.random() < 0.15) burst(nbB, t, 0.09, 600, 150, \"lowpass\", 0.7, 0.25);",
+                "  }",
+                "  function boom() {",
+                "    const t = T();",
+                "    for (const p of [wg.gain, ag.gain, drg.gain, rsg.gain, engBus.gain]) { p.cancelScheduledValues(t); p.setTargetAtTime(0, t, 0.05); }",
+                "    rg.gain.setTargetAtTime(0.05, t, 0.3);",
+                "    tone(\"sine\", t, 2.0, 80, 18, 1.5);",
+                "    tone(\"sine\", t, 9.0, 42, 22, 1.2); tone(\"sine\", t + 0.05, 6.5, 30, 16, 1.0);                         // v8.2: Sub-bass للزلزال",
+                "    for (let i = 0; i < 9; i++) burst(nbB, t + 0.2 + i * 0.7 + rr(0, 0.25), rr(0.4, 0.9), rr(140, 320), 40, \"lowpass\", 0.8, rr(0.5, 0.9) * Math.exp(-i * 0.16));   // رعد/ارتجاج متقطّع",
+                "    burst(nbW, t, 3.0, 3500, 70, \"lowpass\", 0.7, 1.5);",
+                "    burst(nbB, t, 2.4, 900, 50, \"lowpass\", 0.7, 1.4);",
+                "    { const s = ac.createBufferSource(); s.buffer = nbW; const f = ac.createBiquadFilter(), g = ac.createGain(); f.type = \"bandpass\"; f.frequency.value = 1400; f.Q.value = 0.7;",
+                "      g.gain.setValueAtTime(0.9, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.5); s.connect(f); f.connect(g); g.connect(shaper); s.start(t); s.stop(t + 0.6); }",
+                "    for (const fv of [[311, 0.22], [523, 0.18], [812, 0.12], [1330, 0.08]]) tone(\"sine\", t + 0.02, rr(1.2, 2.0), fv[0] * rr(0.98, 1.02), fv[0] * 0.97, fv[1]);",
+                "    for (let i = 0; i < 22; i++) burst(nbW, t + 0.15 + Math.pow(Math.random(), 1.6) * 2.2, rr(0.02, 0.07), rr(2000, 6000), rr(900, 2500), \"bandpass\", 2, rr(0.08, 0.3));",
+                "    muffle.frequency.cancelScheduledValues(t); muffle.frequency.setValueAtTime(380, t); muffle.frequency.setTargetAtTime(18000, t + 1.2, 1.4); holdMuffle = t + 5;",
+                "    tig.gain.cancelScheduledValues(t); tig.gain.setValueAtTime(0.0001, t + 0.05); tig.gain.linearRampToValueAtTime(0.05, t + 0.35); tig.gain.setTargetAtTime(0, t + 2.2, 1.4);",
+                "    verbIn.gain.cancelScheduledValues(t); verbIn.gain.setValueAtTime(0.5, t); verbIn.gain.setTargetAtTime(0.3, t + 1, 2);",
+                "  }",
+                "",
+                "  return {",
+                "    // بيتنادى كل فريم. o.phase = fall | crash | wreck",
+                "    frame(o) {",
+                "      if (dead) return; if (ac.state === \"suspended\") ac.resume();",
+                "      const n = ac.currentTime, dt = Math.min(0.1, Math.max(0, n - tPrev)); tPrev = n;",
+                "      if (n > holdMuffle && o.phase === \"fall\") muffle.frequency.setTargetAtTime(o.inside ? 6500 : 18000, n, 0.3);",
+                "      if (o.phase === \"fall\") {",
+                "        const sp = o.sp, inside = o.inside, hush = o.hush || 0, x = o.x;",
+                "        wg.gain.setTargetAtTime((0.04 + 0.45 * sp) * (inside ? 1 : 1.15), n, 0.2);",
+                "        wf.frequency.setTargetAtTime(inside ? 280 + 1300 * sp : 600 + 2400 * sp, n, 0.25);",
+                "        engBus.gain.setTargetAtTime((inside ? 0.5 : 0.15 + 0.9 * o.dist01) * o.pw * (1 - 0.8 * hush), n, 0.05);",
+                "        ef.frequency.setTargetAtTime((inside ? 260 : 380 + 900 * o.dist01) * (0.7 + 0.6 * o.pw) * o.dopp, n, 0.1);",
+                "        eo1.frequency.setTargetAtTime(58 * (0.8 + 0.5 * o.pw) * o.dopp, n, 0.08);",
+                "        eo2.frequency.setTargetAtTime(87 * (0.8 + 0.5 * o.pw) * o.dopp, n, 0.08);",
+                "        if (pan) pan.pan.setTargetAtTime(inside ? 0 : o.pan, n, 0.08);",
+                "        rg.gain.setTargetAtTime((0.15 + 0.7 * sp) * (inside ? 1.2 : 0.8), n, 0.2);",
+                "        ag.gain.setTargetAtTime(o.alarm && (o.t % 0.6) < 0.3 ? (inside ? 0.05 : 0.012) * (1 - hush) : 0, n, 0.01);",
+                "        al.frequency.setTargetAtTime((o.t % 1.2) < 0.6 ? 920 : 740, n, 0.005);",
+                "        drg.gain.setTargetAtTime(0.12 * o.tension * (1 - hush), n, 0.4); drf.frequency.setTargetAtTime(200 + 700 * o.tension, n, 0.4);",
+                "        dr1.frequency.setTargetAtTime(55 * (1 + 0.5 * x), n, 0.5); dr2.frequency.setTargetAtTime(55.7 * (1 + 0.5 * x), n, 0.5);",
+                "        const rz = Math.min(1, Math.max(0, (x - 0.55) / 0.4)), rzs = rz * rz * (3 - 2 * rz);",
+                "        rsg.gain.setTargetAtTime(0.35 * rzs * (1 - hush), n, 0.2); rsf.frequency.setTargetAtTime(300 * Math.pow(16, rzs), n, 0.15);",
+                "        fbg.gain.setTargetAtTime(0, n, 0.2);",
+                "        if (o.hb > 0.85 && hbPrev <= 0.85) thump((inside ? 0.45 : 0.2) + 0.45 * o.tension);",
+                "        hbPrev = o.hb;",
+                "        if (pwPrev > 0.45 && o.pw < 0.3 && x > 0.25 && Math.random() < 0.5) backfire();",
+                "        pwPrev = o.pw;",
+                "        if (x > 0.2 && n > nextGroan) { groan(0.12 + 0.28 * o.tension); nextGroan = n + rr(1.2, 3.2) / (0.5 + o.tension); }",
+                "      } else {",
+                "        for (const p of [engBus.gain, ag.gain, drg.gain, rsg.gain]) p.setTargetAtTime(0, n, 0.1);",
+                "        wg.gain.setTargetAtTime(0.07, n, 0.5); wf.frequency.setTargetAtTime(420, n, 0.5);",
+                "        rg.gain.setTargetAtTime(0.22 * Math.exp(-(o.wI || 0) * 0.4), n, 0.4);",
+                "        const fk = o.fire === undefined ? 0.6 : o.fire;",
+                "        fbg.gain.setTargetAtTime(0.04 + 0.1 * fk, n, 0.4); fbf.frequency.setTargetAtTime(700 + 500 * Math.sin(n * 0.7), n, 0.3);",
+                "        if (n > nextCrack) { crackle(); nextCrack = n + rr(0.03, 0.25) / (0.3 + fk); }",
+                "        if (o.phase === \"wreck\" && n > nextGroan) { groan(0.1); nextGroan = n + rr(2.5, 5); }",
+                "      }",
+                "    },",
+                "    cue(name) {",
+                "      if (dead) return;",
+                "      if (name === \"crack1\") { glass(6); groan(0.5); thump(0.7); }",
+                "      else if (name === \"crack2\") { glass(10); groan(0.6); thump(0.8); backfire(); }",
+                "      else if (name === \"crack3\") { glass(16); groan(0.8); thump(0.9); }",
+                "      else if (name === \"chase\") whoosh(0.35, 1.0);",
+                "      else if (name === \"rear\") { whoosh(0.25, 0.6); thump(0.5); }",
+                "      else if (name === \"tele\") { braam(0.5); whoosh(0.2, 1.2); }",
+                "      else if (name === \"low\") whoosh(0.3, 0.9);",
+                "      else if (name === \"wreck\") pad(0.12);",
+                "    },",
+                "    boom,",
+                "    fadeOut(sec) { if (dead) return; master.gain.setTargetAtTime(0, ac.currentTime, Math.max(0.05, sec / 3)); },",
+                "    stop() {",
+                "      if (dead) return; dead = true; const n = ac.currentTime; master.gain.setTargetAtTime(0, n, 0.3);",
+                "      setTimeout(() => { try { wind.stop(); en.stop(); rn.stop(); rs.stop(); fb.stop(); al.stop(); eo1.stop(); eo2.stop(); dr1.stop(); dr2.stop(); ti1.stop(); ti2.stop(); ac.close(); } catch (e) { } }, 1500);",
+                "    }",
+                "  };",
+                "})();",
+                "",
+                "// ============================ المسار والحالة ============================",
+                "// الاتجاه: تلقائي = من نص الـ Terrain ناحية نقطة الاصطدام (يعني الصاروخ دايمًا بييجي من فوق الأرض مش من الفراغ)",
+                "let hAng = CFG.approachAngle;",
+                "if (hAng === null) {",
+                "  const dx = C.x - tCenterX, dy = C.y - tCenterY;",
+                "  hAng = Math.hypot(dx, dy) > 50 ? Math.atan2(dy, dx) / DEG : -35;",
+                "}",
+                "const hdir = new V3(Math.cos(hAng * DEG), Math.sin(hAng * DEG), 0);",
+                "const gam = CFG.impactAngle * DEG;",
+                "const dEnd = new V3(hdir.x * Math.cos(gam), hdir.y * Math.cos(gam), -Math.sin(gam));",
+                "const P1 = C.clone().addScaledVector(dEnd, -L_PX);                                   // مكان القاعدة وقت الاصطدام (المقدمة على الأرض)",
+                "const P0 = P1.clone().addScaledVector(hdir, -CFG.approachDist); P0.z += CFG.startAltitude;",
+                "const kc = (CFG.startAltitude * 0.6) / Math.sin(gam);",
+                "const Pc = P1.clone().addScaledVector(dEnd, -kc);",
+                "const side = new V3().crossVectors(Z_AXIS, hdir).normalize();",
+                "function bez(u, o) { const a = (1 - u) * (1 - u), b = 2 * u * (1 - u), c = u * u; return o.set(P0.x * a + Pc.x * b + P1.x * c, P0.y * a + Pc.y * b + P1.y * c, P0.z * a + Pc.z * b + P1.z * c); }",
+                "function bezD(u, o) { const a = 2 * (1 - u), b = 2 * u; return o.set(a * (Pc.x - P0.x) + b * (P1.x - Pc.x), a * (Pc.y - P0.y) + b * (P1.y - Pc.y), a * (Pc.z - P0.z) + b * (P1.z - Pc.z)); }",
+                "console.log(\"[RocketIntro v8.2] بداية السقوط:\", P0.x.toFixed(0), P0.y.toFixed(0), P0.z.toFixed(0), \"| جوّه الـ Terrain:\", insideT(P0.x, P0.y, 0));",
+                "",
+                "// مكان الكاميرا الأرضية: بنختار أول مكان جوّه حدود الـ Terrain",
+                "const gcPos = new V3();",
+                "{",
+                "  let found = false;",
+                "  search:",
+                "  for (const ah of [CFG.groundCamAhead, 1400, 800, 300, -300, -800]) {",
+                "    for (const sd of [1, -1]) {",
+                "      const x = C.x + hdir.x * ah + side.x * CFG.groundCamSide * sd, y = C.y + hdir.y * ah + side.y * CFG.groundCamSide * sd;",
+                "      if (insideT(x, y, 250)) { gcPos.set(x, y, 0); found = true; break search; }",
+                "    }",
+                "  }",
+                "  if (!found) gcPos.set(clamp(C.x + side.x * 900, tMinX + 150, tMaxX - 150), clamp(C.y + side.y * 900, tMinY + 150, tMaxY - 150), 0);",
+                "  const gz = probe(gcPos.x, gcPos.y); gcPos.z = (gz !== null ? gz : C.z) + CFG.groundCamHeight;",
+                "}",
+                "const gcDrift = new V3(C.x - gcPos.x, C.y - gcPos.y, 0).normalize();",
+                "",
+                "// (جديد v6) الكاميرا الأرضية القريبة (Worm's-eye): جنب المعاكس للتيليفوتو = زاوية مختلفة",
+                "const gcClose = new V3();",
+                "{",
+                "  let ok = false;",
+                "  for (const sd of [-1, 1]) {",
+                "    const x = C.x + hdir.x * CFG.closeAhead + side.x * CFG.closeSide * sd, y = C.y + hdir.y * CFG.closeAhead + side.y * CFG.closeSide * sd;",
+                "    if (insideT(x, y, 200)) { gcClose.set(x, y, 0); ok = true; break; }",
+                "  }",
+                "  if (!ok) gcClose.set(clamp(C.x + side.x * 500, tMinX + 150, tMaxX - 150), clamp(C.y + side.y * 500, tMinY + 150, tMaxY - 150), 0);",
+                "  const gz = probe(gcClose.x, gcClose.y); gcClose.z = (gz !== null ? gz : C.z) + CFG.closeHeight;",
+                "}",
+                "",
+                "for (let i = 0; i < 40; i++) {",
+                "  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: texCloud, transparent: true, opacity: rnd(0.35, 0.6), depthWrite: false, fog: false, color: new Col().setHSL(0.6, 0.04, rnd(0.1, 0.28)) }));",
+                "  const p = bez(rnd(0.04, 0.9), new V3()), r = rnd(400, 1800), a = rnd(0, 6.28);",
+                "  s.position.set(p.x + Math.cos(a) * r, p.y + Math.sin(a) * r, p.z + rnd(-500, 500));",
+                "  const sz = rnd(1000, 2800); s.scale.set(sz, sz * 0.6, 1); world.add(s); clouds.push(s);",
+                "}",
+                "",
+                "const st = { t: 0, wt: 0, sT: 0, wI: 0, phase: \"fall\", tI: 0, tW0: 0, t5: 0, roll: 0, trauma: 0, hudAcc: 0, accF: 0, accS: 0, accG: 0, accH: 0, accV: 0, crack: 0, alarm: false, released: false, posted5: false, warn: 0, cf: 0, cfx: 0, dip: 0, heatK: 1, engine: true, failed: false, guard: 0, kick: 0, hb: 0, flareK: 0, afade: false, after1: false };",
+                "const pos = new V3(), vel = new V3(), vdir = new V3(0, 0, -1), _q = new Q(), _q2 = new Q(), _q3 = new Q(), _eu = new Eul(), _v = new V3(), _w = new V3(), _n = new V3(), _b = new V3(), _hp = new V3();",
+                "const leanQ = new Q(), q0 = new Q(), pivot0 = new V3(), contact = new V3();",
+                "function rp(lx, ly, lz, out) { return out.set(lx * U, ly * U, lz * U).applyQuaternion(rocket.quaternion).add(rocket.position); }",
+                "",
+                "// ============================ حركة الصاروخ ============================",
+                "const _qa = new Q(), _qb = new Q(), _qc = new Q();",
+                "function attitude(x, t, out) {",
+                "  _qa.setFromUnitVectors(Z_AXIS, vdir);",
+                "  const tum = 1 - sstep(0, 0.62, x);",
+                "  _qb.setFromAxisAngle(side, -tum * CFG.tumbleDeg * DEG);",
+                "  const wob = (1 - sstep(0.78, 1, x)) * (0.35 + 0.65 * (1 - tum));",
+                "  _eu.set(nz(t * 1.1, 1) * 0.16 * wob, nz(t * 0.9, 2) * 0.16 * wob, 0);",
+                "  _qc.setFromEuler(_eu);",
+                "  return out.copy(_qb).multiply(_qa).multiply(_qc);",
+                "}",
+                "function bestRoll(base) {",
+                "  const pit = CFG.lookPitch * DEG; let best = 0, bz = 1e9;",
+                "  for (let k = 0; k < 24; k++) {",
+                "    const r = k * Math.PI / 12; _q3.setFromAxisAngle(Z_AXIS, r); _q2.copy(base).multiply(_q3);",
+                "    _v.set(Math.cos(pit), 0, Math.sin(pit)).applyQuaternion(_q2);",
+                "    if (_v.z < bz) { bz = _v.z; best = r; }",
+                "  }",
+                "  return best;",
+                "}",
+                "",
+                "// ============================ اللقطات (v7 — مخرج الكاميرا) ============================",
+                "// Fly-by → Chase → Rear-tracking POV → Telephoto Dolly-zoom → Worm's-eye + Impact kick → Wreck crane/orbit",
+                "const BLEND = { fly: 0, chase: 2.2, cockpit: 2.6, tele: 2.4, low: 2.0, wreck: 3.8 };   // مدة الانتقال السموث لكل لقطة (ثواني)",
+                "function setShot(name) {",
+                "  const first = rig.shot === \"\";",
+                "  if (name === \"tele\" && !camSpots.tele) camSpots.tele = pickTele();",
+                "  if (name === \"low\" && !camSpots.low) camSpots.low = pickLow();",
+                "  if (name === \"wreck\" && !camSpots.wreck) camSpots.wreck = pickWreck();",
+                "  rig.shot = name; rig.snap = true; st.sT = 0;",
+                "  if (!first && (BLEND[name] || 0) > 0) {",
+                "    blend.on = true; blend.k = 0; blend.dur = BLEND[name];",
+                "    blend.eye.copy(out.eye); blend.dir.copy(out.look).sub(out.eye).normalize(); blend.up.copy(out.up); blend.fov = out.fov; blend.roll = out.roll;",
+                "  }",
+                "  if (audio && !first) audio.cue(name);",
+                "}",
+                "",
+                "// 🎥 لقطة 1 — FLY-BY: كاميرا قدّام مسار الصاروخ بعدسة تيليفوتو، بيعدّي من جنبها وهي بتتبعه (Low-angle hero reveal) + Dutch angle.",
+                "function setFly(x) {",
+                "  const k = clamp(x / Math.max(CFG.flyEnd, 1e-3), 0, 1), e = sstep(0, 1, k);",
+                "  rp(0, 0, 6.2, _n);",
+                "  _u.crossVectors(vdir, Z_AXIS); if (_u.lengthSq() < 1e-6) _u.set(1, 0, 0); _u.normalize();",
+                "  des.eye.copy(_n).addScaledVector(vdir, lerp(1900, -500, e)).addScaledVector(_u, lerp(1050, 620, e));",
+                "  des.eye.z += lerp(-250, 120, e);",
+                "  des.look.copy(_n).addScaledVector(vdir, lerp(0, 260, e)).addScaledVector(_u, lerp(160, -40, e));   // Rule of thirds",
+                "  des.up.set(0, 0, 1);",
+                "  des.fov = lerp(30, 46, e) + 5 * st.trauma;",
+                "  des.roll = lerp(-6, 4, e);",
+                "  des.sEye = 0.35; des.sLook = 0.12; des.sUp = 0.3; des.sFov = 0.45; des.rel = false;",
+                "  des.shake = 0.1; des.hz = 2.2; des.useTrauma = true; des.shakeScale = 1;",
+                "}",
+                "",
+                "// 🎥 لقطة 2 — CHASE / Wing cam: كاميرا بتطير جنب الصاروخ من ورا لقدّام (لهب + إحساس سرعة) واهتزاز اضطراب.",
+                "function setChase(x) {",
+                "  const k = clamp((x - CFG.flyEnd) / Math.max(CFG.chaseEnd - CFG.flyEnd, 1e-3), 0, 1), e = sstep(0, 1, k);",
+                "  rp(0, 0, 5.4, _n);",
+                "  _u.crossVectors(vdir, Z_AXIS); if (_u.lengthSq() < 1e-6) _u.set(1, 0, 0); _u.normalize();",
+                "  des.eye.copy(_n).addScaledVector(vdir, lerp(-520, 140, e)).addScaledVector(_u, lerp(-560, -400, e));",
+                "  des.eye.z += lerp(160, -30, e);",
+                "  des.look.copy(_n).addScaledVector(vdir, lerp(90, -40, e));",
+                "  des.up.set(0, 0, 1);",
+                "  des.fov = lerp(42, 62, e) + 7 * st.trauma;",
+                "  des.roll = lerp(7, -6, e);",
+                "  des.sEye = 0.14; des.sLook = 0.09; des.sUp = 0.25; des.sFov = 0.35; des.rel = false;",
+                "  des.shake = 0.16 + 0.1 * e; des.hz = 4.5; des.useTrauma = true; des.shakeScale = 1.2;",
+                "}",
+                "",
+                "// 🎥 لقطة 3 — REAR TRACKING (v8.1): كاميرا خارجية ورا الصاروخ وفوقه شوية، بتتتبعه من بره (مفيش دخول جوّه الصاروخ).",
+                "// بتفضل على مسافة آمنة من الهيكل، مع Orbit بطيء جنب الصاروخ + اهتزاز اضطراب يزيد + نبض القلب بيضغط الـ FOV.",
+                "function setCockpit(x, turb) {",
+                "  const k = clamp((x - CFG.chaseEnd) / Math.max(CFG.cockpitEnd - CFG.chaseEnd, 1e-3), 0, 1), e = sstep(0, 1, k);",
+                "  const a = turb + st.trauma, amp = a * a * CFG.camShake, tt = st.wt;",
+                "  rp(0, 0, 3.2, _n);                                        // منتصف جسم الصاروخ",
+                "  _u.crossVectors(vdir, Z_AXIS); if (_u.lengthSq() < 1e-6) _u.set(1, 0, 0); _u.normalize();",
+                "  const ang = lerp(-0.55, 0.45, e), back = lerp(15, 11, e) * U, side = Math.sin(ang) * 6.5 * U;",
+                "  des.eye.copy(_n).addScaledVector(vdir, -back).addScaledVector(_u, side);",
+                "  des.eye.z += lerp(3.2, 1.6, e) * U;",
+                "  des.eye.x += nz(tt * 9, 4) * amp * 6; des.eye.y += nz(tt * 10, 5) * amp * 6; des.eye.z += nz(tt * 8, 6) * amp * 6;",
+                "  des.look.copy(_n).addScaledVector(vdir, 0.8 * U);",
+                "  des.up.set(0, 0, 1);",
+                "  const hb = st.hb;",
+                "  des.fov = lerp(50, 60, e) + st.trauma * 8 - 3.5 * hb;",
+                "  des.roll = lerp(-3, 4, e) + nz(tt * 5, 7) * amp * 2.5;",
+                "  des.sEye = 0.12; des.sLook = 0.08; des.sUp = 0.2; des.sFov = 0.25; des.rel = false;",
+                "  des.shake = 0.12 + 0.12 * e; des.hz = 5; des.useTrauma = true; des.shakeScale = 1.2;",
+                "}",
+                "",
+                "// 🎥 لقطة 4 — TELEPHOTO من الأرض + DOLLY-ZOOM (Vertigo): الصاروخ بيقرّب والخلفية بتتمطّ = توتر.",
+                "// مكان الكاميرا بيتختار تلقائي: أرض (مش ميّه) + مفيش نخل في الطريق + الصاروخ ظاهر طول اللقطة.",
+                "function setTele(x) {",
+                "  const k = clamp((x - CFG.cockpitEnd) / Math.max(CFG.teleEnd - CFG.cockpitEnd, 1e-3), 0, 1), e = sstep(0, 1, k);",
+                "  const sp = camSpots.tele ? camSpots.tele.pos : gcPos;",
+                "  rp(0, 0, 6.2, _n);",
+                "  _w.set(C.x - sp.x, C.y - sp.y, 0).normalize();",
+                "  des.eye.copy(sp).addScaledVector(_w, st.sT * 22); des.eye.z += 45 * e;",
+                "  des.look.copy(_n).addScaledVector(vdir, lerp(60, 220, e));          // Lead room قدّام الصاروخ",
+                "  des.up.set(0, 0, 1);",
+                "  const dist = Math.max(300, des.eye.distanceTo(_n)), fc = clamp(2 * Math.atan(750 / dist) / DEG, 24, 66);",
+                "  des.fov = lerp(lerp(48, 30, e), fc, 0.5 * sstep(0.1, 0.6, k)) + 4 * st.trauma;",
+                "  des.roll = lerp(-4, 3, e);",
+                "  des.sEye = 0.4; des.sLook = 0.16; des.sUp = 0.3; des.sFov = 0.5; des.rel = false;",
+                "  des.shake = 0.07; des.hz = 2.6; des.useTrauma = true; des.shakeScale = 1.5;",
+                "}",
+                "",
+                "// 🎥 لقطة 5 — WORM'S-EYE قريبة جدًا من الأرض بعدسة واسعة: الصاروخ بيعدّي فوق الكاميرا ويخبط.",
+                "// لحظة الاصطدام: Camera kick (دفعة لورا + FOV punch) ثم Dolly-back + Tilt-up مع انحسار الزووم.",
+                "function setLow(x) {",
+                "  const fall = st.phase === \"fall\", w = fall ? 0 : st.wI, kick = fall ? 0 : st.kick;",
+                "  const k = fall ? clamp((x - CFG.teleEnd) / Math.max(1 - CFG.teleEnd, 1e-3), 0, 1) : 1, e = sstep(0, 1, k);",
+                "  const pb = sstep(0, 1, w / 4.5);",
+                "  const sp = camSpots.low ? camSpots.low.pos : gcClose;",
+                "  rp(0, 0, 6.2, _n);",
+                "  des.eye.copy(sp);",
+                "  _w.set(sp.x - C.x, sp.y - C.y, 0).normalize();",
+                "  des.eye.addScaledVector(_w, 480 * pb + 150 * kick); des.eye.z += 160 * pb;",
+                "  des.look.copy(_n); des.look.z += 120 * pb;",
+                "  des.up.set(0, 0, 1);",
+                "  des.fov = (fall ? lerp(64, 82, e) : lerp(82, 52, pb)) + 16 * kick;",
+                "  des.roll = -5 * (fall ? e : 1 - pb) + 5 * st.cfx;",
+                "  des.sEye = fall ? 0.22 : 0.18; des.sLook = fall ? 0.08 : 0.35; des.sUp = 0.3; des.sFov = 0.45; des.rel = false;",
+                "  des.shake = 0.1; des.hz = 3; des.useTrauma = true; des.shakeScale = 2;",
+                "}",
+                "",
+                "// 🎥 لقطة 6 — WRECK REVEAL: Crane-up + Orbit + Pull-out بطيء حوالين الحطام (المدار بيتختار تلقائي بدون عوائق).",
+                "function setWreck() {",
+                "  const tt = st.t - st.tW0, k = clamp(tt / CFG.wreckShotTime, 0, 1), e = sstep(0, 1, k);",
+                "  const sp = camSpots.wreck || { off: 140, dir: 1 };",
+                "  rp(0, 0, 5.5, _n);",
+                "  const az = (hAng + sp.off) * DEG + sp.dir * e * 0.9, dist = lerp(640, 1550, e);",
+                "  const ex = clamp(C.x + Math.cos(az) * dist, tMinX + 120, tMaxX - 120), ey = clamp(C.y + Math.sin(az) * dist, tMinY + 120, tMaxY - 120);",
+                "  des.eye.set(ex, ey, 0);",
+                "  des.eye.z = Math.max(groundAt(des.eye.x, des.eye.y) + 70, C.z + lerp(70, 520, e));",
+                "  des.look.copy(_n); des.look.z += lerp(-40, 90, e);",
+                "  des.up.set(0, 0, 1); des.fov = lerp(40, 32, e); des.roll = lerp(3, -1, e);",
+                "  des.sEye = 0.8; des.sLook = 0.5; des.sUp = 0.2; des.sFov = 0.6; des.rel = false;",
+                "  des.shake = 0.05; des.hz = 1.5; des.useTrauma = true; des.shakeScale = 1;",
+                "}",
+                "",
+                "// ============================ مؤثرات أثناء السقوط ============================",
+                "function emitExhaust(dt, power) {",
+                "  if (!st.engine) return;",
+                "  st.accF += dt * power * 60; st.accS += dt * power * 34;",
+                "  rp(0, 0, -1.1, _n); _b.set(0, 0, -1).applyQuaternion(rocket.quaternion);",
+                "  while (st.accF >= 1) {",
+                "    st.accF--;",
+                "    spawn(fireP, _n.x + rnd(-18, 18), _n.y + rnd(-18, 18), _n.z + rnd(-18, 18), _b.x * 450 + vel.x * 0.1 + rnd(-90, 90), _b.y * 450 + vel.y * 0.1 + rnd(-90, 90), _b.z * 450 + vel.z * 0.1 + rnd(-90, 90),",
+                "      { life: rnd(0.35, 0.7), s0: 90, s1: 230, c0: 0xffe3a0, c1: 0xff3a00, a0: 0.95, fade: 1.5 });",
+                "  }",
+                "  while (st.accS >= 1) {",
+                "    st.accS--;",
+                "    spawn(smokeP, _n.x + rnd(-30, 30), _n.y + rnd(-30, 30), _n.z + rnd(-30, 30), _b.x * 160 + vel.x * 0.05 + rnd(-60, 60), _b.y * 160 + vel.y * 0.05 + rnd(-60, 60), _b.z * 160 + vel.z * 0.05 + rnd(-60, 60),",
+                "      { life: rnd(2.8, 4.6), s0: 110, s1: 620, c0: 0x1c1c1c, c1: 0x808080, a0: 0.5, fade: 1.2, d: 0.4 });",
+                "  }",
+                "}",
+                "function updateFlame(power) {",
+                "  flame.visible = st.engine && power > 0.05;",
+                "  if (!flame.visible) { engGlow.visible = st.engine; lEngine.intensity = 0; return; }",
+                "  const fl = 0.85 + 0.15 * nz(st.wt * 28, 2);",
+                "  lEngine.intensity = 2.6 * power * fl;",
+                "  flame.scale.set(0.8 + 0.3 * power, 0.8 + 0.3 * power, (0.45 + 0.9 * power) * fl);",
+                "  flameIn.rotation.z = st.wt * 9;",
+                "}",
+                "function emitHeatFx(dt, x) {",
+                "  const h = sstep(0, 0.14, x) * (1 - 0.55 * sstep(0.88, 1, x));",
+                "  st.accH += dt * h * 34; st.accV += dt * 22;",
+                "  while (st.accH >= 1) {",
+                "    st.accH--; rp(rnd(-1.2, 1.2), rnd(-1.2, 1.2), rnd(2, 10), _hp);",
+                "    spawn(fireP, _hp.x, _hp.y, _hp.z, -vdir.x * rnd(80, 260) + rnd(-60, 60), -vdir.y * rnd(80, 260) + rnd(-60, 60), -vdir.z * rnd(80, 260) + rnd(-60, 60),",
+                "      { life: rnd(0.5, 1.1), s0: 34, s1: 6, c0: 0xffd080, c1: 0xff2a00, a0: 1, fade: 1.2 });",
+                "  }",
+                "  while (st.accV >= 1) {",
+                "    st.accV--; const a = Math.floor(rnd(0, 4)) * Math.PI / 2; rp(3 * Math.cos(a), 3 * Math.sin(a), 0.7, _hp);",
+                "    spawn(smokeP, _hp.x, _hp.y, _hp.z, -vdir.x * 60 + rnd(-20, 20), -vdir.y * 60 + rnd(-20, 20), -vdir.z * 60 + rnd(-20, 20),",
+                "      { life: 1.5, s0: 40, s1: 150, c0: 0xe6ecf2, c1: 0xaab4bf, a0: 0.28, fade: 1.2, d: 0.6 });",
+                "  }",
+                "}",
+                "function updateStreaks(speed, x, inside) {",
+                "  const vn = clamp(speed / (CFG.speedRef * U), 0, 1), len = clamp(speed * 0.05, 20, 280), RA = 2600, RB = 500;",
+                "  _u.crossVectors(vdir, Z_AXIS); if (_u.lengthSq() < 1e-6) _u.set(1, 0, 0); _u.normalize(); _f.crossVectors(vdir, _u).normalize();",
+                "  for (let i = 0; i < NS; i++) {",
+                "    const h = sHead[i]; _v.copy(h).sub(pos); const al = _v.dot(vdir);",
+                "    if (al < -RB || al > RA) {",
+                "      const r = rnd(70, 1500), a = rnd(0, 6.283);",
+                "      h.copy(pos).addScaledVector(vdir, rnd(RA * 0.3, RA)).addScaledVector(_u, Math.cos(a) * r).addScaledVector(_f, Math.sin(a) * r);",
+                "    }",
+                "    const o = i * 6; sPos[o] = h.x; sPos[o + 1] = h.y; sPos[o + 2] = h.z;",
+                "    sPos[o + 3] = h.x - vdir.x * len; sPos[o + 4] = h.y - vdir.y * len; sPos[o + 5] = h.z - vdir.z * len;",
+                "  }",
+                "  sGeo.attributes.position.needsUpdate = true; sMat.opacity = 0.55 * vn * sstep(0, 0.12, x) * (inside ? 1 : 0.4);",
+                "}",
+                "function updateCockpitProps(dt, x, speed) {",
+                "  const t = st.wt;",
+                "  const heat = sstep(0, 0.14, x) * (1 - 0.55 * sstep(0.88, 1, x)) * (0.85 + 0.15 * nz(t * 25, 7)) * st.heatK;",
+                "  sheathMat.opacity = 0.5 * heat; texStreak.offset.y -= dt * (2 + 3 * heat); sheathMat.color.setHSL(0.06 + 0.02 * nz(t * 3, 1), 1, 0.55);",
+                "  lPlasma.intensity = heat * (1.6 + 0.8 * nz(t * 30, 3));",
+                "  if (st.phase === \"fall\") matHull.emissiveIntensity = 0.85 * heat;",
+                "  else matHull.emissiveIntensity = 0.12 + 0.7 * Math.exp(-(st.t - st.tI) * 0.35);",
+                "  heatHalo.material.opacity = 0.55 * heat; heatHalo.scale.setScalar(14 + 4 * nz(t * 20, 8));",
+                "  const pulse = st.alarm ? (Math.sin(t * 9) > 0 ? 1 : 0.1) : 0;",
+                "  lAlarm.intensity = pulse * 2.2; lampMat.color.setRGB(pulse, pulse * 0.07, pulse * 0.05);",
+                "  lCabin.intensity = 0.9 * (0.55 + 0.45 * (nz(t * 17, 2) > -0.6 ? 1 : 0.2 * st.crack));",
+                "  for (let i = 0; i < btns.length; i++) {",
+                "    const on = Math.sin(t * (2 + i * 0.7) + i) > (st.alarm ? -0.2 : 0.4);",
+                "    btns[i].color.setHex(on ? (i % 3 === 0 ? 0xffb020 : 0x00ff66) : 0x103018);",
+                "  }",
+                "  const nd = lamp.userData.needles; nd[0].rotation.z = nz(t * 5, 1) * 0.8 + x * 2; nd[1].rotation.z = -x * 2.5 + nz(t * 7, 2) * 0.4;",
+                "  engGlow.scale.setScalar((4.2 + 1.2 * nz(t * 22, 4)) * (0.8 + 0.2 * (nz(t * 3, 9) > -0.55 ? 1 : 0)));",
+                "  st.hudAcc += dt;",
+                "  if (st.hudAcc > 0.09) {",
+                "    st.hudAcc = 0; hudInfo.t = t; hudInfo.alt = (pos.z - C.z) / U; hudInfo.spd = speed / U; hudInfo.vs = vel.z / U; hudInfo.warn = st.warn;",
+                "    _v.set(0, 0, 1).applyQuaternion(rocket.quaternion); hudInfo.pitch = Math.asin(clamp(_v.z, -1, 1));",
+                "    _w.set(1, 0, 0).applyQuaternion(rocket.quaternion); hudInfo.roll = Math.atan2(_w.z, Math.sqrt(_w.x * _w.x + _w.y * _w.y) + 1e-6);",
+                "    drawHud();",
+                "  }",
+                "  tickMotes(t, st.trauma);",
+                "  tickShards(dt);",
+                "  // زجاج كريستال: بيسخن ويتوهّج + بيبقى أوضح مع التشقّق + لمعة Facets بتتحرك",
+                "  glassMat.opacity = 0.2 + 0.14 * heat + 0.1 * (st.crack / 3);",
+                "  glassMat.emissiveIntensity = 0.55 * heat;",
+                "  glassMat.envMapIntensity = 2.8 + 0.8 * nz(t * 4, 5);",
+                "  texFacet.offset.x += dt * 0.02;",
+                "}",
+                "function updateShadow() {",
+                "  const d = Math.hypot(pos.x - C.x, pos.y - C.y), gz = groundAt(pos.x, pos.y), alt = pos.z - gz;",
+                "  if (d < GR * 1.05 && alt < 3200 && st.phase === \"fall\") {",
+                "    const k = 1 - clamp(alt / 3200, 0, 1), s = lerp(380, 230, k);",
+                "    blob.position.set(pos.x, pos.y, gz + 5); blob.scale.set(s, s, 1); blob.material.opacity = 0.55 * k;",
+                "  } else { blob.scale.set(0.001, 0.001, 1); }",
+                "}",
+                "",
+                "// ============================ الاصطدام ============================",
+                "function startCrash() {",
+                "  st.phase = \"crash\"; st.tI = st.t; st.wI = 0; st.trauma = 1; st.engine = false; st.kick = 1;",
+                "  flame.visible = false; engGlow.visible = false; lEngine.intensity = 0;",
+                "  setVar(\"IntroPhase\", 4); setVar(\"CrashX\", C.x); setVar(\"CrashY\", C.y); setVar(\"CrashZ\", C.z);",
+                "  if (!gDone) buildGrid(1e9);",
+                "  groundN(C.x, C.y, crashN);",
+                "  q0.copy(rocket.quaternion); pivot0.copy(rocket.position); contact.copy(C);",
+                "  if (audio) audio.boom();",
+                "  spawnShards(60);",
+                "  st.cf = 1;",
+                "  impactLight.position.set(C.x, C.y, C.z + 160); impactLight.intensity = 45;",
+                "  ringMesh.quaternion.setFromUnitVectors(Z_AXIS, crashN); ringMesh.position.set(C.x, C.y, C.z + 6);",
+                "  scorch.geometry.dispose(); scorch.geometry = drapedGeo(520, 28, 5); scorch.scale.set(1, 1, 1); scorch.position.copy(C);",
+                "  embers.geometry.dispose(); embers.geometry = drapedGeo(330, 24, 8); embers.scale.set(1, 1, 1); embers.position.copy(C);",
+                "  for (let i = 0; i < 9; i++) spawn(fireP, C.x + rnd(-90, 90), C.y + rnd(-90, 90), C.z + rnd(30, 200), rnd(-180, 180), rnd(-180, 180), rnd(150, 520),",
+                "    { life: rnd(1.0, 1.9), s0: 260, s1: rnd(900, 1500), c0: 0xfff0b0, c1: 0xff3000, a0: 1, fade: 1.4, d: 1.1 });",
+                "  spawn(fireP, C.x, C.y, C.z + 140, 0, 0, 0, { life: 0.4, s0: 700, s1: 3000, c0: 0xffffff, c1: 0xffaa55, a0: 1, fade: 1 });",
+                "  spawn(fireP, C.x, C.y, C.z + 200, 0, 0, 60, { life: 1.0, s0: 1200, s1: 2400, c0: 0xffb060, c1: 0xff4000, a0: 0.6, fade: 1.3 });",
+                "  for (let i = 0; i < 130; i++) {",
+                "    const a = rnd(0, 6.283), sp = rnd(900, 2400), px = C.x + Math.cos(a) * 40, py = C.y + Math.sin(a) * 40;",
+                "    spawn(smokeP, px, py, groundAt(px, py) + rnd(20, 90), Math.cos(a) * sp, Math.sin(a) * sp, rnd(10, 90),",
+                "      { life: rnd(2.6, 4.2), s0: 200, s1: rnd(700, 1200), c0: 0x6b5a46, c1: 0x9a8c78, a0: 0.6, fade: 1.1, d: 1.7, ground: true });",
+                "  }",
+                "  for (let i = 0; i < 42; i++) {",
+                "    const a = rnd(0, 6.283), r = rnd(0, 120);",
+                "    spawn(smokeP, C.x + Math.cos(a) * r, C.y + Math.sin(a) * r, C.z + rnd(20, 160), Math.cos(a) * rnd(0, 120), Math.sin(a) * rnd(0, 120), rnd(260, 640),",
+                "      { life: rnd(4, 7), s0: 200, s1: rnd(700, 1400), c0: 0x2a2420, c1: 0x7a7268, a0: 0.55, fade: 1.1, d: 0.5 });",
+                "  }",
+                "  for (let i = 0; i < 28; i++) {",
+                "    const sp = rnd(500, 1300);",
+                "    spawn(smokeP, C.x + rnd(-60, 60), C.y + rnd(-60, 60), C.z + rnd(10, 80), hdir.x * sp + rnd(-250, 250), hdir.y * sp + rnd(-250, 250), rnd(120, 520),",
+                "      { life: rnd(1.6, 3.0), s0: 120, s1: rnd(450, 800), c0: 0x5a4a38, c1: 0x8a7c68, a0: 0.55, fade: 1.2, d: 1.2, g: 300 });",
+                "  }",
+                "  for (let i = 0; i < 120; i++) {",
+                "    const a = rnd(0, 6.283), e = rnd(0.2, 1.2), sp = rnd(500, 1800);",
+                "    spawn(fireP, C.x, C.y, C.z + 30, Math.cos(a) * Math.cos(e) * sp, Math.sin(a) * Math.cos(e) * sp, Math.sin(e) * sp,",
+                "      { life: rnd(0.6, 1.8), s0: 18, s1: 6, c0: 0xffe9a0, c1: 0xff5a10, a0: 1, g: 1500, d: 0.2, bounce: 1, fade: 1 });",
+                "  }",
+                "  // حطام (معدن + تراب) — بعضه بيولّع، وبيفضل على الأرض بعد المشهد",
+                "  for (let i = 0; i < 46; i++) {",
+                "    const m = new THREE.Mesh(chunkGeo, chunkMats[i % chunkMats.length]); m.scale.set(rnd(10, 36), rnd(8, 30), rnd(4, 16));",
+                "    const a = rnd(0, 6.283), sp = rnd(300, 1200); m.position.set(C.x + rnd(-40, 40), C.y + rnd(-40, 40), C.z + rnd(20, 90));",
+                "    m.userData = { v: new V3(Math.cos(a) * sp, Math.sin(a) * sp, rnd(400, 1500)), w: new V3(rnd(-8, 8), rnd(-8, 8), rnd(-8, 8)), sleep: false, burn: i % 4 === 0 };",
+                "    world.add(m); chunks.push(m);",
+                "  }",
+                "}",
+                "function tickChunks(dt) {",
+                "  for (const m of chunks) {",
+                "    const u = m.userData; if (u.sleep) continue;",
+                "    u.v.z -= 1500 * dt; m.position.addScaledVector(u.v, dt); m.rotation.x += u.w.x * dt; m.rotation.y += u.w.y * dt; m.rotation.z += u.w.z * dt;",
+                "    // نخلّي الحطام جوّه حدود الـ Terrain",
+                "    if (m.position.x < tMinX + 30) { m.position.x = tMinX + 30; u.v.x = Math.abs(u.v.x) * 0.3; }",
+                "    else if (m.position.x > tMaxX - 30) { m.position.x = tMaxX - 30; u.v.x = -Math.abs(u.v.x) * 0.3; }",
+                "    if (m.position.y < tMinY + 30) { m.position.y = tMinY + 30; u.v.y = Math.abs(u.v.y) * 0.3; }",
+                "    else if (m.position.y > tMaxY - 30) { m.position.y = tMaxY - 30; u.v.y = -Math.abs(u.v.y) * 0.3; }",
+                "    if (u.burn && dt > 0 && Math.random() < dt * 28) spawn(fireP, m.position.x, m.position.y, m.position.z, rnd(-20, 20), rnd(-20, 20), rnd(20, 80), { life: rnd(0.4, 0.8), s0: 40, s1: 10, c0: 0xffc060, c1: 0xff3000, a0: 0.9, fade: 1.3 });",
+                "    const half = m.scale.z * 0.5;",
+                "    if (m.position.z - half < groundAt(m.position.x, m.position.y) + 40) {     // قريب من الأرض: نحسب الارتفاع بدقة بالـ Raycast",
+                "      const gz = groundExact(m.position.x, m.position.y) + half;",
+                "      if (m.position.z < gz) {",
+                "        if (u.v.z < -250) spawn(smokeP, m.position.x, m.position.y, gz, rnd(-40, 40), rnd(-40, 40), rnd(30, 90), { life: 1.3, s0: 60, s1: 230, c0: 0x6b5a46, c1: 0x8a7e6a, a0: 0.4, fade: 1.3, d: 1.2 });",
+                "        m.position.z = gz; u.v.z = Math.abs(u.v.z) * 0.32; u.v.x *= 0.6; u.v.y *= 0.6; u.w.multiplyScalar(0.6);",
+                "        if (u.v.length() < 60) { u.sleep = true; m.rotation.x = 0; m.rotation.y = 0; m.position.z = gz; }",
+                "      }",
+                "    }",
+                "  }",
+                "}",
+                "// نقاط على جسم الصاروخ نتأكد إنها مش تحت الأرض (الذيل + أطراف الزعانف)",
+                "const settlePts = [[0, 0, 0.2], [0, 0, 1.5], [0, 0, 3.5], [0, 0, 6], [3, 0, 0.7], [-3, 0, 0.7], [0, 3, 0.7], [0, -3, 0.7]];",
+                "function settle(tau) {",
+                "  const ang = -CFG.leanDeg * DEG * (1 - Math.exp(-6 * tau) * Math.cos(10 * tau));",
+                "  leanQ.setFromAxisAngle(side, ang);",
+                "  rocket.quaternion.copy(leanQ).multiply(q0);",
+                "  rocket.position.copy(pivot0).sub(contact).applyQuaternion(leanQ).add(contact);",
+                "  const sink = CFG.sinkPx * (1 - Math.exp(-5 * tau)); rocket.position.z -= sink * 0.6; rocket.position.addScaledVector(dEnd, sink * 0.4);",
+                "  let lift = 0;",
+                "  for (const p of settlePts) { rp(p[0], p[1], p[2], _w); lift = Math.max(lift, groundAt(_w.x, _w.y) + 6 - _w.z); }",
+                "  if (lift > 0) rocket.position.z += lift;",
+                "}",
+                "const cutT = () => (CFG.cockpitImpact ? 2.0 : 5.0);",
+                "function crashFx() {",
+                "  const w = st.wI, ct = cutT();",
+                "  st.cfx = Math.pow(Math.max(0, 1 - w / 1.1), 1.7);",
+                "  if (CFG.cockpitImpact) st.dip = w < ct ? sstep(0.12, 0.4, w) : 1 - sstep(ct, ct + 1.4, w);",
+                "  else st.dip = 0;                                  // v6: مفيش Dip أسود — الانتقال لقطة الحطام بقى Blend سموث",
+                "}",
+                "function updateFx(rdt) {",
+                "  st.cf = Math.max(0, st.cf - rdt * 3.2);",
+                "  const fl = Math.max(st.cf, st.cfx);",
+                "  if (fl >= st.dip) { fx.col.setRGB(1, 0.96, 0.88); fx.a = fl; } else { fx.col.setRGB(0, 0, 0); fx.a = st.dip; }",
+                "  const inside = false, pulse = st.alarm && inside ? (Math.sin(st.wt * 9) > 0 ? 1 : 0) : 0;",
+                "  fx.vig = clamp(0.5 + 0.4 * st.trauma + (inside ? 0.12 : 0) + 0.15 * pulse + 0.1 * st.hb, 0, 0.95);",
+                "  fx.vcol.setRGB(0.32 * pulse, 0.01 * pulse, 0);",
+                "}",
+                "",
+                "// ============================ الحريق المستمر في الحطام ============================",
+                "function emitWreck(dt, k) {",
+                "  st.accG += dt * k;",
+                "  const n = Math.floor(st.accG * 22); if (n <= 0) return; st.accG -= n / 22;",
+                "  for (let i = 0; i < n; i++) {",
+                "    const src = i % 3; if (src === 0) rp(0, 0, -1.0, _n); else if (src === 1) rp(0.9, 0.6, 4.5, _n); else rp(0.2, -0.4, 9.5, _n);",
+                "    spawn(fireP, _n.x + rnd(-14, 14), _n.y + rnd(-14, 14), _n.z + rnd(-6, 10), rnd(-30, 30), rnd(-30, 30), rnd(120, 260), { life: rnd(0.6, 1.1), s0: 70, s1: 20, c0: 0xffc060, c1: 0xff3000, a0: 0.9, fade: 1.4 });",
+                "    spawn(smokeP, _n.x + rnd(-20, 20), _n.y + rnd(-20, 20), _n.z + 10, 40 + rnd(-30, 30), rnd(-30, 30), rnd(160, 300), { life: rnd(3.5, 6), s0: 90, s1: 520, c0: 0x181818, c1: 0x6a6a6a, a0: 0.5, fade: 1.1, d: 0.2 });",
+                "    if (Math.random() < 0.25) spawn(fireP, _n.x, _n.y, _n.z, rnd(-120, 120), rnd(-120, 120), rnd(200, 520), { life: rnd(0.7, 1.6), s0: 14, s1: 4, c0: 0xffe0a0, c1: 0xff4010, a0: 1, g: 700, d: 0.1, bounce: 1, fade: 1 });",
+                "  }",
+                "}",
+                "function wreckFlicker() {",
+                "  fireLight.position.copy(rp(0, 0, 3, _w));",
+                "  fireLight.intensity = 3.2 * (0.75 + 0.25 * nz(st.wt * 14, 1) + 0.15 * nz(st.wt * 31, 2)) * (st.released ? clamp(CFG.wreckAmbient * 2, 0, 1) : 1);",
+                "}",
+                "",
+                "// ============================ بعد المشهد: الصاروخ والحطام بيفضلوا على الـ Terrain ============================",
+                "function ambientWreck(rdt) {",
+                "  st.t += rdt; st.wt += rdt; st.wI += rdt;",
+                "  const tau = st.t - st.tI;",
+                "  embers.material.opacity = 0.7 * Math.exp(-tau * 0.03) * (0.8 + 0.2 * nz(st.wt * 9, 3));",
+                "  if (CFG.wreckAmbient > 0) emitWreck(rdt, CFG.wreckAmbient);",
+                "  wreckFlicker();",
+                "  tickChunks(rdt);",
+                "  tickPool(fireP, rdt); tickPool(smokeP, rdt);",
+                "}",
+                "",
+                "// ============================ التحديث كل فريم ============================",
+                "function step(dtRaw) {",
+                "  const rdt = clamp(dtRaw, 0, 0.05), T = CFG.fallTime, ph = getVar(\"IntroPhase\");",
+                "  if (!st.released) pinPlayer();                       // اللاعب ساكن طول المشهد",
+                "  else guardPlayer();",
+                "  if (st.released && ph === 6 && pObj) {               // ارتفاع الأرض تحت اللاعب لحماية كاميرا الـ Get-up",
+                "    const gz = probe(pObj.getCenterX(), pObj.getCenterY()); if (gz !== null) setVar(\"GetUpGroundZ\", gz);",
+                "  }",
+                "  if (!st.released && ph >= 5 && audio && !st.afade) { st.afade = true; audio.fadeOut(1.0); }",
+                "  if (!st.released && ph >= 6) releaseCam();",
+                "  if (st.released && st.phase === \"wreck\") { ambientWreck(rdt); return; }",
+                "  const live = !st.released;",
+                "",
+                "  let ts = 1;",
+                "  if (CFG.slowMo) {",
+                "    if (st.phase === \"fall\") {                                                    // v8.2: بطء توتّر ثم اندفاع عنيف للأرض (مفيش وقوف قبل الاصطدام)",
+                "      const xx = st.t / T, slowK = sstep(0.74, 0.86, xx) - sstep(0.89, 0.95, xx);",
+                "      ts = 1 - CFG.preSlow * slowK + CFG.slamBoost * sstep(0.92, 1.0, xx);",
+                "    }",
+                "    else if (st.phase === \"crash\") ts = st.wI < CFG.hitStop ? 0.04 : lerp(0.3, 1, sstep(0, 1, (st.wI - CFG.hitStop) / 2.2));   // Hit-stop قصير لحظة الاصطدام",
+                "  }",
+                "  const dt = rdt * ts;",
+                "  st.t += dt; st.wt += rdt; st.sT += rdt;",
+                "  if (st.phase !== \"fall\") st.wI += rdt;",
+                "  st.trauma *= Math.exp(-rdt * 1.6);",
+                "  const x = clamp(st.t / T, 0, 1);",
+                "  if (!gDone) buildGrid(x > 0.75 ? 10 : 3.5);",
+                "",
+                "  if (st.phase === \"fall\") {",
+                "    const u = 0.35 * x + 0.65 * x * x, dudx = 0.35 + 1.3 * x;",
+                "    bez(u, pos); bezD(u, vel).multiplyScalar(dudx / T);",
+                "    const speed = vel.length(); vdir.copy(vel).divideScalar(speed || 1);",
+                "    const rate = (14 + 70 * Math.pow(x, 1.5)) * DEG;",
+                "    attitude(x, st.t, _q);",
+                "    let rr = rate * (1 - 0.7 * sstep(0.72, 0.97, x));",
+                "    if (x > 0.7) { const tgtR = bestRoll(_q); st.roll += wrapPi(tgtR - st.roll) * sstep(0.7, 0.97, x) * Math.min(1, dt * 6); }",
+                "    st.roll += rr * dt * (1 - sstep(0.85, 0.97, x));",
+                "    _q3.setFromAxisAngle(Z_AXIS, st.roll); rocket.quaternion.copy(_q).multiply(_q3); rocket.position.copy(pos);",
+                "    if (x > 0.2 && !st.alarm) st.alarm = true;",
+                "    if (x > 0.30 && st.crack < 1) { st.crack = 1; drawCracks(1); if (audio) audio.cue(\"crack1\"); st.trauma = Math.max(st.trauma, 0.55); spawnShards(8); }",
+                "    if (x > 0.42 && st.crack < 2) { st.crack = 2; drawCracks(2); if (audio) audio.cue(\"crack2\"); st.trauma = Math.max(st.trauma, 0.75); st.warn = 1; spawnShards(12); }",
+                "    if (x > 0.54 && st.crack < 3) { st.crack = 3; drawCracks(3); if (audio) audio.cue(\"crack3\"); st.trauma = Math.max(st.trauma, 0.85); st.warn = 2; spawnShards(16); }",
+                "",
+                "    // ---- v7: اختيار اللقطة (Fly-by → Chase → Rear-tracking → Telephoto → Worm's-eye) ----",
+                "    st.hb = Math.pow(Math.max(0, Math.sin(st.wt * 6.5)), 10) * sstep(0.25, 0.9, x);",
+                "    ensureSpots(x);",
+                "    let shot = \"fly\";",
+                "    if (x >= CFG.flyEnd) shot = \"chase\";",
+                "    if (x >= CFG.chaseEnd) shot = \"rear\";",
+                "    if (!CFG.cockpitImpact) { if (x >= CFG.cockpitEnd) shot = \"tele\"; if (x >= CFG.teleEnd) shot = \"low\"; }",
+                "    if (shot !== rig.shot) setShot(shot);",
+                "    if (shot === \"fly\") setFly(x);",
+                "    else if (shot === \"chase\") setChase(x);",
+                "    else if (shot === \"rear\") setCockpit(x, 0.25 + 0.5 * sstep(0.1, 0.9, x));",
+                "    else if (shot === \"tele\") setTele(x);",
+                "    else setLow(x);",
+                "",
+                "    rigStep(rdt); rig.active = live;",
+                "    const stutter = nz(st.wt * 6, 5) > (x > 0.6 ? 0.25 : -0.9) ? 1 : 0.25, pw = (0.6 + 0.4 * x) * stutter;",
+                "    emitExhaust(dt, pw); updateFlame(pw); emitHeatFx(dt, x);",
+                "    st.flareK = clamp(pw, 0, 1) * 0.9;",
+                "    if (live) { updateStreaks(speed, x, false); updateCockpitProps(dt, x, speed); updateShadow(); }",
+                "    if (audio) {",
+                "      const inside = false, hush = sstep(0.90, 0.98, x), sp01 = clamp(speed / (CFG.speedRef * U), 0, 1);",
+                "      let pan = 0, dopp = 1, dist01 = 1;",
+                "      if (!inside) {                                  // Pan + Doppler + مسافة من موضع الكاميرا الفعلي",
+                "        rp(0, 0, 6.2, _n); _v.copy(_n).sub(out.eye); const dd = Math.max(1, _v.length()); _v.multiplyScalar(1 / dd);",
+                "        _w.copy(out.look).sub(out.eye).normalize(); _u.crossVectors(_w, out.up).normalize();",
+                "        pan = clamp(_v.dot(_u) * 1.5, -1, 1); dopp = 1 + clamp(-vel.dot(_v) / 1800, -0.3, 0.3); dist01 = clamp(1 - dd / 4200, 0, 1);",
+                "      }",
+                "      audio.frame({ phase: \"fall\", sp: sp01 * (1 - 0.75 * hush), hush, alarm: st.alarm, t: st.wt, inside, x, pw, hb: st.hb, tension: sstep(0.1, 0.95, x), pan, dopp, dist01 });",
+                "    }",
+                "    if (st.t >= T) startCrash();",
+                "  } else {",
+                "    const tau = st.t - st.tI;",
+                "    settle(tau < 2.2 ? tau : 2.2);",
+                "    st.heatK = Math.exp(-st.wI * 3);",
+                "    crashFx();",
+                "    st.kick = Math.exp(-st.wI * 1.5);",
+                "    if (CFG.quake > 0 && !st.released) {                // v8.2: زلزال — اهتزاز قوي بيهدّي ببطء + هزّات ارتدادية",
+                "      const w = st.wI, env = Math.exp(-w * 0.32) * (1 - sstep(8, 11, w));",
+                "      const pulse = 0.65 + 0.35 * Math.max(Math.pow(Math.max(0, Math.sin(w * 5.2)), 2), 0.6 * Math.exp(-Math.abs(w - 2.4) * 2.5));",
+                "      st.trauma = Math.max(st.trauma, clamp(0.9 * CFG.quake * env * pulse, 0, 1));",
+                "      if (w < 0.7) st.cf = Math.max(st.cf, 0.5 * (1 - w / 0.7));",
+                "      if (w > 2.2 && !st.after1) { st.after1 = true; spawn(smokeP, C.x, C.y, groundAt(C.x, C.y) + 60, 0, 0, 120, { life: 3, s0: 300, s1: 1400, c0: 0x6b5a46, c1: 0x9a8c78, a0: 0.5, fade: 1.2, d: 1, ground: true }); spawnShards(14); }",
+                "    }",
+                "    if (audio) audio.frame({ phase: st.phase, wI: st.wI, fire: 0.5 + 0.5 * Math.exp(-st.wI * 0.15) });",
+                "    const rs = 1 + (tau * 3200); ringMesh.scale.set(rs, rs, 1); ringMesh.material.opacity = 0.9 * Math.pow(Math.max(0, 1 - tau / 1.3), 1.5); if (tau > 1.3) ringMesh.visible = false;",
+                "    impactLight.intensity = 30 * Math.exp(-3.2 * tau) + 0.8 * Math.max(0, 1 - tau / 4);",
+                "    scorch.material.opacity = 0.9 * sstep(0, 0.35, tau);",
+                "    embers.material.opacity = 0.8 * sstep(0, 0.2, tau) * Math.exp(-tau * 0.03) * (0.8 + 0.2 * nz(st.wt * 9, 3));",
+                "    if (st.phase === \"crash\") {",
+                "      const shot = CFG.cockpitImpact ? \"rear\" : \"low\";",
+                "      if (rig.shot !== shot) setShot(shot);",
+                "      if (CFG.cockpitImpact) setCockpit(1, 0.2); else setLow(1);",
+                "      if (st.wI >= cutT()) { st.phase = \"wreck\"; st.tW0 = st.t; setShot(\"wreck\"); }",
+                "    }",
+                "    if (st.phase === \"wreck\") {",
+                "      setWreck();",
+                "      if (!st.posted5 && st.t - st.tW0 >= CFG.wreckShotTime) { st.posted5 = true; st.t5 = st.t; setVar(\"IntroPhase\", 5); }",
+                "      if (st.posted5 && st.t - st.t5 > 6 && !st.released) { setVar(\"IntroPhase\", 6); releaseCam(); }",
+                "    }",
+                "    rigStep(rdt); rig.active = !st.released;",
+                "    if (!st.released) { updateCockpitProps(dt, 1, 0); updateStreaks(0, 1, false); updateShadow(); }",
+                "    emitWreck(dt, 1); tickChunks(dt);",
+                "    wreckFlicker();",
+                "  }",
+                "  if (!st.released) updateFx(rdt);",
+                "  tickPool(fireP, dt); tickPool(smokeP, dt);",
+                "}",
+                "// غلاف أمان: لو حصل Error في أي فريم، نرجّع كل حاجة للّعبة ونكمّل (مش بيهنّج اللعبة)",
+                "const wrapUpdate = function (dtRaw) {",
+                "  if (st.failed) return;",
+                "  try { step(dtRaw); }",
+                "  catch (e) {",
+                "    st.failed = true; console.error(\"[RocketIntro] خطأ أثناء المشهد — اتخطّى:\", e);",
+                "    try { releaseCam(); } catch (e2) { }",
+                "    if (getVar(\"IntroPhase\") < 5) setVar(\"IntroPhase\", 5);",
+                "  }",
+                "};",
+                "",
+                "// أول فريم: نظبط الوضع قبل أول رسم",
+                "st.t = 0; wrapUpdate(0);",
+                "runtimeScene.__rocketIntro = { update: wrapUpdate, release: releaseCam, state: st, config: CFG };"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Per-frame: JS drives rocket, cockpit camera, FX. Sets IntroPhase 4 (impact) then 5 (end of wreck shot)"
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "const S = runtimeScene.__rocketIntro;",
+            "if (S) S.update(runtimeScene.getElapsedTime() / 1000);",
+            ""
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "IMPACT sounds (IntroPhase = 4, set by JS)"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Hard_Jump_Land_01.wav",
+                "no",
+                "100",
+                "0.45"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Hard_Jump_Land_02.wav",
+                "no",
+                "85",
+                "0.3"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "End of wreck shot (IntroPhase = 5): fade to black + hide cinematic bars"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"CrashT\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween3"
+              },
+              "parameters": [
+                "FadeOverlay",
+                "Tween",
+                "Opacity",
+                "\"introFadeOut\"",
+                "255",
+                "\"linear\"",
+                "0.8",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween3"
+              },
+              "parameters": [
+                "CineBarTop",
+                "Tween",
+                "Opacity",
+                "\"barTop\"",
+                "0",
+                "\"linear\"",
+                "1.5",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween3"
+              },
+              "parameters": [
+                "CineBarBottom",
+                "Tween",
+                "Opacity",
+                "\"barBottom\"",
+                "0",
+                "\"linear\"",
+                "1.5",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Screen is black -> IntroPhase 6: JS releases the cinematic camera, restores the Player exactly, shows Lantern/Ember. Get-up starts with eyes closed"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"CrashT\"",
+                ">",
+                "1.2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpT",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "===== GET-UP (IntroPhase 6): eyes open (2 blinks) -> lying -> sitting -> standing, with stagger, breathing, heartbeat, roll, FOV. Camera is above the terrain and hands over seamlessly to gameplay camera ====="
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpT",
+                "=",
+                "min(1, GetUpT + TimeDelta() / 7)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpS1",
+                "=",
+                "AdvancedMathTools::Ease(\"sineInOut\", clamp(GetUpT / 0.3, 0, 1))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpS2",
+                "=",
+                "AdvancedMathTools::Ease(\"sineInOut\", clamp((GetUpT - 0.3) / 0.35, 0, 1))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpS3",
+                "=",
+                "AdvancedMathTools::Ease(\"sineInOut\", clamp((GetUpT - 0.65) / 0.35, 0, 1))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpE",
+                "=",
+                "AdvancedMathTools::Ease(\"sineInOut\", GetUpT)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpEye",
+                "=",
+                "max(clamp((GetUpT - 0.03) / 0.07, 0, 1) * 0.45 * (1 - clamp((GetUpT - 0.14) / 0.04, 0, 1)), clamp((GetUpT - 0.22) / 0.25, 0, 1))"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "FadeOverlay",
+                "Opacity",
+                "=",
+                "255 * (1 - GetUpEye)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpOffZ",
+                "=",
+                "62 - 10 * GetUpS1 - 24 * GetUpS2 - 28 * GetUpS3"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpPitch",
+                "=",
+                "-62 * (1 - AdvancedMathTools::Ease(\"sineInOut\", clamp(GetUpT / 0.75, 0, 1))) + sin(GetUpT * 15.7) * 4 * (1 - GetUpT)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpSway",
+                "=",
+                "sin(GetUpT * 26) * 8 * (1 - GetUpT) * sin(clamp(GetUpT / 0.9, 0, 1) * 3.14159)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpRoll",
+                "=",
+                "18 * (1 - AdvancedMathTools::Ease(\"sineInOut\", clamp(GetUpT / 0.8, 0, 1))) + sin(GetUpT * 34) * 2.5 * (1 - GetUpT)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpBeat",
+                "=",
+                "pow(max(0, sin(GetUpT * 75)), 8) * (1 - GetUpT)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpLook",
+                "=",
+                "0.5 * clamp((GetUpT - 0.3) / 0.2, 0, 1)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "Player"
+              ]
+            },
+            {
+              "type": {
+                "value": "A3F::LerpTowardChild"
+              },
+              "parameters": [
+                "",
+                "HeadPOS",
+                "Object3D",
+                "Player",
+                "Object3D",
+                "\"Head\"",
+                "1 - exp(-25 * TimeDelta())",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MousePointerLock::RequestPointerLock"
+              },
+              "parameters": [
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamX",
+                "+",
+                "MousePointerLock::MovementX() / 10 * GetUpLook"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamY",
+                "-",
+                "MousePointerLock::MovementY() / 10 * GetUpLook"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetAngle"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "CamX - 90"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "HeadPOS.CenterX() + cos(ToRad(CamX)) * (cos(TimeFromStart() * 1.1) + GetUpSway)",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "HeadPOS.CenterY() + sin(ToRad(CamX)) * (cos(TimeFromStart() * 1.1) + GetUpSway)",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraZ"
+              },
+              "parameters": [
+                "",
+                "=",
+                "max((HeadPOS.Object3D::CenterZ() + (Player.Object3D::CenterZ() + 80) * 3) / 4 - GetUpOffZ + sin(TimeFromStart() * 1.5) * 1.2 + GetUpBeat * 1.6, GetUpGroundZ + 18)",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraRotationX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "(HeadPOS.Object3D::RotationY() + CamY * 3) / 4 + GetUpPitch",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraAngle"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamX",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamFOV",
+                "=",
+                "80 - 24 * (1 - GetUpE)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraFov"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamFOV + GetUpBeat * 1.5",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::SetCameraFov"
+              },
+              "parameters": [
+                "",
+                "=",
+                "CamFOV - 25",
+                "\"hand\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetLayerEffectParameter"
+              },
+              "parameters": [
+                "",
+                "\"hand\"",
+                "\"sun\"",
+                "\"elevation\"",
+                "CamY"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetLayerEffectParameter"
+              },
+              "parameters": [
+                "",
+                "\"hand\"",
+                "\"sun\"",
+                "\"rotation\"",
+                "CamX"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Get-up finished: hand control to the normal gameplay camera (camera feel group)"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "GetUpT",
+                ">=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamFOV",
+                "=",
+                "80"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GetUpRoll",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "FadeOverlay",
+                "Opacity",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "7"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Idle\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"StepTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"BreathTimer\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": []
@@ -5894,7 +9374,7 @@
       "isLocked": false,
       "name": "hand",
       "renderingType": "2d+3d",
-      "visibility": true,
+      "visibility": false,
       "cameras": [],
       "effects": [
         {
@@ -6098,6 +9578,10 @@
     {
       "name": "Text",
       "type": "TextContainerCapability::TextContainerBehavior"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
     }
   ]
 }
