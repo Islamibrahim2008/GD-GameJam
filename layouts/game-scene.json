@@ -5242,7 +5242,12 @@
       "type": "Scene3D::Model3DObject",
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "content": {
         "centerLocation": "CenteredOnZ",
         "crossfadeDuration": 0.10000000149011612,
@@ -5480,7 +5485,12 @@
       "type": "Scene3D::Model3DObject",
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "content": {
         "centerLocation": "CenteredOnZ",
         "crossfadeDuration": 0.10000000149011612,
@@ -6538,8 +6548,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
-          "aiGeneratedEventId": "01M71Z4GJ3BHP849N57XKP3F1H",
-          "folded": true,
+          "aiGeneratedEventId": "01M72YX6J3B0JSKDS9HZ8YPPR7",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6559,7 +6568,35 @@
               "parameters": []
             }
           ],
-          "actions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "Lantern",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "Ember",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "LanternFlame",
+                ""
+              ]
+            }
+          ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::JsCode",
@@ -6637,6 +6674,7 @@
           "comment": "Init: GDevelop actions + JS builds rocket / FX / camera takeover. JS freezes the Player and hides Lantern/Ember; restores them at the end (runs once)"
         },
         {
+          "aiGeneratedEventId": "01M72YYMTX07YY9GTE7E1FEBQ9",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6716,6 +6754,22 @@
               },
               "parameters": [
                 "Rocket"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "Lantern"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "Ember"
               ]
             },
             {
@@ -8572,7 +8626,136 @@
                 "",
                 "// أول فريم: نظبط الوضع قبل أول رسم",
                 "st.t = 0; wrapUpdate(0);",
-                "runtimeScene.__rocketIntro = { update: wrapUpdate, release: releaseCam, state: st, config: CFG };"
+                "runtimeScene.__rocketIntro = { update: wrapUpdate, release: releaseCam, state: st, config: CFG };",
+                "/* =====================================================================",
+                "   (v9) نظام التخطي SKIP — الصقه في آخر الكود (بعد runtimeScene.__rocketIntro = {...})",
+                "   ===================================================================== */",
+                "const SKIP = { showAfter: 1.2, fade: 0.7 };",
+                "let skipEl = null, skipStyle = null, skipShown = false, skipKeyFn = null;",
+                "",
+                "function skipHost() {",
+                "  try {",
+                "    const r = runtimeScene.getGame().getRenderer();",
+                "    const d = r.getDomElementContainer && r.getDomElementContainer();",
+                "    if (d) return d;",
+                "  } catch (e) { }",
+                "  return document.body;",
+                "}",
+                "",
+                "function createSkipUI() {",
+                "  try {",
+                "    const host = skipHost(), pos = host === document.body ? \"fixed\" : \"absolute\";",
+                "    skipStyle = document.createElement(\"style\");",
+                "    skipStyle.textContent =",
+                "      \".rk-skip{position:\" + pos + \";left:max(24px,3vw);bottom:max(22px,5vh);display:flex;align-items:center;gap:12px;padding:8px 6px 9px;\" +",
+                "      \"font:600 15px/1 'Segoe UI',Arial,sans-serif;letter-spacing:.3em;color:#fff;opacity:0;transform:translateX(-14px);\" +",
+                "      \"transition:opacity .8s ease,transform .8s ease;cursor:pointer;user-select:none;-webkit-user-select:none;pointer-events:auto;z-index:99999;\" +",
+                "      \"text-shadow:0 1px 8px #000;-webkit-tap-highlight-color:transparent}\" +",
+                "      \".rk-skip.on{opacity:.7;transform:none}.rk-skip.on:hover{opacity:1}\" +",
+                "      \".rk-skip.off{opacity:0!important;transform:translateX(-14px)!important;pointer-events:none;transition:opacity .35s ease,transform .35s ease}\" +",
+                "      \".rk-skip .b{font-size:11px;letter-spacing:-2px;animation:rkn 1.4s ease-in-out infinite}\" +",
+                "      \".rk-skip i{position:absolute;left:6px;right:6px;bottom:0;height:1px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0));opacity:.6}\" +",
+                "      \"@keyframes rkn{0%,100%{transform:translateX(0);opacity:.45}50%{transform:translateX(5px);opacity:1}}\";",
+                "    document.head.appendChild(skipStyle);",
+                "",
+                "    skipEl = document.createElement(\"div\");",
+                "    skipEl.className = \"rk-skip\";",
+                "    skipEl.innerHTML = '<span>SKIP</span><span class=\"b\">&#9654;&#9654;</span><i></i>';",
+                "    skipEl.addEventListener(\"click\", requestSkip);",
+                "    skipEl.addEventListener(\"touchend\", function (e) { e.preventDefault(); requestSkip(); }, { passive: false });",
+                "    host.appendChild(skipEl);",
+                "",
+                "    skipKeyFn = function (e) { if (e.key === \"Escape\" || e.key === \"Enter\" || e.key === \" \") requestSkip(); };",
+                "    window.addEventListener(\"keydown\", skipKeyFn);",
+                "  } catch (e) { console.warn(\"[RocketIntro] skip UI:\", e); }",
+                "}",
+                "",
+                "function hideSkipUI() { if (skipEl) skipEl.classList.add(\"off\"); }",
+                "",
+                "function removeSkipUI() {",
+                "  try { if (skipKeyFn) window.removeEventListener(\"keydown\", skipKeyFn); } catch (e) { }",
+                "  skipKeyFn = null;",
+                "  const el = skipEl, sty = skipStyle; skipEl = null; skipStyle = null;",
+                "  if (el) {",
+                "    el.classList.add(\"off\");",
+                "    setTimeout(function () { try { el.remove(); if (sty) sty.remove(); } catch (e) { } }, 600);",
+                "  }",
+                "}",
+                "",
+                "function requestSkip() {",
+                "  if (st.skipReq || st.released || st.failed || !skipShown) return;",
+                "  if (getVar(\"IntroPhase\") >= 5) return;",
+                "  st.skipReq = true; st.skipT = 0; st.skipped = false;",
+                "  hideSkipUI();",
+                "  if (audio) audio.fadeOut(0.6);",
+                "}",
+                "",
+                "// بيتنادى كل فريم: يظهر الزر، يعمل الـ Fade، وبعدها ينفّذ القفز لنهاية المشهد",
+                "function skipTick(rdt) {",
+                "  const ph = getVar(\"IntroPhase\");",
+                "  if (st.released || st.failed || ph >= 6) { removeSkipUI(); return false; }",
+                "  if (skipEl && !skipShown && !st.skipReq && st.wt > SKIP.showAfter) { skipShown = true; skipEl.classList.add(\"on\"); }",
+                "  if (skipEl && !st.skipReq && ph >= 5) hideSkipUI();",
+                "  if (!st.skipReq || st.skipped) return false;",
+                "  st.skipT += rdt;",
+                "  const fo = objs(\"FadeOverlay\")[0];",
+                "  if (fo && fo.setOpacity) fo.setOpacity(255 * sstep(0, SKIP.fade, st.skipT));",
+                "  if (st.skipT >= SKIP.fade + 0.08) { doSkip(); return true; }",
+                "  return false;",
+                "}",
+                "",
+                "function doSkip() {",
+                "  if (st.skipped || st.released) return;",
+                "  st.skipped = true;",
+                "  try {",
+                "    // 1) ندخّل لحظة الاصطدام (لو لسه في السقوط) — الشاشة سودا والصوت مكتوم",
+                "    if (st.phase === \"fall\") { st.t = CFG.fallTime; step(0); }",
+                "    if (st.phase === \"fall\") startCrash();",
+                "    if (audio) audio.stop();",
+                "",
+                "    // 2) نهاية الـ Settle: الصاروخ مايل ومغروز في الأرض",
+                "    st.t = st.tI + 2.4; st.wI = 30;",
+                "    st.trauma = 0; st.cf = 0; st.cfx = 0; st.kick = 0; st.heatK = 0; st.after1 = true;",
+                "    settle(2.2); crashFx();",
+                "    st.phase = \"wreck\"; st.tW0 = st.t;",
+                "    if (rig.shot !== \"wreck\") setShot(\"wreck\");",
+                "",
+                "    // 3) الزجاج متشقّق بالكامل",
+                "    if (st.crack < 3) { st.crack = 3; drawCracks(3); }",
+                "",
+                "    // 4) الحطام يستقر على الأرض",
+                "    for (let i = 0; i < 150; i++) tickChunks(0.04);",
+                "    for (const m of chunks) {",
+                "      const u = m.userData;",
+                "      m.position.z = groundExact(m.position.x, m.position.y) + m.scale.z * 0.5;",
+                "      m.rotation.x = 0; m.rotation.y = 0; u.sleep = true;",
+                "    }",
+                "",
+                "    // 5) تنضيف مؤثرات الانفجار اللحظية (الحريق والدخان المستمرين بيرجعوا لوحدهم)",
+                "    for (const s of fireP.arr.concat(smokeP.arr)) { s.userData.alive = false; s.visible = false; }",
+                "    for (const m of shards) { m.userData.alive = false; m.visible = false; }",
+                "    ringMesh.visible = false; ringMesh.material.opacity = 0; impactLight.intensity = 0;",
+                "    scorch.material.opacity = 0.9; embers.material.opacity = 0.7;",
+                "    fx.a = 0; fx.vig = 0.5;",
+                "",
+                "    // 6) نكمّل بالأحداث الأصلية: Fade to black -> IntroPhase 6 -> Get-up -> رجوع اللاعب",
+                "    st.posted5 = true; st.t5 = st.t;",
+                "    setVar(\"IntroPhase\", 5);",
+                "  } catch (e) {",
+                "    console.error(\"[RocketIntro] skip failed:\", e);",
+                "    if (getVar(\"IntroPhase\") < 5) setVar(\"IntroPhase\", 5);",
+                "  }",
+                "}",
+                "",
+                "// نربط التخطي بالـ update الأصلي (من غير ما نلمس أي سطر قديم)",
+                "{",
+                "  const _S = runtimeScene.__rocketIntro, _origUpdate = _S.update;",
+                "  _S.update = function (d) {",
+                "    if (skipTick(clamp(d, 0, 0.05))) return;",
+                "    _origUpdate(d);",
+                "  };",
+                "}",
+                "createSkipUI();"
               ],
               "parameterObjects": "",
               "useStrict": true,
@@ -8807,6 +8990,136 @@
                 "GetUpT",
                 "=",
                 "0"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M72Z7SMJFBWCDXNJBZSCQ1TC",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroPhase",
+                "=",
+                "6"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "Lantern",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "Ember",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "LanternFlame",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternFuel",
+                "=",
+                "max(LanternFuel, 0.6)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberDead",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "EmberAnim",
+                "=",
+                "\"Spawn\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Ember",
+                "Animation",
+                "=",
+                "\"Spawn\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::PlayAnimation"
+              },
+              "parameters": [
+                "Ember",
+                "Animation"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EmberCute\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternDip",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternFlicker",
+                "=",
+                "1"
               ]
             }
           ]
@@ -9269,6 +9582,159 @@
               ]
             }
           ]
+        },
+        {
+          "colorB": 120,
+          "colorG": 200,
+          "colorR": 60,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Fix - Hand Layer + Lantern/Ember After Intro",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Fix: بعد ما الـ Intro يخلص أو بعد الـ Skip (IntroPhase >= 6) بنفرض إظهار layer hand و Lantern و Ember و LanternFlame لمدة 3 ثواني. حطه في آخر شيت الأحداث."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "IntroPhase",
+                    "=",
+                    "6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"HandFixT\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "كل فريم لمدة 3 ثواني بعد بداية الـ Get-up: إظهار الـ Layer والأوبجكتس (من غير Once) + Log تشخيصي بعد حوالي 60 فريم في الـ Console"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "IntroPhase",
+                    ">=",
+                    "6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"HandFixT\"",
+                    "<",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ShowLayer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hand\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Show"
+                  },
+                  "parameters": [
+                    "Lantern",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Show"
+                  },
+                  "parameters": [
+                    "Ember",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Show"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "runtimeScene.__hf = (runtimeScene.__hf || 0) + 1;",
+                    "if (runtimeScene.__hf === 60) {",
+                    "  const L = runtimeScene.getLayer(\"hand\");",
+                    "  console.log(\"[HandFix] hand layer visible:\", L.isVisible());",
+                    "  for (const n of [\"Lantern\", \"Ember\", \"LanternFlame\"]) {",
+                    "    for (const o of (runtimeScene.getObjects(n) || [])) {",
+                    "      console.log(\"[HandFix]\", n, \"hidden:\", o.isHidden(), \"| layer:\", JSON.stringify(o.getLayer()), \"| xyz:\", o.getX().toFixed(0), o.getY().toFixed(0), o.getZ ? o.getZ().toFixed(0) : \"-\");",
+                    "    }",
+                    "  }",
+                    "}"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ],
       "parameters": []
@@ -9312,10 +9778,10 @@
           "effectType": "Scene3D::ExponentialFog",
           "name": "HorrorFog",
           "doubleParameters": {
-            "density": 0.008
+            "density": 0.0035
           },
           "stringParameters": {
-            "color": "60;70;80"
+            "color": "10;10;8"
           },
           "booleanParameters": {}
         },
@@ -9323,8 +9789,8 @@
           "effectType": "Scene3D::Skybox",
           "name": "Skybox",
           "doubleParameters": {
-            "backgroundIntensity": 0.1,
-            "environmentIntensity": 0.03
+            "backgroundIntensity": 0.05,
+            "environmentIntensity": 0.15
           },
           "stringParameters": {
             "backFaceResourceName": "Stormy Overcast_Back.jpg",
@@ -9344,12 +9810,12 @@
             "distanceFromCamera": 1200,
             "elevation": 9,
             "frustumSize": 2500,
-            "intensity": 0.1,
+            "intensity": 0.25,
             "minimumShadowBias": 0.0003,
             "rotation": 70
           },
           "stringParameters": {
-            "color": "90;110;170",
+            "color": "255;225;180",
             "shadowQuality": "high",
             "shadowRenderingMode": "fittedToCameraView",
             "top": "Z+"
@@ -9362,30 +9828,18 @@
           "effectType": "Scene3D::AmbientLight",
           "name": "AmbientLight",
           "doubleParameters": {
-            "intensity": 0.05
+            "intensity": 0.35
           },
           "stringParameters": {
-            "color": "25;30;60"
+            "color": "60;50;35"
           },
-          "booleanParameters": {}
-        },
-        {
-          "effectType": "Scene3D::DepthOfField",
-          "name": "DepthOfField",
-          "doubleParameters": {
-            "focusDistance": 450,
-            "focusRange": 500,
-            "maxBlur": 3,
-            "transitionDistance": 1200
-          },
-          "stringParameters": {},
           "booleanParameters": {}
         },
         {
           "effectType": "Scene3D::ToneMapping",
           "name": "ToneMapping",
           "doubleParameters": {
-            "exposure": 0.9
+            "exposure": 1.15
           },
           "stringParameters": {
             "mode": "Neutral"
@@ -9399,7 +9853,7 @@
           "doubleParameters": {
             "backgroundBlurriness": 0,
             "backgroundIntensity": 1,
-            "environmentIntensity": 1,
+            "environmentIntensity": 0.15,
             "rotation": 0
           },
           "stringParameters": {
@@ -9424,14 +9878,14 @@
           "effectType": "Scene3D::VolumetricFog",
           "name": "VolumetricFog",
           "doubleParameters": {
-            "density": 0.0003,
+            "density": 0.00015,
             "height": 0,
             "heightFalloff": 0.006,
             "lightShafts": 0.35,
             "maxDistance": 1800
           },
           "stringParameters": {
-            "color": "14;16;32",
+            "color": "18;14;8",
             "quality": "Medium",
             "top": "Z+"
           },
@@ -9442,7 +9896,7 @@
           "name": "N8AO",
           "doubleParameters": {
             "distanceFalloff": 1,
-            "intensity": 2,
+            "intensity": 0.8,
             "radius": 80
           },
           "stringParameters": {
@@ -9468,14 +9922,14 @@
       "isLocked": false,
       "name": "hand",
       "renderingType": "2d+3d",
-      "visibility": false,
+      "visibility": true,
       "cameras": [],
       "effects": [
         {
           "effectType": "Scene3D::ToneMapping",
           "name": "ToneMapping",
           "doubleParameters": {
-            "exposure": 1
+            "exposure": 1.1
           },
           "stringParameters": {
             "mode": "Neutral"
@@ -9494,7 +9948,7 @@
             "rotation": 70
           },
           "stringParameters": {
-            "color": "150;170;220",
+            "color": "255;230;190",
             "shadowQuality": "high",
             "shadowRenderingMode": "fittedToCameraView",
             "top": "Z+"
@@ -9502,18 +9956,6 @@
           "booleanParameters": {
             "isCastingShadow": true
           }
-        },
-        {
-          "effectType": "Scene3D::DepthOfField",
-          "name": "DepthOfField",
-          "doubleParameters": {
-            "focusDistance": 450,
-            "focusRange": 500,
-            "maxBlur": 3,
-            "transitionDistance": 1200
-          },
-          "stringParameters": {},
-          "booleanParameters": {}
         },
         {
           "effectType": "Scene3D::EnvironmentMap",

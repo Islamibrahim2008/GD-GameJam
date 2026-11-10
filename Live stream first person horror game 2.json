@@ -10,7 +10,6 @@
     "adaptGameResolutionAtRuntime": true,
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
-    "areEffectsHiddenInEditor": true,
     "folderProject": true,
     "orientation": "landscape",
     "packageName": "com.example.gamename",
@@ -1220,8 +1219,8 @@
     },
     {
       "description": "The terrain stays visible while the lantern is held on the hand layer (no opaque hand layer).",
-      "lastRunAt": 1794164645621,
-      "lastRunDurationMs": 16207,
+      "lastRunAt": 1794320719895,
+      "lastRunDurationMs": 21121,
       "lastRunFramesExecuted": 4,
       "lastRunStatus": "stopped",
       "name": "World visible with lantern",
@@ -1396,10 +1395,10 @@
     },
     {
       "description": "The Fear bar (above) follows Ember's Fear, the Brightness bar follows Strength, and both have their text labels.",
-      "lastRunAt": 1794158183624,
-      "lastRunDurationMs": 1483,
-      "lastRunFramesExecuted": 303,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794320754440,
+      "lastRunDurationMs": 10908,
+      "lastRunFramesExecuted": 1,
+      "lastRunStatus": "stopped",
       "name": "HUD shows Fear and Brightness bars",
       "type": "gameplay",
       "source": [
