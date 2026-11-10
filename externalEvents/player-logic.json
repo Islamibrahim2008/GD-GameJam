@@ -6499,7 +6499,7 @@
           "comment": "Matching light in the world, at the lantern's spot relative to the player camera (lights the scene)."
         },
         {
-          "aiGeneratedEventId": "01M6XYNR65MJ3PXWYK8VM1BX02",
+          "aiGeneratedEventId": "01M72CWM6JDJS8N05MH3Z68RRQ",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6522,9 +6522,9 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "CameraCenterX(\"\") + 35 * Scene3D::CameraRightX(\"\") + 60 * Scene3D::CameraForwardX(\"\") - 30 * Scene3D::CameraUpX(\"\")",
+                "Player.CenterX() + 45 * Scene3D::CameraRightX(\"\") + 25 * Scene3D::CameraForwardX(\"\")",
                 "=",
-                "CameraCenterY(\"\") + 35 * Scene3D::CameraRightY(\"\") + 60 * Scene3D::CameraForwardY(\"\") - 30 * Scene3D::CameraUpY(\"\")"
+                "Player.CenterY() + 45 * Scene3D::CameraRightY(\"\") + 25 * Scene3D::CameraForwardY(\"\")"
               ]
             },
             {
@@ -6535,7 +6535,7 @@
                 "LanternFlame",
                 "Object3D",
                 "=",
-                "Scene3D::CameraZ(\"\") + 35 * Scene3D::CameraRightZ(\"\") + 60 * Scene3D::CameraForwardZ(\"\") - 30 * Scene3D::CameraUpZ(\"\")"
+                "Player.Object3D::CenterZ() + 60 + 45 * Scene3D::CameraRightZ(\"\") + 25 * Scene3D::CameraForwardZ(\"\")"
               ]
             },
             {
@@ -7644,7 +7644,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Fireplace Light Source",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
