@@ -16,11 +16,11 @@
     "packageName": "com.example.gamename",
     "pixelsRounding": true,
     "projectUuid": "16225b80-c7d7-41db-ac4e-aa8fbe659215",
-    "scaleMode": "nearest",
+    "scaleMode": "linear",
     "sizeOnStartupMode": "",
     "templateSlug": "starting-first-person-horror",
     "version": "1.0.0",
-    "name": "The Ferry : Late-Autumn",
+    "name": "IT'S ALL UP TO YOU, EMBER",
     "description": "",
     "author": "carrot team",
     "windowWidth": 1280,
@@ -84,7 +84,63 @@
     "playableDevices": [
       "mobile"
     ],
-    "extensionProperties": [],
+    "extensionProperties": [
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "anisotropy",
+        "value": "0"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "diagnostics",
+        "value": "true"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "enabled",
+        "value": "true"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "filtering",
+        "value": "trilinear"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "forceClampWrapping",
+        "value": "false"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "maxTextureResolution",
+        "value": "0"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "memoryBudgetMb",
+        "value": "0"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "mipmapMode",
+        "value": "forceOn"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "overrideModelSamplers",
+        "value": "true"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "preset",
+        "value": "ultra"
+      },
+      {
+        "extension": "AdvancedTextureQuality3D",
+        "property": "resamplingQuality",
+        "value": "high"
+      }
+    ],
     "platforms": [
       {
         "name": "GDevelop JS platform"
