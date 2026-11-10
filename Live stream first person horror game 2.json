@@ -637,6 +637,13 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "Creature_Animated.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Creature_Animated.glb",
+        "userAdded": false
       }
     ]
   },

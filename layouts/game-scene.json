@@ -57,6 +57,16 @@
   ],
   "variables": [
     {
+      "name": "EmberDead",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberAnim",
+      "type": "string",
+      "value": "0"
+    },
+    {
       "name": "Unit",
       "persistentUuid": "67a903c8-4929-497a-923b-006b67a4f86d",
       "type": "number",
@@ -4426,6 +4436,7 @@
     },
     {
       "name": "GetUpLook",
+      "persistentUuid": "6600943d-a409-4b5c-9594-b28c210a847f",
       "type": "number",
       "value": 0
     }
@@ -5454,14 +5465,60 @@
         "isReceivingShadow": true,
         "keepAspectRatio": true,
         "materialType": "StandardWithoutMetalness",
-        "modelResourceName": "Creature.glb",
+        "modelResourceName": "Creature_Animated.glb",
         "originLocation": "ModelOrigin",
         "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
         "width": 100,
-        "animations": []
+        "animations": [
+          {
+            "loop": true,
+            "name": "Idle",
+            "source": "Idle"
+          },
+          {
+            "loop": true,
+            "name": "Walk",
+            "source": "Walk"
+          },
+          {
+            "loop": false,
+            "name": "Run",
+            "source": "Run"
+          },
+          {
+            "loop": false,
+            "name": "Attack",
+            "source": "Attack"
+          },
+          {
+            "loop": false,
+            "name": "Jump",
+            "source": "Jump"
+          },
+          {
+            "loop": true,
+            "name": "Roar",
+            "source": "Roar"
+          },
+          {
+            "loop": false,
+            "name": "Hit",
+            "source": "Hit"
+          },
+          {
+            "loop": false,
+            "name": "Death",
+            "source": "Death"
+          },
+          {
+            "loop": false,
+            "name": "Spawn",
+            "source": "Spawn"
+          }
+        ]
       }
     },
     {
