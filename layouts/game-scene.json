@@ -57,6 +57,16 @@
   ],
   "variables": [
     {
+      "name": "ShelterQuestDone",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ShelterQuestActive",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "EmberFrostT",
       "type": "number",
       "value": 0

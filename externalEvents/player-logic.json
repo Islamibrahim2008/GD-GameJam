@@ -6346,7 +6346,7 @@
           "comment": "Sway: the lantern lags behind mouse look and bobs with the walk cycle."
         },
         {
-          "aiGeneratedEventId": "01M6Y2D6WSZ8XTZ7TDAR264VQA",
+          "aiGeneratedEventId": "01M760R870JVAXQ1XMYPTDT0D9",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -6377,9 +6377,9 @@
               "parameters": [
                 "Lantern",
                 "=",
-                "85 + LanternSwayX + cos(BobPhase * 0.5) * BobAmp * 3 + clamp((EmberFear01 - 0.6) / 0.4, 0, 1) * 1.6 * sin(TimeFromStart() * 47)",
+                "85 + LanternSwayX + cos(BobPhase * 0.5) * BobAmp * 3 + sin(TimeFromStart() * 1.4) * 1.5 + LandDip * 0.8",
                 "=",
-                "32 + LanternSwayY + clamp((EmberFear01 - 0.6) / 0.4, 0, 1) * 1.2 * cos(TimeFromStart() * 53) + abs(sin(BobPhase * 0.5)) * BobAmp * 3 + sin(TimeFromStart() * 1.4) * 1.5 + LandDip * 0.8"
+                "32 + LanternSwayY + abs(sin(BobPhase * 0.5)) * BobAmp * 3 + sin(TimeFromStart() * 1.4) * 1.5 + LandDip * 0.8"
               ]
             },
             {
@@ -10438,6 +10438,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M760R870JVAXQ1XMYPTDT0D9",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -10513,27 +10514,6 @@
                 "Object3D",
                 "+",
                 "sin(TimeFromStart() * 47) * 2.5"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "LanternFlicker",
-                "=",
-                "clamp(LanternFlicker + 0.18 * sin(TimeFromStart() * 39) + 0.12 * sin(TimeFromStart() * 61 + 1.7), 0.15, 1.2)"
-              ]
-            },
-            {
-              "type": {
-                "value": "Light3D::PointLight3D::SetColor"
-              },
-              "parameters": [
-                "LanternFlame",
-                "=",
-                "\"150;200;255\"",
-                ""
               ]
             }
           ],
@@ -10850,6 +10830,7 @@
               ]
             },
             {
+              "aiGeneratedEventId": "01M760R870JVAXQ1XMYPTDT0D9",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -10909,33 +10890,12 @@
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "LanternFlicker",
-                    "=",
-                    "clamp(0.25 + 0.5 * abs(sin(TimeFromStart() * 31)) * RandomFloat(1) + 0.3 * abs(sin(TimeFromStart() * 57 + 1)), 0.08, 1.1)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Light3D::PointLight3D::SetColor"
-                  },
-                  "parameters": [
-                    "LanternFlame",
-                    "=",
-                    "\"120;\" + ToString(round(170 + 60 * LanternFlicker)) + \";255\"",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "Light3D::PointLight3D::SetIntensity"
                   },
                   "parameters": [
                     "LanternFlame",
                     "=",
-                    "3 + 7 * LanternFlicker * abs(sin(TimeFromStart() * 43))",
+                    "0",
                     ""
                   ]
                 },
@@ -11102,6 +11062,315 @@
             }
           ],
           "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M760BEJS345QPZN264WVWT2X",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Shelter Quest (Ember Frozen)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Quest appears when Ember freezes: player stops, looks at lantern, quest UI in tutorial style."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberFrozen",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestActive",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestActive",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestDone",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"ShelterLook\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TargetFwd",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TargetSide",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (!runtimeScene.__shelterQuest) {",
+                "  const host = (() => { try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch(e){} return document.body; })();",
+                "  const POS = host === document.body ? 'fixed' : 'absolute';",
+                "  const u = (n) => 'calc(var(--u) * ' + n + ')';",
+                "  const GOLD = '#d8c9a3';",
+                "  if (!document.getElementById('shelter-css')) {",
+                "    const css = document.createElement('style');",
+                "    css.id = 'shelter-css';",
+                "    css.textContent = '.tt{position:'+POS+';left:50%;top:'+u(16)+';width:'+u(400)+';z-index:99998;pointer-events:none;font-family:Cormorant Garamond,Georgia,serif;color:#e6dcc3;user-select:none;text-shadow:0 1px 5px #000;opacity:0;transform:translate(-50%,'+u(-18)+');transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}'",
+                "    + '.tt.on{opacity:1;transform:translate(-50%,0)}.tt.off{opacity:0;transform:translate(-50%,'+u(-18)+');transition:opacity .5s ease,transform .5s ease}'",
+                "    + '.tt-head{display:flex;align-items:center;gap:'+u(12)+';height:'+u(32)+'}.tt-dia{width:'+u(26)+';height:'+u(26)+';flex:none}'",
+                "    + '.tt-title{font-family:Cinzel,Georgia,serif;font-weight:500;font-size:'+u(18)+';letter-spacing:.3em;color:#e0d3b0;white-space:nowrap}'",
+                "    + '.tt-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(216,201,163,.7),rgba(216,201,163,0))}'",
+                "    + '.tt-stage{position:relative;height:'+u(64)+';margin-left:'+u(13)+';border-left:1px solid rgba(216,201,163,.35)}'",
+                "    + '.tt-stage:before{content:\"\";position:absolute;left:'+u(-3.5)+';top:'+u(-1)+';width:'+u(6)+';height:'+u(6)+';background:'+GOLD+';transform:rotate(45deg)}'",
+                "    + '.tt-strip{position:absolute;left:'+u(24)+';right:0;top:'+u(6)+';opacity:0;transform:translateY('+u(10)+');transition:opacity .4s ease,transform .45s cubic-bezier(.2,.8,.2,1)}'",
+                "    + '.tt-strip.in{opacity:1;transform:none}'",
+                "    + '.tt-row{display:flex;align-items:center;gap:'+u(10)+';height:'+u(28)+'}.tt-lbl{font-size:'+u(17)+';font-weight:500;color:#e6dcc3;white-space:nowrap}'",
+                "    + '.tt-hint{font-size:'+u(14)+';font-style:italic;color:#a89f88;margin-top:'+u(1)+';white-space:nowrap}'",
+                "    + '.tt-bar{position:relative;height:'+u(2)+';margin-top:'+u(6)+';background:rgba(216,201,163,.18);overflow:hidden}'",
+                "    + '.tt-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,#d9a400,#f5c000);box-shadow:0 0 '+u(6)+' rgba(245,192,0,.7)}'",
+                "    + '.tt-fire{font-size:'+u(22)+';animation:ttfire 1s ease-in-out infinite}@keyframes ttfire{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}'",
+                "    + '.tt-foot{margin:'+u(2)+' 0 0 '+u(37)+';font-family:Cinzel,Georgia,serif;font-size:'+u(10)+';letter-spacing:.26em;color:#7d776a}';",
+                "    document.head.appendChild(css);",
+                "  }",
+                "  const font = document.createElement('link');",
+                "  font.rel = 'stylesheet';",
+                "  font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap';",
+                "  document.head.appendChild(font);",
+                "  const root = document.createElement('div');",
+                "  root.className = 'tt';",
+                "  root.innerHTML = '<div class=\"tt-head\"><svg class=\"tt-dia\" viewBox=\"0 0 26 26\"><path d=\"M13 1 25 13 13 25 1 13Z\" fill=\"none\" stroke=\"'+GOLD+'\" stroke-width=\"1.3\"/><path d=\"M13 8 18 13 13 18 8 13Z\" fill=\"'+GOLD+'\"/></svg><span class=\"tt-title\">QUEST</span><span class=\"tt-line\"></span></div>'",
+                "    + '<div class=\"tt-stage\"><div class=\"tt-strip in\"><div class=\"tt-row\"><span class=\"tt-fire\">🔥</span><span class=\"tt-lbl\">: Find Warmth — FAST</span></div>'",
+                "    + '<div class=\"tt-hint\">Ember is freezing — reach the Fireplace!</div><div class=\"tt-bar\"><i id=\"shelter-bar\"></i></div></div></div>'",
+                "    + '<div class=\"tt-foot\">EMBER IS FREEZING</div>';",
+                "  host.appendChild(root);",
+                "  requestAnimationFrame(() => root.classList.add('on'));",
+                "  let dead = false;",
+                "  const bar = root.querySelector('#shelter-bar');",
+                "  const tick = () => {",
+                "    if (dead) return;",
+                "    try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { finish(); return; } } catch(e){}",
+                "    const h = host === document.body ? window.innerHeight : (host.clientHeight || window.innerHeight);",
+                "    root.style.setProperty('--u', (h / 941) + 'px');",
+                "    try {",
+                "      const v = runtimeScene.getVariables().get('LanternFuel');",
+                "      const f = v ? v.getAsNumber() : 0;",
+                "      if (bar) bar.style.width = Math.max(0, Math.min(100, f * 100)).toFixed(1) + '%';",
+                "    } catch(e){}",
+                "    requestAnimationFrame(tick);",
+                "  };",
+                "  const finish = () => {",
+                "    if (dead) return; dead = true;",
+                "    root.classList.remove('on'); root.classList.add('off');",
+                "    setTimeout(() => { try { root.remove(); font.remove(); } catch(e){} }, 700);",
+                "    runtimeScene.__shelterQuest = null;",
+                "  };",
+                "  runtimeScene.__shelterQuest = { finish: finish };",
+                "  requestAnimationFrame(tick);",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Player stops + looks at lantern for ~1.5s after freeze (zero speed targets, pitch camera down)."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestActive",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"ShelterLook\"",
+                "<",
+                "1.5"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TargetFwd",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TargetSide",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CamY",
+                "-",
+                "28 * TimeDelta()"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Quest dismissed when Ember thaws (fuel back or scare over)."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestActive",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberFrozen",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestActive",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterQuestDone",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "if (runtimeScene.__shelterQuest) runtimeScene.__shelterQuest.finish();",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
         }
       ],
       "parameters": []
