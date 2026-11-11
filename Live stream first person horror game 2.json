@@ -832,6 +832,28 @@
         "metadata": "",
         "name": "Meshy_AI_Rusty_Night_Shack_1111185318_texture.glb",
         "userAdded": false
+      },
+      {
+        "file": "assets/Cliff Block Slope Walls Rock.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Cliff Block Slope Walls Rock.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Nature/Wall/45f6088e1aa1a0c9a6a7bab101811f04b6211d3e9b2c654eea14b54cd80515d1_Cliff Block Slope Walls Rock.glb",
+          "name": "Cliff Block Slope Walls Rock.glb"
+        }
+      },
+      {
+        "file": "assets/Cliff Corner Inner Top Rock.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Cliff Corner Inner Top Rock.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Nature/Wall/cbc0e02f9b06d34a4e8fff996853b76c0e7016ca7884458e0bc20c786d899597_Cliff Corner Inner Top Rock.glb",
+          "name": "Cliff Corner Inner Top Rock.glb"
+        }
       }
     ]
   },
