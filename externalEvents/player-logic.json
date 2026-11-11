@@ -6239,7 +6239,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Lantern",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6694,7 +6693,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Ember Fear",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -8448,6 +8446,41 @@
               ]
             }
           ]
+        },
+        {
+          "aiGeneratedEventId": "01M75Z51S4GZB7DFS5E3DP9NCS",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "EmberFrost"
+              ]
+            },
+            {
+              "type": {
+                "value": "ParticleEmitter3D::ParticleEmitter3D::SetFlow"
+              },
+              "parameters": [
+                "EmberFrost",
+                "=",
+                "0",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -8769,7 +8802,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Head Pat System",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -10532,6 +10564,544 @@
               ]
             }
           ]
+        },
+        {
+          "aiGeneratedEventId": "01M75ZEF810NNCKVAMWDNSH3XJ",
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Ember Frozen (only when scared + brightness zero)",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Frozen runs ONLY inside Ember Gets Scared: needs EmberScaredActive=1 AND Strength zero (EmberDead=1). Not any other fuel-zero case."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberScaredActive",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberDead",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrozen",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrozen",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrostT",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"EmberFrost\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetStartColor"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "\"180;220;255\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetEndColor"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "\"120;170;255\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetFlow"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "24",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetDuration"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "0",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetShouldAutodestruct"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "no",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetLifespanMin"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "0.7",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetLifespanMax"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "1.4",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetStartSpeedMin"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "8",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetStartSpeedMax"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "26",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetGravity"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "-18",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetZoneRadius"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "12",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Show"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::Restart"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "  for (const ember of objects) {",
+                    "    const root = ember.get3DRendererObject();",
+                    "    if (!root) continue;",
+                    "    root.traverse(o => {",
+                    "      const m = o.material;",
+                    "      if (!m) return;",
+                    "      const mats = Array.isArray(m) ? m : [m];",
+                    "      for (const mat of mats) {",
+                    "        if (!mat.userData) mat.userData = {};",
+                    "        if (!mat.userData.emberOrig && mat.color) mat.userData.emberOrig = { c: mat.color.clone(), e: mat.emissive ? mat.emissive.clone() : null, r: mat.roughness, mt: mat.metalness, ei: mat.emissiveIntensity };",
+                    "        if (mat.color) mat.color.setRGB(0.55, 0.75, 1.0);",
+                    "        if (mat.emissive) mat.emissive.setRGB(0.25, 0.5, 1.0);",
+                    "        if ('roughness' in mat) mat.roughness = 0.15;",
+                    "        if ('metalness' in mat) mat.metalness = 0.1;",
+                    "        if ('emissiveIntensity' in mat) mat.emissiveIntensity = 1.2;",
+                    "        mat.needsUpdate = true;",
+                    "      }",
+                    "    });",
+                    "  }"
+                  ],
+                  "parameterObjects": "Ember",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                },
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "  try {",
+                    "    if (!runtimeScene._emberCold) {",
+                    "      const AC = window.AudioContext || window.webkitAudioContext;",
+                    "      const ctx = new AC();",
+                    "      const len = ctx.sampleRate * 2;",
+                    "      const buf = ctx.createBuffer(1, len, ctx.sampleRate);",
+                    "      const d = buf.getChannelData(0);",
+                    "      for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;",
+                    "      const src = ctx.createBufferSource();",
+                    "      src.buffer = buf; src.loop = true;",
+                    "      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 900; bp.Q.value = 0.8;",
+                    "      const g = ctx.createGain(); g.gain.value = 0.0;",
+                    "      g.gain.linearRampToValueAtTime(0.12, ctx.currentTime + 1.5);",
+                    "      const lfo = ctx.createOscillator(); lfo.frequency.value = 0.7;",
+                    "      const lfoG = ctx.createGain(); lfoG.gain.value = 350;",
+                    "      lfo.connect(lfoG); lfoG.connect(bp.frequency);",
+                    "      src.connect(bp); bp.connect(g); g.connect(ctx.destination);",
+                    "      src.start(); lfo.start();",
+                    "      runtimeScene._emberCold = { ctx, src, lfo, g };",
+                    "    }",
+                    "  } catch(e) {}"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberScaredActive",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrozen",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrostT",
+                    "+",
+                    "TimeDelta()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "Ember.X() - 8",
+                    "=",
+                    "Ember.Y() + 6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "Object3D",
+                    "=",
+                    "Ember.Object3D::Z() + 10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LanternFlicker",
+                    "=",
+                    "clamp(0.25 + 0.5 * abs(sin(TimeFromStart() * 31)) * RandomFloat(1) + 0.3 * abs(sin(TimeFromStart() * 57 + 1)), 0.08, 1.1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetColor"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "=",
+                    "\"120;\" + ToString(round(170 + 60 * LanternFlicker)) + \";255\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetIntensity"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "=",
+                    "3 + 7 * LanternFlicker * abs(sin(TimeFromStart() * 43))",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "+",
+                    "sin(TimeFromStart() * 71) * 2.2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "+",
+                    "cos(TimeFromStart() * 83) * 1.8"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "  try {",
+                    "    const c = runtimeScene._emberCold;",
+                    "    if (c && c.ctx) {",
+                    "      const t = c.ctx.currentTime;",
+                    "      c.g.gain.cancelScheduledValues(t);",
+                    "      c.g.gain.setTargetAtTime(0.08 + 0.06 * Math.abs(Math.sin(t * 2.3)), t, 0.1);",
+                    "    }",
+                    "  } catch(e) {}"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrozen",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "LanternFuel",
+                        ">",
+                        "0.15"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberScaredActive",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFrozen",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetFlow"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "0",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "EmberFrost"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "  for (const ember of objects) {",
+                    "    const root = ember.get3DRendererObject();",
+                    "    if (!root) continue;",
+                    "    root.traverse(o => {",
+                    "      const m = o.material;",
+                    "      if (!m) return;",
+                    "      const mats = Array.isArray(m) ? m : [m];",
+                    "      for (const mat of mats) {",
+                    "        const orig = mat.userData && mat.userData.emberOrig;",
+                    "        if (!orig) continue;",
+                    "        if (mat.color && orig.c) mat.color.copy(orig.c);",
+                    "        if (mat.emissive && orig.e) mat.emissive.copy(orig.e);",
+                    "        if ('roughness' in mat) mat.roughness = orig.r;",
+                    "        if ('metalness' in mat) mat.metalness = orig.mt;",
+                    "        if ('emissiveIntensity' in mat) mat.emissiveIntensity = orig.ei;",
+                    "        mat.needsUpdate = true;",
+                    "      }",
+                    "    });",
+                    "  }"
+                  ],
+                  "parameterObjects": "Ember",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                },
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "  try {",
+                    "    const c = runtimeScene._emberCold;",
+                    "    if (c && c.ctx) {",
+                    "      const t = c.ctx.currentTime;",
+                    "      c.g.gain.linearRampToValueAtTime(0.0, t + 0.6);",
+                    "      const cold = c;",
+                    "      setTimeout(() => { try { cold.src.stop(); cold.lfo.stop(); cold.ctx.close(); } catch(e) {} }, 800);",
+                    "      runtimeScene._emberCold = null;",
+                    "    }",
+                    "  } catch(e) {}"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
       ],
       "parameters": []

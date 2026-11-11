@@ -1300,10 +1300,10 @@
     },
     {
       "description": "Lantern Strength drains away from fires, refills near the Fireplace, and the HUD bar follows it.",
-      "lastRunAt": 1794154121839,
-      "lastRunDurationMs": 5348,
-      "lastRunFramesExecuted": 648,
-      "lastRunStatus": "passed",
+      "lastRunAt": 1794423063766,
+      "lastRunDurationMs": 12580,
+      "lastRunFramesExecuted": 1,
+      "lastRunStatus": "stopped",
       "name": "Lantern drains and recharges at fireplace",
       "type": "gameplay",
       "source": [

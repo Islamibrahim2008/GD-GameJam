@@ -21,7 +21,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.255045547335449,
+    "zoomFactor": 0.4950840073749179,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -57,12 +57,24 @@
   ],
   "variables": [
     {
+      "name": "EmberFrostT",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberFrozen",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "EmberScaredT",
+      "persistentUuid": "6c0747e2-56a1-4471-86b9-22407c2ada9e",
       "type": "number",
       "value": 0
     },
     {
       "name": "EmberScaredActive",
+      "persistentUuid": "911dff4d-576f-450e-b215-68109275915e",
       "type": "number",
       "value": 0
     },
@@ -4778,6 +4790,7 @@
     },
     {
       "name": "EmberRetFromS",
+      "persistentUuid": "37200a64-ad14-4b79-87f3-99c5b7fe9b83",
       "type": "number",
       "value": 0
     }
@@ -5204,6 +5217,22 @@
       "y": 5609,
       "z": 611,
       "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "hand",
+      "name": "EmberFrost",
+      "persistentUuid": "442af804-0f86-4c72-bb0a-2644c3b47dab",
+      "width": 0,
+      "x": 85,
+      "y": 46,
+      "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -6723,6 +6752,76 @@
           }
         ]
       }
+    },
+    {
+      "assetStoreId": "689eb6ab04b3f61b3ee35a00831f42bdb43a35fd4fb7eb5048825e887f7566e5",
+      "name": "EmberFrost",
+      "persistentUuid": "feaba495-3963-4bb1-ad57-81d24c45d91a",
+      "type": "ParticleEmitter3D::ParticleEmitter3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "StartColor": "255;255;255",
+        "EndColor": "235;240;255",
+        "StartOpacity": 255,
+        "EndOpacity": 200,
+        "EndScale": 1,
+        "Blending": "Normal",
+        "Flow": 900,
+        "LifespanMin": 7,
+        "LifespanMax": 8,
+        "Duration": 0,
+        "ShouldAutodestruct": false,
+        "AreParticlesRelative": false,
+        "StartSpeedMin": 0,
+        "StartSpeedMax": 20,
+        "SpayConeAngle": 60,
+        "ZoneRadius": 800,
+        "GravityTop": "Z+",
+        "Gravity": 25,
+        "RenderMode": "Billboard",
+        "StartSizeMin": 10,
+        "StartSizeMax": 16
+      },
+      "childrenContent": {
+        "Particle": {
+          "adaptCollisionMaskAutomatically": true,
+          "updateIfNotVisible": false,
+          "animations": [
+            {
+              "name": "Image",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "LightGlow.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -6819,6 +6918,9 @@
       },
       {
         "objectName": "FPSText"
+      },
+      {
+        "objectName": "EmberFrost"
       }
     ]
   },
