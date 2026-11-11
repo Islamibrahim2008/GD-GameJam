@@ -10568,6 +10568,7 @@
               "comment": "Frozen runs ONLY inside Ember Gets Scared: needs EmberScaredActive=1 AND Strength zero (EmberDead=1). Not any other fuel-zero case."
             },
             {
+              "aiGeneratedEventId": "01M761BTSH24TSJAHJARQ8SPD7",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -10638,7 +10639,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "\"180;220;255\"",
+                    "\"200;230;255\"",
                     ""
                   ]
                 },
@@ -10649,7 +10650,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "\"120;170;255\"",
+                    "\"130;170;255\"",
                     ""
                   ]
                 },
@@ -10660,7 +10661,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "24",
+                    "12",
                     ""
                   ]
                 },
@@ -10692,7 +10693,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "0.7",
+                    "0.5",
                     ""
                   ]
                 },
@@ -10703,7 +10704,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "1.4",
+                    "0.9",
                     ""
                   ]
                 },
@@ -10714,7 +10715,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "8",
+                    "6",
                     ""
                   ]
                 },
@@ -10725,7 +10726,62 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "26",
+                    "18",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetStartSizeMin"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "3",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetStartSizeMax"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "6",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetEndScale"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "0",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetStartOpacity"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "220",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetEndOpacity"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "0",
                     ""
                   ]
                 },
@@ -10736,7 +10792,7 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "-18",
+                    "-12",
                     ""
                   ]
                 },
@@ -10747,7 +10803,65 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "12",
+                    "10",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetSpayConeAngle"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "180",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Pixel3DDither::EnablePixel3D"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hand\"",
+                    "\"Cartoon\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Pixel3DDither::SetNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hand\"",
+                    "\"Pixel Height\"",
+                    "270",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Pixel3DDither::SetNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hand\"",
+                    "\"Color Levels\"",
+                    "64",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Pixel3DDither::SetNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "\"hand\"",
+                    "\"Dither Strength\"",
+                    "0.3",
                     ""
                   ]
                 },
@@ -10830,7 +10944,7 @@
               ]
             },
             {
-              "aiGeneratedEventId": "01M760R870JVAXQ1XMYPTDT0D9",
+              "aiGeneratedEventId": "01M761CHC8NB97R665QKEGQ5D7",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -10872,9 +10986,9 @@
                   "parameters": [
                     "EmberFrost",
                     "=",
-                    "Ember.X() - 8",
+                    "Ember.X() - 6",
                     "=",
-                    "Ember.Y() + 6"
+                    "Ember.Y() + 8"
                   ]
                 },
                 {
@@ -10885,7 +10999,18 @@
                     "EmberFrost",
                     "Object3D",
                     "=",
-                    "Ember.Object3D::Z() + 10"
+                    "Ember.Object3D::Z() + 12"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ParticleEmitter3D::ParticleEmitter3D::SetFlow"
+                  },
+                  "parameters": [
+                    "EmberFrost",
+                    "=",
+                    "10 + 4 * abs(sin(EmberFrostT * 5))",
+                    ""
                   ]
                 },
                 {

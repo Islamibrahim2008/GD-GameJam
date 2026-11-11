@@ -21,10 +21,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4950840073749179,
+    "zoomFactor": 0.41943397827593076,
     "windowMask": false,
     "selectedLayer": "",
-    "gameEditorMode": "instances-editor"
+    "gameEditorMode": "embedded-game"
   },
   "objectsGroups": [
     {
@@ -58,21 +58,25 @@
   "variables": [
     {
       "name": "ShelterQuestDone",
+      "persistentUuid": "f945cd15-e9d9-4da2-a782-da975c1368c8",
       "type": "number",
       "value": 0
     },
     {
       "name": "ShelterQuestActive",
+      "persistentUuid": "60a2cc48-aef6-4dc3-9ab7-7b441e366506",
       "type": "number",
       "value": 0
     },
     {
       "name": "EmberFrostT",
+      "persistentUuid": "3716ae17-5aa1-4ed7-a397-ae8d88f9b621",
       "type": "number",
       "value": 0
     },
     {
       "name": "EmberFrozen",
+      "persistentUuid": "e21e3d96-353d-428a-a859-5195b0fc96dd",
       "type": "number",
       "value": 0
     },
@@ -4943,9 +4947,9 @@
       "name": "Fireplace",
       "persistentUuid": "80320864-fd37-4864-bb78-c9aebc516a44",
       "width": 58,
-      "x": 4523.999999999999,
-      "y": 3228,
-      "z": 123.18790893559344,
+      "x": 3007,
+      "y": 5598,
+      "z": 682,
       "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
@@ -5148,24 +5152,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 600,
-      "height": 6000,
-      "keepRatio": true,
-      "layer": "",
-      "name": "NewGrass",
-      "persistentUuid": "1012c214-aff5-4da5-9ed5-9263289295b0",
-      "width": 6000,
-      "x": 1155,
-      "y": 1012,
-      "z": -218,
-      "zOrder": 0,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "keepRatio": true,
@@ -5173,9 +5159,9 @@
       "name": "FireplaceFlames",
       "persistentUuid": "652d67e3-43e4-4fb2-a388-1c9932a77ce4",
       "width": 0,
-      "x": 4524,
-      "y": 3228,
-      "z": 135,
+      "x": 3008,
+      "y": 5597,
+      "z": 697,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -5190,9 +5176,9 @@
       "name": "FireplaceLight",
       "persistentUuid": "070a96f7-4d57-45e2-9253-eed67b4a8c61",
       "width": 0,
-      "x": 4524,
-      "y": 3228,
-      "z": 175,
+      "x": 3000,
+      "y": 5597,
+      "z": 705,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -5242,6 +5228,110 @@
       "width": 0,
       "x": 85,
       "y": 46,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 32,
+      "layer": "",
+      "name": "",
+      "persistentUuid": "dba8f95a-61f5-4119-9406-05e5742320ab",
+      "width": 32,
+      "x": 0,
+      "y": 0,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 350,
+      "height": 716,
+      "layer": "",
+      "name": "MetalShelter",
+      "persistentUuid": "a22e093e-b3ec-4c9e-9d74-9921bb5ea24d",
+      "width": 672,
+      "x": 2659,
+      "y": 5451,
+      "z": 886,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 600,
+      "height": 6000,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewGrass",
+      "persistentUuid": "8412aea1-ba65-450d-b386-8e132c553a20",
+      "width": 554,
+      "x": 1155,
+      "y": 1012,
+      "z": -218,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 600,
+      "height": 6000,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewGrass",
+      "persistentUuid": "a43bc38a-7f2e-434f-8be9-4f6cee1548a2",
+      "width": 2874,
+      "x": 4281,
+      "y": 1012,
+      "z": -218,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 600,
+      "height": 3489,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewGrass",
+      "persistentUuid": "ea335a99-fae7-4d84-87a6-efa45207cb53",
+      "width": 2572,
+      "x": 1709,
+      "y": 1012,
+      "z": -218,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 600,
+      "height": 3000,
+      "keepRatio": true,
+      "layer": "",
+      "name": "MeadowGrass",
+      "persistentUuid": "5c734211-52d2-48b7-b14e-2c758751d5ef",
+      "width": 2200,
+      "x": 4800,
+      "y": 1500,
+      "z": -218,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -5484,7 +5574,8 @@
         "HeightBlending": 0.6,
         "TextureVariation": 0.6,
         "CliffLayer": "3",
-        "CliffAngle": 30
+        "CliffAngle": 30,
+        "SculptData": "2;256;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"
       }
     },
     {
@@ -5501,7 +5592,7 @@
         "BaseColor": "28;55;28",
         "TipColor": "85;115;60",
         "FadeDistance": 3000,
-        "MaxSlope": 35,
+        "MaxSlope": 25,
         "BladeHeight": 42,
         "GroundLayer": "1"
       }
@@ -6773,27 +6864,27 @@
       "effects": [],
       "behaviors": [],
       "content": {
-        "StartColor": "255;255;255",
-        "EndColor": "235;240;255",
-        "StartOpacity": 255,
-        "EndOpacity": 200,
-        "EndScale": 1,
-        "Blending": "Normal",
-        "Flow": 900,
-        "LifespanMin": 7,
-        "LifespanMax": 8,
+        "StartColor": "200;230;255",
+        "EndColor": "130;170;255",
+        "StartOpacity": 220,
+        "EndOpacity": 0,
+        "EndScale": 0,
+        "Blending": "Additive",
+        "Flow": 12,
+        "LifespanMin": 0.5,
+        "LifespanMax": 0.9,
         "Duration": 0,
         "ShouldAutodestruct": false,
         "AreParticlesRelative": false,
-        "StartSpeedMin": 0,
-        "StartSpeedMax": 20,
-        "SpayConeAngle": 60,
-        "ZoneRadius": 800,
+        "StartSpeedMin": 6,
+        "StartSpeedMax": 18,
+        "SpayConeAngle": 180,
+        "ZoneRadius": 10,
         "GravityTop": "Z+",
-        "Gravity": 25,
+        "Gravity": -12,
         "RenderMode": "Billboard",
-        "StartSizeMin": 10,
-        "StartSizeMax": 16
+        "StartSizeMin": 3,
+        "StartSizeMax": 6
       },
       "childrenContent": {
         "Particle": {
@@ -6831,6 +6922,84 @@
             }
           ]
         }
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "MetalShelter",
+      "persistentUuid": "a2e2503b-d20b-48c2-94fd-2b6ee7181c66",
+      "type": "Scene3D::Model3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Physics3D",
+          "type": "Physics3D::Physics3DBehavior",
+          "object3D": "Object3D",
+          "bodyType": "Static",
+          "bullet": false,
+          "fixedRotation": false,
+          "shape": "Mesh",
+          "meshShapeResourceName": "",
+          "shapeOrientation": "Z",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeDimensionC": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "shapeOffsetZ": 0,
+          "massCenterOffsetX": 0,
+          "massCenterOffsetY": 0,
+          "massCenterOffsetZ": 0,
+          "massOverride": 0,
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 17,
+          "masks": 17
+        }
+      ],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 100,
+        "height": 100,
+        "isCastingShadow": true,
+        "isReceivingShadow": true,
+        "keepAspectRatio": true,
+        "materialType": "StandardWithoutMetalness",
+        "modelResourceName": "Meshy_AI_Rusty_Night_Shack_1111185318_texture.glb",
+        "originLocation": "ModelOrigin",
+        "pbrConfig": "",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 90,
+        "width": 100,
+        "animations": []
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "MeadowGrass",
+      "persistentUuid": "4a6ac099-1992-4678-82a8-5593eee7eb86",
+      "type": "Terrain3D::TerrainGrass",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Density": 60,
+        "BaseColor": "28;55;28",
+        "TipColor": "85;115;60",
+        "FadeDistance": 3000,
+        "MaxSlope": 20,
+        "BladeHeight": 30,
+        "GroundLayer": "1",
+        "BladeWidth": 4,
+        "Seed": 7
       }
     }
   ],
@@ -6931,6 +7100,12 @@
       },
       {
         "objectName": "EmberFrost"
+      },
+      {
+        "objectName": "MetalShelter"
+      },
+      {
+        "objectName": "MeadowGrass"
       }
     ]
   },
@@ -10663,7 +10838,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Performance FSR + LOD (Adaptive)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -10807,11 +10981,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ],
   "layers": [
