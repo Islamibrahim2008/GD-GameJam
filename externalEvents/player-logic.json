@@ -10284,6 +10284,257 @@
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [],
       "actions": []
+    },
+    {
+      "aiGeneratedEventId": "01M75S9KGQJVG7NWJZ7SNQP29G",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Ember Gets Scared",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Special state 1: after pet + lantern, first walk scares Ember. Fear -> 95 (slight wobble), Brightness 100 -> fast cold drain, tremble + unstable flicker + cold light."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberScaredActive",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberCollected",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+              },
+              "parameters": [
+                "Player",
+                "PhysicsCharacter3D"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberScaredActive",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberScaredT",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Strength",
+                "=",
+                "100"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Fear",
+                "=",
+                "95"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Ember",
+                "Animation",
+                "=",
+                "\"Hit\""
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::PlayAnimation"
+              },
+              "parameters": [
+                "Ember",
+                "Animation"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberScaredActive",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberScaredT",
+                "+",
+                "TimeDelta()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Fear",
+                "=",
+                "lerp(LanternFlame.Fear, 95 + 2 * sin(EmberScaredT * 3.1), 1 - exp(-3 * TimeDelta()))"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Strength",
+                "-",
+                "8 * TimeDelta()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "Ember",
+                "+",
+                "sin(TimeFromStart() * 55) * 1.8"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetY"
+              },
+              "parameters": [
+                "Ember",
+                "+",
+                "cos(TimeFromStart() * 63) * 1.4"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetRotationY"
+              },
+              "parameters": [
+                "Ember",
+                "Object3D",
+                "+",
+                "sin(TimeFromStart() * 47) * 2.5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LanternFlicker",
+                "=",
+                "clamp(LanternFlicker + 0.18 * sin(TimeFromStart() * 39) + 0.12 * sin(TimeFromStart() * 61 + 1.7), 0.15, 1.2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetColor"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "\"150;200;255\"",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Animation"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::PlayAnimation"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Animation"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
     }
   ]
 }

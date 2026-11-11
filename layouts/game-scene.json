@@ -57,6 +57,16 @@
   ],
   "variables": [
     {
+      "name": "EmberScaredT",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberScaredActive",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "EmberCentered",
       "persistentUuid": "5cfc89bf-0f92-4ba8-b493-9a1f96917150",
       "type": "number",
