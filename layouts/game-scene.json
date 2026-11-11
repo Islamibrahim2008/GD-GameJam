@@ -4851,6 +4851,23 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 17.315411169956736,
+      "layer": "",
+      "name": "EmberC",
+      "persistentUuid": "30912555-c2ae-4d02-8bf9-173484e491a1",
+      "rotationX": 336,
+      "width": 20.174752657374473,
+      "x": 4452,
+      "y": 5609,
+      "z": 611,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -6254,6 +6271,113 @@
         "lineHeight": 0,
         "color": "0;255;0"
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "EmberC",
+      "persistentUuid": "f01239a6-95ab-4162-8710-c1fbbe783ae9",
+      "type": "Scene3D::Model3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Physics3D",
+          "type": "Physics3D::Physics3DBehavior",
+          "object3D": "Object3D",
+          "bodyType": "Static",
+          "bullet": false,
+          "fixedRotation": false,
+          "shape": "Mesh",
+          "meshShapeResourceName": "",
+          "shapeOrientation": "Z",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeDimensionC": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "shapeOffsetZ": 0,
+          "massCenterOffsetX": 0,
+          "massCenterOffsetY": 0,
+          "massCenterOffsetZ": 0,
+          "massOverride": 0,
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 17,
+          "masks": 17
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 25,
+        "height": 25,
+        "isCastingShadow": true,
+        "isReceivingShadow": true,
+        "keepAspectRatio": true,
+        "materialType": "StandardWithoutMetalness",
+        "modelResourceName": "Creature_Animated.glb",
+        "originLocation": "ModelOrigin",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 90,
+        "width": 25,
+        "animations": [
+          {
+            "loop": true,
+            "name": "Idle",
+            "source": "Idle"
+          },
+          {
+            "loop": true,
+            "name": "Walk",
+            "source": "Walk"
+          },
+          {
+            "loop": false,
+            "name": "Run",
+            "source": "Run"
+          },
+          {
+            "loop": false,
+            "name": "Attack",
+            "source": "Attack"
+          },
+          {
+            "loop": false,
+            "name": "Jump",
+            "source": "Jump"
+          },
+          {
+            "loop": true,
+            "name": "Roar",
+            "source": "Roar"
+          },
+          {
+            "loop": false,
+            "name": "Hit",
+            "source": "Hit"
+          },
+          {
+            "loop": false,
+            "name": "Death",
+            "source": "Death"
+          },
+          {
+            "loop": false,
+            "name": "Spawn",
+            "source": "Spawn"
+          }
+        ]
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -6308,6 +6432,9 @@
       },
       {
         "objectName": "Ember"
+      },
+      {
+        "objectName": "EmberC"
       },
       {
         "objectName": "FearBar"
@@ -6644,6 +6771,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Rocket Intro (Three.js JS) v5 Horror",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
