@@ -5542,7 +5542,7 @@
       "depth": 120,
       "height": 74,
       "layer": "",
-      "name": "Steel_Frame_Shelves_01",
+      "name": "Shelves",
       "persistentUuid": "ca533fcb-04e4-48bb-9712-8919c3670af7",
       "width": 50,
       "x": 2703,
@@ -5562,7 +5562,7 @@
       "persistentUuid": "39161640-a732-4bfc-b9b7-b142d9495ac0",
       "width": 133,
       "x": 2519,
-      "y": 5133,
+      "y": 5145,
       "z": 723,
       "zOrder": 18,
       "numberProperties": [],
@@ -5574,7 +5574,7 @@
       "customSize": false,
       "height": 74.32359866185175,
       "layer": "",
-      "name": "Decoration_Carpet",
+      "name": "Carpet",
       "persistentUuid": "21a59b8e-976a-47bf-a041-d4ff3c659471",
       "width": 120,
       "x": 2882,
@@ -7563,7 +7563,7 @@
     },
     {
       "assetStoreId": "b09161c56ff843f0374c5054a0a2b96f668e589b8175e9dbb992d8d39f4bf644",
-      "name": "Steel_Frame_Shelves_01",
+      "name": "Shelves",
       "persistentUuid": "a4a7cbfb-64c5-4d36-87ee-64ac4fa3c216",
       "type": "Scene3D::Model3DObject",
       "variables": [],
@@ -7671,7 +7671,7 @@
     },
     {
       "assetStoreId": "6a3b98fa703970083031ced1fe9d7ebfebe8a278ed8d15224f91bf28df8a0b1f",
-      "name": "Decoration_Carpet",
+      "name": "Carpet",
       "persistentUuid": "434ffdaa-f8de-465f-a415-c1fa6cfe1903",
       "type": "Scene3D::Model3DObject",
       "variables": [],
@@ -7829,13 +7829,13 @@
         "objectName": "Wooden_Table_03"
       },
       {
-        "objectName": "Decoration_Carpet"
+        "objectName": "Carpet"
       },
       {
         "objectName": "Ceiling_Fan"
       },
       {
-        "objectName": "Steel_Frame_Shelves_01"
+        "objectName": "Shelves"
       },
       {
         "objectName": "Boombox"
