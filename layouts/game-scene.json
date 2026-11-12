@@ -57,6 +57,21 @@
   ],
   "variables": [
     {
+      "name": "ClimbSpeed",
+      "type": "number",
+      "value": 130
+    },
+    {
+      "name": "ClimbStamina",
+      "type": "number",
+      "value": 100
+    },
+    {
+      "name": "ClimbActive",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "ShelterQuestDone",
       "persistentUuid": "f945cd15-e9d9-4da2-a782-da975c1368c8",
       "type": "number",
@@ -5664,7 +5679,7 @@
           "name": "PhysicsCharacter3D",
           "type": "Physics3D::PhysicsCharacter3D",
           "physics3D": "Physics3D",
-          "jumpHeight": 70,
+          "jumpHeight": 95,
           "jumpSustainTime": 0.15,
           "gravity": 1500,
           "fallingSpeedMax": 650,
@@ -5674,8 +5689,8 @@
           "sidewaysAcceleration": 240,
           "sidewaysDeceleration": 800,
           "sidewaysSpeedMax": 115,
-          "slopeMaxAngle": 40,
-          "stairHeightMax": 20,
+          "slopeMaxAngle": 55,
+          "stairHeightMax": 35,
           "shouldBindObjectAndForwardAngle": true,
           "canBePushed": false
         }

@@ -730,6 +730,16 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Sushi Restaurant/Decoration/18a86eafc4278883781340a44c9b658425f69934db7ec77d63edf7f674f3d152_Decoration Carpet.glb",
           "name": "Decoration Carpet.glb"
         }
+      },
+      {
+        "file": "assets/um_kulthum.mp3",
+        "kind": "audio",
+        "metadata": "{\"extension\":\"\"}",
+        "name": "um_kulthum.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
       }
     ]
   },

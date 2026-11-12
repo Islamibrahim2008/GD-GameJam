@@ -7,7 +7,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -17,7 +16,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "controls",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -6239,6 +6237,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Lantern",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -8802,6 +8801,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Head Pat System",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -10323,6 +10323,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Ember Gets Scared",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11197,6 +11198,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Shelter Quest (Ember Frozen)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11494,6 +11496,128 @@
               "parameterObjects": "",
               "useStrict": true,
               "eventsSheetExpanded": false
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M76MZH3S0PTDDB747C2G3T5N",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Boombox 3D song",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Player",
+                "Boombox",
+                "550",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MusicPlaying"
+                  },
+                  "parameters": [
+                    "",
+                    "11"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlayMusicOnChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "um_kulthum.mp3",
+                    "11",
+                    "yes",
+                    "60",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SpatialSound::SetListenerPosition"
+                  },
+                  "parameters": [
+                    "Player.X()",
+                    "Player.Y()",
+                    "Player.Object3D::Z()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SpatialSound::SetSoundPosition"
+                  },
+                  "parameters": [
+                    "",
+                    "11",
+                    "Boombox.X()",
+                    "Boombox.Y()",
+                    "Boombox.Object3D::Z()"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Else",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MusicPlaying"
+                  },
+                  "parameters": [
+                    "",
+                    "11"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "StopMusicCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "11"
+                  ]
+                }
+              ]
             }
           ]
         }
