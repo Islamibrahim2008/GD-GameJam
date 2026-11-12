@@ -3322,6 +3322,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M78R1AKKPQZ1WD8KP98DQ1S2",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3336,12 +3337,6 @@
             },
             {
               "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            },
-            {
-              "type": {
                 "value": "NumberVariable"
               },
               "parameters": [
@@ -3349,6 +3344,12 @@
                 "=",
                 "0"
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
@@ -3367,7 +3368,7 @@
                 "value": "AnimatableCapability::AnimatableBehavior::SetName"
               },
               "parameters": [
-                "Ember",
+                "EmberC",
                 "Animation",
                 "=",
                 "\"Jump\""
@@ -3378,7 +3379,7 @@
                 "value": "AnimatableCapability::AnimatableBehavior::PlayAnimation"
               },
               "parameters": [
-                "Ember",
+                "EmberC",
                 "Animation"
               ]
             }
@@ -3784,6 +3785,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M78R0TS5R5MW51VP16B4TS5P",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3857,15 +3859,20 @@
                 "=",
                 "\"Idle\""
               ]
-            },
+            }
+          ],
+          "events": [
             {
-              "type": {
-                "value": "Delete"
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
               },
-              "parameters": [
-                "EmberC",
-                ""
-              ]
+              "comment": "Single owner of Delete(EmberC) is Head Pat event-9.2; Lantern group owns light/glow after pickup."
             }
           ]
         },
@@ -4203,7 +4210,7 @@
           "comment": "Normal hand-layer Ember faces the player (only while presented)"
         },
         {
-          "aiGeneratedEventId": "01M75MTJ2R9C6ZNK4VH9SDB99C",
+          "aiGeneratedEventId": "01M78R3EJ1ZK4SPWVQNX6NXMKZ",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4214,6 +4221,16 @@
                 "EmberPresent",
                 "=",
                 "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberReturning",
+                "=",
+                "0"
               ]
             }
           ],
@@ -6420,7 +6437,7 @@
           "comment": "Ember sits inside the lantern glass, bobbing gently (and shivering with Fear), and always turns to face the player: the hand-layer camera is at the origin, so his yaw is 180 + the angle toward it."
         },
         {
-          "aiGeneratedEventId": "01M75K5K3QTMAMNG94KW33E841",
+          "aiGeneratedEventId": "01M78B3B1KQR3D9PW4E35EEW7A",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -6452,9 +6469,9 @@
               "parameters": [
                 "Ember",
                 "=",
-                "Lantern.X() + sin(TimeFromStart() * 2.3) * 0.6 + EmberFear01 * 0.5 * sin(TimeFromStart() * 61)",
+                "Lantern.X() + sin(TimeFromStart() * 2.3) * 0.6 + EmberFear01 * 0.5 * sin(TimeFromStart() * 61) + WindJoltX",
                 "=",
-                "Lantern.Y() + 14 + sin(TimeFromStart() * 1.7) * 0.8"
+                "Lantern.Y() + 14 + sin(TimeFromStart() * 1.7) * 0.8 + WindJoltY"
               ]
             },
             {
@@ -6657,6 +6674,7 @@
               "comment": "HUD bar mirrors Strength."
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -7067,6 +7085,7 @@
             },
             {
               "aiGeneratedEventId": "01M6Y2J2JJ7BMY6AVJPHV35368",
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -8802,7 +8821,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Head Pat System",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -9604,6 +9622,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M78R2SMTKC0KGPWM17S4VWGT",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -9671,6 +9690,16 @@
             },
             {
               "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "EmberAnim",
+                "=",
+                "\"Hit\""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
@@ -9718,6 +9747,7 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M78R3EJ1ZK4SPWVQNX6NXMKZ",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -9761,6 +9791,16 @@
               "parameters": [
                 "Ember",
                 "Animation"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "EmberAnim",
+                "=",
+                "\"Idle\""
               ]
             },
             {
@@ -11312,7 +11352,8 @@
                 "    + '.tt-bar{position:relative;height:'+u(2)+';margin-top:'+u(6)+';background:rgba(216,201,163,.18);overflow:hidden}'",
                 "    + '.tt-bar i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,#d9a400,#f5c000);box-shadow:0 0 '+u(6)+' rgba(245,192,0,.7)}'",
                 "    + '.tt-fire{font-size:'+u(22)+';animation:ttfire 1s ease-in-out infinite}@keyframes ttfire{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}'",
-                "    + '.tt-foot{margin:'+u(2)+' 0 0 '+u(37)+';font-family:Cinzel,Georgia,serif;font-size:'+u(10)+';letter-spacing:.26em;color:#7d776a}';",
+                "    + '.tt-foot{margin:'+u(2)+' 0 0 '+u(37)+';font-family:Cinzel,Georgia,serif;font-size:'+u(10)+';letter-spacing:.26em;color:#7d776a}'",
+                "    + '.tt.compact{transform:translate(-50%,0) scale(.82);transform-origin:top center;opacity:.92}';",
                 "    document.head.appendChild(css);",
                 "  }",
                 "  const font = document.createElement('link');",
@@ -11326,6 +11367,7 @@
                 "    + '<div class=\"tt-hint\">Ember is freezing — reach the Fireplace!</div><div class=\"tt-bar\"><i id=\"shelter-bar\"></i></div></div></div>'",
                 "    + '<div class=\"tt-foot\">EMBER IS FREEZING</div>';",
                 "  host.appendChild(root);",
+                "  try { window.__SubBus = window.__SubBus || {done:{}}; window.__SubBus.quest = root; } catch(e){}",
                 "  requestAnimationFrame(() => root.classList.add('on'));",
                 "  let dead = false;",
                 "  const bar = root.querySelector('#shelter-bar');",
@@ -11626,6 +11668,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Ember Cute Cinematic (R)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -13050,11 +13093,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ]
 }

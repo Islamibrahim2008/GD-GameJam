@@ -21,10 +21,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.41943397827593076,
+    "zoomFactor": 0.4950840073749184,
     "windowMask": false,
     "selectedLayer": "",
-    "gameEditorMode": "embedded-game"
+    "gameEditorMode": "instances-editor"
   },
   "objectsGroups": [
     {
@@ -53,9 +53,161 @@
           "name": "Player"
         }
       ]
+    },
+    {
+      "name": "QuakeProps",
+      "objects": [
+        {
+          "name": "PalmTrees"
+        },
+        {
+          "name": "Fireplace"
+        },
+        {
+          "name": "Table"
+        },
+        {
+          "name": "Chair"
+        },
+        {
+          "name": "Shelves"
+        },
+        {
+          "name": "Boombox"
+        },
+        {
+          "name": "Frame"
+        },
+        {
+          "name": "Lamp"
+        },
+        {
+          "name": "Wall_Clock"
+        },
+        {
+          "name": "Wooden_Table_03"
+        },
+        {
+          "name": "Carpet"
+        },
+        {
+          "name": "Paper"
+        },
+        {
+          "name": "corpse"
+        },
+        {
+          "name": "Gothic_Bed_01"
+        }
+      ]
     }
   ],
   "variables": [
+    {
+      "name": "RestoreI",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ZombieReleased",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ZombieSoundOn",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ZombieFlick",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "QuakePrevY",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "QuakePrevX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "QuakeOffY",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "QuakeOffX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CrackCount",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "QuakeDone",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "QuakeStarted",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "WindJoltY",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "WindJoltX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GustDur",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GustGap",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "GustDir",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "StormI",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "StormPhase",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "FlickOn",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberNervous",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ExitQuakeDone",
+      "type": "number",
+      "value": 0
+    },
     {
       "name": "ShelterPitchT",
       "persistentUuid": "acd27d56-f2be-4d81-8aae-e2cdc559fb9c",
@@ -6037,7 +6189,9 @@
         "SculptData": "2;256;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",
         "WetShore": true,
         "WetShoreZ": 95,
-        "WetShoreFade": 80
+        "WetShoreFade": 80,
+        "Anisotropy": "1",
+        "CastShadow": false
       }
     },
     {
@@ -6129,7 +6283,8 @@
         "Smoothing": 0.4,
         "Decay": 1,
         "Color": "255;240;200",
-        "ShadowQuality": "High"
+        "ShadowQuality": "High",
+        "IsCastingShadow": false
       }
     },
     {
@@ -6141,13 +6296,17 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "A3S",
+          "type": "A3F::A3S"
+        },
+        {
           "name": "NavMeshCharacter",
           "type": "NavMeshPathfinding::NavMeshCharacterBehavior",
           "acceleration": 350,
           "maxSpeed": 200,
           "angularMaxSpeed": 180,
           "rotateObject": true,
-          "angleOffset": 0,
+          "angleOffset": 180,
           "radius": 15,
           "avoidanceSightRange": 120
         },
@@ -6190,7 +6349,7 @@
         "isReceivingShadow": true,
         "keepAspectRatio": true,
         "materialType": "StandardWithoutMetalness",
-        "modelResourceName": "Zombie A.glb",
+        "modelResourceName": "void_creature.glb",
         "originLocation": "ModelOrigin",
         "pbrConfig": "",
         "rotationX": 90,
@@ -6201,17 +6360,77 @@
           {
             "loop": true,
             "name": "Idle",
-            "source": "idle"
+            "source": "Armature|Idle"
           },
           {
-            "loop": true,
-            "name": "Run",
-            "source": "run"
+            "loop": false,
+            "name": "Armature|Attack",
+            "source": "Armature|Attack"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Attack 2",
+            "source": "Armature|Attack 2"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Fall",
+            "source": "Armature|Fall"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Fly Back",
+            "source": "Armature|Fly Back"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Hurt Back",
+            "source": "Armature|Hurt Back"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Hurt Front",
+            "source": "Armature|Hurt Front"
+          },
+          {
+            "loop": false,
+            "name": "Armature|In Air Back",
+            "source": "Armature|In Air Back"
+          },
+          {
+            "loop": false,
+            "name": "Armature|In Air Forward",
+            "source": "Armature|In Air Forward"
           },
           {
             "loop": false,
             "name": "Jump",
-            "source": "jump"
+            "source": "Armature|Jump"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Land",
+            "source": "Armature|Land"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Land Back",
+            "source": "Armature|Land Back"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Land Forward",
+            "source": "Armature|Land Forward"
+          },
+          {
+            "loop": false,
+            "name": "Armature|Pounce",
+            "source": "Armature|Pounce"
+          },
+          {
+            "loop": true,
+            "name": "Run",
+            "source": "Armature|Walk"
           }
         ]
       }
@@ -6394,7 +6613,7 @@
         "EndOpacity": 0,
         "StartSizeMin": 45,
         "StartSizeMax": 85,
-        "Flow": 350,
+        "Flow": 120,
         "LifespanMin": 0.8,
         "LifespanMax": 1.6,
         "StartSpeedMin": 120,
@@ -6451,9 +6670,9 @@
       "behaviors": [],
       "content": {
         "Color": "255;130;50",
-        "Intensity": 70,
+        "Intensity": 50,
         "Decay": 0.8,
-        "Range": 1800,
+        "Range": 1200,
         "IsCastingShadow": false
       }
     },
@@ -6941,7 +7160,9 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "content": {}
+      "content": {
+        "IsCastingShadow": false
+      }
     },
     {
       "adaptCollisionMaskAutomatically": true,
@@ -7153,7 +7374,8 @@
       "content": {
         "Color": "255;170;60",
         "Intensity": 3,
-        "Range": 1500
+        "Range": 1500,
+        "IsCastingShadow": false
       }
     },
     {
@@ -7493,7 +7715,7 @@
         "EndOpacity": 0,
         "StartSizeMin": 60,
         "StartSizeMax": 110,
-        "Flow": 55,
+        "Flow": 22,
         "LifespanMin": 4,
         "LifespanMax": 6,
         "StartSpeedMin": 250,
@@ -7637,7 +7859,8 @@
         "Intensity": 10,
         "ConeLength": 200,
         "ConeAngle": 45,
-        "Smoothing": 0.6
+        "Smoothing": 0.6,
+        "IsCastingShadow": false
       }
     },
     {
@@ -8176,6 +8399,22 @@
         "lineHeight": 0,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "ZombieGlow",
+      "type": "Light3D::PointLight3D",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "Color": "255;25;20",
+        "Intensity": 45,
+        "Range": 750,
+        "Decay": 1,
+        "IsCastingShadow": false
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -8329,6 +8568,9 @@
       },
       {
         "objectName": "NotePrompt"
+      },
+      {
+        "objectName": "ZombieGlow"
       }
     ]
   },
@@ -8355,6 +8597,7 @@
       "target": "javascript systems"
     },
     {
+      "aiGeneratedEventId": "01M78JYKP07FEP32Q250N6J1AH",
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -8374,7 +8617,8 @@
           "parameters": [
             "",
             "\"\"",
-            "\"Cartoon\""
+            "\"Cartoon\"",
+            ""
           ]
         },
         {
@@ -8385,7 +8629,8 @@
             "",
             "\"\"",
             "\"Outline\"",
-            "yes"
+            "yes",
+            ""
           ]
         },
         {
@@ -8396,7 +8641,8 @@
             "",
             "\"\"",
             "\"Cel Shading\"",
-            "yes"
+            "yes",
+            ""
           ]
         },
         {
@@ -8407,7 +8653,8 @@
             "",
             "\"\"",
             "\"Rim Light\"",
-            "no"
+            "no",
+            ""
           ]
         },
         {
@@ -8418,7 +8665,8 @@
             "",
             "\"\"",
             "\"Dither\"",
-            "yes"
+            "no",
+            ""
           ]
         },
         {
@@ -8429,7 +8677,8 @@
             "",
             "\"\"",
             "\"Colored Outline\"",
-            "yes"
+            "no",
+            ""
           ]
         },
         {
@@ -8440,7 +8689,8 @@
             "",
             "\"\"",
             "\"Pixel Scale\"",
-            "0"
+            "0",
+            ""
           ]
         },
         {
@@ -8451,7 +8701,8 @@
             "",
             "\"\"",
             "\"Pixel Height\"",
-            "270"
+            "270",
+            ""
           ]
         },
         {
@@ -8462,7 +8713,8 @@
             "",
             "\"\"",
             "\"Color Levels\"",
-            "64"
+            "32",
+            ""
           ]
         },
         {
@@ -8473,7 +8725,8 @@
             "",
             "\"\"",
             "\"Dither Strength\"",
-            "0.3"
+            "0",
+            ""
           ]
         },
         {
@@ -8484,7 +8737,8 @@
             "",
             "\"\"",
             "\"Saturation\"",
-            "1.5"
+            "1.2",
+            ""
           ]
         },
         {
@@ -8495,7 +8749,8 @@
             "",
             "\"\"",
             "\"Contrast\"",
-            "1.4"
+            "1.2",
+            ""
           ]
         },
         {
@@ -8506,7 +8761,8 @@
             "",
             "\"\"",
             "\"Cel Shading\"",
-            "0.75"
+            "0.75",
+            ""
           ]
         },
         {
@@ -8517,7 +8773,8 @@
             "",
             "\"\"",
             "\"Cel Bands\"",
-            "5"
+            "4",
+            ""
           ]
         },
         {
@@ -8528,7 +8785,8 @@
             "",
             "\"\"",
             "\"Cel Softness\"",
-            "0.2"
+            "0.2",
+            ""
           ]
         },
         {
@@ -8539,7 +8797,8 @@
             "",
             "\"\"",
             "\"Rim\"",
-            "0"
+            "0",
+            ""
           ]
         },
         {
@@ -8550,7 +8809,8 @@
             "",
             "\"\"",
             "\"Outline\"",
-            "1.1"
+            "1.1",
+            ""
           ]
         },
         {
@@ -8561,7 +8821,8 @@
             "",
             "\"\"",
             "\"Outline Thickness\"",
-            "1"
+            "1",
+            ""
           ]
         },
         {
@@ -8572,7 +8833,8 @@
             "",
             "\"\"",
             "\"Outline Threshold\"",
-            "0.12"
+            "0.12",
+            ""
           ]
         },
         {
@@ -8583,7 +8845,8 @@
             "",
             "\"\"",
             "\"Outline Distance\"",
-            "0.3"
+            "0.3",
+            ""
           ]
         },
         {
@@ -8594,7 +8857,8 @@
             "",
             "\"\"",
             "\"Crease Threshold\"",
-            "1.2"
+            "1.2",
+            ""
           ]
         },
         {
@@ -8605,7 +8869,8 @@
             "",
             "\"\"",
             "\"Vignette\"",
-            "0.88"
+            "1",
+            ""
           ]
         },
         {
@@ -8616,7 +8881,8 @@
             "",
             "\"\"",
             "\"Chromatic\"",
-            "0.012"
+            "0",
+            ""
           ]
         }
       ]
@@ -11647,6 +11913,249 @@
           ]
         },
         {
+          "aiGeneratedEventId": "01M78MY4EK4Z2G5TK567YQTQJG",
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "/* =====================================================================",
+            "   📜 Ashen Story v2 — Dialogue line 2 + OBJECTIVE banner (pure DOM)",
+            "   نفس أسلوب و مكان و حجم الـ HUD (Movement Tutorial v2)، بدون أي كائنات.",
+            "   ===================================================================== */",
+            "if (runtimeScene.__ashenStory) return;   // مرة واحدة بس",
+            "window.__SubBus = window.__SubBus || {done:{}};",
+            "if (window.__SubBus.done.ashen) return;   // never repeat after completion",
+            "",
+            "const V = runtimeScene.getVariables();",
+            "",
+            "// ============================ الإعدادات ============================",
+            "const CFG = {",
+            "  line: \"I need to find somewhere to stay until I figure out what to do. There's no point wandering around in the dark.\",",
+            "  line1: \"Ugh... My head... What happened? I remember entering the atmosphere, but... how did I end up here?\",",
+            "  line1Hold: 3.4,        // ثواني بعد اكتمال سطر الاستيقاظ",
+            "  speaker: \"ASHEN\",",
+            "  objective: \"Find shelter.\",",
+            "  moveGoal: 40,",
+            "  fallback: 8,",
+            "  typeSpeed: 34,",
+            "  holdAfterType: 3.2,",
+            "  refH: 941,",
+            "  skipKey: \"KeyH\"",
+            "};",
+            "",
+            "// ============================ الـ DOM ============================",
+            "function host() {",
+            "  try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch (e) { }",
+            "  return document.body;",
+            "}",
+            "const H = host(), POS = H === document.body ? \"fixed\" : \"absolute\";",
+            "const u = (n) => \"calc(var(--u) * \" + n + \")\";",
+            "",
+            "const font = document.createElement(\"link\");",
+            "font.rel = \"stylesheet\";",
+            "font.href = \"https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap\";",
+            "document.head.appendChild(font);",
+            "",
+            "const css = document.createElement(\"style\");",
+            "css.textContent = `",
+            ".as{position:${POS};left:0;right:0;z-index:99997;pointer-events:none;user-select:none;-webkit-user-select:none;",
+            "  font-family:'Cormorant Garamond',Georgia,serif;color:#e6dcc3;text-shadow:0 1px 6px #000,0 0 18px rgba(0,0,0,.55)}",
+            ".as-dlg{position:absolute;left:50%;bottom:${u(36)};transform:translateX(-50%);width:${u(760)};text-align:center;",
+            "  opacity:0;transition:opacity .8s ease}",
+            ".as-dlg.on{opacity:1}",
+            ".as-dlg.off{opacity:0;transition:opacity .7s ease}",
+            ".as-name{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(17)};letter-spacing:.34em;color:#e0d3b0;margin-bottom:${u(6)}}",
+            ".as-name:before,.as-name:after{content:\"\";display:inline-block;width:${u(40)};height:1px;vertical-align:middle;",
+            "  background:linear-gradient(90deg,rgba(216,201,163,0),rgba(216,201,163,.7));margin:0 ${u(12)}}",
+            ".as-name:after{background:linear-gradient(90deg,rgba(216,201,163,.7),rgba(216,201,163,0))}",
+            ".as-quote{font-size:${u(24)};font-style:italic;font-weight:500;line-height:1.35;color:#efe6d0;min-height:${u(66)}}",
+            ".as-obj{position:absolute;left:50%;top:${u(120)};transform:translateX(-50%) translateY(${u(26)});opacity:0;",
+            "  transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1);text-align:center}",
+            ".as-obj.on{opacity:1;transform:translateX(-50%)}",
+            ".as-obj.off{opacity:0;transform:translateX(-50%) translateY(${u(-18)});transition:opacity .6s ease,transform .6s ease}",
+            ".as-obj-cap{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(13)};letter-spacing:.5em;color:#e8c27a;",
+            "  display:flex;align-items:center;gap:${u(14)};justify-content:center}",
+            ".as-obj-cap:before,.as-obj-cap:after{content:\"\";width:${u(70)};height:1px;",
+            "  background:linear-gradient(90deg,rgba(232,194,122,0),rgba(232,194,122,.65))}",
+            ".as-obj-cap:after{background:linear-gradient(90deg,rgba(232,194,122,.65),rgba(232,194,122,0))}",
+            ".as-obj-cap svg{width:${u(15)};height:${u(15)};flex:none;animation:asSpin 6s linear infinite}",
+            "@keyframes asSpin{to{transform:rotate(360deg)}}",
+            ".as-obj-txt{margin-top:${u(7)};font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:${u(21)};",
+            "  letter-spacing:.12em;color:#f2ead6;animation:asPulse 2.6s ease-in-out infinite}",
+            "@keyframes asPulse{0%,100%{text-shadow:0 1px 6px #000,0 0 ${u(6)} rgba(232,194,122,.25)}50%{text-shadow:0 1px 6px #000,0 0 ${u(14)} rgba(232,194,122,.6)}}",
+            ".as-obj.done .as-obj-txt{color:#8fe3a9;animation:none}",
+            ".as-obj.parked{left:${u(24)} !important;right:auto;transform:none !important;text-align:left;opacity:.92}",
+            ".as-obj.parked.on{transform:none !important}",
+            ".as-obj.parked .as-obj-cap{justify-content:flex-start;font-size:${u(11)}}",
+            ".as-obj.parked .as-obj-cap:before{display:none}",
+            ".as-obj.parked .as-obj-txt{font-size:${u(16)};text-align:left;animation:none}",
+            ".sp-obj.parked{left:${u(24)} !important;right:auto;transform:none !important;text-align:left;opacity:.92}",
+            ".sp-obj.parked.on{transform:none !important}",
+            ".sp-obj.parked .sp-obj-cap{justify-content:flex-start;font-size:${u(11)}}",
+            ".sp-obj.parked .sp-obj-cap:before{display:none}",
+            ".sp-obj.parked .sp-obj-txt{font-size:${u(16)};text-align:left;animation:none}",
+            "`;",
+            "document.head.appendChild(css);",
+            "",
+            "const dlg = document.createElement(\"div\");",
+            "dlg.className = \"as as-dlg\";",
+            "dlg.innerHTML = '<div class=\"as-name\">' + CFG.speaker + '</div><div class=\"as-quote\"></div>';",
+            "const quoteEl = dlg.querySelector(\".as-quote\");",
+            "",
+            "const obj = document.createElement(\"div\");",
+            "obj.className = \"as as-obj\";",
+            "obj.innerHTML =",
+            "  '<div class=\"as-obj-cap\">' +",
+            "    '<svg viewBox=\"0 0 20 20\"><path d=\"M10 1 19 10 10 19 1 10Z\" fill=\"none\" stroke=\"#e8c27a\" stroke-width=\"1.4\"/></svg>' +",
+            "    '<span>O B J E C T I V E</span>' +",
+            "    '<svg viewBox=\"0 0 20 20\"><path d=\"M10 1 19 10 10 19 1 10Z\" fill=\"none\" stroke=\"#e8c27a\" stroke-width=\"1.4\"/></svg>' +",
+            "  '</div>' +",
+            "  '<div class=\"as-obj-txt\"></div>';",
+            "const objTxt = obj.querySelector(\".as-obj-txt\");",
+            "",
+            "H.appendChild(dlg);",
+            "H.appendChild(obj);",
+            "",
+            "// ============================ الصوت ============================",
+            "let ac = null;",
+            "function blip(f1, f2, dur, vol) {",
+            "  try {",
+            "    ac = ac || new (window.AudioContext || window.webkitAudioContext)();",
+            "    const t = ac.currentTime, o = ac.createOscillator(), g = ac.createGain();",
+            "    o.type = \"sine\"; o.frequency.setValueAtTime(f1, t); o.frequency.exponentialRampToValueAtTime(f2, t + dur);",
+            "    g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);",
+            "    o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur + 0.05);",
+            "  } catch (e) { }",
+            "}",
+            "",
+            "// ============================ المنطق ============================",
+            "let phase = 0; // 0 انتظار، 1 كتابة الحوار، 2 ثبات، 4 الهدف ظاهر، 5 خلص، 10 سطر الاستيقاظ، 11 انتظار الحركة",
+            "let t0 = 0, typed = 0, sx = 0, sy = 0, haveStart = false;",
+            "let last = performance.now();",
+            "const onKD = (e) => { if (e.code === CFG.skipKey && !e.repeat && ((phase >= 1 && phase <= 2) || phase === 10)) startObjective(); };",
+            "window.addEventListener(\"keydown\", onKD);",
+            "",
+            "function startLine1() {",
+            "  phase = 10; typed = 0; t0 = 0;",
+            "  dlg.querySelector(\".as-name\").textContent = CFG.speaker;",
+            "  quoteEl.textContent = \"\";",
+            "  dlg.classList.add(\"on\");",
+            "  blip(520, 780, 0.18, 0.06);",
+            "}",
+            "function startDialogue() {",
+            "  phase = 1; typed = 0; quoteEl.textContent = \"\";",
+            "  dlg.classList.add(\"on\");",
+            "  blip(520, 780, 0.18, 0.06);",
+            "}",
+            "function busTakeDlg() {",
+            "  try {",
+            "    window.__SubBus.dlg = dlg;",
+            "    document.querySelectorAll(\".sp-dlg,.fe-dlg,.sh-dlg\").forEach((el) => { el.classList.remove(\"on\"); });",
+            "    document.querySelectorAll(\".sp-title,.fe-title,.sh-title\").forEach((el) => { el.classList.remove(\"on\"); el.classList.add(\"off\"); });",
+            "  } catch (e) {}",
+            "}",
+            "function busShowObj() {",
+            "  try {",
+            "    document.querySelectorAll(\".sp-obj.on,.sh-obj.on\").forEach((el) => el.classList.add(\"parked\"));",
+            "    obj.classList.remove(\"parked\");",
+            "    const q = document.querySelector(\".tt.on\"); if (q) q.classList.add(\"compact\");",
+            "  } catch (e) {}",
+            "}",
+            "function parkOthers(myObj) {",
+            "  try {",
+            "    document.querySelectorAll(\".as-obj.on, .sp-obj.on\").forEach((el) => { if (el !== myObj) { el.classList.add(\"parked\"); } });",
+            "    // Old dialogue hides so names/titles never overlap (screenshot 2 fix)",
+            "    document.querySelectorAll(\".as-dlg.on, .sp-dlg.on\").forEach((el) => { if (el !== dlg) { el.classList.remove(\"on\"); } });",
+            "    document.querySelectorAll(\".as-title.on, .sp-title.on\").forEach((el) => { el.classList.remove(\"on\"); el.classList.add(\"off\"); });",
+            "  } catch (e) {}",
+            "}",
+            "function startObjective() {",
+            "  // New objective appears: park the old one to the left with a tween, hide other dialogues",
+            "  parkOthers(obj);",
+            "  try { busShowObj(); busTakeDlg(); } catch (e) {}",
+            "  try { dlg.classList.remove(\"on\"); } catch (e) {}",
+            "  dlg.classList.remove(\"on\"); dlg.classList.add(\"off\");",
+            "  obj.classList.remove(\"parked\");",
+            "  objTxt.textContent = CFG.objective;",
+            "  obj.classList.add(\"on\");",
+            "  phase = 4;",
+            "  blip(660, 990, 0.25, 0.07);",
+            "}",
+            "",
+            "function tick(now) {",
+            "  const dt = Math.min(0.1, (now - last) / 1000); last = now; t0 += dt;",
+            "",
+            "  // تناسب الحجم مع ارتفاع الشاشة (نفس نظام الـ HUD)",
+            "  const h = (H === document.body ? window.innerHeight : (H.clientHeight || window.innerHeight));",
+            "  try { dlg.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); obj.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); } catch (e) { }",
+            "",
+            "  // لو المشهد اتغير، نشيل الواجهة",
+            "  try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { cleanup(); return; } } catch (e) { }",
+            "",
+            "  const introDone = V.has(\"IntroDone\") && V.get(\"IntroDone\").getAsNumber() === 1;",
+            "  const players = runtimeScene.getObjects(\"Player\");",
+            "  // ---- سطر الاستيقاظ: أول ما اللاعب يصحى (بعد مشهد الصاروخ) ----",
+            "  if (phase === 0 && introDone) {",
+            "    startLine1();",
+            "  }",
+            "  else if (phase === 10) {",
+            "    const full = Math.min(CFG.line1.length, Math.floor(t0 * CFG.typeSpeed));",
+            "    if (full !== typed) {",
+            "      typed = full;",
+            "      quoteEl.textContent = '\\u201C' + CFG.line1.substring(0, typed) + (typed < CFG.line1.length ? '\\u201D' : '');",
+            "      if (typed % 3 === 0) blip(300 + Math.random() * 60, 220, 0.03, 0.015);",
+            "    }",
+            "    if (typed >= CFG.line1.length && t0 > CFG.line1.length / CFG.typeSpeed + CFG.line1Hold) {",
+            "      dlg.classList.remove(\"on\");",
+            "      dlg.classList.add(\"off\");",
+            "      setTimeout(() => { dlg.classList.remove(\"off\"); phase = 11; t0 = 0; }, 750);",
+            "      phase = 12; // انتظار الـ fade قبل تفعيل انتظار الحركة",
+            "    }",
+            "  }",
+            "  // ---- انتظار تحرك اللاعب (أو 8 ثواني) عشان سطر الحركة ----",
+            "  else if (phase === 11 && introDone) {",
+            "    if (!haveStart && players.length) { sx = players[0].getX(); sy = players[0].getY(); haveStart = true; }",
+            "    if (haveStart && players.length) {",
+            "      const moved = Math.hypot(players[0].getX() - sx, players[0].getY() - sy);",
+            "      if (moved > CFG.moveGoal || t0 > CFG.fallback) startDialogue();",
+            "    }",
+            "  }",
+            "  else if (phase === 1 || phase === 2) {",
+            "    const full = Math.min(CFG.line.length, Math.floor(t0 * CFG.typeSpeed));",
+            "    if (full !== typed) {",
+            "      typed = full;",
+            "      quoteEl.textContent = '\\u201C' + CFG.line.substring(0, typed) + (typed < CFG.line.length ? '\\u201D' : '');",
+            "      if (typed % 3 === 0) blip(300 + Math.random() * 60, 220, 0.03, 0.015);",
+            "    }",
+            "    if (typed >= CFG.line.length && t0 > CFG.line.length / CFG.typeSpeed + CFG.holdAfterType) startObjective();",
+            "  }",
+            "  else if (phase === 4) {",
+            "    const questDone = V.has(\"ShelterQuestDone\") && V.get(\"ShelterQuestDone\").getAsNumber() === 1;",
+            "    if (questDone) {",
+            "      obj.classList.add(\"done\");",
+            "      objTxt.textContent = \"Find shelter \\u2713\";",
+            "      blip(523, 1046, 0.4, 0.07);",
+            "      phase = 5;",
+            "      setTimeout(() => { obj.classList.remove(\"on\"); obj.classList.add(\"off\"); }, 1400);",
+            "      setTimeout(cleanup, 2300);",
+            "      try { window.__SubBus.done.ashen = true; } catch (e) {}",
+            "    }",
+            "  }",
+            "  requestAnimationFrame(tick);",
+            "}",
+            "",
+            "function cleanup() {",
+            "  window.removeEventListener(\"keydown\", onKD);",
+            "  [dlg, obj].forEach((el) => { try { el.remove(); } catch (e) { } });",
+            "  try { css.remove(); font.remove(); if (ac) ac.close(); } catch (e) { }",
+            "}",
+            "",
+            "runtimeScene.__ashenStory = { skip: () => { if (phase < 4) startObjective(); } };",
+            "requestAnimationFrame(tick);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": true
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -12264,6 +12773,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Shelter Note Quest (Table Note + Three.js Paper)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -12374,12 +12884,13 @@
             },
             {
               "type": {
-                "value": "Distance"
+                "value": "Physics3D::Collision"
               },
               "parameters": [
                 "Player",
+                "Physics3D",
                 "Table",
-                "250",
+                "Physics3D",
                 ""
               ]
             },
@@ -12449,12 +12960,13 @@
                 {
                   "type": {
                     "inverted": true,
-                    "value": "Distance"
+                    "value": "Physics3D::Collision"
                   },
                   "parameters": [
                     "Player",
+                    "Physics3D",
                     "Table",
-                    "380",
+                    "Physics3D",
                     ""
                   ]
                 }
@@ -12910,9 +13422,2694 @@
       "parameters": []
     },
     {
+      "aiGeneratedEventId": "01M787JWMFZA9RJ47H7EQ4ZPBY",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Shelter Exit Quake (Note + Cute + Carpet)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Trigger: finished reading note (ShelterNoteT>1) + cute cinematic done (CuteT>=13.4, CuteActive=0) + touches carpet."
+        },
+        {
+          "aiGeneratedEventId": "01M78RX3G92MDFG36FWN4R8MTA",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ExitQuakeDone",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "ShelterNoteT",
+                ">",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CuteActive",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "CuteT",
+                ">=",
+                "13.4"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Player",
+                "Carpet",
+                "260",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ExitQuakeDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberNervous",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FlickOn",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"ExitQuake\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EmberFlicker\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberScaredActive",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "LanternFlame",
+                "Fear",
+                "=",
+                "95"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+              },
+              "parameters": [
+                "Ember",
+                "Animation",
+                "=",
+                "\"Hit\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetColor"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "\"255;60;50\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "StormPhase",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "StormI",
+                "=",
+                "0.05"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GustDir",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GustGap",
+                "=",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "GustDur",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WindJoltX",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "WindJoltY",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "QuakeStarted",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "QuakeDone",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CrackCount",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "QuakeOffX",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "QuakeOffY",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "QuakePrevX",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "QuakePrevY",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"StormStep\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GustGap\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"GustDur\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"JoltStep\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"QuakeT\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"CrackStep\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"QuakeSnd\""
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraShake::SetLayerTranslationAmplitude"
+              },
+              "parameters": [
+                "",
+                "2",
+                "2",
+                "\"\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraShake::SetLayerShakingFrequency"
+              },
+              "parameters": [
+                "",
+                "18",
+                "\"\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraShake::ShakeCamera"
+              },
+              "parameters": [
+                "",
+                "24",
+                "1.5",
+                "5",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundOnChannel"
+              },
+              "parameters": [
+                "",
+                "dragon-studio-harsh-wind-515272.mp3",
+                "9",
+                "yes",
+                "4",
+                "0.85"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSoundChannelVolume"
+              },
+              "parameters": [
+                "",
+                "9",
+                "=",
+                "4"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M78B2SXVS6REKM9SEEJZJH6T",
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Wind Storm (rising, pushes the player, shakes the camera)",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Storm envelope on the StormStep timer: rise 0-3s, peak 3-8s, fade 8-12s, then a light wind that stays forever."
+            },
+            {
+              "aiGeneratedEventId": "01M78CDPRZ4D3JASPCKQPK6E3B",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ExitQuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "StormPhase",
+                    ">=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "TimerElapsedTime(\"StormStep\")",
+                        "<",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormPhase",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormI",
+                        "=",
+                        "max(0.05, TimerElapsedTime(\"StormStep\") / 3)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "TimerElapsedTime(\"StormStep\")",
+                        "<",
+                        "8"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormPhase",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormI",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "TimerElapsedTime(\"StormStep\")",
+                        "<",
+                        "12"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormPhase",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormI",
+                        "=",
+                        "max(0.12, 1 - (TimerElapsedTime(\"StormStep\") - 8) / 4)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Else",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormPhase",
+                        "=",
+                        "4"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StormI",
+                        "=",
+                        "0.12"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSoundChannelVolume"
+                      },
+                      "parameters": [
+                        "",
+                        "9",
+                        "=",
+                        "6 + 82 * StormI"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "StormPhase",
+                        "<=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "CameraShake::SetLayerTranslationAmplitude"
+                      },
+                      "parameters": [
+                        "",
+                        "2 + 10 * StormI",
+                        "2 + 10 * StormI",
+                        "\"\"",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "CameraShake::SetLayerShakingFrequency"
+                      },
+                      "parameters": [
+                        "",
+                        "14 + 18 * StormI",
+                        "\"\"",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "LanternFlame",
+                        "Fear",
+                        "=",
+                        "max(LanternFlame.Fear, 70 + 25 * StormI)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EmberScaredActive",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "TimerElapsedTime(\"GustGap\")",
+                        ">",
+                        "GustGap"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"GustGap\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GustGap",
+                        "=",
+                        "RandomFloatInRange(0.3, 0.9) + 0.45 * (1 - StormI)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GustDir",
+                        "=",
+                        "Random(2) * 2 - 1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GustDur",
+                        "=",
+                        "RandomFloatInRange(0.25, 0.65)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"GustDur\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "TimerElapsedTime(\"GustDur\")",
+                        "<",
+                        "GustDur"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Physics3D::PhysicsCharacter3D::SetCurrentSidewaysSpeed"
+                      },
+                      "parameters": [
+                        "Player",
+                        "PhysicsCharacter3D",
+                        "=",
+                        "GustDir * (80 + 300 * StormI)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CompareTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"JoltStep\"",
+                        ">",
+                        "0.07"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"JoltStep\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "WindJoltX",
+                        "=",
+                        "GustDir * (0.8 + 3.2 * StormI) * RandomFloatInRange(0.35, 1) + RandomFloatInRange(-0.5, 0.5) * StormI"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "WindJoltY",
+                        "=",
+                        "RandomFloatInRange(-1.3, 1.3) * StormI"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "aiGeneratedEventId": "01M78B2SXVS6REKM9SEEJZJH6T",
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Earthquake (heavy shake, cracking ground)",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Kicks in after the storm settles (~13.5s): very heavy camera shake, props and palms rattling, rumble + breaking sounds, and dark cracks carved into the terrain around the player."
+            },
+            {
+              "aiGeneratedEventId": "01M78CDPRZ4D3JASPCKQPK6E3B",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ExitQuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeStarted",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "StormPhase",
+                    ">=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "TimerElapsedTime(\"StormStep\")",
+                    ">=",
+                    "13.5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeStarted",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CrackCount",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakePrevX",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakePrevY",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeDone",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuakeT\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"CrackStep\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuakeSnd\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberScaredActive",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "Fear",
+                    "=",
+                    "100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Animation",
+                    "=",
+                    "\"Roar\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "freesound_community-earthquake-loop-64704.mp3",
+                    "no",
+                    "100",
+                    "0.45"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "Hard_Jump_Land_01.wav",
+                    "no",
+                    "90",
+                    "0.5"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M78CAPHVPFC4Q0Z31KSA6AEH",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ExitQuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeStarted",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "TimerElapsedTime(\"QuakeT\")",
+                    "<",
+                    "5.6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QA",
+                    "=",
+                    "1 - TimerElapsedTime(\"QuakeT\") / 5.6"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CameraShake::SetLayerTranslationAmplitude"
+                  },
+                  "parameters": [
+                    "",
+                    "5 + 8 * QA",
+                    "5 + 8 * QA",
+                    "\"\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CameraShake::SetLayerShakingFrequency"
+                  },
+                  "parameters": [
+                    "",
+                    "18 + 10 * QA",
+                    "\"\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeOffX",
+                    "=",
+                    "sin(TimerElapsedTime(\"QuakeT\") * 43) * 5 * QA"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeOffY",
+                    "=",
+                    "sin(TimerElapsedTime(\"QuakeT\") * 37 + 1.1) * 3.5 * QA"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "QuakeProps",
+                    "+",
+                    "QuakeOffX - QuakePrevX"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "QuakeProps",
+                    "+",
+                    "QuakeOffY - QuakePrevY"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakePrevX",
+                    "=",
+                    "QuakeOffX"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakePrevY",
+                    "=",
+                    "QuakeOffY"
+                  ]
+                }
+              ],
+              "variables": [
+                {
+                  "name": "QA",
+                  "type": "number",
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M78CDPRZ4D3JASPCKQPK6E3B",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ExitQuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeStarted",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "TimerElapsedTime(\"QuakeT\")",
+                    "<",
+                    "5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuakeSnd\"",
+                    ">",
+                    "0.8"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"QuakeSnd\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "freesound_community-earthquake-loop-64704.mp3",
+                    "no",
+                    "45",
+                    "RandomInRange(0.85, 1.15)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "Jump_Land_06.wav",
+                    "no",
+                    "65",
+                    "RandomInRange(0.5, 0.85)"
+                  ]
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M78CAPHVPFC4Q0Z31KSA6AEH",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ExitQuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeStarted",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CrackCount",
+                    "<",
+                    "9"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "TimerElapsedTime(\"QuakeT\")",
+                    "<",
+                    "3.4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"CrackStep\"",
+                    ">",
+                    "0.3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"CrackStep\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CrackCount",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CA",
+                    "=",
+                    "RandomInRange(0, 360)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CL",
+                    "=",
+                    "RandomInRange(160, 420)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CX",
+                    "=",
+                    "Player.X()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CY",
+                    "=",
+                    "Player.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EX",
+                    "=",
+                    "CX + cos(ToRad(CA)) * CL"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EY",
+                    "=",
+                    "CY + sin(ToRad(CA)) * CL"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Terrain3D::Terrain3D::RaiseGroundAlongLine"
+                  },
+                  "parameters": [
+                    "TropicalIslandTerrain",
+                    "CX",
+                    "CY",
+                    "EX",
+                    "EY",
+                    "22",
+                    "-26",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Terrain3D::Terrain3D::TintGround"
+                  },
+                  "parameters": [
+                    "TropicalIslandTerrain",
+                    "CX",
+                    "CY",
+                    "45",
+                    "\"52;40;55\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Terrain3D::Terrain3D::TintGround"
+                  },
+                  "parameters": [
+                    "TropicalIslandTerrain",
+                    "(CX + EX) / 2",
+                    "(CY + EY) / 2",
+                    "45",
+                    "\"52;40;55\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Terrain3D::Terrain3D::TintGround"
+                  },
+                  "parameters": [
+                    "TropicalIslandTerrain",
+                    "EX",
+                    "EY",
+                    "45",
+                    "\"52;40;55\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "Knuckles Cracking.aac",
+                    "no",
+                    "85",
+                    "RandomInRange(0.45, 0.75)"
+                  ]
+                }
+              ],
+              "variables": [
+                {
+                  "name": "CA",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "CL",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "CX",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "CY",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "EX",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "EY",
+                  "type": "number",
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "aiGeneratedEventId": "01M78SAW17QAWF9MR1FDH74MG1",
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ExitQuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeStarted",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeDone",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "TimerElapsedTime(\"QuakeT\")",
+                    ">=",
+                    "5.6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "QuakeProps",
+                    "+",
+                    "-QuakePrevX"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "QuakeProps",
+                    "+",
+                    "-QuakePrevY"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakePrevX",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "QuakePrevY",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CameraShake::SetLayerTranslationAmplitude"
+                  },
+                  "parameters": [
+                    "",
+                    "0",
+                    "0",
+                    "\"\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CameraShake::SetLayerShakingFrequency"
+                  },
+                  "parameters": [
+                    "",
+                    "18",
+                    "\"\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Zombie",
+                    "2950",
+                    "5150",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Zombie",
+                    "Object3D",
+                    "=",
+                    "TropicalIslandTerrain.GroundZ(2950, 5150)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "ZombieGlow",
+                    "2950",
+                    "5150",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "ZombieGlow",
+                    "Object3D",
+                    "=",
+                    "TropicalIslandTerrain.GroundZ(2950, 5150) + 110"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ZombieReleased",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"ZombieGlowFlick\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "freesound_community-dark-talking-78916.mp3",
+                    "no",
+                    "100",
+                    "0.7"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "CameraShake::ShakeCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "30",
+                    "2",
+                    "8",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Suspicion",
+                    "=",
+                    "100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "MonsterState",
+                    "=",
+                    "\"Chase\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "PrevState",
+                    "=",
+                    "\"Patrol\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PlayerVisible",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TimeSinceSeen",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LastSeenX",
+                    "=",
+                    "Player.CenterX()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LastSeenY",
+                    "=",
+                    "Player.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "LastSeenZ",
+                    "=",
+                    "Player.Object3D::Z()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetX",
+                    "=",
+                    "Player.CenterX()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetY",
+                    "=",
+                    "Player.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TargetSpeed",
+                    "=",
+                    "265"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ChaseTime",
+                    "=",
+                    "0.8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ScreamCd",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "OneShotAnim",
+                    "=",
+                    "\"Run\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "OneShotTime",
+                    "=",
+                    "1.2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "OneShotMoveMul",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Forest light dims gradually after the quake starts."
+        },
+        {
+          "aiGeneratedEventId": "01M78CAPHVPFC4Q0Z31KSA6AEH",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ExitQuakeDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"ExitQuake\"",
+                "<",
+                "6"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Light3D::SpotLight3D::SetIntensity"
+              },
+              "parameters": [
+                "light",
+                "=",
+                "max(300, 600 - TimerElapsedTime(\"ExitQuake\") * 45)",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Ember unstable flicker for ~4 seconds, then stays nervous (red + scared) without blinking."
+        },
+        {
+          "aiGeneratedEventId": "01M78CCQ8HZZK6BC3FQQVCHAAD",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ExitQuakeDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberNervous",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"EmberFlicker\"",
+                ">",
+                "0.12"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"EmberFlicker\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "Ember",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "FlickOn",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetColor"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "=",
+                    "\"255;60;50\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FlickOn",
+                    "=",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetColor"
+                  },
+                  "parameters": [
+                    "LanternFlame",
+                    "=",
+                    "\"255;120;90\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FlickOn",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M78CCQ8HZZK6BC3FQQVCHAAD",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ExitQuakeDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberNervous",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"ExitQuake\"",
+                ">",
+                "4"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "Ember",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberNervous",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FlickOn",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Light3D::PointLight3D::SetColor"
+              },
+              "parameters": [
+                "LanternFlame",
+                "=",
+                "\"255;120;90\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M78KBRY61JJXTKFQDWMNJW5T",
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
+      "conditions": [
+        {
+          "type": {
+            "value": "SceneJustBegins"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "  try { runtimeScene.getGame().setMaximumFps(60); } catch (e) {}",
+            "  try { gdjs.__perfCtl.upWait = 15000; } catch (e) {}"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01M78P1XSB9Y98Q3ETFHAS0E3D",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Strange Pull Subtitles (DOM)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "/* =====================================================================",
+            "   📜 The Strange Pull — Subtitles + OBJECTIVE banner (pure DOM)",
+            "   Same style/position/size as Ashen Story v2 HUD, no objects.",
+            "   Trigger: runs when dizziness + pull to EMBER starts (EmberPhase >= 1).",
+            "   ===================================================================== */",
+            "if (runtimeScene.__strangePull) return;",
+            "window.__SubBus = window.__SubBus || {done:{}};",
+            "if (window.__SubBus.done.pull) return;   // never repeat",
+            "runtimeScene.__strangePull = true;",
+            "const V = runtimeScene.getVariables();",
+            "const getN = (n, d) => { try { if (V.has(n)) return V.get(n).getAsNumber(); } catch (e) {} return d; };",
+            "const CFG = {",
+            "  speaker: \"ASHEN\",",
+            "  title: \"The Strange Pull\",",
+            "  lines: [",
+            "    \"Wait... What was that?\",",
+            "    \"Why do I feel like... something is pulling me? That's strange. There's nothing out there.\",",
+            "    \"Ugh... Not now. What's happening to me? I can barely keep my eyes open...\",",
+            "    \"Something... is out there. I don't know what it is, but I feel like I need to find it.\",",
+            "    \"Just a little farther... Whatever this is, it's getting stronger.\"",
+            "  ],",
+            "  objective: \"Follow the strange sensation.\",",
+            "  typeSpeed: 34,",
+            "  holdAfterType: 2.6,",
+            "  firstHold: 1.2,",
+            "  refH: 941",
+            "};",
+            "function host() { try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch (e) {} return document.body; }",
+            "const H = host(), POS = H === document.body ? \"fixed\" : \"absolute\";",
+            "const u = (n) => \"calc(var(--u) * \" + n + \")\";",
+            "const css = document.createElement(\"style\");",
+            "css.textContent = `",
+            ".sp{position:${POS};left:0;right:0;z-index:99997;pointer-events:none;user-select:none;-webkit-user-select:none;font-family:'Cormorant Garamond',Georgia,serif;color:#e6dcc3;text-shadow:0 1px 6px #000,0 0 18px rgba(0,0,0,.55)}",
+            ".sp-title{position:absolute;left:50%;bottom:${u(118)};transform:translateX(-50%);text-align:center;opacity:0;transition:opacity .8s ease;font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(15)};letter-spacing:.42em;color:#c9b98f}",
+            ".sp-title.on{opacity:1}",
+            ".sp-title.off{opacity:0;transition:opacity .6s ease}",
+            ".sp-dlg{position:absolute;left:50%;bottom:${u(36)};transform:translateX(-50%);width:${u(760)};text-align:center;opacity:0;transition:opacity .8s ease}",
+            ".sp-dlg.on{opacity:1}",
+            ".sp-dlg.off{opacity:0;transition:opacity .7s ease}",
+            ".sp-name{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(17)};letter-spacing:.34em;color:#e0d3b0;margin-bottom:${u(6)}}",
+            ".sp-name:before,.sp-name:after{content:\"\";display:inline-block;width:${u(40)};height:1px;vertical-align:middle;background:linear-gradient(90deg,rgba(216,201,163,0),rgba(216,201,163,.7));margin:0 ${u(12)}}",
+            ".sp-name:after{background:linear-gradient(90deg,rgba(216,201,163,.7),rgba(216,201,163,0))}",
+            ".sp-quote{font-size:${u(24)};font-style:italic;font-weight:500;line-height:1.35;color:#efe6d0;min-height:${u(66)}}",
+            ".sp-obj{position:absolute;left:50%;top:${u(120)};transform:translateX(-50%) translateY(${u(26)});opacity:0;transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1);text-align:center}",
+            ".sp-obj.on{opacity:1;transform:translateX(-50%)}",
+            ".sp-obj.off{opacity:0;transform:translateX(-50%) translateY(${u(-18)});transition:opacity .6s ease,transform .6s ease}",
+            ".sp-obj-cap{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(13)};letter-spacing:.5em;color:#e8c27a;display:flex;align-items:center;gap:${u(14)};justify-content:center}",
+            ".sp-obj-cap:before,.sp-obj-cap:after{content:\"\";width:${u(70)};height:1px;background:linear-gradient(90deg,rgba(232,194,122,0),rgba(232,194,122,.65))}",
+            ".sp-obj-cap:after{background:linear-gradient(90deg,rgba(232,194,122,.65),rgba(232,194,122,0))}",
+            ".sp-obj-cap svg{width:${u(15)};height:${u(15)};flex:none;animation:spSpin 6s linear infinite}",
+            "@keyframes spSpin{to{transform:rotate(360deg)}}",
+            ".sp-obj-txt{margin-top:${u(7)};font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:${u(21)};letter-spacing:.12em;color:#f2ead6;animation:spPulse 2.6s ease-in-out infinite}",
+            "@keyframes spPulse{0%,100%{text-shadow:0 1px 6px #000,0 0 ${u(6)} rgba(232,194,122,.25)}50%{text-shadow:0 1px 6px #000,0 0 ${u(14)} rgba(232,194,122,.6)}}",
+            ".sp-obj.done .sp-obj-txt{color:#8fe3a9;animation:none}",
+            ".sp-obj.parked,.as-obj.parked{transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1),left .8s cubic-bezier(.2,.8,.2,1) !important}",
+            ".sp-obj.parked{left:${u(24)} !important;right:auto;transform:none !important;text-align:left;opacity:.92}",
+            ".sp-obj.parked.on{transform:none !important}",
+            ".sp-obj.parked .sp-obj-cap{justify-content:flex-start;font-size:${u(11)}}",
+            ".sp-obj.parked .sp-obj-cap:before{display:none}",
+            ".sp-obj.parked .sp-obj-txt{font-size:${u(16)};text-align:left;animation:none}",
+            ".as-obj.parked{left:${u(24)} !important;right:auto;transform:none !important;text-align:left;opacity:.92}",
+            ".as-obj.parked.on{transform:none !important}",
+            "`;",
+            "document.head.appendChild(css);",
+            "const title = document.createElement(\"div\");",
+            "title.className = \"sp sp-title\";",
+            "title.textContent = CFG.title;",
+            "const dlg = document.createElement(\"div\");",
+            "dlg.className = \"sp sp-dlg\";",
+            "dlg.innerHTML = '<div class=\"sp-name\">' + CFG.speaker + '</div><div class=\"sp-quote\"></div>';",
+            "const quoteEl = dlg.querySelector(\".sp-quote\");",
+            "const obj = document.createElement(\"div\");",
+            "obj.className = \"sp sp-obj\";",
+            "obj.innerHTML = '<div class=\"sp-obj-cap\">' + '<svg viewBox=\"0 0 20 20\"><path d=\"M10 1 19 10 10 19 1 10Z\" fill=\"none\" stroke=\"#e8c27a\" stroke-width=\"1.4\"/></svg>' + '<span>O B J E C T I V E</span>' + '<svg viewBox=\"0 0 20 20\"><path d=\"M10 1 19 10 10 19 1 10Z\" fill=\"none\" stroke=\"#e8c27a\" stroke-width=\"1.4\"/></svg>' + '</div>' + '<div class=\"sp-obj-txt\"></div>';",
+            "const objTxt = obj.querySelector(\".sp-obj-txt\");",
+            "H.appendChild(title); H.appendChild(dlg); H.appendChild(obj);",
+            "let ac = null;",
+            "function blip(f1, f2, dur, vol) { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const t = ac.currentTime, o = ac.createOscillator(), g = ac.createGain(); o.type = \"sine\"; o.frequency.setValueAtTime(f1, t); o.frequency.exponentialRampToValueAtTime(f2, t + dur); g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + dur); o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur + 0.05); } catch (e) {} }",
+            "let started = false, li = 0, typed = 0, t0 = 0, objShown = false, done = false;",
+            "let last = performance.now();",
+            "function parkOthers(myObj) {",
+            "  try {",
+            "    // Old objective tweens to the left instead of overlapping (screenshot 1 fix)",
+            "    document.querySelectorAll(\".as-obj.on, .sp-obj.on\").forEach((el) => { if (el !== myObj) el.classList.add(\"parked\"); });",
+            "    // Only one subtitle visible: hide the other system's dialogue + title (screenshot 2 fix)",
+            "    document.querySelectorAll(\".as-dlg.on, .sp-dlg.on\").forEach((el) => { if (el !== dlg) { el.classList.remove(\"on\"); el.classList.add(\"off\"); setTimeout(() => { try { el.classList.remove(\"off\"); } catch (e) {} }, 800); } });",
+            "    document.querySelectorAll(\".as-title.on, .sp-title.on\").forEach((el) => { if (el !== title) { el.classList.remove(\"on\"); el.classList.add(\"off\"); } });",
+            "  } catch (e) {}",
+            "}",
+            "function hideShelterObjective() {",
+            "  // Shelter reached: hide the old \"Find shelter\" objective wherever it is (center or parked left)",
+            "  try { document.querySelectorAll(\".as-obj\").forEach((el) => { el.classList.remove(\"on\"); el.classList.add(\"off\"); setTimeout(() => { try { el.remove(); } catch (e) {} }, 800); }); } catch (e) {}",
+            "}",
+            "function showLine(i) { li = i; typed = 0; t0 = 0; quoteEl.textContent = \"\"; parkOthers(null); try { window.__SubBus.dlg = dlg; document.querySelectorAll(\".as-dlg,.fe-dlg,.sh-dlg\").forEach((el) => el.classList.remove(\"on\")); } catch (e) {} dlg.classList.remove(\"off\"); dlg.classList.add(\"on\"); title.classList.remove(\"off\"); title.classList.add(\"on\"); blip(520, 780, 0.18, 0.06); }",
+            "function showObjective() { parkOthers(obj); try { window.__SubBus.obj = obj; const q = document.querySelector(\".tt.on\"); if (q) q.classList.add(\"compact\"); } catch (e) {} try { document.querySelectorAll(\".as-dlg.on, .sp-dlg.on\").forEach((el) => { el.classList.remove(\"on\"); el.classList.add(\"off\"); }); } catch (e) {} dlg.classList.remove(\"on\"); dlg.classList.add(\"off\"); title.classList.remove(\"on\"); title.classList.add(\"off\"); obj.classList.remove(\"parked\"); objTxt.textContent = CFG.objective; obj.classList.add(\"on\"); objShown = true; blip(660, 990, 0.25, 0.07); }",
+            "function cleanup() { try { title.remove(); dlg.remove(); obj.remove(); css.remove(); if (ac) ac.close(); } catch (e) {} runtimeScene.__strangePull = null; }",
+            "function tick(now) {",
+            "  const dt = Math.min(0.1, (now - last) / 1000); last = now;",
+            "  const h = (H === document.body ? window.innerHeight : (H.clientHeight || window.innerHeight));",
+            "  try { dlg.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); obj.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); title.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); } catch (e) {}",
+            "  try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { cleanup(); return; } } catch (e) {}",
+            "  const phase = getN(\"EmberPhase\", 0);",
+            "  const collected = getN(\"EmberCollected\", 0);",
+            "  if (done) return;",
+            "  if (!started) { if (phase >= 1) { started = true; showLine(0); } requestAnimationFrame(tick); return; }",
+            "  if (!objShown) {",
+            "    t0 += dt;",
+            "    const full = CFG.lines[li];",
+            "    const n = Math.min(full.length, Math.floor(t0 * CFG.typeSpeed));",
+            "    if (n !== typed) { typed = n; quoteEl.textContent = '\\u201C' + full.substring(0, typed) + (typed < full.length ? '\\u201D' : '\\u201D'); if (typed % 3 === 0) blip(300 + Math.random() * 60, 220, 0.03, 0.015); }",
+            "    const hold = (li === 0 ? CFG.firstHold : CFG.holdAfterType);",
+            "    if (typed >= full.length && t0 > full.length / CFG.typeSpeed + hold) {",
+            "      if (li + 1 < CFG.lines.length) { showLine(li + 1); }",
+            "      else { showObjective(); }",
+            "    }",
+            "  } else {",
+            "    // Shelter reached at any time: remove the old shelter objective (center or parked left)",
+            "    try { if (getN(\"ShelterQuestDone\", 0) === 1) hideShelterObjective(); } catch (e) {}",
+            "    // Ember reached: hide this Strange Pull objective",
+            "    if (collected === 1 || phase >= 5) {",
+            "      obj.classList.add(\"done\");",
+            "      objTxt.textContent = CFG.objective + \" \\u2713\";",
+            "      blip(523, 1046, 0.4, 0.07);",
+            "      done = true;",
+            "      setTimeout(() => { obj.classList.remove(\"on\"); obj.classList.add(\"off\"); }, 1400);",
+            "      setTimeout(cleanup, 2300);",
+            "      try { window.__SubBus.done.pull = true; } catch (e) {}",
+            "      return;",
+            "    }",
+            "  }",
+            "  requestAnimationFrame(tick);",
+            "}",
+            "requestAnimationFrame(tick);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M78PM82HR8WBB1DZ801JY4JW",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Finding Ember Subtitles (DOM)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "/* =====================================================================",
+            "   📜 Finding Ember — cute + professional subtitles (pure DOM)",
+            "   Same HUD style as Ashen Story v2 / Strange Pull. No objects.",
+            "   Flow: starts at EmberPhase >= 3 (faint light), lines 0-1 while approaching,",
+            "   lines 2-5 after pickup (phase >= 5), hides when EmberCineDone / phase >= 6.",
+            "   ===================================================================== */",
+            "if (runtimeScene.__findingEmber) return;",
+            "window.__SubBus = window.__SubBus || {done:{}};",
+            "if (window.__SubBus.done.ember) return;   // never repeat",
+            "runtimeScene.__findingEmber = true;",
+            "const V = runtimeScene.getVariables();",
+            "const getN = (n, d) => { try { if (V.has(n)) return V.get(n).getAsNumber(); } catch (e) {} return d; };",
+            "const CFG = {",
+            "  speaker: \"ASHEN\",",
+            "  title: \"✦ Finding Ember ✦\",",
+            "  lines: [",
+            "    \"Is that... a light? Wait, that's what I've been feeling.\",",
+            "    \"A ZUL...? I haven't seen one in so long. Hey... can you hear me?\",",
+            "    \"You're barely holding on, aren't you? Is this why I was being drawn here?\",",
+            "    \"Easy now. I've got you. Whatever happens, I'm not leaving you behind.\",",
+            "    \"You need a name... How about Ember? It suits you.\",",
+            "    \"Ember it is, then. Come on, little one. Let's get you somewhere warm.\"",
+            "  ],",
+            "  typeSpeed: 36,",
+            "  holdAfterType: 2.8,",
+            "  refH: 941",
+            "};",
+            "function host() { try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch (e) {} return document.body; }",
+            "const H = host(), POS = H === document.body ? \"fixed\" : \"absolute\";",
+            "const u = (n) => \"calc(var(--u) * \" + n + \")\";",
+            "const css = document.createElement(\"style\");",
+            "css.textContent = `",
+            ".fe{position:${POS};left:0;right:0;z-index:99997;pointer-events:none;user-select:none;-webkit-user-select:none;font-family:'Cormorant Garamond',Georgia,serif;color:#e6dcc3;text-shadow:0 1px 6px #000,0 0 18px rgba(0,0,0,.55)}",
+            ".fe-title{position:absolute;left:50%;bottom:${u(118)};transform:translateX(-50%) scale(.9);text-align:center;opacity:0;transition:opacity .8s ease,transform 1s cubic-bezier(.2,.8,.2,1);font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(15)};letter-spacing:.42em;color:#f0c98a;text-shadow:0 0 ${u(12)} rgba(255,170,80,.45),0 1px 6px #000}",
+            ".fe-title.on{opacity:1;transform:translateX(-50%) scale(1)}",
+            ".fe-title.off{opacity:0;transition:opacity .6s ease}",
+            ".fe-dlg{position:absolute;left:50%;bottom:${u(36)};transform:translateX(-50%) translateY(${u(10)});width:${u(760)};text-align:center;opacity:0;transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1)}",
+            ".fe-dlg.on{opacity:1;transform:translateX(-50%) translateY(0)}",
+            ".fe-dlg.off{opacity:0;transition:opacity .6s ease}",
+            ".fe-name{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(17)};letter-spacing:.34em;color:#ffd9a0;margin-bottom:${u(6)};text-shadow:0 0 ${u(10)} rgba(255,170,80,.35),0 1px 6px #000}",
+            ".fe-name:before,.fe-name:after{content:\"\";display:inline-block;width:${u(40)};height:1px;vertical-align:middle;background:linear-gradient(90deg,rgba(255,200,140,0),rgba(255,200,140,.8));margin:0 ${u(12)}}",
+            ".fe-name:after{background:linear-gradient(90deg,rgba(255,200,140,.8),rgba(255,200,140,0))}",
+            ".fe-name .heart{display:inline-block;animation:feBeat 1.4s ease-in-out infinite;color:#ffb3c0;text-shadow:0 0 ${u(8)} rgba(255,150,170,.7)}",
+            "@keyframes feBeat{0%,100%{transform:scale(1)}25%{transform:scale(1.25)}50%{transform:scale(1)}}",
+            ".fe-quote{font-size:${u(24)};font-style:italic;font-weight:500;line-height:1.35;color:#fff3dd;min-height:${u(66)}}",
+            ".fe-quote.warm{color:#ffe9c4;text-shadow:0 0 ${u(14)} rgba(255,170,80,.5),0 1px 6px #000}",
+            "`;",
+            "document.head.appendChild(css);",
+            "const title = document.createElement(\"div\");",
+            "title.className = \"fe fe-title\";",
+            "title.textContent = CFG.title;",
+            "const dlg = document.createElement(\"div\");",
+            "dlg.className = \"fe fe-dlg\";",
+            "dlg.innerHTML = '<div class=\"fe-name\">' + CFG.speaker + ' <span class=\"heart\">\\u2665</span></div><div class=\"fe-quote\"></div>';",
+            "const quoteEl = dlg.querySelector(\".fe-quote\");",
+            "H.appendChild(title); H.appendChild(dlg);",
+            "let ac = null;",
+            "function blip(f1, f2, dur, vol) { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const t = ac.currentTime, o = ac.createOscillator(), g = ac.createGain(); o.type = \"sine\"; o.frequency.setValueAtTime(f1, t); o.frequency.exponentialRampToValueAtTime(f2, t + dur); g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + dur); o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur + 0.05); } catch (e) {} }",
+            "function warmBlip() { blip(660, 990, 0.22, 0.05); setTimeout(() => blip(780, 1170, 0.2, 0.04), 140); }",
+            "function parkOthers() {",
+            "  try {",
+            "    document.querySelectorAll(\".as-obj.on, .sp-obj.on\").forEach((el) => el.classList.add(\"parked\"));",
+            "    document.querySelectorAll(\".as-dlg.on, .sp-dlg.on\").forEach((el) => { el.classList.remove(\"on\"); el.classList.add(\"off\"); setTimeout(() => { try { el.classList.remove(\"off\"); } catch (e) {} }, 800); });",
+            "    document.querySelectorAll(\".as-title.on, .sp-title.on\").forEach((el) => { el.classList.remove(\"on\"); el.classList.add(\"off\"); });",
+            "  } catch (e) {}",
+            "}",
+            "let started = false, li = -1, typed = 0, t0 = 0, done = false;",
+            "let last = performance.now();",
+            "function showLine(i) {",
+            "  li = i; typed = 0; t0 = 0;",
+            "  parkOthers();",
+            "  try { window.__SubBus.dlg = dlg; document.querySelectorAll(\".as-dlg,.sp-dlg,.sh-dlg\").forEach((el) => el.classList.remove(\"on\")); } catch (e) {}",
+            "  quoteEl.textContent = \"\";",
+            "  quoteEl.classList.toggle(\"warm\", i >= 3);",
+            "  dlg.classList.remove(\"off\"); dlg.classList.add(\"on\");",
+            "  title.classList.remove(\"off\"); title.classList.add(\"on\");",
+            "  if (i >= 3) warmBlip(); else blip(520, 780, 0.18, 0.05);",
+            "}",
+            "function cleanup() { try { title.remove(); dlg.remove(); css.remove(); if (ac) ac.close(); } catch (e) {} runtimeScene.__findingEmber = null; }",
+            "function tick(now) {",
+            "  const dt = Math.min(0.1, (now - last) / 1000); last = now;",
+            "  const h = (H === document.body ? window.innerHeight : (H.clientHeight || window.innerHeight));",
+            "  try { dlg.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); title.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); } catch (e) {}",
+            "  try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { cleanup(); return; } } catch (e) {}",
+            "  if (done) return;",
+            "  const phase = getN(\"EmberPhase\", 0);",
+            "  const cineDone = getN(\"EmberCineDone\", 0);",
+            "  if (!started) { if (phase >= 3) { started = true; showLine(0); } requestAnimationFrame(tick); return; }",
+            "  // Finished: collected cinematic done or phase 6 -> soft fade",
+            "  if (cineDone === 1 || phase >= 6) {",
+            "    done = true;",
+            "    dlg.classList.remove(\"on\"); dlg.classList.add(\"off\");",
+            "    title.classList.remove(\"on\"); title.classList.add(\"off\");",
+            "    warmBlip();",
+            "    setTimeout(cleanup, 1200);",
+            "    try { window.__SubBus.done.ember = true; } catch (e) {}",
+            "    return;",
+            "  }",
+            "  // Gate: lines 0-1 while approaching (phase 3-4), hold line 1 until pickup (phase 5)",
+            "  if (li === 1 && phase < 5) {",
+            "    // keep line 1 visible, waiting for pickup; just keep alive",
+            "    requestAnimationFrame(tick);",
+            "    return;",
+            "  }",
+            "  t0 += dt;",
+            "  const full = CFG.lines[li];",
+            "  const n = Math.min(full.length, Math.floor(t0 * CFG.typeSpeed));",
+            "  if (n !== typed) { typed = n; quoteEl.textContent = '\\u201C' + full.substring(0, typed) + '\\u201D'; if (typed % 3 === 0) blip(340 + Math.random() * 60, 240, 0.03, 0.012); }",
+            "  if (typed >= full.length && t0 > full.length / CFG.typeSpeed + CFG.holdAfterType) {",
+            "    if (li + 1 < CFG.lines.length) {",
+            "      // Don't jump past the pickup gate: line 2 needs phase >= 5",
+            "      if (li + 1 === 2 && phase < 5) { requestAnimationFrame(tick); return; }",
+            "      showLine(li + 1);",
+            "    } else {",
+            "      // Last line holds until cinematic done (handled above); keep alive",
+            "    }",
+            "  }",
+            "  requestAnimationFrame(tick);",
+            "}",
+            "requestAnimationFrame(tick);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M78PTBC9X8PBM9GMW9GMRQ1A",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "The Shelter Subtitles (DOM)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "/* =====================================================================",
+            "   📜 The Shelter — subtitles + OBJECTIVE: Read the note (pure DOM)",
+            "   Same HUD style. Trigger: carrying Ember (EmberCollected=1) + near Table.",
+            "   Hides objective when note reading starts (ShelterNotePhase >= 4).",
+            "   ===================================================================== */",
+            "if (runtimeScene.__shelterStory) return;",
+            "window.__SubBus = window.__SubBus || {done:{}};",
+            "if (window.__SubBus.done.shelterNote) return;   // read once then deleted forever",
+            "runtimeScene.__shelterStory = true;",
+            "const V = runtimeScene.getVariables();",
+            "const getN = (n, d) => { try { if (V.has(n)) return V.get(n).getAsNumber(); } catch (e) {} return d; };",
+            "const CFG = {",
+            "  speaker: \"ASHEN\",",
+            "  title: \"The Shelter\",",
+            "  lines: [",
+            "    \"Finally... A roof over my head. I think we can catch our breath here for a moment.\",",
+            "    \"Oh... Someone didn't make it out. I wonder how long they've been here.\",",
+            "    \"There's something beside them. A note, maybe? I should see what it says.\"",
+            "  ],",
+            "  objective: \"Read the note.\",",
+            "  nearDist: 450,",
+            "  typeSpeed: 36,",
+            "  holdAfterType: 2.8,",
+            "  refH: 941",
+            "};",
+            "function host() { try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch (e) {} return document.body; }",
+            "const H = host(), POS = H === document.body ? \"fixed\" : \"absolute\";",
+            "const u = (n) => \"calc(var(--u) * \" + n + \")\";",
+            "const css = document.createElement(\"style\");",
+            "css.textContent = `",
+            ".sh{position:${POS};left:0;right:0;z-index:99997;pointer-events:none;user-select:none;-webkit-user-select:none;font-family:'Cormorant Garamond',Georgia,serif;color:#e6dcc3;text-shadow:0 1px 6px #000,0 0 18px rgba(0,0,0,.55)}",
+            ".sh-title{position:absolute;left:50%;bottom:${u(118)};transform:translateX(-50%);text-align:center;opacity:0;transition:opacity .8s ease;font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(15)};letter-spacing:.42em;color:#c9b98f}",
+            ".sh-title.on{opacity:1}",
+            ".sh-title.off{opacity:0;transition:opacity .6s ease}",
+            ".sh-dlg{position:absolute;left:50%;bottom:${u(36)};transform:translateX(-50%);width:${u(760)};text-align:center;opacity:0;transition:opacity .8s ease}",
+            ".sh-dlg.on{opacity:1}",
+            ".sh-dlg.off{opacity:0;transition:opacity .7s ease}",
+            ".sh-name{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(17)};letter-spacing:.34em;color:#e0d3b0;margin-bottom:${u(6)}}",
+            ".sh-name:before,.sh-name:after{content:\"\";display:inline-block;width:${u(40)};height:1px;vertical-align:middle;background:linear-gradient(90deg,rgba(216,201,163,0),rgba(216,201,163,.7));margin:0 ${u(12)}}",
+            ".sh-name:after{background:linear-gradient(90deg,rgba(216,201,163,.7),rgba(216,201,163,0))}",
+            ".sh-quote{font-size:${u(24)};font-style:italic;font-weight:500;line-height:1.35;color:#efe6d0;min-height:${u(66)}}",
+            ".sh-obj{position:absolute;left:50%;top:${u(120)};transform:translateX(-50%) translateY(${u(26)});opacity:0;transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1);text-align:center}",
+            ".sh-obj.on{opacity:1;transform:translateX(-50%)}",
+            ".sh-obj.off{opacity:0;transform:translateX(-50%) translateY(${u(-18)});transition:opacity .6s ease,transform .6s ease}",
+            ".sh-obj-cap{font-family:'Cinzel',Georgia,serif;font-weight:600;font-size:${u(13)};letter-spacing:.5em;color:#e8c27a;display:flex;align-items:center;gap:${u(14)};justify-content:center}",
+            ".sh-obj-cap:before,.sh-obj-cap:after{content:\"\";width:${u(70)};height:1px;background:linear-gradient(90deg,rgba(232,194,122,0),rgba(232,194,122,.65))}",
+            ".sh-obj-cap:after{background:linear-gradient(90deg,rgba(232,194,122,.65),rgba(232,194,122,0))}",
+            ".sh-obj-cap svg{width:${u(15)};height:${u(15)};flex:none;animation:shSpin 6s linear infinite}",
+            "@keyframes shSpin{to{transform:rotate(360deg)}}",
+            ".sh-obj-txt{margin-top:${u(7)};font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:${u(21)};letter-spacing:.12em;color:#f2ead6;animation:shPulse 2.6s ease-in-out infinite}",
+            "@keyframes shPulse{0%,100%{text-shadow:0 1px 6px #000,0 0 ${u(6)} rgba(232,194,122,.25)}50%{text-shadow:0 1px 6px #000,0 0 ${u(14)} rgba(232,194,122,.6)}}",
+            ".sh-obj.done .sh-obj-txt{color:#8fe3a9;animation:none}",
+            "`;",
+            "document.head.appendChild(css);",
+            "const title = document.createElement(\"div\");",
+            "title.className = \"sh sh-title\";",
+            "title.textContent = CFG.title;",
+            "const dlg = document.createElement(\"div\");",
+            "dlg.className = \"sh sh-dlg\";",
+            "dlg.innerHTML = '<div class=\"sh-name\">' + CFG.speaker + '</div><div class=\"sh-quote\"></div>';",
+            "const quoteEl = dlg.querySelector(\".sh-quote\");",
+            "const obj = document.createElement(\"div\");",
+            "obj.className = \"sh sh-obj\";",
+            "obj.innerHTML = '<div class=\"sh-obj-cap\">' + '<svg viewBox=\"0 0 20 20\"><path d=\"M10 1 19 10 10 19 1 10Z\" fill=\"none\" stroke=\"#e8c27a\" stroke-width=\"1.4\"/></svg>' + '<span>O B J E C T I V E</span>' + '<svg viewBox=\"0 0 20 20\"><path d=\"M10 1 19 10 10 19 1 10Z\" fill=\"none\" stroke=\"#e8c27a\" stroke-width=\"1.4\"/></svg>' + '</div>' + '<div class=\"sh-obj-txt\"></div>';",
+            "const objTxt = obj.querySelector(\".sh-obj-txt\");",
+            "H.appendChild(title); H.appendChild(dlg); H.appendChild(obj);",
+            "let ac = null;",
+            "function blip(f1, f2, dur, vol) { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const t = ac.currentTime, o = ac.createOscillator(), g = ac.createGain(); o.type = \"sine\"; o.frequency.setValueAtTime(f1, t); o.frequency.exponentialRampToValueAtTime(f2, t + dur); g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + dur); o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dur + 0.05); } catch (e) {} }",
+            "function parkOthers(myObj) {",
+            "  try {",
+            "    document.querySelectorAll(\".as-obj.on, .sp-obj.on, .fe-obj.on\").forEach((el) => { if (el !== myObj) el.classList.add(\"parked\"); });",
+            "    document.querySelectorAll(\".as-dlg.on, .sp-dlg.on, .fe-dlg.on\").forEach((el) => { if (el !== dlg) { el.classList.remove(\"on\"); el.classList.add(\"off\"); setTimeout(() => { try { el.classList.remove(\"off\"); } catch (e) {} }, 800); } });",
+            "  } catch (e) {}",
+            "}",
+            "function distToTable() {",
+            "  try {",
+            "    const ps = runtimeScene.getObjects(\"Player\"), ts = runtimeScene.getObjects(\"Table\");",
+            "    if (!ps.length || !ts.length) return 1e9;",
+            "    const dx = ps[0].getX() - ts[0].getX(), dy = ps[0].getY() - ts[0].getY();",
+            "    return Math.hypot(dx, dy);",
+            "  } catch (e) { return 1e9; }",
+            "}",
+            "let started = false, li = 0, typed = 0, t0 = 0, objShown = false, done = false;",
+            "let last = performance.now();",
+            "function showLine(i) { li = i; typed = 0; t0 = 0; parkOthers(null); try { window.__SubBus.dlg = dlg; document.querySelectorAll(\".as-dlg,.sp-dlg,.fe-dlg\").forEach((el) => el.classList.remove(\"on\")); } catch (e) {} quoteEl.textContent = \"\"; dlg.classList.remove(\"off\"); dlg.classList.add(\"on\"); title.classList.remove(\"off\"); title.classList.add(\"on\"); blip(520, 780, 0.18, 0.05); }",
+            "function showObjective() { parkOthers(obj); try { const q = document.querySelector(\".tt.on\"); if (q) q.classList.add(\"compact\"); } catch (e) {} dlg.classList.remove(\"on\"); dlg.classList.add(\"off\"); title.classList.remove(\"on\"); title.classList.add(\"off\"); obj.classList.remove(\"parked\"); objTxt.textContent = CFG.objective; obj.classList.add(\"on\"); objShown = true; blip(660, 990, 0.25, 0.07); }",
+            "function cleanup() { try { title.remove(); dlg.remove(); obj.remove(); css.remove(); if (ac) ac.close(); } catch (e) {} runtimeScene.__shelterStory = null; }",
+            "function tick(now) {",
+            "  const dt = Math.min(0.1, (now - last) / 1000); last = now;",
+            "  const h = (H === document.body ? window.innerHeight : (H.clientHeight || window.innerHeight));",
+            "  try { dlg.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); obj.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); title.style.setProperty(\"--u\", (h / CFG.refH) + \"px\"); } catch (e) {}",
+            "  try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { cleanup(); return; } } catch (e) {}",
+            "  if (done) return;",
+            "  if (!started) {",
+            "    // Trigger: carrying Ember inside the shelter, close to the Table (note)",
+            "    if (getN(\"EmberCollected\", 0) === 1 && distToTable() < CFG.nearDist) { started = true; showLine(0); }",
+            "    requestAnimationFrame(tick);",
+            "    return;",
+            "  }",
+            "  if (!objShown) {",
+            "    t0 += dt;",
+            "    const full = CFG.lines[li];",
+            "    const n = Math.min(full.length, Math.floor(t0 * CFG.typeSpeed));",
+            "    if (n !== typed) { typed = n; quoteEl.textContent = '\\u201C' + full.substring(0, typed) + '\\u201D'; if (typed % 3 === 0) blip(300 + Math.random() * 60, 220, 0.03, 0.012); }",
+            "    if (typed >= full.length && t0 > full.length / CFG.typeSpeed + CFG.holdAfterType) {",
+            "      if (li + 1 < CFG.lines.length) showLine(li + 1);",
+            "      else showObjective();",
+            "    }",
+            "  } else {",
+            "    // Note opened / reading started -> complete and hide",
+            "    if (getN(\"ShelterNotePhase\", 0) >= 4) {",
+            "      obj.classList.add(\"done\");",
+            "      objTxt.textContent = CFG.objective + \" \\u2713\";",
+            "      blip(523, 1046, 0.4, 0.07);",
+            "      done = true;",
+            "      setTimeout(() => { obj.classList.remove(\"on\"); obj.classList.add(\"off\"); }, 1400);",
+            "      setTimeout(cleanup, 2300);",
+            "      try { window.__SubBus.done.shelterNote = true; } catch (e) {}   // never show again",
+            "      return;",
+            "    }",
+            "  }",
+            "  requestAnimationFrame(tick);",
+            "}",
+            "requestAnimationFrame(tick);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M78SBKDK2RYCQJRVQ76P9EDC",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Monster Chase HUD (JS DOM)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "  if (runtimeScene.__chaseHUD) return;",
+            "  runtimeScene.__chaseHUD = true;",
+            "  function host() { try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch (e) {} return document.body; }",
+            "  const H = host(), POS = H === document.body ? \"fixed\" : \"absolute\";",
+            "  const css = document.createElement(\"style\");",
+            "  css.textContent = `",
+            "  .ch{position:${POS};left:0;right:0;z-index:99990;pointer-events:none;user-select:none;font-family:Arial,sans-serif}",
+            "  .ch-warn{position:absolute;left:50%;top:18px;transform:translateX(-50%) scale(.9);text-align:center;opacity:0;transition:opacity .3s ease,transform .3s ease}",
+            "  .ch-warn.on{opacity:1;transform:translateX(-50%) scale(1)}",
+            "  .ch-title{font-weight:900;font-size:42px;letter-spacing:.12em;color:#ff2d2d;text-shadow:0 0 18px rgba(255,0,0,.8),0 2px 8px #000;animation:chPulse .7s ease-in-out infinite}",
+            "  @keyframes chPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}",
+            "  .ch-sub{margin-top:4px;font-weight:700;font-size:20px;color:#ffd9d9;text-shadow:0 2px 6px #000}",
+            "  .ch-dist{margin-top:6px;display:inline-block;font-weight:900;font-size:18px;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,60,60,.7);border-radius:999px;padding:4px 14px}",
+            "  .ch-hide{position:absolute;left:50%;top:18px;transform:translateX(-50%);text-align:center;opacity:0;transition:opacity .4s ease}",
+            "  .ch-hide.on{opacity:1}",
+            "  .ch-hide-txt{font-weight:800;font-size:22px;color:#9fe8ff;text-shadow:0 0 12px rgba(80,200,255,.6),0 2px 6px #000}",
+            "  .ch-vig{position:${POS};left:0;right:0;top:0;bottom:0;pointer-events:none;opacity:0;transition:opacity .3s ease;background:radial-gradient(ellipse at center,transparent 55%,rgba(255,0,0,.55) 100%)}",
+            "  .ch-vig.on{opacity:1;animation:chVig .8s ease-in-out infinite}",
+            "  @keyframes chVig{0%,100%{opacity:.55}50%{opacity:1}}",
+            "  `;",
+            "  document.head.appendChild(css);",
+            "  const warn = document.createElement(\"div\");",
+            "  warn.className = \"ch ch-warn\";",
+            "  warn.innerHTML = '<div class=\"ch-title\">RUN! اهرب!</div><div class=\"ch-sub\">الوحش وراك!</div><div class=\"ch-dist\">--m</div>';",
+            "  const distEl = warn.querySelector(\".ch-dist\");",
+            "  const hide = document.createElement(\"div\");",
+            "  hide.className = \"ch ch-hide\";",
+            "  hide.innerHTML = '<div class=\"ch-hide-txt\">استخبى! ضيعته... بس لسه قريب</div>';",
+            "  const vig = document.createElement(\"div\");",
+            "  vig.className = \"ch-vig\";",
+            "  H.appendChild(warn); H.appendChild(hide); H.appendChild(vig);",
+            "  function cleanup() { try { warn.remove(); hide.remove(); vig.remove(); css.remove(); } catch (e) {} runtimeScene.__chaseHUD = null; }",
+            "  function tick() {",
+            "    try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { cleanup(); return; } } catch (e) {}",
+            "    let released = 0, state = \"\", dist = 9999;",
+            "    try {",
+            "      const V = runtimeScene.getVariables();",
+            "      if (V.has(\"ZombieReleased\")) released = V.get(\"ZombieReleased\").getAsNumber();",
+            "      if (V.has(\"MonsterState\")) state = V.get(\"MonsterState\").getAsString();",
+            "      if (V.has(\"DistToPlayer\")) dist = V.get(\"DistToPlayer\").getAsNumber();",
+            "    } catch (e) {}",
+            "    if (!released) {",
+            "      warn.classList.remove(\"on\"); hide.classList.remove(\"on\"); vig.classList.remove(\"on\");",
+            "    } else if (state === \"Chase\") {",
+            "      warn.classList.add(\"on\"); hide.classList.remove(\"on\");",
+            "      try { distEl.textContent = Math.max(0, Math.round(dist)) + \"m\"; } catch (e) {}",
+            "      if (dist < 600) vig.classList.add(\"on\"); else vig.classList.remove(\"on\");",
+            "    } else {",
+            "      warn.classList.remove(\"on\"); vig.classList.remove(\"on\"); hide.classList.add(\"on\");",
+            "    }",
+            "    requestAnimationFrame(tick);",
+            "  }",
+            "  requestAnimationFrame(tick);"
+          ],
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": []
     }
   ],
   "layers": [

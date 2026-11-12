@@ -8,7 +8,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "00 — Init (physics + anim names)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -136,7 +135,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "01 — Brain (Perception / Hearing / Memory / FSM)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -154,6 +152,7 @@
           "comment": "MONSTER AI v4 - Animation layer + Cunning + Hotspot Memory. Declare ALL scene variables as Number (except those in variables.txt marked String). Needs: Zombie (3D + NavMeshCharacter + Animation), Player, HeadPOS, scene vars CamX/CamY, MonsterVisionObstacles. Edit Cfg_* in the init event. To use extra animations (Idle/Scream/Attack...) set Cfg_ExtraAnims=1 and make the names in the second init event match your 3D model animations. Hit moment for damage: use condition MonsterAttackNow = 1."
         },
         {
+          "aiGeneratedEventId": "01M78S7EGSEV2NK1XWECPKQ5W9",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -263,7 +262,7 @@
               "parameters": [
                 "Cfg_ChaseSpeed",
                 "=",
-                "150"
+                "265"
               ]
             },
             {
@@ -333,7 +332,7 @@
               "parameters": [
                 "Cfg_LoseTime",
                 "=",
-                "4"
+                "6.5"
               ]
             },
             {
@@ -403,7 +402,7 @@
               "parameters": [
                 "Cfg_ChaseRampTime",
                 "=",
-                "1.5"
+                "0.8"
               ]
             },
             {
@@ -423,7 +422,7 @@
               "parameters": [
                 "Cfg_RubberFarMul",
                 "=",
-                "1.1"
+                "1.25"
               ]
             },
             {
@@ -603,7 +602,7 @@
               "parameters": [
                 "Cfg_AttackDist",
                 "=",
-                "110"
+                "135"
               ]
             },
             {
@@ -653,7 +652,7 @@
               "parameters": [
                 "Cfg_ScreamCooldown",
                 "=",
-                "12"
+                "6"
               ]
             },
             {
@@ -15366,6 +15365,478 @@
             }
           ],
           "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M78FP1S82FS6CRWWYN16C9X5",
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SceneJustBegins"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"ZombieGlowFlick\""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "ZombieReleased",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "ZombieSoundOn",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "ZombieFlick",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "Hide"
+          },
+          "parameters": [
+            "Zombie"
+          ]
+        },
+        {
+          "type": {
+            "value": "Hide"
+          },
+          "parameters": [
+            "ZombieGlow"
+          ]
+        }
+      ]
+    },
+    {
+      "aiGeneratedEventId": "01M78DDGZN72VCK7YBCK0RNXEJ",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Zombie Dread Light + Voice (follows zombie)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Scary red light follows the zombie + positional scary voice while it walks/turns."
+        },
+        {
+          "aiGeneratedEventId": "01M78FP1S82FS6CRWWYN16C9X5",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieReleased",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetX"
+              },
+              "parameters": [
+                "ZombieGlow",
+                "=",
+                "Zombie.X()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetY"
+              },
+              "parameters": [
+                "ZombieGlow",
+                "=",
+                "Zombie.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "ZombieGlow",
+                "Object3D",
+                "=",
+                "Zombie.Object3D::Z() + 110"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M78FP1S82FS6CRWWYN16C9X5",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieReleased",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"ZombieGlowFlick\"",
+                ">",
+                "0.14"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"ZombieGlowFlick\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ZombieFlick",
+                "=",
+                "1 - ZombieFlick"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ZombieFlick",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetColor"
+                  },
+                  "parameters": [
+                    "ZombieGlow",
+                    "=",
+                    "\"255;25;20\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetIntensity"
+                  },
+                  "parameters": [
+                    "ZombieGlow",
+                    "=",
+                    "52",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetColor"
+                  },
+                  "parameters": [
+                    "ZombieGlow",
+                    "=",
+                    "\"255;70;35\"",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Light3D::PointLight3D::SetIntensity"
+                  },
+                  "parameters": [
+                    "ZombieGlow",
+                    "=",
+                    "38",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M78FP1S82FS6CRWWYN16C9X5",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieReleased",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieSoundOn",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "NavMeshPathfinding::NavMeshCharacterBehavior::Speed"
+                  },
+                  "parameters": [
+                    "Zombie",
+                    "NavMeshCharacter",
+                    ">",
+                    "10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NavMeshPathfinding::NavMeshCharacterBehavior::ObjectRotated"
+                  },
+                  "parameters": [
+                    "Zombie",
+                    "NavMeshCharacter"
+                  ]
+                }
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "A3F::A3S::Play"
+              },
+              "parameters": [
+                "Zombie",
+                "A3S",
+                "freesound_community-dark-talking-78916.mp3",
+                "90",
+                "yes",
+                "1400",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ZombieSoundOn",
+                "=",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieSoundOn",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NavMeshPathfinding::NavMeshCharacterBehavior::Speed"
+              },
+              "parameters": [
+                "Zombie",
+                "NavMeshCharacter",
+                "<=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "NavMeshPathfinding::NavMeshCharacterBehavior::ObjectRotated"
+              },
+              "parameters": [
+                "Zombie",
+                "NavMeshCharacter"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "A3F::A3S::StopAll"
+              },
+              "parameters": [
+                "Zombie",
+                "A3S",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ZombieSoundOn",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M78FP1S82FS6CRWWYN16C9X5",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Zombie hidden until release",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Failsafe: while hidden, the voice stays stopped."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieReleased",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieSoundOn",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "A3F::A3S::StopAll"
+              },
+              "parameters": [
+                "Zombie",
+                "A3S",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ZombieSoundOn",
+                "=",
+                "0"
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
