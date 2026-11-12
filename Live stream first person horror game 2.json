@@ -569,6 +569,167 @@
         "metadata": "",
         "name": "Meshy_AI_Rusty_Night_Shack_1111185318_texture.glb",
         "userAdded": false
+      },
+      {
+        "file": "assets/Wooden Table 02.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Wooden Table 02.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Tables/Dining Tables/9722b780066e4602becdba582b56f798eecb98ae8d9ea351942def49f94af745_Wooden Table 02.glb",
+          "name": "Wooden Table 02.glb"
+        }
+      },
+      {
+        "file": "assets/Industrial Pipe Lamp.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Industrial Pipe Lamp.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Lighting/Floor & Desk/Desk Lamps/b49bdc8c8de219ca2d22d1820f1af1644252f8cee57737f0c58301d7f9969acb_Industrial Pipe Lamp.glb",
+          "name": "Industrial Pipe Lamp.glb"
+        }
+      },
+      {
+        "file": "assets/Painted Wooden Chair 01.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Painted Wooden Chair 01.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Seating/Chairs/60061a36ca375bd51a48f5ce83885baa3d4decdef7fc7d9d6c68e178cef58ed7_Painted Wooden Chair 01.glb",
+          "name": "Painted Wooden Chair 01.glb"
+        }
+      },
+      {
+        "file": "assets/Green Chair 01.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Green Chair 01.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Seating/Chairs/a8c92ad58e7b2bcd424712d1979e15c8c97412b7ffe9eaf1f724b64ad7797155_Green Chair 01.glb",
+          "name": "Green Chair 01.glb"
+        }
+      },
+      {
+        "file": "assets/Paper.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Paper.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Pirate Kit/Collectable/3081faaf209d587b2570c1b38a241f641efea54911797da85a9fd0cb5fdfb587_Paper.glb",
+          "name": "Paper.glb"
+        }
+      },
+      {
+        "file": "assets/Standing Picture Frame 01.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Standing Picture Frame 01.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Decor & Art/Ornaments/Display Pieces/1857c33648ae503e041b79642190074899beb263c9c3b67049777d1653816038_Standing Picture Frame 01.glb",
+          "name": "Standing Picture Frame 01.glb"
+        }
+      },
+      {
+        "file": "assets/Debris Papers 3.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Debris Papers 3.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Toon Shooter/Prop/f5c468d38a0a60f463fe966220b8250e3679472fc4718dcd2d2afc5cc9670c54_Debris Papers 3.glb",
+          "name": "Debris Papers 3.glb"
+        }
+      },
+      {
+        "file": "lobotomy_wall_attacker_made_by_me.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "lobotomy_wall_attacker_made_by_me.glb",
+        "userAdded": false
+      },
+      {
+        "file": "assets/Wall Clock.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Wall Clock.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Decor & Art/Wall Decor/Wall Clocks/ce028bfdb28fedef133484db1923df61fdbc876676a7cb55ae44cd0177a961ec_Wall Clock.glb",
+          "name": "Wall Clock.glb"
+        }
+      },
+      {
+        "file": "assets/Boombox.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Boombox.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Electronics & Appliances/Audio & Video/Radios & Portable Audio/98506a6f9633d7603a637ee0fb55d1bca54f7771b1817f3e650b977a5be0eb87_Boombox.glb",
+          "name": "Boombox.glb"
+        }
+      },
+      {
+        "file": "assets/Steel Frame Shelves 01.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Steel Frame Shelves 01.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Storage Furniture/Shelving & Bookcases/6a89f11befedf97c5c3abf0b68fc941ce36301c59c8ef5feee337a8a890aed01_Steel Frame Shelves 01.glb",
+          "name": "Steel Frame Shelves 01.glb"
+        }
+      },
+      {
+        "file": "assets/Wooden Table 03.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Wooden Table 03.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Storage Furniture/Sideboards/6b589d62142e6d3e04c3bb71ba94655b185cca22f68b72ece82ff6afa74932ef_Wooden Table 03.glb",
+          "name": "Wooden Table 03.glb"
+        }
+      },
+      {
+        "file": "assets/Gothic Bed 01.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Gothic Bed 01.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Beds/589ad432b457993dfd5b396fb5a73eb7bbe6731126ec823bd5a23368ea3bcd51_Gothic Bed 01.glb",
+          "name": "Gothic Bed 01.glb"
+        }
+      },
+      {
+        "file": "assets/Ceiling Fan.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Ceiling Fan.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Electronics & Appliances/Home Appliances/Fans/7502f26b8fa9b933c8199a5ac89e7bec849f22e1ef8d361780d185845c001b68_Ceiling Fan.glb",
+          "name": "Ceiling Fan.glb"
+        }
+      },
+      {
+        "file": "assets/Decoration Carpet.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Decoration Carpet.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Sushi Restaurant/Decoration/18a86eafc4278883781340a44c9b658425f69934db7ec77d63edf7f674f3d152_Decoration Carpet.glb",
+          "name": "Decoration Carpet.glb"
+        }
       }
     ]
   },
