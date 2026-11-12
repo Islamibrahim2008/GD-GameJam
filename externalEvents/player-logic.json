@@ -7,6 +7,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -10313,11 +10314,6 @@
       "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
-    },
-    {
       "aiGeneratedEventId": "01M75S9KGQJVG7NWJZ7SNQP29G",
       "colorB": 228,
       "colorG": 176,
@@ -11508,6 +11504,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Boombox 3D song",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11623,6 +11620,1441 @@
         }
       ],
       "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Ember Cute Cinematic (R)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "aiGeneratedEventId": "01M771A88VZ8F1F0819A81MBQ3",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Shelter-note trigger only: starts from Game Scene event-6.4.0.2 (X closes note + Ember taken). Events = motion, JS #1 = Three.js FX, JS #2 = kiss VFX + grow-in. At the end Ember returns to his normal place in the lantern glass at full size and stays visible."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CuteActive",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CuteT",
+                "=",
+                "TimerElapsedTime(\"Cute\")"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Capture where Ember is when the dash starts (7.4s)."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CuteActive",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    ">=",
+                    "7.4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CuteStored",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteStored",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteX5",
+                    "=",
+                    "Ember.X()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteY5",
+                    "=",
+                    "Ember.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteZ5",
+                    "=",
+                    "Ember.Object3D::Z()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "1a) 0-1s: rises out of the lantern top (he grows from tiny in JS #2), wobbling."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    "<",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteS",
+                    "=",
+                    "1 - pow(1 - CuteT, 3)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "CuteSX + sin(CuteT * 25) * 2 * (1 - CuteT)",
+                    "=",
+                    "CuteSY - 26 * CuteS"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "CuteSZ"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationX"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z())) + sin(CuteT * 12.566) * 10 * (1 - CuteT)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "sin(CuteT * 14) * 14 * (1 - CuteT)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "1b) 1-2.4s: smooth arc (bezier) from above the lantern to the front point (100,10,-140) with a flip."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    "<",
+                    "2.4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteR",
+                    "=",
+                    "CuteT - 1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteU",
+                    "=",
+                    "CuteR / 1.4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteS",
+                    "=",
+                    "CuteU * CuteU * (3 - 2 * CuteU)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "(1 - CuteS) * (1 - CuteS) * CuteSX + 2 * (1 - CuteS) * CuteS * ((CuteSX + 100) / 2) + CuteS * CuteS * 100",
+                    "=",
+                    "(1 - CuteS) * (1 - CuteS) * (CuteSY - 26) + 2 * (1 - CuteS) * CuteS * (CuteSY - 96) + CuteS * CuteS * 10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "(1 - CuteS) * (1 - CuteS) * CuteSZ + 2 * (1 - CuteS) * CuteS * ((CuteSZ - 140) / 2) + CuteS * CuteS * (-140)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationX"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z())) + 360 * CuteS"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "sin(CuteR * 10) * 16 * (1 - CuteU)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "2) 2.4-7.4s: roams on ALL sides (left/right/up/down/near/far inside the view). 0.55 = side reach, 0.3 = vertical reach."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    "<",
+                    "7.4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteR",
+                    "=",
+                    "CuteT - 2.4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteS",
+                    "=",
+                    "min(1, CuteR / 0.8)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteW",
+                    "=",
+                    "CuteS * CuteS * (3 - 2 * CuteS)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteZr",
+                    "=",
+                    "-120 + 45 * sin(CuteR * 1.6 + 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteXr",
+                    "=",
+                    "0.55 * (-CuteZr) * sin(CuteR * 2.5 + 1.2)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteYr",
+                    "=",
+                    "10 + 0.3 * (-CuteZr) * sin(CuteR * 3.7 + 0.5)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "100 + (CuteXr - 100) * CuteW",
+                    "=",
+                    "10 + (CuteYr - 10) * CuteW"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "-140 + (CuteZr + 140) * CuteW"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationX"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z())) + CuteR * 132"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "sin(CuteR * 8.4) * 22"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "3) 7.4-9.2s: notices the player, corkscrew dash to the face."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    "<",
+                    "9.2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteR",
+                    "=",
+                    "CuteT - 7.4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteU",
+                    "=",
+                    "CuteR / 1.8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteS",
+                    "=",
+                    "CuteU * CuteU * (3 - 2 * CuteU)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "CuteX5 + (0 - CuteX5) * CuteS + sin(CuteR * 6.2832) * 40 * (1 - CuteU)",
+                    "=",
+                    "CuteY5 + (0 - CuteY5) * CuteS + (1 - cos(CuteR * 6.2832)) * 14 * (1 - CuteU)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "CuteZ5 + (-18 - CuteZ5) * CuteS"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationX"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z())) + 660 + 420 * CuteS"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "sin(CuteR * 10) * 20 * (1 - CuteU)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "4) 9.2-12s: 4 kisses (0.7s each) on the face: left cheek, right cheek, forehead, center. Edit the KX/KY spots below to change where he kisses. Pressed on the face from u=0.5 of each kiss (VFX fires then)."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    "<",
+                    "12"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteR",
+                    "=",
+                    "CuteT - 9.2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteK",
+                    "=",
+                    "min(3, floor(CuteR / 0.7))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteU",
+                    "=",
+                    "CuteR / 0.7 - CuteK"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CuteK",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX0",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY0",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX",
+                        "=",
+                        "-6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY",
+                        "=",
+                        "2.2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CuteK",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX0",
+                        "=",
+                        "-6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY0",
+                        "=",
+                        "2.2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX",
+                        "=",
+                        "6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY",
+                        "=",
+                        "2.8"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CuteK",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX0",
+                        "=",
+                        "6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY0",
+                        "=",
+                        "2.8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX",
+                        "=",
+                        "0.5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY",
+                        "=",
+                        "-3.3"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CuteK",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX0",
+                        "=",
+                        "0.5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY0",
+                        "=",
+                        "-3.3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKX",
+                        "=",
+                        "-2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteKY",
+                        "=",
+                        "0.8"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteS",
+                        "=",
+                        "min(1, CuteU / 0.5)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteW",
+                        "=",
+                        "CuteS * CuteS * (3 - 2 * CuteS)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetXY"
+                      },
+                      "parameters": [
+                        "Ember",
+                        "=",
+                        "CuteKX0 + (CuteKX - CuteKX0) * CuteW + sin(CuteR * 17) * 0.25",
+                        "=",
+                        "CuteKY0 + (CuteKY - CuteKY0) * CuteW + cos(CuteR * 13) * 0.25"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetZ"
+                      },
+                      "parameters": [
+                        "Ember",
+                        "Object3D",
+                        "=",
+                        "-14.5 - 9 * sin(CuteS * 3.1416) - 3.5 * max(0, 1 - CuteR * 4)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetRotationX"
+                      },
+                      "parameters": [
+                        "Ember",
+                        "Object3D",
+                        "=",
+                        "90"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetRotationY"
+                      },
+                      "parameters": [
+                        "Ember",
+                        "Object3D",
+                        "=",
+                        "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z())) + sin(CuteR * 9) * 6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
+                      },
+                      "parameters": [
+                        "Ember",
+                        "=",
+                        "CuteKX * 2 + sin(CuteR * 16) * 4"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "5) 12-13.4s: flies back to his normal place in the lantern glass (follows the live lantern position), full size, stays visible. The Lantern logic takes over after the end."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "CuteT",
+                    "<",
+                    "13.4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteR",
+                    "=",
+                    "CuteT - 12"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteU",
+                    "=",
+                    "CuteR / 1.4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteS",
+                    "=",
+                    "CuteU * CuteU * (3 - 2 * CuteU)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "-2 * (1 - CuteS) + Lantern.X() * CuteS + sin(CuteU * 3.1416) * 45",
+                    "=",
+                    "0.8 * (1 - CuteS) + (Lantern.Y() + 14) * CuteS - sin(CuteU * 3.1416) * 70"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetZ"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "-14.5 * (1 - CuteS) + (Lantern.Object3D::Z() + 51) * CuteS - sin(CuteU * 3.1416) * 40"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationX"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "90"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetRotationY"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "Object3D",
+                    "=",
+                    "180 + ToDeg(atan2(-Ember.X(), -Ember.Object3D::Z())) + 360 * CuteS"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "sin(CuteR * 9) * 14 * (1 - CuteS)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Else",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CuteActive",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetAngle"
+                  },
+                  "parameters": [
+                    "Ember",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "JS #1: Three.js r185 FX (reads CuteT): squash & stretch (kiss squash on contact), sparks, glow, warm light, soft eye vignette (30% during kisses), FOV punch. Timeline B = [2.4,7.4,9.2,12,13.4]. Ends settled at full size with glow/sparks fading out."
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const emberFx=gdjs.__emberFx||(gdjs.__emberFx=(function(){const u={ember:\"Ember\",lantern:\"Lantern\",activeVariable:\"CuteActive\",timeVariable:\"CuteT\",squashAxis:\"Y\",fovPunch:9,fovLayers:[],useLight:!0,lightIntensity:2e4,lightDistance:700,sparks:260,glowColor:[1,.55,.18],B:[2.4,7.4,9.2,12,13.4]},v=u.B,U=function(e){return e<0?0:e>1?1:e},E=function(e,t,i){return U((e-t)/(i-t))},q=function(e,t,i){return e+(t-e)*i},T={outQuad:function(e){return 1-(1-e)*(1-e)},inQuad:function(e){return e*e},inCubic:function(e){return e*e*e},outCubic:function(e){return 1-Math.pow(1-e,3)},inOutCubic:function(e){return e<.5?4*e*e*e:1-Math.pow(-2*e+2,3)/2},inOutSine:function(e){return-(Math.cos(Math.PI*e)-1)/2},outBack:function(e){return 1+2.70158*Math.pow(e-1,3)+1.70158*Math.pow(e-1,2)}};function P(e,t,i){this.x=e,this.v=0,this.k=t,this.c=i}P.prototype.step=function(e,t){const i=Math.max(1,Math.ceil(t/.008)),a=t/i;for(let s=0;s<i;s++)this.v+=(this.k*(e-this.x)-this.c*this.v)*a,this.x+=this.v*a;return this.x};const y=function(e,t){const i=Array.prototype.slice.call(arguments,2);if(typeof e[t]==\"function\")return e[t].apply(e,i);const a=e.getBehavior&&e.getBehavior(\"Object3D\");if(a&&typeof a[t]==\"function\")return a[t].apply(a,i)},tt=function(e,t){try{const i=e.getVariables();if(i.has(u.activeVariable)){i.get(u.activeVariable).setNumber(t);return}const a=e.getGame().getVariables();a.has(u.activeVariable)&&a.get(u.activeVariable).setNumber(t)}catch{}},j=function(e,t){try{const i=e.getVariables();if(i.has(t))return i.get(t).getAsNumber();const a=e.getGame().getVariables();if(a.has(t))return a.get(t).getAsNumber()}catch{}return 0},I=function(e){return e&&e.length?e[0]:null},Q=[\"attribute float aLife; attribute float aSize; attribute float aSeed;\",\"uniform float uPx; uniform float uMax; varying float vLife; varying float vSeed;\",\"void main(){\",\"  vLife = aLife; vSeed = aSeed;\",\"  vec4 mv = modelViewMatrix * vec4(position, 1.0);\",\"  float s = aSize * smoothstep(0.0, 0.08, aLife + 0.08) * (1.0 - smoothstep(0.55, 1.0, aLife));\",\"  gl_PointSize = min(max(0.0, s * uPx / max(0.001, -mv.z)), uMax);\",\"  gl_Position = projectionMatrix * mv;\",\"}\"].join(`",
+                "`),K=[\"varying float vLife; varying float vSeed;\",\"void main(){\",\"  vec2 p = gl_PointCoord * 2.0 - 1.0; float d = dot(p, p); if (d > 1.0) discard;\",\"  float core = exp(-d * 5.0); float halo = exp(-d * 1.6) * 0.35;\",\"  vec3 hot = vec3(1.0, 0.95, 0.70), mid = vec3(1.0, 0.50, 0.12), cool = vec3(0.60, 0.09, 0.02);\",\"  vec3 col = mix(hot, mid, smoothstep(0.0, 0.35, vLife));\",\"  col = mix(col, cool, smoothstep(0.35, 1.0, vLife));\",\"  float tw = 0.75 + 0.25 * sin(vSeed * 40.0 + vLife * 30.0);\",\"  float a = (core + halo) * (1.0 - vLife) * tw;\",\"  gl_FragColor = vec4(col * 1.4, a);\",\"}\"].join(`",
+                "`),W=\"varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }\",N=[\"uniform float uInt; uniform float uTime; uniform vec3 uCol; varying vec2 vUv;\",\"void main(){\",\"  vec2 p = vUv * 2.0 - 1.0; float d = length(p);\",\"  float core = exp(-d * d * 9.0); float halo = exp(-d * 3.2) * 0.55;\",\"  float ang = atan(p.y, p.x);\",\"  float rays = (0.5 + 0.5 * cos(ang * 4.0 + uTime * 1.5)) * exp(-d * 5.0) * 0.35;\",\"  float fall = smoothstep(1.0, 0.75, d);\",\"  float a = (core + halo + rays) * fall * uInt;\",\"  vec3 col = mix(uCol, vec3(1.0, 0.93, 0.70), core);\",\"  gl_FragColor = vec4(col, a);\",\"}\"].join(`",
+                "`),Y=[\"uniform float uCover; uniform float uTime; uniform float uFlash; uniform float uPulse; uniform float uAspect;\",\"varying vec2 vUv;\",\"float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }\",\"float noise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);\",\"  return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), f.x), f.y); }\",\"float fbm(vec2 p){ float v = 0.0, a = 0.5; for (int i = 0; i < 4; i++){ v += a * noise(p); p *= 2.03; a *= 0.5; } return v; }\",\"void main(){\",\"  vec2 p = (vUv * 2.0 - 1.0) / 1.4; p.x *= uAspect;\",\"  float r = length(p);\",\"  float n = fbm(p * 2.2 + vec2(0.0, -uTime * 0.5));\",\"  float vig = smoothstep(0.35, 1.9, r + (n - 0.5) * 0.35);\",\"  float a = uCover * (0.20 + 0.60 * vig) * (1.0 + 0.18 * uPulse);\",\"  vec3 col = mix(vec3(1.0, 0.45, 0.08), vec3(0.42, 0.05, 0.01), vig);\",\"  vec2 g = p * 9.0; vec2 id = floor(g); vec2 f = fract(g) - 0.5;\",\"  float h = hash(id);\",\"  vec2 q = f - (vec2(hash(id + 3.1), hash(id + 7.7)) - 0.5) * 0.5;\",\"  float tw = step(0.82, h) * (0.5 + 0.5 * sin(uTime * 5.0 + h * 40.0));\",\"  float star = (exp(-abs(q.x) * 55.0 - abs(q.y) * 9.0) + exp(-abs(q.y) * 55.0 - abs(q.x) * 9.0)) * tw;\",\"  col += vec3(1.0, 0.75, 0.35) * star * uCover * 0.5;\",\"  col = mix(col, vec3(1.0, 0.60, 0.20), uFlash);\",\"  a += uFlash * 0.30;\",\"  gl_FragColor = vec4(col, clamp(a, 0.0, 0.88));\",\"}\"].join(`",
+                "`);function H(e,t,i){this.parent=e,this.unit=t;const a=u.sparks;this.n=a,this.head=0,this.pos=new Float32Array(a*3),this.vel=new Float32Array(a*3),this.age=new Float32Array(a).fill(1e9),this.life=new Float32Array(a).fill(1),this.base=new Float32Array(a),this.aLife=new Float32Array(a).fill(1),this.aSize=new Float32Array(a),this.aSeed=new Float32Array(a);for(let h=0;h<a;h++)this.aSeed[h]=Math.random();const s=new THREE.BufferGeometry;this.attrPos=new THREE.BufferAttribute(this.pos,3).setUsage(THREE.DynamicDrawUsage),this.attrLife=new THREE.BufferAttribute(this.aLife,1).setUsage(THREE.DynamicDrawUsage),this.attrSize=new THREE.BufferAttribute(this.aSize,1).setUsage(THREE.DynamicDrawUsage),s.setAttribute(\"position\",this.attrPos),s.setAttribute(\"aLife\",this.attrLife),s.setAttribute(\"aSize\",this.attrSize),s.setAttribute(\"aSeed\",new THREE.BufferAttribute(this.aSeed,1)),this.sparkMat=new THREE.ShaderMaterial({uniforms:{uPx:{value:i},uMax:{value:60}},vertexShader:Q,fragmentShader:K,transparent:!0,depthWrite:!1,blending:THREE.AdditiveBlending}),this.points=new THREE.Points(s,this.sparkMat),this.points.frustumCulled=!1,this.points.renderOrder=20,e.add(this.points),this.glowMat=new THREE.ShaderMaterial({uniforms:{uInt:{value:1},uTime:{value:0},uCol:{value:new THREE.Color(u.glowColor[0],u.glowColor[1],u.glowColor[2])}},vertexShader:W,fragmentShader:N,transparent:!0,depthWrite:!1,blending:THREE.AdditiveBlending}),this.glow=new THREE.Mesh(new THREE.PlaneGeometry(1,1),this.glowMat),this.glow.frustumCulled=!1,this.glow.renderOrder=19,e.add(this.glow),this.light=null,u.useLight&&(this.light=new THREE.PointLight(16751178,0,u.lightDistance,2),e.add(this.light)),this.veilMat=new THREE.ShaderMaterial({uniforms:{uCover:{value:0},uTime:{value:0},uFlash:{value:0},uPulse:{value:0},uAspect:{value:1.78}},vertexShader:W,fragmentShader:Y,transparent:!0,depthTest:!1,depthWrite:!1}),this.veil=new THREE.Mesh(new THREE.PlaneGeometry(1,1),this.veilMat),this.veil.frustumCulled=!1,this.veil.renderOrder=9999,this.veil.visible=!1,e.add(this.veil),this.tmpA=new THREE.Vector3,this.tmpB=new THREE.Vector3,this.tmpQ=new THREE.Quaternion}H.prototype.emit=function(e,t,i,a,s,h,r,f){const p=this.unit;for(let l=0;l<t;l++){const c=this.head;this.head=(this.head+1)%this.n;const b=c*3;let d=Math.random()*2-1,w=Math.random()*2-1,x=Math.random()*2-1;const M=Math.sqrt(d*d+w*w+x*x)||1;d/=M,w/=M,x/=M;const L=p*i*(.4+Math.random()*.9);this.pos[b]=e.x+d*p*.12,this.pos[b+1]=e.y+w*p*.12,this.pos[b+2]=e.z+x*p*.12,this.vel[b]=(d*a+(f?f.x:0))*L,this.vel[b+1]=(w*a+(f?f.y:0))*L,this.vel[b+2]=(x*a+(f?f.z:0))*L,this.age[c]=0,this.life[c]=h+Math.random()*(r-h),this.base[c]=p*s*(.5+Math.random()*.9)}},H.prototype.update=function(e,t){const i=this.unit,a=i*3,s=i*2.2,h=Math.exp(-2.2*e);for(let r=0;r<this.n;r++){const f=this.age[r]+=e,p=this.life[r];if(f>=p){this.aSize[r]=0,this.aLife[r]=1;continue}const l=r*3,c=this.aSeed[r]*40;this.vel[l]=this.vel[l]*h+(t.x*a+Math.sin(f*7+c)*s)*e,this.vel[l+1]=this.vel[l+1]*h+(t.y*a+Math.cos(f*6+c)*s)*e,this.vel[l+2]=this.vel[l+2]*h+(t.z*a+Math.sin(f*5+c)*s)*e,this.pos[l]+=this.vel[l]*e,this.pos[l+1]+=this.vel[l+1]*e,this.pos[l+2]+=this.vel[l+2]*e,this.aLife[r]=f/p,this.aSize[r]=this.base[r]}this.attrPos.needsUpdate=!0,this.attrLife.needsUpdate=!0,this.attrSize.needsUpdate=!0},H.prototype.dispose=function(){const e=this.parent;[this.points,this.glow,this.veil,this.light].forEach(function(t){t&&(e.remove(t),t.geometry&&t.geometry.dispose(),t.material&&t.material.dispose())})};const X=function(e){const t=e&&e.getRenderer&&e.getRenderer();return t&&t.getThreeCamera?t.getThreeCamera():null};function Z(e){const t=I(e.getObjects(u.ember));if(!t)throw new Error(\"EmberFx: object '\"+u.ember+\"' not found\");if(typeof THREE==\"undefined\")throw new Error(\"EmberFx: THREE is not available\");const i=t.getLayer(),a=e.getLayer(i),s=X(a),h=t.get3DRendererObject?t.get3DRendererObject():null;let r=h;for(;r&&r.parent;)r=r.parent;const f=Math.max(t.getWidth(),t.getHeight())||30,p={ember:t,layer:a,cam:s,o3d:h,fx:null,unit:f,wp:new THREE.Vector3,up:new THREE.Vector3(0,0,1),base:[y(t,\"getScaleX\")||1,y(t,\"getScaleY\")||1,y(t,\"getScaleZ\")||1],sq:new P(1,170,11),pulse:new P(0,150,9),emitAcc:0,beat:-1,glowKick:0,fovApplied:0,fovLayers:[],phase:-1,lastT:0};if([i].concat(u.fovLayers).forEach(function(l){const c=e.getLayer(l);c&&typeof c.getCamera3DFieldOfView==\"function\"&&typeof c.setCamera3DFieldOfView==\"function\"&&p.fovLayers.push(c)}),r){const l=e.getGame().getGameResolutionHeight(),c=s&&s.fov?s.fov:45;p.fx=new H(r,f,l/(2*Math.tan(THREE.MathUtils.degToRad(c)/2)))}return p}function J(e){if(j(e,u.activeVariable)===0){V(e);return}let t=S._run;t||(t=S._run=Z(e));const i=j(e,u.timeVariable),a=Math.min(.05,Math.max(.001,(e.getElapsedTime()||16)/1e3)),s=i<v[0]?0:i<v[1]?1:i<v[2]?2:i<v[3]?3:4;let h=1,r=1,f=0,p=0,l=0,c=1,b=0,d=0,w=0;const x=s!==t.phase;if(t.phase=s,s===0)h=1+.38*(1-2*E(i,0,v[0])),c=1.3,d=90,x&&(w=24,t.glowKick=1.2);else if(s===1){const n=i-v[0],g=Math.abs(Math.sin(Math.PI*2*n)),R=Math.floor(n/.5);if(h=.8+.34*g,c=1.1+.25*(1-g),d=60,x&&(t.pulse.v+=9,w=34),R!==t.beat){t.beat=R;const C=R%4===3;t.pulse.v+=C?11:5,w+=C?28:12}}else if(s===2){const n=E(i,v[1],v[2]);x&&(t.glowKick=2.2,t.pulse.v+=12),h=n<.12?.85:1.3,r=1.1,c=1.6+.8*n,d=230,f=.35*T.inQuad(E(i,v[2]-.35,v[2])),b=u.fovPunch*T.inOutSine(n)}else if(s===3){const n=i-v[2];x&&(w=46,t.glowKick=2.5,t.pulse.v+=14);const g=T.outCubic(E(i,v[2],v[2]+.3));f=g*.3,p=(1-g)*.6,l=0,h=1-.3*Math.exp(-Math.pow(((n/.7)%1-.5)*10,2)),c=1.2,d=60,b=u.fovPunch*(1-T.outCubic(E(i,v[2],v[2]+.7)))}else{const n=E(i,v[3],v[4]);f=.3*(1-T.inOutSine(E(n,0,.43))),h=n>.8?q(1.15,1,T.outQuad(E(n,.8,1))):1.15,c=q(1.6,0,n),d=110*(1-n)}const M=Math.max(.55,Math.min(1.6,t.sq.step(h,a))),L=t.pulse.step(0,a),k=1/Math.sqrt(M),z=u.squashAxis,_=(1+L*.08)*r,O=t.ember;y(O,\"setScaleX\",t.base[0]*_*(z===\"X\"?M:k)),y(O,\"setScaleY\",t.base[1]*_*(z===\"Y\"?M:k)),y(O,\"setScaleZ\",t.base[2]*_*(z===\"Z\"?M:k));for(let n=0;n<t.fovLayers.length;n++){const g=t.fovLayers[n];g.setCamera3DFieldOfView(g.getCamera3DFieldOfView()-t.fovApplied+b)}t.fovApplied=b;const o=t.fx;if(!o)return;const m=t.cam;t.o3d&&t.o3d.getWorldPosition(t.wp);let A=1;if(m){m.updateMatrixWorld(),o.tmpA.setFromMatrixColumn(m.matrixWorld,1),t.up.copy(o.tmpA),m.getWorldPosition(o.tmpA);const n=Math.sqrt((t.wp.x-o.tmpA.x)*(t.wp.x-o.tmpA.x)+(t.wp.y-o.tmpA.y)*(t.wp.y-o.tmpA.y)+(t.wp.z-o.tmpA.z)*(t.wp.z-o.tmpA.z));A=U((n-t.unit*2.5)/(t.unit*6))}t.glowKick*=Math.exp(-4*a),t.emitAcc+=d*A*a;const D=Math.floor(t.emitAcc);t.emitAcc-=D,D>0&&o.emit(t.wp,D,1.6,.8,.3,.45,1,null),w>0&&A>.05&&o.emit(t.wp,Math.round(w*A),3.4,1,.36,.5,1.2,null),o.update(a,t.up);const $=.85+.15*Math.sin(i*23)*Math.sin(i*37+1.3)+.08*Math.sin(i*61),B=(c+t.glowKick)*$;o.glowMat.uniforms.uInt.value=B*.9*A,o.glowMat.uniforms.uTime.value=i;const G=t.unit*3.6*(.9+.1*Math.sin(i*9))*(.8+.2*B);if(o.glow.scale.set(G,G,1),o.glow.position.copy(t.wp),o.glow.visible=A>.01,m&&(m.getWorldQuaternion(o.tmpQ),o.glow.quaternion.copy(o.tmpQ),m.getWorldDirection(o.tmpB),o.glow.position.addScaledVector(o.tmpB,t.unit*.6)),o.light&&(o.light.position.copy(t.wp),m&&o.light.position.addScaledVector(o.tmpB,-t.unit*1.2),o.light.intensity=u.lightIntensity*B*.8*A),o.veil.visible=f>.001||p>.001,o.veil.visible&&m){const n=Math.max(.5,(m.near||1)*1.6),g=m.fov||45,R=m.aspect||1.78,C=2*n*Math.tan(THREE.MathUtils.degToRad(g)/2)*1.4;m.getWorldPosition(o.tmpA),o.veil.position.copy(o.tmpA).addScaledVector(o.tmpB,n),o.veil.quaternion.copy(o.tmpQ),o.veil.scale.set(C*R,C,1);const F=o.veilMat.uniforms;F.uCover.value=f,F.uFlash.value=p,F.uPulse.value=l,F.uTime.value=i,F.uAspect.value=R}if(m){const n=m.fov||45,g=e.getGame().getGameResolutionHeight();o.sparkMat.uniforms.uPx.value=g/(2*Math.tan(THREE.MathUtils.degToRad(n)/2)),o.sparkMat.uniforms.uMax.value=g*.05}}function V(e){const t=S._run;if(t){try{for(let i=0;i<t.fovLayers.length;i++){const a=t.fovLayers[i];a.setCamera3DFieldOfView(a.getCamera3DFieldOfView()-t.fovApplied)}y(t.ember,\"setScaleX\",t.base[0]),y(t.ember,\"setScaleY\",t.base[1]),y(t.ember,\"setScaleZ\",t.base[2]),t.fx&&t.fx.dispose()}catch(i){console.error(\"[EmberFx] cleanup\",i)}S._run=null}}const S={_run:null,off:!1,tick:function(e){if(!S.off)try{J(e)}catch(t){console.error(\"[EmberFx]\",t),S.off=!0,V(e)}},stop:function(e){V(e)}};return S})());emberFx.tick(runtimeScene);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "JS #2: 2D canvas overlay VFX (follows Ember on screen): emerge spark burst + ember trail + kiss VFX (heart stamp, shock ring, hearts, sparkles). Also grows Ember from tiny when leaving the lantern (growAtStart). At the end he is kept visible at full size (shrinkAtEnd / hideAtEnd = false)."
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const KS = gdjs.__emberKissFx || (gdjs.__emberKissFx = (function () {",
+                "const CFG = {",
+                "  ember: 'Ember', activeVariable: 'CuteActive', timeVariable: 'CuteT',",
+                "  start: 9.2, period: 0.7, count: 4, contact: 0.5,",
+                "  hearts: 10, sparkles: 16, stampSize: 0.26, heartSize: 0.07,",
+                "  growAtStart: true, shrinkAtEnd: false, hideAtEnd: false, growTime: 1.0, shrinkFrom: 12.7, shrinkTo: 13.4, minScale: 0.04,",
+                "  trail: true, trailRate: 45, zIndex: 99999, debug: false",
+                "};",
+                "const rnd = (a, b) => a + Math.random() * (b - a);",
+                "const clamp = (v, a, b) => Math.max(a, Math.min(b, v));",
+                "const clamp01 = (v) => clamp(v, 0, 1);",
+                "const outBack = (e) => 1 + 2.70158 * Math.pow(e - 1, 3) + 1.70158 * Math.pow(e - 1, 2);",
+                "const outCubic = (e) => 1 - Math.pow(1 - e, 3);",
+                "const inCubic = (e) => e * e * e;",
+                "const getNum = (scene, name) => {",
+                "  try {",
+                "    const v = scene.getVariables();",
+                "    if (v.has(name)) return v.get(name).getAsNumber();",
+                "    const g = scene.getGame().getVariables();",
+                "    if (g.has(name)) return g.get(name).getAsNumber();",
+                "  } catch (e) {}",
+                "  return 0;",
+                "};",
+                "const callE = (o, name, v) => {",
+                "  if (typeof o[name] === 'function') return o[name](v);",
+                "  const b = o.getBehavior && o.getBehavior('Object3D');",
+                "  if (b && typeof b[name] === 'function') return b[name](v);",
+                "};",
+                "function applyScale(ember, f) {",
+                "  if (f === 1) return;",
+                "  ['X', 'Y', 'Z'].forEach(function (a) {",
+                "    const g = callE(ember, 'getScale' + a);",
+                "    if (typeof g === 'number') callE(ember, 'setScale' + a, g * f);",
+                "  });",
+                "}",
+                "let st = null;",
+                "let V = null;",
+                "function ensure(scene) {",
+                "  if (st) return st;",
+                "  const gc = scene.getGame().getRenderer().getCanvas();",
+                "  if (!gc) throw new Error('EmberKissFx: game canvas not found');",
+                "  const c = document.createElement('canvas');",
+                "  c.style.cssText = 'position:fixed;pointer-events:none;z-index:' + CFG.zIndex + ';';",
+                "  (gc.parentElement || document.body).appendChild(c);",
+                "  const ember = (scene.getObjects(CFG.ember) || [])[0] || null;",
+                "  if (ember && ember.hide) ember.hide(false);",
+                "  st = { gc: gc, canvas: c, ctx: c.getContext('2d'), ember: ember, stamps: [], rings: [], flashes: [], parts: [], last: -1, W: 1, H: 1, burst: false, trailAcc: 0 };",
+                "  return st;",
+                "}",
+                "function layout(s) {",
+                "  const r = s.gc.getBoundingClientRect();",
+                "  const dpr = window.devicePixelRatio || 1;",
+                "  const w = Math.max(1, Math.round(r.width * dpr));",
+                "  const h = Math.max(1, Math.round(r.height * dpr));",
+                "  if (s.canvas.width !== w || s.canvas.height !== h) { s.canvas.width = w; s.canvas.height = h; }",
+                "  s.canvas.style.left = r.left + 'px'; s.canvas.style.top = r.top + 'px';",
+                "  s.canvas.style.width = r.width + 'px'; s.canvas.style.height = r.height + 'px';",
+                "  s.W = w; s.H = h;",
+                "}",
+                "function emberScreen(scene, s) {",
+                "  try {",
+                "    const ember = s.ember;",
+                "    if (ember && typeof THREE !== 'undefined') {",
+                "      const o3d = ember.get3DRendererObject ? ember.get3DRendererObject() : null;",
+                "      const cam = scene.getLayer(ember.getLayer()).getRenderer().getThreeCamera();",
+                "      if (o3d && cam) {",
+                "        if (!V) V = new THREE.Vector3();",
+                "        cam.updateMatrixWorld();",
+                "        o3d.getWorldPosition(V);",
+                "        V.project(cam);",
+                "        if (isFinite(V.x) && isFinite(V.y) && V.z < 1) {",
+                "          return { x: clamp((V.x * 0.5 + 0.5) * s.W, s.W * 0.05, s.W * 0.95), y: clamp((-V.y * 0.5 + 0.5) * s.H, s.H * 0.05, s.H * 0.95) };",
+                "        }",
+                "      }",
+                "    }",
+                "  } catch (e) {}",
+                "  return null;",
+                "}",
+                "function warm(s, x, y, n, spd) {",
+                "  const H = s.H;",
+                "  for (let k = 0; k < n; k++) {",
+                "    const a = rnd(0, Math.PI * 2), sp = H * rnd(0.05, 0.6) * spd;",
+                "    s.parts.push({ type: 'star', x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - H * 0.03, age: 0, life: rnd(0.35, 0.8), size: H * rnd(0.007, 0.018), rot: 0, spin: 0, seed: Math.random(), color: Math.random() > 0.5 ? 'rgb(255,200,120)' : 'rgb(255,150,80)' });",
+                "  }",
+                "}",
+                "function kiss(s, x, y) {",
+                "  const H = s.H;",
+                "  if (CFG.debug) console.log('[EmberKissFx] kiss at', Math.round(x), Math.round(y));",
+                "  s.flashes.push({ x: x, y: y, age: 0, life: 0.28 });",
+                "  s.rings.push({ x: x, y: y, age: 0, life: 0.5 });",
+                "  s.stamps.push({ x: x, y: y, age: 0, life: 0.95, roll: rnd(-0.35, 0.35) });",
+                "  for (let k = 0; k < CFG.hearts; k++) {",
+                "    const a = rnd(-Math.PI * 0.9, -Math.PI * 0.1), sp = H * rnd(0.25, 0.6);",
+                "    s.parts.push({ type: 'heart', x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, age: 0, life: rnd(0.9, 1.5), size: H * CFG.heartSize * rnd(0.6, 1.2), rot: rnd(-0.5, 0.5), spin: rnd(-1.2, 1.2), seed: Math.random(), color: '' });",
+                "  }",
+                "  for (let k = 0; k < CFG.sparkles; k++) {",
+                "    const a = rnd(0, Math.PI * 2), sp = H * rnd(0.4, 1.0);",
+                "    s.parts.push({ type: 'star', x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, age: 0, life: rnd(0.35, 0.7), size: H * rnd(0.012, 0.03), rot: 0, spin: 0, seed: Math.random(), color: Math.random() > 0.5 ? 'rgb(255,230,240)' : 'rgb(255,215,150)' });",
+                "  }",
+                "}",
+                "function heartPath(ctx, size) {",
+                "  ctx.beginPath();",
+                "  ctx.moveTo(0, size * 0.45);",
+                "  ctx.bezierCurveTo(-size * 0.62, size * 0.02, -size * 0.52, -size * 0.46, 0, -size * 0.14);",
+                "  ctx.bezierCurveTo(size * 0.52, -size * 0.46, size * 0.62, size * 0.02, 0, size * 0.45);",
+                "  ctx.closePath();",
+                "}",
+                "function drawHeart(ctx, size, alpha, rot) {",
+                "  ctx.save(); ctx.rotate(rot); ctx.globalAlpha = alpha;",
+                "  heartPath(ctx, size);",
+                "  const g = ctx.createLinearGradient(0, -size * 0.4, 0, size * 0.45);",
+                "  g.addColorStop(0, '#ffa6c6'); g.addColorStop(1, '#ff4f87');",
+                "  ctx.fillStyle = g; ctx.fill();",
+                "  ctx.lineWidth = Math.max(1, size * 0.05); ctx.strokeStyle = 'rgba(255,255,255,0.55)'; ctx.stroke();",
+                "  ctx.beginPath(); ctx.ellipse(-size * 0.2, -size * 0.16, size * 0.1, size * 0.06, -0.6, 0, Math.PI * 2);",
+                "  ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.fill();",
+                "  ctx.restore();",
+                "}",
+                "function drawStar(ctx, r, alpha, color) {",
+                "  ctx.globalAlpha = alpha; ctx.fillStyle = color;",
+                "  ctx.beginPath(); ctx.moveTo(0, -r);",
+                "  ctx.quadraticCurveTo(0, 0, r, 0); ctx.quadraticCurveTo(0, 0, 0, r);",
+                "  ctx.quadraticCurveTo(0, 0, -r, 0); ctx.quadraticCurveTo(0, 0, 0, -r);",
+                "  ctx.fill();",
+                "}",
+                "function step(s, dt) {",
+                "  const ctx = s.ctx, H = s.H;",
+                "  ctx.setTransform(1, 0, 0, 1, 0, 0);",
+                "  ctx.clearRect(0, 0, s.W, s.H);",
+                "  ctx.globalCompositeOperation = 'lighter';",
+                "  for (let i = s.flashes.length - 1; i >= 0; i--) {",
+                "    const f = s.flashes[i]; f.age += dt; const t = f.age / f.life;",
+                "    if (t >= 1) { s.flashes.splice(i, 1); continue; }",
+                "    const r = H * 0.4 * (0.6 + 0.4 * t);",
+                "    const g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, r);",
+                "    g.addColorStop(0, 'rgba(255,150,190,' + (0.55 * (1 - t)) + ')'); g.addColorStop(1, 'rgba(255,100,160,0)');",
+                "    ctx.globalAlpha = 1; ctx.fillStyle = g; ctx.beginPath(); ctx.arc(f.x, f.y, r, 0, Math.PI * 2); ctx.fill();",
+                "  }",
+                "  for (let i = s.rings.length - 1; i >= 0; i--) {",
+                "    const r0 = s.rings[i]; r0.age += dt; const t = r0.age / r0.life;",
+                "    if (t >= 1) { s.rings.splice(i, 1); continue; }",
+                "    ctx.globalAlpha = 1; ctx.strokeStyle = 'rgba(255,140,185,' + (0.9 * (1 - t)) + ')';",
+                "    ctx.lineWidth = H * 0.012 * (1 - t) + 1;",
+                "    ctx.beginPath(); ctx.arc(r0.x, r0.y, H * (0.05 + 0.2 * outCubic(t)), 0, Math.PI * 2); ctx.stroke();",
+                "  }",
+                "  ctx.globalCompositeOperation = 'source-over';",
+                "  for (let i = s.stamps.length - 1; i >= 0; i--) {",
+                "    const m = s.stamps[i]; m.age += dt; const t = m.age / m.life;",
+                "    if (t >= 1) { s.stamps.splice(i, 1); continue; }",
+                "    const size = H * CFG.stampSize * Math.max(0.001, outBack(clamp01(m.age / 0.2)));",
+                "    const fade = 1 - clamp01((t - 0.55) / 0.45);",
+                "    ctx.save(); ctx.translate(m.x, m.y - H * 0.08 * t);",
+                "    ctx.shadowColor = 'rgba(255,80,140,0.9)'; ctx.shadowBlur = size * 0.25;",
+                "    drawHeart(ctx, size, fade, m.roll);",
+                "    ctx.restore();",
+                "  }",
+                "  const damp = Math.exp(-1.6 * dt);",
+                "  for (let i = s.parts.length - 1; i >= 0; i--) {",
+                "    const p = s.parts[i]; p.age += dt; const t = p.age / p.life;",
+                "    if (t >= 1) { s.parts.splice(i, 1); continue; }",
+                "    p.vx *= damp; p.vy *= damp;",
+                "    const heart = p.type === 'heart';",
+                "    if (heart) p.vy -= H * 0.25 * dt;",
+                "    p.x += p.vx * dt + (heart ? Math.sin(p.age * 6 + p.seed * 20) * H * 0.06 * dt : 0);",
+                "    p.y += p.vy * dt; p.rot += p.spin * dt;",
+                "    const pop = clamp01(p.age / 0.1), fade = 1 - clamp01((t - 0.6) / 0.4);",
+                "    ctx.save(); ctx.translate(p.x, p.y);",
+                "    if (heart) { drawHeart(ctx, p.size * pop, fade, p.rot); }",
+                "    else {",
+                "      ctx.globalCompositeOperation = 'lighter';",
+                "      const tw = 0.7 + 0.3 * Math.sin(p.age * 40 + p.seed * 20);",
+                "      drawStar(ctx, p.size * (0.6 + 0.8 * (1 - t)), fade * tw, p.color);",
+                "    }",
+                "    ctx.restore();",
+                "  }",
+                "  ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';",
+                "}",
+                "function stop() {",
+                "  if (!st) return;",
+                "  try { if (st.canvas.parentNode) st.canvas.parentNode.removeChild(st.canvas); } catch (e) {}",
+                "  try { if (st.ember && st.ember.hide) st.ember.hide(!!CFG.hideAtEnd); } catch (e) {}",
+                "  st = null;",
+                "}",
+                "const S = {",
+                "  off: false, stop: stop,",
+                "  tick: function (scene) {",
+                "    if (S.off) return;",
+                "    try {",
+                "      if (getNum(scene, CFG.activeVariable) === 0) { stop(); return; }",
+                "      const s = ensure(scene);",
+                "      layout(s);",
+                "      const i = getNum(scene, CFG.timeVariable);",
+                "      const dt = clamp((scene.getElapsedTime() || 16) / 1000, 0.001, 0.05);",
+                "      if (s.ember) {",
+                "        let f = 1;",
+                "        if (CFG.growAtStart && i < CFG.growTime) f = CFG.minScale + (1 - CFG.minScale) * outBack(clamp01(i / CFG.growTime));",
+                "        else if (CFG.shrinkAtEnd && i > CFG.shrinkFrom) f = 1 - (1 - CFG.minScale) * inCubic(clamp01((i - CFG.shrinkFrom) / (CFG.shrinkTo - CFG.shrinkFrom)));",
+                "        applyScale(s.ember, f);",
+                "      }",
+                "      const kissEnd = CFG.start + CFG.period * CFG.count;",
+                "      if (!s.burst && i >= 0.15) { s.burst = true; const p0 = emberScreen(scene, s); if (p0) warm(s, p0.x, p0.y, 18, 1.2); }",
+                "      if (CFG.trail && i > 0.05 && !(i >= CFG.start - 0.2 && i < kissEnd)) {",
+                "        s.trailAcc += CFG.trailRate * dt;",
+                "        const n = Math.floor(s.trailAcc); s.trailAcc -= n;",
+                "        if (n > 0) { const p1 = emberScreen(scene, s); if (p1) warm(s, p1.x, p1.y, n, 0.25); }",
+                "      }",
+                "      const t = (i - CFG.start) / CFG.period;",
+                "      if (t >= 0 && t < CFG.count) {",
+                "        const idx = Math.floor(t), u = t - idx;",
+                "        if (u >= CFG.contact && idx > s.last) {",
+                "          s.last = idx;",
+                "          const p = emberScreen(scene, s) || { x: s.W * 0.5, y: s.H * 0.5 };",
+                "          kiss(s, p.x, p.y);",
+                "        }",
+                "      }",
+                "      step(s, dt);",
+                "    } catch (e) {",
+                "      console.error('[EmberKissFx]', e);",
+                "      S.off = true;",
+                "      stop();",
+                "    }",
+                "  }",
+                "};",
+                "return S;",
+                "})());",
+                "KS.tick(runtimeScene);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Cleanup of the FX when the cinematic is over."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CuteActive",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const f = gdjs.__emberFx; if (f && f._run) f.stop(runtimeScene);",
+                "const k = gdjs.__emberKissFx; if (k) k.stop();"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ]
 }

@@ -57,6 +57,42 @@
   ],
   "variables": [
     {
+      "name": "ShelterPitchT",
+      "persistentUuid": "acd27d56-f2be-4d81-8aae-e2cdc559fb9c",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ShelterYawT",
+      "persistentUuid": "1628cc29-15b8-4069-8583-7eaa552c3621",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ShelterPitch0",
+      "persistentUuid": "776d7964-8dac-4a85-87e9-9eb744b30d33",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ShelterYaw0",
+      "persistentUuid": "6af48009-1147-4fc4-9799-122114901b55",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ShelterNoteT",
+      "persistentUuid": "7adb736c-b435-43c3-8c0f-3dec60bdeb39",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "ShelterNotePhase",
+      "persistentUuid": "06312f37-478a-4635-8ec4-bdadacb21d32",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "ClimbSpeed",
       "persistentUuid": "5d54c38f-6133-4ad6-bb50-125eb6357d1a",
       "type": "number",
@@ -4825,6 +4861,131 @@
       "persistentUuid": "37200a64-ad14-4b79-87f3-99c5b7fe9b83",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "CuteActive",
+      "persistentUuid": "5136d0d8-8698-47e6-b13e-054d36ea8b0c",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteStored",
+      "persistentUuid": "f6410227-7f1a-4e44-aa86-d300dc154f12",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteSX",
+      "persistentUuid": "b6b0dcb8-1484-4adc-9d9b-285ed31e04b3",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteSY",
+      "persistentUuid": "e750268f-65c4-408f-9e0d-e5f2d9935460",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteSZ",
+      "persistentUuid": "1b43d866-845a-4ebb-b78b-67cca8a24161",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteT",
+      "persistentUuid": "1a9ea5ef-8a05-4b0b-82ce-c8ddec9e728e",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteX5",
+      "persistentUuid": "c9373749-5d9b-4373-9091-9a2f5af4039b",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteY5",
+      "persistentUuid": "a505d8a4-7254-483d-81a8-2dcf0dd757de",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteZ5",
+      "persistentUuid": "3089f1f2-0a20-4190-9c1c-e5395e518a80",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteS",
+      "persistentUuid": "b4913522-c024-40ad-b610-204592b5c94a",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteR",
+      "persistentUuid": "3ae96d85-14ba-4a64-9c4e-d3f1c6811406",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteU",
+      "persistentUuid": "eed13ec3-2e3c-4c67-96b9-28d56af0f148",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteW",
+      "persistentUuid": "f0abbdfa-9c7c-47a4-b601-beec136df955",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteZr",
+      "persistentUuid": "93583ce1-4762-476f-b62a-b015ff025fe6",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteXr",
+      "persistentUuid": "e66e5169-0097-4ca9-a03e-fb3bbbdfa11b",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteYr",
+      "persistentUuid": "4223aa17-95ef-4fdf-9b74-150fd8ae1a6d",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteKX0",
+      "persistentUuid": "af20a43d-300f-482a-a875-a16a4dd74a99",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteKY0",
+      "persistentUuid": "0446dfd7-2804-4723-b6c5-91c9ca68ed18",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteKX",
+      "persistentUuid": "929a275e-7dc9-405b-9093-8b3e0c3e4e3f",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteKY",
+      "persistentUuid": "6cee8ab0-e233-421d-aa02-ac01a001a15e",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CuteK",
+      "type": "number",
+      "value": 0
     }
   ],
   "instances": [
@@ -5599,6 +5760,38 @@
       "y": 5285,
       "z": 723,
       "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "QuestText",
+      "persistentUuid": "aae07972-c555-4c7f-a564-fede07e379b4",
+      "width": 0,
+      "x": 240,
+      "y": 90,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "HUD",
+      "name": "NotePrompt",
+      "persistentUuid": "48aa5bf0-5903-479c-aa29-dc723519e2e7",
+      "width": 0,
+      "x": 490,
+      "y": 620,
+      "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -7896,6 +8089,93 @@
         "width": 120,
         "animations": []
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "QuestText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "New Quest: Inspect the table in the shelter",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 28,
+      "color": {
+        "b": 150,
+        "g": 220,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "New Quest: Inspect the table in the shelter",
+        "font": "",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 28,
+        "lineHeight": 0,
+        "color": "255;220;150"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "NotePrompt",
+      "persistentUuid": "5fc68b69-8f1e-417a-a91f-1b888fcf2d36",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Press X to read",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 30,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Press X to read",
+        "font": "",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 30,
+        "lineHeight": 0,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -8043,6 +8323,12 @@
       },
       {
         "objectName": "Paper"
+      },
+      {
+        "objectName": "QuestText"
+      },
+      {
+        "objectName": "NotePrompt"
       }
     ]
   },
@@ -8340,6 +8626,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Rocket Intro (Three.js JS) v5 Horror",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11620,6 +11907,7 @@
           "colorG": 200,
           "colorR": 60,
           "creationTime": 0,
+          "folded": true,
           "name": "Fix - Hand Layer + Lantern/Ember After Intro",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -11775,6 +12063,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Performance FSR + LOD (Adaptive v3)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -11965,6 +12254,657 @@
           "parameterObjects": "",
           "useStrict": true,
           "eventsSheetExpanded": true
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M76YPQB4WYRHHXXJPMNG9AJ3",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Shelter Note Quest (Table Note + Three.js Paper)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "QuestText"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "NotePrompt"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterNotePhase",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterNoteT",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M76ZBWK3N5V0S4W4EES3Q1SN",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "  try {",
+                "    const im = runtimeScene.getGame().getImageManager();",
+                "    if (im.loadResource) im.loadResource(\"paper.png\");",
+                "  } catch (e) {}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M77266SCXZ51J0KS7TC24TYQ",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ShelterNotePhase",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Player",
+                "Table",
+                "250",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "CuteActive",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterNotePhase",
+                "=",
+                "3"
+              ]
+            },
+            {
+              "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "NotePrompt",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ShelterNotePhase",
+                "=",
+                "3"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterNoteT",
+                "+",
+                "TimeDelta()"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Table",
+                    "380",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ShelterNotePhase",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "NotePrompt"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextJustPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"x\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Hide"
+                  },
+                  "parameters": [
+                    "NotePrompt"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ShelterNotePhase",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ShelterNoteT",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "PlayerState",
+                    "=",
+                    "\"Cinematic\""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "  (function(){",
+                    "    if (window.__shelterNote) { window.__shelterNote.open = true; return; }",
+                    "    const overlay = document.createElement('div');",
+                    "    overlay.id = 'shelterNoteOverlay';",
+                    "    overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;pointer-events:none;background:radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.72) 100%);';",
+                    "    document.body.appendChild(overlay);",
+                    "    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });",
+                    "    renderer.setSize(window.innerWidth, window.innerHeight);",
+                    "    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));",
+                    "    renderer.domElement.style.cssText = 'width:100%;height:100%;display:block;';",
+                    "    overlay.appendChild(renderer.domElement);",
+                    "    const scene = new THREE.Scene();",
+                    "    const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);",
+                    "    camera.position.set(0, 0, 6);",
+                    "    camera.lookAt(0, 0, 0);",
+                    "    scene.add(new THREE.AmbientLight(0xfff2d9, 1.15));",
+                    "    const key = new THREE.DirectionalLight(0xffe9c4, 1.6);",
+                    "    key.position.set(2, 3, 4);",
+                    "    scene.add(key);",
+                    "    const rim = new THREE.DirectionalLight(0x88aaff, 0.35);",
+                    "    rim.position.set(-3, 1, -2);",
+                    "    scene.add(rim);",
+                    "    function makePaperTexture() {",
+                    "      const W = 1024, H = 1408;",
+                    "      const c = document.createElement('canvas');",
+                    "      c.width = W; c.height = H;",
+                    "      const g = c.getContext('2d');",
+                    "      g.fillStyle = '#d8c49a'; g.fillRect(0, 0, W, H);",
+                    "      for (let i = 0; i < 9000; i++) {",
+                    "        const x = Math.random() * W, y = Math.random() * H;",
+                    "        const a = Math.random() * 0.08;",
+                    "        g.fillStyle = Math.random() < 0.5 ? `rgba(120,90,50,${a})` : `rgba(255,245,220,${a})`;",
+                    "        g.fillRect(x, y, 2, 2);",
+                    "      }",
+                    "      const grd = g.createRadialGradient(W/2, H/2, H*0.25, W/2, H/2, H*0.75);",
+                    "      grd.addColorStop(0, 'rgba(0,0,0,0)');",
+                    "      grd.addColorStop(1, 'rgba(74,48,20,0.55)');",
+                    "      g.fillStyle = grd; g.fillRect(0, 0, W, H);",
+                    "      g.strokeStyle = 'rgba(90,60,30,0.6)'; g.lineWidth = 10;",
+                    "      g.strokeRect(28, 28, W - 56, H - 56);",
+                    "      g.strokeStyle = 'rgba(60,40,20,0.35)'; g.lineWidth = 3;",
+                    "      g.strokeRect(48, 48, W - 96, H - 96);",
+                    "      for (let i = 0; i < 7; i++) {",
+                    "        const x = Math.random() * W, y = Math.random() * H, r = 30 + Math.random() * 90;",
+                    "        const st = g.createRadialGradient(x, y, 4, x, y, r);",
+                    "        st.addColorStop(0, 'rgba(101,67,33,0.20)');",
+                    "        st.addColorStop(1, 'rgba(101,67,33,0)');",
+                    "        g.fillStyle = st;",
+                    "        g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();",
+                    "      }",
+                    "      g.fillStyle = 'rgba(40,26,14,0.92)';",
+                    "      g.textAlign = 'center';",
+                    "      g.font = 'bold 54px Georgia, serif';",
+                    "      g.fillText('Personal Log', W / 2, 150);",
+                    "      g.font = 'italic 38px Georgia, serif';",
+                    "      g.fillStyle = 'rgba(70,48,26,0.9)';",
+                    "      g.fillText('— Unknown Date —', W / 2, 210);",
+                    "      g.strokeStyle = 'rgba(70,48,26,0.7)'; g.lineWidth = 2;",
+                    "      g.beginPath(); g.moveTo(140, 250); g.lineTo(W - 140, 250); g.stroke();",
+                    "      const lines = ['I thought this shelter would keep me safe.', '', 'But the darkness is spreading faster', 'than I expected. Pieces of the world', 'are disappearing, and something', 'is moving out there.', '', 'It follows the light.', '', 'I saw the tower in the distance. It might', 'be the source of everything... or the only', 'place where this can end.', '', 'If anyone finds this note, do not stay here.', 'The light is not safe anymore.'];",
+                    "      g.textAlign = 'left';",
+                    "      g.font = '40px Georgia, serif';",
+                    "      g.fillStyle = 'rgba(45,30,16,0.95)';",
+                    "      let y = 340;",
+                    "      for (const ln of lines) {",
+                    "        if (ln === '') { y += 30; continue; }",
+                    "        g.fillText(ln, 110, y);",
+                    "        y += 62;",
+                    "      }",
+                    "      g.font = 'italic 34px Georgia, serif';",
+                    "      g.fillStyle = 'rgba(70,48,26,0.75)';",
+                    "      g.textAlign = 'center';",
+                    "      g.fillText('— X to put the note down —', W / 2, H - 90);",
+                    "      const tex = new THREE.CanvasTexture(c);",
+                    "      tex.colorSpace = THREE.SRGBColorSpace;",
+                    "      tex.anisotropy = 4;",
+                    "      return tex;",
+                    "    }",
+                    "    let paperTex = null;",
+                    "    try {",
+                    "      const im = runtimeScene.getGame().getImageManager();",
+                    "      if (im.getThreeTexture) paperTex = im.getThreeTexture(\"paper.png\");",
+                    "      if (!paperTex || !paperTex.image) {",
+                    "        const src = im.getImageSource ? im.getImageSource(\"paper.png\") : null;",
+                    "        if (src) paperTex = new THREE.CanvasTexture(src);",
+                    "      }",
+                    "    } catch (e) { paperTex = null; }",
+                    "    if (!paperTex || !paperTex.image) paperTex = makePaperTexture();",
+                    "    paperTex.colorSpace = THREE.SRGBColorSpace;",
+                    "    const paperMat = new THREE.MeshStandardMaterial({ map: paperTex, roughness: 0.9, metalness: 0.0, side: THREE.DoubleSide });",
+                    "    const backMat = new THREE.MeshStandardMaterial({ color: 0xb89a68, roughness: 0.95, side: THREE.DoubleSide });",
+                    "    const mats = [backMat, backMat, backMat, backMat, paperMat, backMat];",
+                    "    const paper = new THREE.Mesh(new THREE.BoxGeometry(2.2, 3.0, 0.02, 1, 1, 1), mats);",
+                    "    paper.position.set(0, -4.5, 0);",
+                    "    paper.rotation.set(0.9, 0, -0.12);",
+                    "    scene.add(paper);",
+                    "    const st = { overlay, renderer, scene, camera, paper, t: 0, open: true, sway: Math.random() * 10 };",
+                    "    window.__shelterNote = st;",
+                    "    window.__closeShelterNote = function() {",
+                    "      try { window.removeEventListener('resize', st.onResize); } catch(e) {}",
+                    "      try { renderer.dispose(); } catch(e) {}",
+                    "      try { overlay.remove(); } catch(e) {}",
+                    "      if (window.__shelterNote === st) window.__shelterNote = null;",
+                    "    };",
+                    "    st.onResize = function() {",
+                    "      camera.aspect = window.innerWidth / window.innerHeight;",
+                    "      camera.updateProjectionMatrix();",
+                    "      renderer.setSize(window.innerWidth, window.innerHeight);",
+                    "    };",
+                    "    window.addEventListener('resize', st.onResize);",
+                    "    st.last = performance.now();",
+                    "    (function tick(now) {",
+                    "      if (!window.__shelterNote || window.__shelterNote !== st) return;",
+                    "      requestAnimationFrame(tick);",
+                    "      const dt = Math.min(0.05, (now - st.last) / 1000); st.last = now;",
+                    "      st.t += dt;",
+                    "      const k = 1 - Math.exp(-2.2 * st.t);",
+                    "      const e = 1 - Math.pow(1 - k, 3);",
+                    "      paper.position.y = -4.5 + 4.5 * e + Math.sin(st.t * 1.4) * 0.05 * e;",
+                    "      paper.position.z = Math.sin(st.t * 0.9) * 0.08 * e;",
+                    "      paper.rotation.x = 0.9 - 0.9 * e + Math.sin(st.t * 1.1) * 0.02 * e;",
+                    "      paper.rotation.y = Math.sin(st.t * 0.8 + st.sway) * 0.06 * e;",
+                    "      paper.rotation.z = -0.12 + 0.12 * e + Math.sin(st.t * 1.7) * 0.008 * e;",
+                    "      renderer.render(scene, camera);",
+                    "    })(st.last);",
+                    "  })();"
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ShelterNotePhase",
+                "=",
+                "4"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ShelterNoteT",
+                "+",
+                "TimeDelta()"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextJustPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"x\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::CompareNumbers"
+                  },
+                  "parameters": [
+                    "ShelterNoteT",
+                    ">",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": "  if (window.__closeShelterNote) window.__closeShelterNote();",
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": false
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "ShelterNotePhase",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "PlayerState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "aiGeneratedEventId": "01M7726ZEGCV04X8476SSVJ70H",
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberCollected",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberCineDone",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberPhase",
+                        "=",
+                        "6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberPresent",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberReturning",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CuteActive",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "EmberDead",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Hide"
+                      },
+                      "parameters": [
+                        "NotePrompt"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteActive",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteStored",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteSX",
+                        "=",
+                        "Lantern.X()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteSY",
+                        "=",
+                        "Lantern.Y() + 14"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CuteSZ",
+                        "=",
+                        "min(Lantern.Object3D::Z() + 51, -40)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Cute\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "parameters": []

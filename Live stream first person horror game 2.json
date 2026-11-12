@@ -740,6 +740,14 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/paper.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\"\"}",
+        "name": "paper.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ]
   },
@@ -1424,6 +1432,41 @@
         "const bars = harness.getObjects('CineBarTop')[0];",
         "harness.assert(bars && bars.opacity < 30, 'Letterbox bars faded, opacity=' + (bars && bars.opacity));"
       ]
+    },
+    {
+      "description": "Shelter note quest init check",
+      "lastRunAt": 1794458495822,
+      "lastRunDurationMs": 10810,
+      "lastRunFramesExecuted": 1,
+      "lastRunStatus": "stopped",
+      "name": "shelter-note-init",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(120);",
+        "const q = harness.getObjects('QuestText');",
+        "const p = harness.getObjects('NotePrompt');",
+        "harness.assert(q.length>0, 'QuestText exists');",
+        "harness.assert(p.length>0, 'NotePrompt exists');",
+        "const ph = harness.getSceneVariable('ShelterNotePhase');",
+        "harness.assert(ph && ph.value===0, 'Phase starts at 0, got '+(ph?ph.value:'none'));",
+        "await harness.takeScreenshot('quest-init');"
+      ]
+    },
+    {
+      "description": "Scene loads after paper.png added",
+      "lastRunAt": 1794456830999,
+      "lastRunDurationMs": 750,
+      "lastRunFramesExecuted": 0,
+      "lastRunStatus": "stopped",
+      "name": "paper-load-check",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(60);",
+        "harness.assert(true, 'scene loads with paper resource');",
+        "await harness.takeScreenshot('paper-preload-check');"
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -1476,6 +1519,12 @@
       },
       {
         "itemName": "rocket-crash-intro"
+      },
+      {
+        "itemName": "shelter-note-init"
+      },
+      {
+        "itemName": "paper-load-check"
       }
     ]
   },
