@@ -234,179 +234,6 @@
         }
       },
       {
-        "file": "assets/grey.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "grey.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/01-Placeholders/1b4fbbbff8442a832eeb7817195957e584b1da5cda04f398f42878d63326ecbe_grey.png",
-          "name": "grey.png"
-        }
-      },
-      {
-        "file": "Hands.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Hands.png",
-        "smoothed": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/terrain-grass-001-color.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-grass-001-color.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/adad4efa227acf462688bcf6e25233bf0682353807f91322f0c0eca19e00dd16_terrain-grass-001-color.jpg",
-          "name": "terrain-grass-001-color.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-grass-001-normal.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-grass-001-normal.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/f57cc3c33b29c4a48debc313d9daa23a3b7f992aa374195d2e4150b59b4c22f9_terrain-grass-001-normal.jpg",
-          "name": "terrain-grass-001-normal.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-ground-048-color.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-ground-048-color.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/a0cb5cfd7e832039ea497495ad1555c9023d742c7ba9e71384307d10b21e8fc9_terrain-ground-048-color.jpg",
-          "name": "terrain-ground-048-color.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-ground-048-normal.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-ground-048-normal.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/83641613d7484f89977dd76deafd64f2e5670338615b698e58055dfd35323cba_terrain-ground-048-normal.jpg",
-          "name": "terrain-ground-048-normal.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-rock-036-color.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-rock-036-color.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/f640e17fb06fd0dc3bc1442459d2134cb56111fd060a7ff395dff581a8a5d8a2_terrain-rock-036-color.jpg",
-          "name": "terrain-rock-036-color.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-rock-036-normal.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-rock-036-normal.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/8ed25f8d3a252c53f93f1ebfb33c48755cb81f8506cf1d69f0df3cc73be80ae0_terrain-rock-036-normal.jpg",
-          "name": "terrain-rock-036-normal.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-ground-080-color.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-ground-080-color.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/0dd348f6ed2f6c915e60474c9f11ec60b53e98f107f92a097f476b1334325959_terrain-ground-080-color.jpg",
-          "name": "terrain-ground-080-color.jpg"
-        }
-      },
-      {
-        "file": "assets/terrain-ground-080-normal.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "terrain-ground-080-normal.jpg",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Terrains/45064805ad1ce7d044b7fb7971f66c799bfc6bcc91bfa88aa82add8bd205431e_terrain-ground-080-normal.jpg",
-          "name": "terrain-ground-080-normal.jpg"
-        }
-      },
-      {
-        "file": "assets/Palm Tree 1.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Palm Tree 1.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Scattered Models/Trees/4a3fdf0a531f7238a41b5eab4123b18c343e8ceb1508b86d932cb2af0fb45b95_Palm Tree 1.glb",
-          "name": "Palm Tree 1.glb"
-        }
-      },
-      {
-        "file": "assets/Door White Glass.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Door White Glass.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Modular Buildings/Doors/313b71df4a6d29f597532365edc495e75d680c541b39a288dde5ba3724706eac_Door White Glass.glb",
-          "name": "Door White Glass.glb"
-        }
-      },
-      {
-        "file": "assets/blue.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "blue.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/01-Placeholders/93517e555275405940e84957ed49f92de0eac0d7690164a2101c03b6fdd2a1e6_blue.png",
-          "name": "blue.png"
-        }
-      },
-      {
-        "file": "assets/orange.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "orange.png",
-        "smoothed": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/01-Placeholders/2a32f1a9dcc4101a874e0d6271f1bbaab5ed0984f88ea062a4d994da54fd4841_orange.png",
-          "name": "orange.png"
-        }
-      },
-      {
-        "file": "assets/Lever Single.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Lever Single.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Prototype Kit/Mechanisms/799539abe8460ae01b0c453dd0a310c93ecadf9680644f6b46a5ffc21c4af6b9_Lever Single.glb",
-          "name": "Lever Single.glb"
-        }
-      },
-      {
         "file": "assets/Zombie A.glb",
         "kind": "model3D",
         "metadata": "",
@@ -415,27 +242,6 @@
         "origin": {
           "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Animated Characters Survivors/6f751275a57912a6a1b589db55de957f87217518d2b92348e5a471d30a86c5eb_Zombie A.glb",
           "name": "Zombie A.glb"
-        }
-      },
-      {
-        "file": "StartingCapsule.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "StartingCapsule.glb",
-        "userAdded": false
-      },
-      {
-        "file": "assets/Walk_01.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "9e6c1c3f9594ea0796b8bbd636507bfe04625bc14344d5fc2a673e0da51030d7_Walk_01.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/SoundEffects/Nox Footsteps/DirtyGround/Walk/9e6c1c3f9594ea0796b8bbd636507bfe04625bc14344d5fc2a673e0da51030d7_Walk_01.wav",
-          "name": "gdevelop-asset-store"
         }
       },
       {
@@ -449,40 +255,10 @@
         "userAdded": false
       },
       {
-        "file": "assets/Walk_09.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "Walk_09.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Tall_Movement_01.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "Tall_Movement_01.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
         "file": "assets/Jump_Land_01.wav",
         "kind": "audio",
         "metadata": "",
         "name": "Jump_Land_01.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/MetalV2_Run_12.wav",
-        "kind": "audio",
-        "metadata": "",
-        "name": "MetalV2_Run_12.wav",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -559,13 +335,6 @@
         }
       },
       {
-        "file": "Creature.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Creature.glb",
-        "userAdded": false
-      },
-      {
         "file": "walking.mp3",
         "kind": "audio",
         "metadata": "",
@@ -590,16 +359,6 @@
         "kind": "audio",
         "metadata": "",
         "name": "islam.wav",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Abstract Anxiety.aac",
-        "kind": "audio",
-        "metadata": "",
-        "name": "Abstract Anxiety.aac",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -798,28 +557,6 @@
         }
       },
       {
-        "file": "assets/Pine Tree 1.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Pine Tree 1.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Scattered Models/Trees/b81a17652b5f80fd94c8c4357138dd306335603fc258faf32dd8463f2b82e2cd_Pine Tree 1.glb",
-          "name": "Pine Tree 1.glb"
-        }
-      },
-      {
-        "file": "assets/Common Tree Dead 1.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Common Tree Dead 1.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Scattered Models/Trees/8bd3ebc3f8f37ddf0ebfa6c839b213714a8c885cb8da182c0e8ebf9d48e63755_Common Tree Dead 1.glb",
-          "name": "Common Tree Dead 1.glb"
-        }
-      },
-      {
         "file": "Meshy_AI_Lone_Evergreen_1109134311_texture.glb",
         "kind": "model3D",
         "metadata": "",
@@ -832,28 +569,6 @@
         "metadata": "",
         "name": "Meshy_AI_Rusty_Night_Shack_1111185318_texture.glb",
         "userAdded": false
-      },
-      {
-        "file": "assets/Cliff Block Slope Walls Rock.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Cliff Block Slope Walls Rock.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Nature/Wall/45f6088e1aa1a0c9a6a7bab101811f04b6211d3e9b2c654eea14b54cd80515d1_Cliff Block Slope Walls Rock.glb",
-          "name": "Cliff Block Slope Walls Rock.glb"
-        }
-      },
-      {
-        "file": "assets/Cliff Corner Inner Top Rock.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Cliff Corner Inner Top Rock.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Nature/Wall/cbc0e02f9b06d34a4e8fff996853b76c0e7016ca7884458e0bc20c786d899597_Cliff Corner Inner Top Rock.glb",
-          "name": "Cliff Corner Inner Top Rock.glb"
-        }
       }
     ]
   },
