@@ -58,16 +58,19 @@
   "variables": [
     {
       "name": "ClimbSpeed",
+      "persistentUuid": "5d54c38f-6133-4ad6-bb50-125eb6357d1a",
       "type": "number",
       "value": 130
     },
     {
       "name": "ClimbStamina",
+      "persistentUuid": "e65998c8-3ed0-4710-a350-3ecae0e09d75",
       "type": "number",
       "value": 100
     },
     {
       "name": "ClimbActive",
+      "persistentUuid": "23ada92b-3892-4e56-90e5-c9e3ae6188fd",
       "type": "number",
       "value": 0
     },
@@ -11772,7 +11775,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Performance FSR + LOD (Adaptive)",
+      "name": "Performance FSR + LOD (Adaptive v3)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
@@ -11845,6 +11848,42 @@
                 "4",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "LOD3D::SetFrustumCulling"
+              },
+              "parameters": [
+                "",
+                "yes",
+                "25",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "LOD3D::SetCullingSafety"
+              },
+              "parameters": [
+                "",
+                "2",
+                "0",
+                "3",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "LOD3D::SetObjectProtection"
+              },
+              "parameters": [
+                "",
+                "1200",
+                "250",
+                "900",
+                "1080",
+                ""
+              ]
             }
           ]
         },
@@ -11859,34 +11898,49 @@
             "const STD=[30,48,60,72,75,90,100,120,144,165,240];",
             "const MAXS=LADDER.length-1;",
             "let C=gdjs.__perfCtl;",
-            "if(!C||C.v!==2){C=gdjs.__perfCtl={v:2,stage:3,last:now,buf:new Float32Array(120),n:0,i:0,ema:16.7,hz:60,hzUp:0,starved:0,settle:45,lastEval:now,lastChange:0,bad:0,good:0,upWait:5000,probe:null,budget:-1,applied:-1,tries:0,scene:null};}",
-            "if(C.scene!==scene){C.scene=scene;C.settle=45;C.applied=-1;C.tries=0;C.n=0;C.i=0;C.bad=0;C.good=0;C.probe=null;C.last=now;return;}",
+            "if(!C||C.v!==3){",
+            "C=gdjs.__perfCtl={v:3,stage:3,last:now,buf:new Float32Array(120),sorted:new Float32Array(120),n:0,i:0,ema:16.7,hz:60,hzUp:0,starved:0,settle:45,lastEval:now,lastChange:0,bad:0,good:0,upWait:5000,probe:null,budget:-1,applied:-1,tries:0,scene:null,layers:0};",
+            "C.eachLayer=function(st,name){",
+            "if(!st||!st.enabled)return;",
+            "const L=LADDER[C.stage];",
+            "C.layers++;",
+            "if(st.dyn&&st.dyn.on)st.dyn.on=false;",
+            "if(Math.abs(st.scale-L.s)>0.004)FSR.setRenderScale(C.scene,name,L.s);",
+            "FSR.setSharpness(C.scene,name,L.sh);",
+            "FSR.setDenoise(C.scene,name,L.dn);",
+            "};",
+            "C.apply=function(){",
+            "const sc=C.scene,L=LADDER[C.stage];",
+            "C.layers=0;",
+            "const m=sc.__fsr1;",
+            "if(m&&m.forEach)m.forEach(C.eachLayer);",
+            "LOD.setBias(sc,L.b);",
+            "LOD.setShadowPixels(sc,L.sp);",
+            "LOD.setTerrainLOD(sc,true,L.te,L.ts,4);",
+            "if(C.layers>0||C.tries>=60)C.applied=C.stage;",
+            "};",
+            "C.change=function(ns,B,t){",
+            "ns=Math.max(0,Math.min(MAXS,ns));",
+            "if(ns===C.stage)return;",
+            "C.stage=ns;C.lastChange=t;C.settle=14;C.n=0;C.i=0;C.bad=0;C.good=0;C.ema=B;C.tries=0;C.apply();",
+            "};",
+            "}",
+            "if(C.scene!==scene){",
+            "C.scene=scene;C.settle=45;C.applied=-1;C.tries=0;C.n=0;C.i=0;C.bad=0;C.good=0;C.probe=null;C.last=now;",
+            "return;",
+            "}",
             "const dt=now-C.last;C.last=now;",
             "if(!(dt>0&&dt<=250)||document.hidden){C.bad=0;C.good=0;return;}",
-            "const apply=function(){",
-            "  const L=LADDER[C.stage];let layers=0;",
-            "  const m=scene.__fsr1;",
-            "  if(m&&m.forEach){m.forEach(function(st,name){",
-            "    if(!st||!st.enabled)return;",
-            "    layers++;",
-            "    if(st.dyn&&st.dyn.on)st.dyn.on=false;",
-            "    if(Math.abs(st.scale-L.s)>0.004)FSR.setRenderScale(scene,name,L.s);",
-            "    FSR.setSharpness(scene,name,L.sh);",
-            "    FSR.setDenoise(scene,name,L.dn);",
-            "  });}",
-            "  LOD.setBias(scene,L.b);",
-            "  LOD.setShadowPixels(scene,L.sp);",
-            "  LOD.setTerrainLOD(scene,true,L.te,L.ts,4);",
-            "  if(layers>0||C.tries>=60)C.applied=C.stage;",
-            "};",
             "if(C.settle>0){C.settle--;if(C.settle>40)return;}",
-            "if(C.applied!==C.stage&&C.tries<150){C.tries++;apply();}",
+            "if(C.applied!==C.stage&&C.tries<150){C.tries++;C.apply();}",
             "if(C.settle>0)return;",
             "C.buf[C.i]=dt;C.i=(C.i+1)%120;if(C.n<120)C.n++;",
             "C.ema+=(dt-C.ema)*0.08;",
             "if(now-C.lastEval<250||C.n<40)return;",
             "C.lastEval=now;",
-            "const len=C.n,a=C.buf.slice(0,len).sort();",
+            "const len=C.n;",
+            "C.sorted.set(C.buf.subarray(0,len));",
+            "const a=C.sorted.subarray(0,len);a.sort();",
             "const p95=a[Math.min(len-1,Math.floor(len*0.95))],p10=a[Math.floor(len*0.1)];",
             "let cand=STD[0],bd=1e9;const raw=1000/Math.max(p10,2);",
             "for(let k=0;k<STD.length;k++){const d=Math.abs(STD[k]-raw);if(d<bd){bd=d;cand=STD[k];}}",
@@ -11896,14 +11950,13 @@
             "if(over){C.bad++;C.good=0;if(C.stage>=MAXS){C.starved+=250;if(C.starved>8000){C.hz=Math.max(30,Math.min(C.hz,cand));C.starved=0;}}}",
             "else{C.bad=0;C.starved=0;if(healthy)C.good+=250;}",
             "if(C.probe&&now-C.probe.t>8000){C.probe=null;C.upWait=Math.max(5000,C.upWait*0.7);}",
-            "const change=function(ns){ns=Math.max(0,Math.min(MAXS,ns));if(ns===C.stage)return;C.stage=ns;C.lastChange=now;C.settle=14;C.n=0;C.i=0;C.bad=0;C.good=0;C.ema=B;C.tries=0;apply();};",
             "if(C.bad>=(severe?1:2)&&C.stage<MAXS&&now-C.lastChange>700){",
-            "  if(C.probe&&now-C.probe.t<6000)C.upWait=Math.min(C.upWait*2,60000);",
-            "  C.probe=null;",
-            "  change(C.stage+(severe?2:1));",
+            "if(C.probe&&now-C.probe.t<6000)C.upWait=Math.min(C.upWait*2,60000);",
+            "C.probe=null;",
+            "C.change(C.stage+(severe?2:1),B,now);",
             "}else if(C.good>=C.upWait&&C.stage>0&&now-C.lastChange>3000){",
-            "  C.probe={t:now};",
-            "  change(C.stage-1);",
+            "C.probe={t:now};",
+            "C.change(C.stage-1,B,now);",
             "}",
             "const ms=over?0.4:(LOD.isBusy(scene)?1.5:1);",
             "if(ms!==C.budget){LOD.setBudget(scene,ms);C.budget=ms;}",
@@ -11915,6 +11968,11 @@
         }
       ],
       "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ],
   "layers": [
