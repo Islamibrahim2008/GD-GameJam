@@ -104,6 +104,21 @@
   ],
   "variables": [
     {
+      "name": "EndMusicVol",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EndT",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EndPhase",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "EmberLightPull",
       "persistentUuid": "10212ca2-b390-4cf3-86d6-d8042c9aa103",
       "type": "number",
@@ -13427,6 +13442,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Shelter Exit Quake (Note + Cute + Carpet)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -15403,6 +15419,7 @@
               ]
             },
             {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -16901,73 +16918,455 @@
       "parameters": []
     },
     {
-      "aiGeneratedEventId": "01M78SBKDK2RYCQJRVQ76P9EDC",
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "disabled": true,
-      "folded": true,
-      "name": "Monster Chase HUD (JS DOM)",
+      "name": "the end",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "aiGeneratedEventId": "01M79G36M80GXVSATXWNEHG70X",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "DayPhase",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EndPhase",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EndPhase",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EndT",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EndMusicVol",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "PlayerState",
+                "=",
+                "\"Cinematic\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "IntroDone",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSoundChannelVolume"
+              },
+              "parameters": [
+                "",
+                "9",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"hand\""
+              ]
+            },
+            {
+              "type": {
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"HUD\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlayMusicOnChannel"
+              },
+              "parameters": [
+                "",
+                "Infinite Peace.aac",
+                "20",
+                "yes",
+                "0",
+                "1"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M79G36M80GXVSATXWNEHG70X",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EndPhase",
+                ">=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetSoundChannelVolume"
+              },
+              "parameters": [
+                "",
+                "20",
+                "=",
+                "EndMusicVol"
+              ]
+            }
+          ]
+        },
+        {
+          "aiGeneratedEventId": "01M79G36M80GXVSATXWNEHG70X",
           "type": "BuiltinCommonInstructions::JsCode",
           "inlineCode": [
-            "  if (runtimeScene.__chaseHUD) return;",
-            "  runtimeScene.__chaseHUD = true;",
-            "  function host() { try { const d = runtimeScene.getGame().getRenderer().getDomElementContainer(); if (d) return d; } catch (e) {} return document.body; }",
-            "  const H = host(), POS = H === document.body ? \"fixed\" : \"absolute\";",
-            "  const css = document.createElement(\"style\");",
-            "  css.textContent = `",
-            "  .ch{position:${POS};left:0;right:0;z-index:99990;pointer-events:none;user-select:none;font-family:Arial,sans-serif}",
-            "  .ch-warn{position:absolute;left:50%;top:18px;transform:translateX(-50%) scale(.9);text-align:center;opacity:0;transition:opacity .3s ease,transform .3s ease}",
-            "  .ch-warn.on{opacity:1;transform:translateX(-50%) scale(1)}",
-            "  .ch-title{font-weight:900;font-size:42px;letter-spacing:.12em;color:#ff2d2d;text-shadow:0 0 18px rgba(255,0,0,.8),0 2px 8px #000;animation:chPulse .7s ease-in-out infinite}",
-            "  @keyframes chPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}",
-            "  .ch-sub{margin-top:4px;font-weight:700;font-size:20px;color:#ffd9d9;text-shadow:0 2px 6px #000}",
-            "  .ch-dist{margin-top:6px;display:inline-block;font-weight:900;font-size:18px;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,60,60,.7);border-radius:999px;padding:4px 14px}",
-            "  .ch-hide{position:absolute;left:50%;top:18px;transform:translateX(-50%);text-align:center;opacity:0;transition:opacity .4s ease}",
-            "  .ch-hide.on{opacity:1}",
-            "  .ch-hide-txt{font-weight:800;font-size:22px;color:#9fe8ff;text-shadow:0 0 12px rgba(80,200,255,.6),0 2px 6px #000}",
-            "  .ch-vig{position:${POS};left:0;right:0;top:0;bottom:0;pointer-events:none;opacity:0;transition:opacity .3s ease;background:radial-gradient(ellipse at center,transparent 55%,rgba(255,0,0,.55) 100%)}",
-            "  .ch-vig.on{opacity:1;animation:chVig .8s ease-in-out infinite}",
-            "  @keyframes chVig{0%,100%{opacity:.55}50%{opacity:1}}",
-            "  `;",
-            "  document.head.appendChild(css);",
-            "  const warn = document.createElement(\"div\");",
-            "  warn.className = \"ch ch-warn\";",
-            "  warn.innerHTML = '<div class=\"ch-title\">RUN! اهرب!</div><div class=\"ch-sub\">الوحش وراك!</div><div class=\"ch-dist\">--m</div>';",
-            "  const distEl = warn.querySelector(\".ch-dist\");",
-            "  const hide = document.createElement(\"div\");",
-            "  hide.className = \"ch ch-hide\";",
-            "  hide.innerHTML = '<div class=\"ch-hide-txt\">استخبى! ضيعته... بس لسه قريب</div>';",
-            "  const vig = document.createElement(\"div\");",
-            "  vig.className = \"ch-vig\";",
-            "  H.appendChild(warn); H.appendChild(hide); H.appendChild(vig);",
-            "  function cleanup() { try { warn.remove(); hide.remove(); vig.remove(); css.remove(); } catch (e) {} runtimeScene.__chaseHUD = null; }",
-            "  function tick() {",
-            "    try { if (runtimeScene.getGame().getSceneStack().getCurrentScene() !== runtimeScene) { cleanup(); return; } } catch (e) {}",
-            "    let released = 0, state = \"\", dist = 9999;",
-            "    try {",
-            "      const V = runtimeScene.getVariables();",
-            "      if (V.has(\"ZombieReleased\")) released = V.get(\"ZombieReleased\").getAsNumber();",
-            "      if (V.has(\"MonsterState\")) state = V.get(\"MonsterState\").getAsString();",
-            "      if (V.has(\"DistToPlayer\")) dist = V.get(\"DistToPlayer\").getAsNumber();",
-            "    } catch (e) {}",
-            "    if (!released) {",
-            "      warn.classList.remove(\"on\"); hide.classList.remove(\"on\"); vig.classList.remove(\"on\");",
-            "    } else if (state === \"Chase\") {",
-            "      warn.classList.add(\"on\"); hide.classList.remove(\"on\");",
-            "      try { distEl.textContent = Math.max(0, Math.round(dist)) + \"m\"; } catch (e) {}",
-            "      if (dist < 600) vig.classList.add(\"on\"); else vig.classList.remove(\"on\");",
-            "    } else {",
-            "      warn.classList.remove(\"on\"); vig.classList.remove(\"on\"); hide.classList.add(\"on\");",
+            "(() => {",
+            "  const V = runtimeScene.getVariables();",
+            "  const phase = V.has(\"EndPhase\") ? V.get(\"EndPhase\").getAsNumber() : 0;",
+            "  if (phase < 1) return;",
+            "  const S = runtimeScene.__endCine || (runtimeScene.__endCine = { t: 0, last: performance.now(), built: false, done: false });",
+            "  if (S.done) return;",
+            "  const now = performance.now();",
+            "  const dt = Math.min(0.05, (now - S.last) / 1000); S.last = now;",
+            "  S.t += dt;",
+            "  const t = S.t;",
+            "  if (V.has(\"EndT\")) V.get(\"EndT\").setNumber(t);",
+            "",
+            "  /* ---------------- helpers ---------------- */",
+            "  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));",
+            "  const c01 = (x) => clamp(x, 0, 1);",
+            "  const easeIO = (x) => { x = c01(x); return 0.5 - 0.5 * Math.cos(Math.PI * x); };",
+            "  const smoother = (x) => { x = c01(x); return x * x * x * (x * (x * 6 - 15) + 10); };",
+            "  const easeOut = (x) => 1 - Math.pow(1 - c01(x), 3);",
+            "  const lerp = (a, b, k) => a + (b - a) * k;",
+            "  const win = (tt, a, b, c, d) => easeIO((tt - a) / (b - a)) * (1 - easeIO((tt - c) / (d - c)));",
+            "  const bump = (tt, a, b, p) => p * Math.pow(Math.sin(Math.PI * c01((tt - a) / (b - a))), 2);",
+            "",
+            "  /* ================= ONE-TIME BUILD ================= */",
+            "  if (!S.built) {",
+            "    S.built = true;",
+            "    const game = runtimeScene.getGame();",
+            "    const layer0 = runtimeScene.getLayer(\"\");",
+            "",
+            "    /* ---------- الإعدادات (عدّل هنا) ---------- */",
+            "    const C = S.cfg = {",
+            "      NEXT_SCENE: 'main menu',      // المشهد اللي يروحله بعد الكريديتس ('' = يفضل على الأسود)",
+            "      WORLD_TIME_SCALE: 0,          // 0 = العالم متجمد، 0.1 = حركة شبه ساكنة (الشجر والغيوم)",
+            "      RISE: 1100, DRIFT: 220,       // ارتفاع الكاميرا وانجرافها",
+            "      SUN_AZ: 70, SUN_EL: 48,       // نفس قيم الشمس (Directional light) عندك",
+            "      FOV_END: 58,",
+            "      MUSIC_VOL: 72,",
+            "      SKIP_AFTER: 10,               // بعد كام ثانية يقدر اللاعب يتخطى بـ ESC",
+            "      LINES: [{ a: 10, text: 'the night is over' }],   // أسطر شعرية (ممكن تزود)",
+            "      END_TEXT: 'THE END',",
+            "      CREDITS: [                    // اعمله [] لو مش عايز كريديتس",
+            "        { role: 'developer', name: 'islam ibrahim' },",
+            "        { role: 'tester', name: 'seif mostafa' },",
+            "        { role: 'writer', name: 'Kirby' },",
+            "        { role: '3d design', name: 'rax' },",
+            "      ],",
+            "      TITLE: \"IT'S ALL UP TO YOU, EMBER\",",
+            "    };",
+            "    C.T = { INTRO: 3, BARS: 3.5, TURN_A: 4, TURN_B: 40, RISE: 62, GLARE_A: 6, GLARE_B: 34,",
+            "            CLOSE_A: 47, CLOSE_B: 56, END_A: 59, END_HOLD: 69, END_OUT: 73, BLOCK: 5.6 };",
+            "    C.T.CRED_A = C.T.END_OUT + 1.8;",
+            "    C.T.TITLE_A = C.T.CRED_A + C.CREDITS.length * C.T.BLOCK + 0.6;",
+            "    C.T.TITLE_B = C.T.TITLE_A + 8;",
+            "    S.leaveAt = C.T.TITLE_B + 2.2;",
+            "",
+            "    /* ---------- الكاميرا ---------- */",
+            "    runtimeScene.getTimeManager().setTimeScale(C.WORLD_TIME_SCALE);",
+            "    S.x0 = layer0.getCameraX(); S.y0 = layer0.getCameraY(); S.z0 = layer0.getCameraZ(null);",
+            "    S.yaw0 = layer0.getCameraRotation(); S.pitch0 = layer0.getCameraRotationX();",
+            "    S.fov0 = layer0.getCamera3DFieldOfView();",
+            "",
+            "    /* ---------- DOM ---------- */",
+            "    let H; try { H = game.getRenderer().getDomElementContainer(); } catch (e) {}",
+            "    H = H || document.body; S.H = H;",
+            "    const css = document.createElement(\"style\");",
+            "    css.textContent = `",
+            "      .ec-root{position:${H === document.body ? 'fixed' : 'absolute'};inset:0;overflow:hidden;pointer-events:none;z-index:99990;--u:1px;",
+            "        font-family:'Cinzel',Georgia,'Times New Roman',serif;color:#f6ecd2}",
+            "      .ec-root *{box-sizing:border-box}",
+            "      .ec-grade{position:absolute;inset:0;opacity:0;mix-blend-mode:soft-light;",
+            "        background:linear-gradient(180deg,rgba(255,170,90,.55) 0%,rgba(255,200,140,.35) 45%,rgba(255,150,80,.55) 100%)}",
+            "      .ec-rays{position:absolute;inset:-30%;opacity:0;mix-blend-mode:screen;transform-origin:50% 40%;",
+            "        background:repeating-conic-gradient(from 0deg at 50% 40%,rgba(255,238,200,0) 0deg,rgba(255,238,200,.2) 5deg,rgba(255,238,200,0) 11deg,rgba(255,238,200,0) 17deg);",
+            "        -webkit-mask-image:radial-gradient(circle at 50% 40%,#000 0%,rgba(0,0,0,.55) 28%,transparent 62%);",
+            "        mask-image:radial-gradient(circle at 50% 40%,#000 0%,rgba(0,0,0,.55) 28%,transparent 62%)}",
+            "      .ec-glare{position:absolute;inset:0;opacity:0;mix-blend-mode:screen;",
+            "        background:radial-gradient(circle at 50% 34%,rgba(255,246,220,.95) 0%,rgba(255,228,170,.5) 18%,rgba(255,210,140,.18) 38%,rgba(255,200,120,0) 62%)}",
+            "      .ec-streak{position:absolute;left:5%;width:90%;top:34%;height:calc(var(--u)*6);transform:translateY(-50%);opacity:0;mix-blend-mode:screen;",
+            "        background:radial-gradient(ellipse at center,rgba(190,215,255,.95) 0%,rgba(120,170,255,.35) 38%,rgba(120,170,255,0) 72%);filter:blur(calc(var(--u)*3))}",
+            "      .ec-motes,.ec-grain{position:absolute;inset:0;width:100%;height:100%}",
+            "      .ec-motes{mix-blend-mode:screen}",
+            "      .ec-grain{mix-blend-mode:overlay;opacity:.1;image-rendering:pixelated}",
+            "      .ec-blur{position:absolute;inset:0}",
+            "      .ec-vig{position:absolute;inset:0}",
+            "      .ec-lid{position:absolute;left:-10%;width:120%;height:58%;background:#000}",
+            "      .ec-lid.top{top:0;border-radius:0 0 50% 50%/0 0 18% 18%;transform:translateY(-101%);box-shadow:0 26px 60px 18px rgba(0,0,0,.95)}",
+            "      .ec-lid.bot{bottom:0;border-radius:50% 50% 0 0/18% 18% 0 0;transform:translateY(101%);box-shadow:0 -26px 60px 18px rgba(0,0,0,.95)}",
+            "      .ec-bar{position:absolute;left:0;right:0;height:0;background:#000}",
+            "      .ec-bar.t{top:0}.ec-bar.b{bottom:0}",
+            "      .ec-t{position:absolute;left:0;right:0;text-align:center;opacity:0;white-space:nowrap}",
+            "      .ec-sub{top:56%;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;color:#d8cba8;",
+            "        font-size:calc(var(--u)*30);letter-spacing:.2em;text-shadow:0 1px 8px rgba(0,0,0,.9)}",
+            "      .ec-end{top:41%;font-weight:500;font-size:calc(var(--u)*84);text-indent:.55em;text-shadow:0 0 28px rgba(255,220,160,.5),0 2px 10px rgba(0,0,0,.8)}",
+            "      .ec-line{position:absolute;left:50%;top:56%;width:calc(var(--u)*220);height:1px;margin-left:calc(var(--u)*-110);opacity:0;transform-origin:center;",
+            "        background:linear-gradient(90deg,transparent,rgba(246,236,210,.8),transparent)}",
+            "      .ec-cr{top:44%}",
+            "      .ec-cr .r{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:calc(var(--u)*26);letter-spacing:.32em;color:#cdbf9b;text-transform:uppercase;margin-bottom:calc(var(--u)*18)}",
+            "      .ec-cr .n{font-weight:500;font-size:calc(var(--u)*58);letter-spacing:.26em;text-indent:.26em;text-transform:uppercase;text-shadow:0 0 20px rgba(255,220,160,.35)}",
+            "      .ec-title{top:46%;font-weight:500;font-size:calc(var(--u)*50);letter-spacing:.4em;text-indent:.4em;text-shadow:0 0 24px rgba(255,220,160,.4)}",
+            "      .ec-hint{position:absolute;right:3.2%;bottom:calc(var(--u)*22);font-family:'Cormorant Garamond',Georgia,serif;font-size:calc(var(--u)*20);letter-spacing:.2em;",
+            "        color:#cdbf9b;opacity:0;pointer-events:auto;cursor:pointer;text-transform:uppercase}",
+            "      .ec-black{position:absolute;inset:0;background:#000;opacity:1}",
+            "    `;",
+            "    document.head.appendChild(css); S.css = css;",
+            "    const font = document.createElement(\"link\"); font.rel = \"stylesheet\";",
+            "    font.href = \"https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:ital@1&display=swap\";",
+            "    document.head.appendChild(font); S.font = font;",
+            "",
+            "    const lines = C.LINES.map((l, i) => `<div class=\"ec-t ec-sub\" data-i=\"${i}\"></div>`).join('');",
+            "    const root = document.createElement(\"div\"); root.className = \"ec-root\";",
+            "    root.innerHTML = `",
+            "      <div class=\"ec-grade\"></div><div class=\"ec-rays\"></div><div class=\"ec-glare\"></div><div class=\"ec-streak\"></div>",
+            "      <canvas class=\"ec-motes\"></canvas><div class=\"ec-blur\"></div><div class=\"ec-vig\"></div><canvas class=\"ec-grain\"></canvas>",
+            "      <div class=\"ec-lid top\"></div><div class=\"ec-lid bot\"></div>",
+            "      <div class=\"ec-bar t\"></div><div class=\"ec-bar b\"></div>",
+            "      ${lines}",
+            "      <div class=\"ec-t ec-end\"></div><div class=\"ec-line\"></div>",
+            "      <div class=\"ec-t ec-cr\"><div class=\"r\"></div><div class=\"n\"></div></div>",
+            "      <div class=\"ec-t ec-title\"></div>",
+            "      <div class=\"ec-hint\">[ESC] skip</div>",
+            "      <div class=\"ec-black\"></div>`;",
+            "    H.appendChild(root); S.root = root;",
+            "    const q = (s) => root.querySelector(s);",
+            "    S.el = { grade: q('.ec-grade'), rays: q('.ec-rays'), glare: q('.ec-glare'), streak: q('.ec-streak'), motes: q('.ec-motes'),",
+            "             blur: q('.ec-blur'), vig: q('.ec-vig'), grain: q('.ec-grain'), lidT: q('.ec-lid.top'), lidB: q('.ec-lid.bot'),",
+            "             barT: q('.ec-bar.t'), barB: q('.ec-bar.b'), end: q('.ec-end'), line: q('.ec-line'), cr: q('.ec-cr'),",
+            "             crR: q('.ec-cr .r'), crN: q('.ec-cr .n'), title: q('.ec-title'), hint: q('.ec-hint'), black: q('.ec-black'),",
+            "             subs: Array.from(root.querySelectorAll('.ec-sub')) };",
+            "    S.el.end.textContent = C.END_TEXT; S.el.title.textContent = C.TITLE;",
+            "    S.el.subs.forEach((e, i) => { e.textContent = C.LINES[i].text; });",
+            "",
+            "    /* grain */",
+            "    const gc = S.el.grain; gc.width = 192; gc.height = 108; S.gx = gc.getContext('2d'); S.grain = []; S.fn = 0;",
+            "    for (let f = 0; f < 4; f++) {",
+            "      const im = S.gx.createImageData(192, 108);",
+            "      for (let i = 0; i < im.data.length; i += 4) { const v = (Math.random() * 255) | 0; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }",
+            "      S.grain.push(im);",
             "    }",
-            "    requestAnimationFrame(tick);",
+            "    /* dust motes (bokeh) */",
+            "    S.mg = S.el.motes.getContext('2d');",
+            "    const spr = document.createElement('canvas'); spr.width = spr.height = 64;",
+            "    const sg = spr.getContext('2d'), gr = sg.createRadialGradient(32, 32, 0, 32, 32, 32);",
+            "    gr.addColorStop(0, 'rgba(255,236,200,1)'); gr.addColorStop(.45, 'rgba(255,225,170,.55)'); gr.addColorStop(1, 'rgba(255,210,150,0)');",
+            "    sg.fillStyle = gr; sg.fillRect(0, 0, 64, 64); S.spr = spr;",
+            "    S.motes = [];",
+            "    for (let i = 0; i < 46; i++) S.motes.push({ x: Math.random(), y: Math.random(), r: 5 + Math.random() * 32, vy: .004 + Math.random() * .012,",
+            "                                                sw: .004 + Math.random() * .012, ph: Math.random() * 6.28, a: .06 + Math.random() * .3 });",
+            "",
+            "    /* ---------- المغادرة ---------- */",
+            "    const resolve = (wanted) => {",
+            "      if (!wanted) return null;",
+            "      let names = []; try { names = game.getGameData().layouts.map((l) => l.name); } catch (e) {}",
+            "      if (!names.length) return wanted;",
+            "      const norm = (s) => String(s).toLowerCase().replace(/[\\s_\\-]+/g, '');",
+            "      const hit = names.find((n) => n === wanted) || names.find((n) => norm(n) === norm(wanted));",
+            "      if (!hit) console.error('[End] Scene \"' + wanted + '\" not found. Available scenes:', names);",
+            "      return hit || null;",
+            "    };",
+            "    S.cleanup = () => {",
+            "      document.removeEventListener('keydown', S.onKey, true);",
+            "      S.root.style.transition = 'opacity .8s'; S.root.style.opacity = '0';",
+            "      setTimeout(() => { try { S.root.remove(); S.css.remove(); S.font.remove(); } catch (e) {} }, 900);",
+            "    };",
+            "    S.go = () => {",
+            "      try { runtimeScene.getTimeManager().setTimeScale(1); } catch (e) {}",
+            "      const next = resolve(C.NEXT_SCENE);",
+            "      if (!next) return;                       // يفضل على الأسود",
+            "      runtimeScene.requestChange(gdjs.RuntimeScene.REPLACE_SCENE, next);",
+            "      setTimeout(() => {",
+            "        try { const st = game.getSceneStack(); if (st.getCurrentScene() === runtimeScene) st.replace(next, false); } catch (e) { console.error('[End] scene change failed', e); }",
+            "      }, 400);",
+            "      setTimeout(S.cleanup, 900);",
+            "    };",
+            "    S.onKey = (e) => {",
+            "      if (S.t < C.SKIP_AFTER) return;",
+            "      if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') S.leaveAt = Math.min(S.leaveAt, S.t + 2.2);",
+            "    };",
+            "    document.addEventListener('keydown', S.onKey, true);",
+            "    S.el.hint.addEventListener('click', () => { if (S.t >= C.SKIP_AFTER) S.leaveAt = Math.min(S.leaveAt, S.t + 2.2); });",
             "  }",
-            "  requestAnimationFrame(tick);"
+            "",
+            "  const C = S.cfg, T = C.T, E = S.el;",
+            "  const layer = runtimeScene.getLayer(\"\");",
+            "",
+            "  /* ================= LEAVE / FADES ================= */",
+            "  const leaveFade = c01((t - (S.leaveAt - 2.2)) / 2.2);",
+            "  if (t >= S.leaveAt && !S.done) { S.done = true; S.go(); }",
+            "",
+            "  /* ================= MUSIC ================= */",
+            "  if (V.has(\"EndMusicVol\")) V.get(\"EndMusicVol\").setNumber(C.MUSIC_VOL * easeIO(t / 9) * (1 - leaveFade));",
+            "",
+            "  /* ================= CAMERA ================= */",
+            "  const rad = Math.PI / 180;",
+            "  const kRise = smoother(t / T.RISE);",
+            "  const kTurn = smoother((t - T.TURN_A) / (T.TURN_B - T.TURN_A));",
+            "  const drift = C.DRIFT * kRise;",
+            "  const dYaw = ((C.SUN_AZ - S.yaw0 + 540) % 360) - 180;",
+            "  const calm = 1 - kTurn;",
+            "  layer.setCameraX(S.x0 + Math.cos(C.SUN_AZ * rad) * drift);",
+            "  layer.setCameraY(S.y0 + Math.sin(C.SUN_AZ * rad) * drift);",
+            "  layer.setCameraZ(S.z0 + C.RISE * kRise, null);",
+            "  layer.setCameraRotation(S.yaw0 + dYaw * kTurn + Math.sin(t * 0.35) * 0.7 * calm);",
+            "  layer.setCameraRotationX(S.pitch0 + (C.SUN_EL - S.pitch0) * kTurn + Math.sin(t * 0.5) * 0.4 * calm);",
+            "  layer.setCamera3DFieldOfView(S.fov0 + (C.FOV_END - S.fov0) * smoother(t / T.RISE));",
+            "",
+            "  /* ================= EYELIDS (نعاس بطيء ثم غلق نهائي) ================= */",
+            "  const baseLid = 0.22 * easeIO((t - 26) / 22);",
+            "  const blinks = bump(t, 31, 33.6, .42) + bump(t, 37.5, 40.3, .5) + bump(t, 43, 46, .6);",
+            "  const finalClose = easeIO((t - T.CLOSE_A) / (T.CLOSE_B - T.CLOSE_A));",
+            "  const c = Math.max(Math.min(baseLid + blinks, .88), finalClose);",
+            "",
+            "  /* ================= LAYOUT ================= */",
+            "  const W = S.H.clientWidth || 1920, Hh = S.H.clientHeight || 1080, u = Hh / 1080;",
+            "  if (u !== S.u) { S.u = u; S.root.style.setProperty('--u', u + 'px'); }",
+            "  const barPx = Math.max(0, (Hh - W / 2.39) / 2) * easeIO(t / T.BARS);",
+            "  E.barT.style.height = barPx + 'px'; E.barB.style.height = barPx + 'px';",
+            "",
+            "  /* ================= LIGHT ================= */",
+            "  const glareIn = easeIO((t - T.GLARE_A) / (T.GLARE_B - T.GLARE_A));",
+            "  const open = 1 - c;",
+            "  const breath = Math.sin(t * 2 * Math.PI / 5.2) * 0.5 + 0.5;",
+            "  E.grade.style.opacity = String(0.7 * easeIO((t - 6) / 30) * open);",
+            "  E.glare.style.opacity = String(clamp(glareIn * open * (0.94 + 0.06 * Math.sin(t * 0.8)), 0, 0.85));",
+            "  E.glare.style.transform = 'scale(' + (1 + 0.12 * glareIn).toFixed(3) + ')';",
+            "  E.rays.style.opacity = String(0.55 * glareIn * open);",
+            "  E.rays.style.transform = 'rotate(' + (t * 0.35).toFixed(2) + 'deg)';",
+            "  E.streak.style.opacity = String(0.6 * Math.pow(glareIn, 1.5) * open);",
+            "  E.streak.style.transform = 'translateY(-50%) scaleX(' + (0.6 + 0.4 * glareIn).toFixed(3) + ')';",
+            "  const vs = 54 - 24 * c - 3 * breath;",
+            "  E.vig.style.background = 'radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) ' + vs.toFixed(1) + '%, rgba(0,0,0,' + (0.35 + 0.5 * c).toFixed(2) + ') 100%)';",
+            "  const blurPx = 7 * c * c;",
+            "  const bf = blurPx > 0.2 ? 'blur(' + blurPx.toFixed(2) + 'px)' : 'none';",
+            "  E.blur.style.backdropFilter = bf; E.blur.style.webkitBackdropFilter = bf;",
+            "  E.lidT.style.transform = 'translateY(' + (-101 + 101 * c) + '%)';",
+            "  E.lidB.style.transform = 'translateY(' + (101 - 101 * c) + '%)';",
+            "",
+            "  /* ================= MOTES ================= */",
+            "  const cv = E.motes;",
+            "  if (cv.width !== (W | 0) || cv.height !== (Hh | 0)) { cv.width = W | 0; cv.height = Hh | 0; }",
+            "  const g = S.mg; g.clearRect(0, 0, cv.width, cv.height);",
+            "  const mk = easeIO((t - 4) / 8) * open * (1 - leaveFade);",
+            "  if (mk > 0.003) {",
+            "    for (const p of S.motes) {",
+            "      p.y -= p.vy * dt; p.x += Math.sin(t * 0.25 + p.ph) * p.sw * dt;",
+            "      if (p.y < -0.1) { p.y = 1.1; p.x = Math.random(); }",
+            "      const a = p.a * (0.6 + 0.4 * Math.sin(t * 0.6 + p.ph * 2)) * mk;",
+            "      if (a < 0.004) continue;",
+            "      const r = p.r * u; g.globalAlpha = a;",
+            "      g.drawImage(S.spr, p.x * cv.width - r, p.y * cv.height - r, r * 2, r * 2);",
+            "    }",
+            "    g.globalAlpha = 1;",
+            "  }",
+            "  if ((S.fn++ % 3) === 0) S.gx.putImageData(S.grain[((S.fn / 3) | 0) % 4], 0, 0);",
+            "",
+            "  /* ================= TEXT ================= */",
+            "  C.LINES.forEach((l, i) => {",
+            "    const o = win(t, l.a, l.a + 4, l.a + 7, l.a + 11) * open;",
+            "    E.subs[i].style.opacity = String(c01(o) * 0.9);",
+            "    E.subs[i].style.transform = 'translateY(' + (10 * (1 - easeIO((t - l.a) / 5))).toFixed(2) + 'px)';",
+            "  });",
+            "  // THE END",
+            "  const eo = win(t, T.END_A, T.END_A + 4, T.END_HOLD, T.END_OUT);",
+            "  E.end.style.opacity = String(c01(eo));",
+            "  E.end.style.letterSpacing = lerp(0.95, 0.55, easeOut((t - T.END_A) / 10)).toFixed(3) + 'em';",
+            "  E.end.style.filter = 'blur(' + (14 * (1 - easeOut((t - T.END_A) / 4))).toFixed(2) + 'px)';",
+            "  E.line.style.opacity = String(c01(eo) * 0.8);",
+            "  E.line.style.transform = 'scaleX(' + easeOut((t - T.END_A - 2) / 4).toFixed(3) + ')';",
+            "  // credits (واحد واحد، فيد هادي)",
+            "  const ci = Math.floor((t - T.CRED_A) / T.BLOCK);",
+            "  if (ci >= 0 && ci < C.CREDITS.length) {",
+            "    if (S.ci !== ci) { S.ci = ci; E.crR.textContent = C.CREDITS[ci].role; E.crN.textContent = C.CREDITS[ci].name; }",
+            "    const a0 = T.CRED_A + ci * T.BLOCK, lt = t - a0;",
+            "    E.cr.style.opacity = String(c01(win(t, a0, a0 + 1.4, a0 + T.BLOCK - 1.6, a0 + T.BLOCK)));",
+            "    E.cr.style.transform = 'translateY(' + (12 * (1 - easeOut(lt / 2))).toFixed(2) + 'px)';",
+            "  } else E.cr.style.opacity = '0';",
+            "  // title card",
+            "  E.title.style.opacity = String(c01(win(t, T.TITLE_A, T.TITLE_A + 2.4, T.TITLE_B - 2.4, T.TITLE_B)));",
+            "  E.title.style.filter = 'blur(' + (10 * (1 - easeOut((t - T.TITLE_A) / 3))).toFixed(2) + 'px)';",
+            "  // skip hint",
+            "  E.hint.style.opacity = String(0.4 * easeIO((t - C.SKIP_AFTER) / 2) * (1 - leaveFade));",
+            "  // black (فيد دخول بطيء + فيد خروج)",
+            "  E.black.style.opacity = String(Math.max(1 - easeIO((t - 0.2) / T.INTRO), leaveFade).toFixed(3));",
+            "})()"
           ],
           "parameterObjects": "",
           "useStrict": true,

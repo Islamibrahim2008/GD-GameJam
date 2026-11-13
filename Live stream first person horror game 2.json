@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "main menu",
   "gdVersion": {
     "build": 287,
     "major": 5,
@@ -749,6 +749,16 @@
         "kind": "audio",
         "metadata": "{\"extension\":\"\"}",
         "name": "freesound_community-dark-talking-78916.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Infinite Peace.aac",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Infinite Peace.aac",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -1625,6 +1635,42 @@
       "name": "quakeholesverify",
       "type": "gameplay",
       "source": "await harness.goToScene('Game Scene'); await harness.stepFrames(5); harness.setSceneVariable('ExitQuakeDone', 1); harness.setSceneVariable('StormPhase', 4); const started = await harness.stepUntil(() => harness.getSceneVariable('QuakeStarted')?.value === 1, {maxFrames: 3600}); harness.assert(started, 'Quake started'); const holed = await harness.stepUntil(() => { const c = harness.getSceneVariable('CrackCount'); return c && c.value >= 1; }, {maxFrames: 1200}); harness.assert(holed, 'Hole carved CrackCount>=1'); await harness.stepFrames(60); harness.assert(true, 'Quake runs without crash'); await harness.takeScreenshot('quake-holes');"
+    },
+    {
+      "description": "Sunrise ending: trigger fires at DayPhase=2, camera rises toward the sun, the end text appears, eyelids close.",
+      "name": "sunrise-ending-cinematic",
+      "type": "gameplay",
+      "source": [
+        "await harness.goToScene('Game Scene');",
+        "await harness.stepFrames(10);",
+        "// Skip the long rocket intro and jump straight to the post-quake day",
+        "harness.setSceneVariable('IntroPhase', 7);",
+        "harness.setSceneVariable('IntroDone', 1);",
+        "harness.setSceneVariable('PlayerState', 'Idle');",
+        "harness.setSceneVariable('DayPhase', 2);",
+        "harness.setSceneVariable('EndPhase', 0);",
+        "await harness.stepFrames(5);",
+        "const p1 = harness.getSceneVariable('EndPhase');",
+        "harness.assert(p1 && p1.value === 1, 'Ending trigger fired (EndPhase=1) when DayPhase=2, got ' + JSON.stringify(p1));",
+        "const cam0 = harness.getCameraState('');",
+        "harness.assert(!!cam0, 'Camera state readable');",
+        "// Step ~7 seconds: camera should be rising and turning toward the sun",
+        "await harness.stepFrames(420);",
+        "const cam1 = harness.getCameraState('');",
+        "harness.assert(cam1.z > cam0.z + 200, 'Camera rose high (z ' + cam0.z.toFixed(0) + ' -> ' + cam1.z.toFixed(0) + ')');",
+        "const t = harness.getSceneVariable('EndT');",
+        "harness.assert(t && t.value > 6, 'EndT advanced past 6s, got ' + JSON.stringify(t));",
+        "await harness.takeScreenshot('ending-mid-rise');",
+        "// Step to ~14s: text visible, first blink happening",
+        "await harness.stepFrames(420);",
+        "await harness.takeScreenshot('ending-text-blink');",
+        "// Step to ~22s: eyes fully closed",
+        "await harness.stepFrames(500);",
+        "await harness.takeScreenshot('ending-eyes-closed');",
+        "const t2 = harness.getSceneVariable('EndT');",
+        "harness.assert(t2 && t2.value > 20, 'Cinematic reached final phase, EndT=' + JSON.stringify(t2));",
+        ""
+      ]
     }
   ],
   "testsFolderStructure": {
@@ -1692,6 +1738,9 @@
       },
       {
         "itemName": "quakeholesverify"
+      },
+      {
+        "itemName": "sunrise-ending-cinematic"
       }
     ]
   },
