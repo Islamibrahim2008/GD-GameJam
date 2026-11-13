@@ -8,6 +8,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "00 — Init (physics + anim names)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -135,6 +136,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "01 — Brain (Perception / Hearing / Memory / FSM)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -15399,7 +15401,7 @@
           "parameters": [
             "ZombieReleased",
             "=",
-            "0"
+            "1"
           ]
         },
         {
@@ -15409,7 +15411,7 @@
           "parameters": [
             "ZombieSoundOn",
             "=",
-            "0"
+            "1"
           ]
         },
         {
@@ -15419,23 +15421,7 @@
           "parameters": [
             "ZombieFlick",
             "=",
-            "0"
-          ]
-        },
-        {
-          "type": {
-            "value": "Hide"
-          },
-          "parameters": [
-            "Zombie"
-          ]
-        },
-        {
-          "type": {
-            "value": "Hide"
-          },
-          "parameters": [
-            "ZombieGlow"
+            "1"
           ]
         }
       ]
@@ -15463,7 +15449,7 @@
           "comment": "Scary red light follows the zombie + positional scary voice while it walks/turns."
         },
         {
-          "aiGeneratedEventId": "01M78FP1S82FS6CRWWYN16C9X5",
+          "aiGeneratedEventId": "01M79E9QGBCW82M7GKQKG5VQWY",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -15480,12 +15466,21 @@
           "actions": [
             {
               "type": {
+                "value": "Show"
+              },
+              "parameters": [
+                "ZombieGlow",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "SetX"
               },
               "parameters": [
                 "ZombieGlow",
                 "=",
-                "Zombie.X()"
+                "Zombie.CenterX() + cos(ToRad(Zombie.Angle())) * 70"
               ]
             },
             {
@@ -15495,7 +15490,7 @@
               "parameters": [
                 "ZombieGlow",
                 "=",
-                "Zombie.Y()"
+                "Zombie.CenterY() + sin(ToRad(Zombie.Angle())) * 70"
               ]
             },
             {
@@ -15506,7 +15501,7 @@
                 "ZombieGlow",
                 "Object3D",
                 "=",
-                "Zombie.Object3D::Z() + 110"
+                "Zombie.Object3D::Z() + 140"
               ]
             }
           ]
@@ -15834,6 +15829,231 @@
                 "ZombieSoundOn",
                 "=",
                 "0"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "aiGeneratedEventId": "01M79E9QGBCW82M7GKQKG5VQWY",
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Zombie Ember-Light Attraction",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Bright Ember lantern light draws the zombie: reveals player at close range and pulls search toward the light."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberLightFuel",
+                "=",
+                "LanternFuel"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EmberLightPull",
+                "=",
+                "clamp(EmberLightFuel * (1500 - DistToPlayer) / 1500, 0, 1)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieReleased",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberLightFuel",
+                ">",
+                "0.6"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::CompareNumbers"
+              },
+              "parameters": [
+                "DistToPlayer",
+                "<",
+                "900"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PlayerVisible",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "PlayerVisible",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastSeenX",
+                "=",
+                "Player.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastSeenY",
+                "=",
+                "Player.CenterY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastSeenZ",
+                "=",
+                "Player.Object3D::Z()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TimeSinceSeen",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "ZombieReleased",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "EmberLightPull",
+                ">",
+                "0.15"
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "PlayerVisible",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Suspicion",
+                "+",
+                "EmberLightPull * 22 * TimeDelta()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastSeenX",
+                "=",
+                "Player.CenterX()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastSeenY",
+                "=",
+                "Player.CenterY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "LastSeenZ",
+                "=",
+                "Player.Object3D::Z()"
               ]
             }
           ]

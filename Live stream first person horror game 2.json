@@ -234,17 +234,6 @@
         }
       },
       {
-        "file": "assets/Zombie A.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Zombie A.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Animated Characters Survivors/6f751275a57912a6a1b589db55de957f87217518d2b92348e5a471d30a86c5eb_Zombie A.glb",
-          "name": "Zombie A.glb"
-        }
-      },
-      {
         "file": "assets/Jump_Start_05.wav",
         "kind": "audio",
         "metadata": "",
@@ -593,17 +582,6 @@
         }
       },
       {
-        "file": "assets/Painted Wooden Chair 01.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Painted Wooden Chair 01.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Seating/Chairs/60061a36ca375bd51a48f5ce83885baa3d4decdef7fc7d9d6c68e178cef58ed7_Painted Wooden Chair 01.glb",
-          "name": "Painted Wooden Chair 01.glb"
-        }
-      },
-      {
         "file": "assets/Green Chair 01.glb",
         "kind": "model3D",
         "metadata": "",
@@ -612,17 +590,6 @@
         "origin": {
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Furniture/Seating/Chairs/a8c92ad58e7b2bcd424712d1979e15c8c97412b7ffe9eaf1f724b64ad7797155_Green Chair 01.glb",
           "name": "Green Chair 01.glb"
-        }
-      },
-      {
-        "file": "assets/Paper.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Paper.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Pirate Kit/Collectable/3081faaf209d587b2570c1b38a241f641efea54911797da85a9fd0cb5fdfb587_Paper.glb",
-          "name": "Paper.glb"
         }
       },
       {
@@ -710,17 +677,6 @@
         }
       },
       {
-        "file": "assets/Ceiling Fan.glb",
-        "kind": "model3D",
-        "metadata": "",
-        "name": "Ceiling Fan.glb",
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Polyhaven/Models/Electronics & Appliances/Home Appliances/Fans/7502f26b8fa9b933c8199a5ac89e7bec849f22e1ef8d361780d185845c001b68_Ceiling Fan.glb",
-          "name": "Ceiling Fan.glb"
-        }
-      },
-      {
         "file": "assets/Decoration Carpet.glb",
         "kind": "model3D",
         "metadata": "",
@@ -736,24 +692,6 @@
         "kind": "audio",
         "metadata": "{\"extension\":\"\"}",
         "name": "um_kulthum.mp3",
-        "preloadAsMusic": false,
-        "preloadAsSound": false,
-        "preloadInCache": false,
-        "userAdded": false
-      },
-      {
-        "file": "assets/paper.png",
-        "kind": "image",
-        "metadata": "{\"extension\":\"\"}",
-        "name": "paper.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "assets/Windy Old Weather.aac",
-        "kind": "audio",
-        "metadata": "",
-        "name": "Windy Old Weather.aac",
         "preloadAsMusic": false,
         "preloadAsSound": false,
         "preloadInCache": false,
@@ -778,18 +716,6 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
-      },
-      {
-        "file": "assets/ambientcg-road-008-b-color.jpg",
-        "kind": "image",
-        "metadata": "",
-        "name": "ambientcg-road-008-b-color.jpg",
-        "smoothed": true,
-        "userAdded": false,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Cubes/AmbientCG/eec7fae6ef60a7d52927b7c3acf5437b458734ab26592491c409f6e730e01a3a_ambientcg-road-008-b-color.jpg",
-          "name": "ambientcg-road-008-b-color.jpg"
-        }
       },
       {
         "file": "assets/Jump_Land_06.wav",
@@ -827,18 +753,6 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
-      },
-      {
-        "file": "assets/Default-panel (24).png",
-        "kind": "image",
-        "metadata": "",
-        "name": "Default-panel (24).png",
-        "smoothed": true,
-        "userAdded": true,
-        "origin": {
-          "identifier": "https://asset-resources.gdevelop.io/public-resources/Fantasy UI Borders/Default Size/Panels/c3d940f22c76133691a97929c0252ed25c55601b7facab0778c659648f581126_Default-panel (24).png",
-          "name": "Default-panel (24).png"
-        }
       }
     ]
   },
@@ -852,6 +766,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/game-scene"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/main-menu"
     }
   ],
   "layoutsFolderStructure": {
@@ -859,6 +777,9 @@
     "children": [
       {
         "itemName": "Game Scene"
+      },
+      {
+        "itemName": "main menu"
       }
     ]
   },

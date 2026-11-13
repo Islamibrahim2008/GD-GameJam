@@ -21,10 +21,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.3010461197182641,
+    "zoomFactor": 0.25504554733544943,
     "windowMask": false,
     "selectedLayer": "",
-    "gameEditorMode": "instances-editor"
+    "gameEditorMode": "embedded-game"
   },
   "objectsGroups": [
     {
@@ -103,6 +103,18 @@
     }
   ],
   "variables": [
+    {
+      "name": "EmberLightPull",
+      "persistentUuid": "10212ca2-b390-4cf3-86d6-d8042c9aa103",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "EmberLightFuel",
+      "persistentUuid": "d102686f-3aa6-4880-aec1-4a903709381e",
+      "type": "number",
+      "value": 0
+    },
     {
       "name": "RestoreI",
       "persistentUuid": "09cc16a8-4e5b-470f-9ae6-090882eabcab",
@@ -5575,15 +5587,16 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 17.315411169956736,
+      "customSize": true,
+      "depth": 57,
+      "height": 41,
       "layer": "",
       "name": "EmberC",
       "persistentUuid": "30912555-c2ae-4d02-8bf9-173484e491a1",
       "rotationX": 336,
-      "width": 20.174752657374473,
+      "width": 57,
       "x": 4452,
-      "y": 5609,
+      "y": 5594,
       "z": 611,
       "zOrder": 3,
       "numberProperties": [],
@@ -5985,6 +5998,40 @@
       "width": 0,
       "x": 490,
       "y": 620,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 200,
+      "height": 90,
+      "layer": "",
+      "name": "Zombie",
+      "persistentUuid": "029fdd61-cd49-4249-97f0-efc872ba3d94",
+      "width": 80,
+      "x": 4232,
+      "y": 6166,
+      "z": 586,
+      "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "ZombieGlow",
+      "persistentUuid": "c0520ef1-9956-4687-82ab-bc9fbf59e3f3",
+      "width": 0,
+      "x": 4220,
+      "y": 6176,
+      "z": 744,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -7421,119 +7468,6 @@
       }
     },
     {
-      "assetStoreId": "",
-      "name": "EmberC",
-      "persistentUuid": "f01239a6-95ab-4162-8710-c1fbbe783ae9",
-      "type": "Scene3D::Model3DObject",
-      "variables": [
-        {
-          "name": "PickUp",
-          "type": "boolean",
-          "value": false
-        }
-      ],
-      "effects": [],
-      "behaviors": [
-        {
-          "name": "Physics3D",
-          "type": "Physics3D::Physics3DBehavior",
-          "object3D": "Object3D",
-          "bodyType": "Static",
-          "bullet": false,
-          "fixedRotation": false,
-          "shape": "Mesh",
-          "meshShapeResourceName": "",
-          "shapeOrientation": "Z",
-          "shapeDimensionA": 0,
-          "shapeDimensionB": 0,
-          "shapeDimensionC": 0,
-          "shapeOffsetX": 0,
-          "shapeOffsetY": 0,
-          "shapeOffsetZ": 0,
-          "massCenterOffsetX": 0,
-          "massCenterOffsetY": 0,
-          "massCenterOffsetZ": 0,
-          "massOverride": 0,
-          "density": 1,
-          "friction": 0.3,
-          "restitution": 0.1,
-          "linearDamping": 0.1,
-          "angularDamping": 0.1,
-          "gravityScale": 1,
-          "layers": 17,
-          "masks": 17
-        },
-        {
-          "name": "Tween",
-          "type": "Tween::TweenBehavior"
-        }
-      ],
-      "content": {
-        "centerLocation": "CenteredOnZ",
-        "crossfadeDuration": 0.10000000149011612,
-        "depth": 25,
-        "height": 25,
-        "isCastingShadow": true,
-        "isReceivingShadow": true,
-        "keepAspectRatio": true,
-        "materialType": "StandardWithoutMetalness",
-        "modelResourceName": "Creature_Animated.glb",
-        "originLocation": "ModelOrigin",
-        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
-        "rotationX": 90,
-        "rotationY": 0,
-        "rotationZ": 90,
-        "width": 25,
-        "animations": [
-          {
-            "loop": true,
-            "name": "Idle",
-            "source": "Idle"
-          },
-          {
-            "loop": true,
-            "name": "Walk",
-            "source": "Walk"
-          },
-          {
-            "loop": false,
-            "name": "Run",
-            "source": "Run"
-          },
-          {
-            "loop": false,
-            "name": "Attack",
-            "source": "Attack"
-          },
-          {
-            "loop": false,
-            "name": "Jump",
-            "source": "Jump"
-          },
-          {
-            "loop": true,
-            "name": "Roar",
-            "source": "Roar"
-          },
-          {
-            "loop": false,
-            "name": "Hit",
-            "source": "Hit"
-          },
-          {
-            "loop": false,
-            "name": "Death",
-            "source": "Death"
-          },
-          {
-            "loop": false,
-            "name": "Spawn",
-            "source": "Spawn"
-          }
-        ]
-      }
-    },
-    {
       "assetStoreId": "689eb6ab04b3f61b3ee35a00831f42bdb43a35fd4fb7eb5048825e887f7566e5",
       "name": "EmberFrost",
       "persistentUuid": "feaba495-3963-4bb1-ad57-81d24c45d91a",
@@ -8393,6 +8327,7 @@
     {
       "assetStoreId": "",
       "name": "ZombieGlow",
+      "persistentUuid": "8015c4fa-6501-42b0-92cb-a4b91e2c194a",
       "type": "Light3D::PointLight3D",
       "variant": "",
       "variables": [],
@@ -8400,10 +8335,88 @@
       "behaviors": [],
       "content": {
         "Color": "255;25;20",
-        "Intensity": 45,
-        "Range": 750,
-        "Decay": 1,
+        "Intensity": 140,
+        "Range": 80,
+        "Decay": 2,
         "IsCastingShadow": false
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "EmberC",
+      "persistentUuid": "0d77270c-73b3-4ebb-8cf4-7db1af492411",
+      "type": "Scene3D::Model3DObject",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "centerLocation": "CenteredOnZ",
+        "crossfadeDuration": 0.10000000149011612,
+        "depth": 100,
+        "height": 100,
+        "isCastingShadow": true,
+        "isReceivingShadow": true,
+        "keepAspectRatio": true,
+        "materialType": "StandardWithoutMetalness",
+        "modelResourceName": "Creature_Animated.glb",
+        "originLocation": "ModelOrigin",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
+        "rotationX": 90,
+        "rotationY": 0,
+        "rotationZ": 90,
+        "width": 100,
+        "animations": [
+          {
+            "loop": true,
+            "name": "Idle",
+            "source": "Idle"
+          },
+          {
+            "loop": true,
+            "name": "Walk",
+            "source": "Walk"
+          },
+          {
+            "loop": false,
+            "name": "Run",
+            "source": "Run"
+          },
+          {
+            "loop": false,
+            "name": "Attack",
+            "source": "Attack"
+          },
+          {
+            "loop": false,
+            "name": "Jump",
+            "source": "Jump"
+          },
+          {
+            "loop": true,
+            "name": "Roar",
+            "source": "Roar"
+          },
+          {
+            "loop": false,
+            "name": "Hit",
+            "source": "Hit"
+          },
+          {
+            "loop": false,
+            "name": "Death",
+            "source": "Death"
+          },
+          {
+            "loop": false,
+            "name": "Spawn",
+            "source": "Spawn"
+          }
+        ]
       }
     }
   ],
@@ -13848,6 +13861,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Wind Storm (rising, pushes the player, shakes the camera)",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -14257,6 +14271,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Earthquake (heavy shake, cracking ground)",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -15076,52 +15091,6 @@
                 },
                 {
                   "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Zombie",
-                    "2950",
-                    "5150",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetZ"
-                  },
-                  "parameters": [
-                    "Zombie",
-                    "Object3D",
-                    "=",
-                    "TropicalIslandTerrain.GroundZWithHoles(2950, 5150, TropicalIslandTerrain.GroundZ(2950, 5150))"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "ZombieGlow",
-                    "2950",
-                    "5150",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetZ"
-                  },
-                  "parameters": [
-                    "ZombieGlow",
-                    "Object3D",
-                    "=",
-                    "TropicalIslandTerrain.GroundZWithHoles(2950, 5150, TropicalIslandTerrain.GroundZ(2950, 5150)) + 110"
-                  ]
-                },
-                {
-                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -15321,6 +15290,868 @@
                     "OneShotMoveMul",
                     "=",
                     "0"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "aiGeneratedEventId": "01M79BW80RQFQCT01VXBZH80RD",
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Day Cycle - Night to Dawn to Day (after quake)",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "QuakeDone",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DayCycleActive",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DayCycleActive",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DayPhase",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DaySunMul",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GravLift",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GravLiftZ",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"DayT\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"SunFlick\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DayCycleActive",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DayT",
+                    "=",
+                    "TimerElapsedTime(\"DayT\")"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "DayT",
+                        ">=",
+                        "8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DayPhase",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "DayPhase",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"SunFlick\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "freesound_community-dark-talking-78916.mp3",
+                        "no",
+                        "60",
+                        "1.3"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "DayT",
+                        ">=",
+                        "38"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DayPhase",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "DayPhase",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "DaySunMul",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GravLift",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetZ"
+                      },
+                      "parameters": [
+                        "QuakeProps",
+                        "Object3D",
+                        "-",
+                        "GravLiftZ"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GravLiftZ",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Physics3D::Physics3DBehavior::SetGravityZ"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Physics3D",
+                        "=",
+                        "-981"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"intensity\"",
+                        "2.4"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"elevation\"",
+                        "48"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"rotation\"",
+                        "70"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectStringParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"color\"",
+                        "\"255;244;225\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"AmbientLight\"",
+                        "\"intensity\"",
+                        "0.95"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectStringParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"AmbientLight\"",
+                        "\"color\"",
+                        "\"155;165;185\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"Skybox\"",
+                        "\"backgroundIntensity\"",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"Skybox\"",
+                        "\"environmentIntensity\"",
+                        "0.7"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"HorrorFog\"",
+                        "\"density\"",
+                        "0.0008"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectStringParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"HorrorFog\"",
+                        "\"color\"",
+                        "\"150;160;175\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"ToneMapping\"",
+                        "\"exposure\"",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "CameraShake::ShakeCamera"
+                      },
+                      "parameters": [
+                        "",
+                        "25",
+                        "1.2",
+                        "6",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Jump_Land_06.wav",
+                        "no",
+                        "100",
+                        "0.6"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DayPhase",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "K",
+                        "=",
+                        "clamp(TimerElapsedTime(\"DayT\") - 8, 0, 30) / 30"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"intensity\"",
+                        "(0.25 + 2.15 * K) * DaySunMul"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"elevation\"",
+                        "9 + 39 * K"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectStringParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"sun\"",
+                        "\"color\"",
+                        "\"255;225;180\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"AmbientLight\"",
+                        "\"intensity\"",
+                        "(0.35 + 0.6 * K) * max(0.25, DaySunMul)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"Skybox\"",
+                        "\"backgroundIntensity\"",
+                        "(0.05 + 0.95 * K) * max(0.15, DaySunMul)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"Skybox\"",
+                        "\"environmentIntensity\"",
+                        "0.15 + 0.55 * K"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"HorrorFog\"",
+                        "\"density\"",
+                        "0.0035 - 0.0027 * K"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetLayerEffectParameter"
+                      },
+                      "parameters": [
+                        "",
+                        "\"\"",
+                        "\"ToneMapping\"",
+                        "\"exposure\"",
+                        "1.15 - 0.15 * K"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "CompareTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"SunFlick\"",
+                            ">",
+                            "0.14"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "RandomFloatInRange(0, 1)",
+                            "<",
+                            "0.55"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "ResetTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"SunFlick\""
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::CompareNumbers"
+                              },
+                              "parameters": [
+                                "RandomFloatInRange(0, 1)",
+                                "<",
+                                "0.3"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "DaySunMul",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "PlaySound"
+                              },
+                              "parameters": [
+                                "",
+                                "Knuckles Cracking.aac",
+                                "no",
+                                "30",
+                                "RandomInRange(1.4, 1.8)"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Else",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "DaySunMul",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "variables": [
+                    {
+                      "name": "K",
+                      "type": "number",
+                      "value": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DayPhase",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "DayT",
+                        ">=",
+                        "12"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "DayT",
+                        "<",
+                        "32"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GravLift",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Physics3D::Physics3DBehavior::SetGravityZ"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Physics3D",
+                        "=",
+                        "-120"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Physics3D::Physics3DBehavior::ApplyForceAtCenter"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Physics3D",
+                        "0",
+                        "0",
+                        "90"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetZ"
+                      },
+                      "parameters": [
+                        "QuakeProps",
+                        "Object3D",
+                        "+",
+                        "55 * TimeDelta()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GravLiftZ",
+                        "+",
+                        "55 * TimeDelta()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "GravLift",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "DayT",
+                        ">=",
+                        "32"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GravLift",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetZ"
+                      },
+                      "parameters": [
+                        "QuakeProps",
+                        "Object3D",
+                        "-",
+                        "GravLiftZ"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "GravLiftZ",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Physics3D::Physics3DBehavior::SetGravityZ"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Physics3D",
+                        "=",
+                        "-981"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "CameraShake::ShakeCamera"
+                      },
+                      "parameters": [
+                        "",
+                        "35",
+                        "2",
+                        "8",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Hard_Jump_Land_01.wav",
+                        "no",
+                        "100",
+                        "0.5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "Jump_Land_06.wav",
+                        "no",
+                        "90",
+                        "0.7"
+                      ]
+                    }
                   ]
                 }
               ]
@@ -16075,6 +16906,8 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "disabled": true,
+      "folded": true,
       "name": "Monster Chase HUD (JS DOM)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -16139,868 +16972,6 @@
           "parameterObjects": "",
           "useStrict": true,
           "eventsSheetExpanded": false
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "aiGeneratedEventId": "01M79BW80RQFQCT01VXBZH80RD",
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "name": "Day Cycle - Night to Dawn to Day (after quake)",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "QuakeDone",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "DayCycleActive",
-                "=",
-                "0"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "DayCycleActive",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "DayPhase",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "DaySunMul",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "GravLift",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "GravLiftZ",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"DayT\""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"SunFlick\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "DayCycleActive",
-                "=",
-                "1"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "DayT",
-                "=",
-                "TimerElapsedTime(\"DayT\")"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "DayT",
-                    ">=",
-                    "8"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "DayPhase",
-                    "=",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "DayPhase",
-                    "=",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"SunFlick\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "freesound_community-dark-talking-78916.mp3",
-                    "no",
-                    "60",
-                    "1.3"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "DayT",
-                    ">=",
-                    "38"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "DayPhase",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "DayPhase",
-                    "=",
-                    "2"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "DaySunMul",
-                    "=",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "GravLift",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetZ"
-                  },
-                  "parameters": [
-                    "QuakeProps",
-                    "Object3D",
-                    "-",
-                    "GravLiftZ"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "GravLiftZ",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Physics3D::Physics3DBehavior::SetGravityZ"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Physics3D",
-                    "=",
-                    "-981"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"intensity\"",
-                    "2.4"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"elevation\"",
-                    "48"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"rotation\"",
-                    "70"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectStringParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"color\"",
-                    "\"255;244;225\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"AmbientLight\"",
-                    "\"intensity\"",
-                    "0.95"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectStringParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"AmbientLight\"",
-                    "\"color\"",
-                    "\"155;165;185\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"Skybox\"",
-                    "\"backgroundIntensity\"",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"Skybox\"",
-                    "\"environmentIntensity\"",
-                    "0.7"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"HorrorFog\"",
-                    "\"density\"",
-                    "0.0008"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectStringParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"HorrorFog\"",
-                    "\"color\"",
-                    "\"150;160;175\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"ToneMapping\"",
-                    "\"exposure\"",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "CameraShake::ShakeCamera"
-                  },
-                  "parameters": [
-                    "",
-                    "25",
-                    "1.2",
-                    "6",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "Jump_Land_06.wav",
-                    "no",
-                    "100",
-                    "0.6"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "DayPhase",
-                    "=",
-                    "1"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "K",
-                    "=",
-                    "clamp(TimerElapsedTime(\"DayT\") - 8, 0, 30) / 30"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"intensity\"",
-                    "(0.25 + 2.15 * K) * DaySunMul"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"elevation\"",
-                    "9 + 39 * K"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectStringParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"sun\"",
-                    "\"color\"",
-                    "\"255;225;180\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"AmbientLight\"",
-                    "\"intensity\"",
-                    "(0.35 + 0.6 * K) * max(0.25, DaySunMul)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"Skybox\"",
-                    "\"backgroundIntensity\"",
-                    "(0.05 + 0.95 * K) * max(0.15, DaySunMul)"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"Skybox\"",
-                    "\"environmentIntensity\"",
-                    "0.15 + 0.55 * K"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"HorrorFog\"",
-                    "\"density\"",
-                    "0.0035 - 0.0027 * K"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetLayerEffectParameter"
-                  },
-                  "parameters": [
-                    "",
-                    "\"\"",
-                    "\"ToneMapping\"",
-                    "\"exposure\"",
-                    "1.15 - 0.15 * K"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "CompareTimer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"SunFlick\"",
-                        ">",
-                        "0.14"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "BuiltinCommonInstructions::CompareNumbers"
-                      },
-                      "parameters": [
-                        "RandomFloatInRange(0, 1)",
-                        "<",
-                        "0.55"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "ResetTimer"
-                      },
-                      "parameters": [
-                        "",
-                        "\"SunFlick\""
-                      ]
-                    }
-                  ],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "BuiltinCommonInstructions::CompareNumbers"
-                          },
-                          "parameters": [
-                            "RandomFloatInRange(0, 1)",
-                            "<",
-                            "0.3"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "DaySunMul",
-                            "=",
-                            "0"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PlaySound"
-                          },
-                          "parameters": [
-                            "",
-                            "Knuckles Cracking.aac",
-                            "no",
-                            "30",
-                            "RandomInRange(1.4, 1.8)"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Else",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "DaySunMul",
-                            "=",
-                            "1"
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "variables": [
-                {
-                  "name": "K",
-                  "type": "number",
-                  "value": 0
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "DayPhase",
-                    "=",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "DayT",
-                    ">=",
-                    "12"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "DayT",
-                    "<",
-                    "32"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "GravLift",
-                    "=",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Physics3D::Physics3DBehavior::SetGravityZ"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Physics3D",
-                    "=",
-                    "-120"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Physics3D::Physics3DBehavior::ApplyForceAtCenter"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Physics3D",
-                    "0",
-                    "0",
-                    "90"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetZ"
-                  },
-                  "parameters": [
-                    "QuakeProps",
-                    "Object3D",
-                    "+",
-                    "55 * TimeDelta()"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "GravLiftZ",
-                    "+",
-                    "55 * TimeDelta()"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "GravLift",
-                    "=",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::CompareNumbers"
-                  },
-                  "parameters": [
-                    "DayT",
-                    ">=",
-                    "32"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "GravLift",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetZ"
-                  },
-                  "parameters": [
-                    "QuakeProps",
-                    "Object3D",
-                    "-",
-                    "GravLiftZ"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "GravLiftZ",
-                    "=",
-                    "0"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Physics3D::Physics3DBehavior::SetGravityZ"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Physics3D",
-                    "=",
-                    "-981"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "CameraShake::ShakeCamera"
-                  },
-                  "parameters": [
-                    "",
-                    "35",
-                    "2",
-                    "8",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "Hard_Jump_Land_01.wav",
-                    "no",
-                    "100",
-                    "0.5"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "PlaySound"
-                  },
-                  "parameters": [
-                    "",
-                    "Jump_Land_06.wav",
-                    "no",
-                    "90",
-                    "0.7"
-                  ]
-                }
-              ]
-            }
-          ]
         }
       ],
       "parameters": []
@@ -17329,10 +17300,6 @@
     {
       "name": "Effect",
       "type": "EffectCapability::EffectBehavior"
-    },
-    {
-      "name": "FPSDisplayer",
-      "type": "FPS::FPSDisplayer"
     },
     {
       "name": "Flippable",
