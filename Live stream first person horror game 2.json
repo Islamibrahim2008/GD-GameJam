@@ -1563,10 +1563,10 @@
     },
     {
       "description": "Shelter Exit Quake: wind storm rises and pushes the player, Ember is jolted inside the lantern, then a heavy earthquake with cracks, rumble and camera shake.",
-      "lastRunAt": 1794517227517,
-      "lastRunDurationMs": 1007,
-      "lastRunFramesExecuted": 0,
-      "lastRunStatus": "stopped",
+      "lastRunAt": 1794529776995,
+      "lastRunDurationMs": 14610,
+      "lastRunFramesExecuted": 14,
+      "lastRunStatus": "failed",
       "name": "storm-and-quake-sequence",
       "type": "gameplay",
       "source": [
@@ -1694,6 +1694,16 @@
         "harness.assert(harness.getObjects('VoidPatch').length === 0, 'No fake void object - real terrain holes only');",
         "return 'glitch + real void verified';"
       ]
+    },
+    {
+      "description": "Force quake and verify holes",
+      "lastRunAt": 1794529910968,
+      "lastRunDurationMs": 19691,
+      "lastRunFramesExecuted": 88,
+      "lastRunStatus": "passed",
+      "name": "quakeholesverify",
+      "type": "gameplay",
+      "source": "await harness.goToScene('Game Scene'); await harness.stepFrames(5); harness.setSceneVariable('ExitQuakeDone', 1); harness.setSceneVariable('StormPhase', 4); const started = await harness.stepUntil(() => harness.getSceneVariable('QuakeStarted')?.value === 1, {maxFrames: 3600}); harness.assert(started, 'Quake started'); const holed = await harness.stepUntil(() => { const c = harness.getSceneVariable('CrackCount'); return c && c.value >= 1; }, {maxFrames: 1200}); harness.assert(holed, 'Hole carved CrackCount>=1'); await harness.stepFrames(60); harness.assert(true, 'Quake runs without crash'); await harness.takeScreenshot('quake-holes');"
     }
   ],
   "testsFolderStructure": {
@@ -1758,6 +1768,9 @@
       },
       {
         "itemName": "glitch-and-real-void"
+      },
+      {
+        "itemName": "quakeholesverify"
       }
     ]
   },

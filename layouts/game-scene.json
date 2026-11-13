@@ -14265,7 +14265,7 @@
           "parameters": []
         },
         {
-          "aiGeneratedEventId": "01M78B2SXVS6REKM9SEEJZJH6T",
+          "aiGeneratedEventId": "01M794XFDEXC02Y9913PX0VJD0",
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -14284,10 +14284,9 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "Kicks in after the storm settles (~13.5s): very heavy camera shake, props and palms rattling, rumble + breaking sounds, and dark cracks carved into the terrain around the player."
+              "comment": "Real quake: violent punch at start then smooth-random decay + REAL Terrain3D holes around the player."
             },
             {
-              "aiGeneratedEventId": "01M78CDPRZ4D3JASPCKQPK6E3B",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -14411,6 +14410,16 @@
                 },
                 {
                   "type": {
+                    "value": "CameraShake::StartShaking"
+                  },
+                  "parameters": [
+                    "",
+                    "0.4",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
@@ -14461,14 +14470,13 @@
                     "",
                     "Hard_Jump_Land_01.wav",
                     "no",
-                    "90",
+                    "100",
                     "0.5"
                   ]
                 }
               ]
             },
             {
-              "aiGeneratedEventId": "01M78CAPHVPFC4Q0Z31KSA6AEH",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -14498,7 +14506,7 @@
                   "parameters": [
                     "TimerElapsedTime(\"QuakeT\")",
                     "<",
-                    "5.6"
+                    "7"
                   ]
                 }
               ],
@@ -14510,7 +14518,27 @@
                   "parameters": [
                     "QA",
                     "=",
-                    "1 - TimerElapsedTime(\"QuakeT\") / 5.6"
+                    "pow(1 - TimerElapsedTime(\"QuakeT\") / 7, 1.5)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Punch",
+                    "=",
+                    "max(0, 1 - TimerElapsedTime(\"QuakeT\") / 0.9)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Amp",
+                    "=",
+                    "4 + 22 * QA + 20 * Punch * Punch"
                   ]
                 },
                 {
@@ -14519,8 +14547,8 @@
                   },
                   "parameters": [
                     "",
-                    "5 + 8 * QA",
-                    "5 + 8 * QA",
+                    "Amp",
+                    "Amp * 0.8",
                     "\"\"",
                     ""
                   ]
@@ -14531,7 +14559,7 @@
                   },
                   "parameters": [
                     "",
-                    "18 + 10 * QA",
+                    "13 + 17 * QA + 8 * Punch",
                     "\"\"",
                     ""
                   ]
@@ -14543,7 +14571,7 @@
                   "parameters": [
                     "QuakeOffX",
                     "=",
-                    "sin(TimerElapsedTime(\"QuakeT\") * 43) * 5 * QA"
+                    "(sin(TimerElapsedTime(\"QuakeT\") * 47) + sin(TimerElapsedTime(\"QuakeT\") * 29.3 + 1.7) * 0.7 + sin(TimerElapsedTime(\"QuakeT\") * 13.1 + 0.5) * 0.5) * Amp * 0.32 * RandomInRange(0.75, 1.25)"
                   ]
                 },
                 {
@@ -14553,7 +14581,7 @@
                   "parameters": [
                     "QuakeOffY",
                     "=",
-                    "sin(TimerElapsedTime(\"QuakeT\") * 37 + 1.1) * 3.5 * QA"
+                    "(sin(TimerElapsedTime(\"QuakeT\") * 43 + 1.1) + sin(TimerElapsedTime(\"QuakeT\") * 27.7 + 3.2) * 0.7 + sin(TimerElapsedTime(\"QuakeT\") * 11.3 + 2.1) * 0.5) * Amp * 0.26 * RandomInRange(0.75, 1.25)"
                   ]
                 },
                 {
@@ -14602,11 +14630,20 @@
                   "name": "QA",
                   "type": "number",
                   "value": 0
+                },
+                {
+                  "name": "Punch",
+                  "type": "number",
+                  "value": 0
+                },
+                {
+                  "name": "Amp",
+                  "type": "number",
+                  "value": 0
                 }
               ]
             },
             {
-              "aiGeneratedEventId": "01M78CDPRZ4D3JASPCKQPK6E3B",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -14636,7 +14673,7 @@
                   "parameters": [
                     "TimerElapsedTime(\"QuakeT\")",
                     "<",
-                    "5"
+                    "6.5"
                   ]
                 },
                 {
@@ -14669,7 +14706,7 @@
                     "",
                     "freesound_community-earthquake-loop-64704.mp3",
                     "no",
-                    "45",
+                    "40 + 60 * pow(1 - TimerElapsedTime(\"QuakeT\") / 7, 1.5)",
                     "RandomInRange(0.85, 1.15)"
                   ]
                 },
@@ -14681,14 +14718,13 @@
                     "",
                     "Jump_Land_06.wav",
                     "no",
-                    "65",
+                    "55 + 40 * pow(1 - TimerElapsedTime(\"QuakeT\") / 7, 1.5)",
                     "RandomInRange(0.5, 0.85)"
                   ]
                 }
               ]
             },
             {
-              "aiGeneratedEventId": "01M78CAPHVPFC4Q0Z31KSA6AEH",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -14718,7 +14754,7 @@
                   "parameters": [
                     "CrackCount",
                     "<",
-                    "9"
+                    "14"
                   ]
                 },
                 {
@@ -14728,7 +14764,7 @@
                   "parameters": [
                     "TimerElapsedTime(\"QuakeT\")",
                     "<",
-                    "3.4"
+                    "5.5"
                   ]
                 },
                 {
@@ -14739,7 +14775,7 @@
                     "",
                     "\"CrackStep\"",
                     ">",
-                    "0.3"
+                    "0.35"
                   ]
                 }
               ],
@@ -14778,9 +14814,9 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "CL",
+                    "CD",
                     "=",
-                    "RandomInRange(160, 420)"
+                    "RandomInRange(180, 620)"
                   ]
                 },
                 {
@@ -14790,7 +14826,7 @@
                   "parameters": [
                     "CX",
                     "=",
-                    "Player.X()"
+                    "Player.X() + cos(ToRad(CA)) * CD"
                   ]
                 },
                 {
@@ -14800,7 +14836,7 @@
                   "parameters": [
                     "CY",
                     "=",
-                    "Player.Y()"
+                    "Player.Y() + sin(ToRad(CA)) * CD"
                   ]
                 },
                 {
@@ -14808,33 +14844,20 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "EX",
+                    "HR",
                     "=",
-                    "CX + cos(ToRad(CA)) * CL"
+                    "RandomInRange(55, 120) + CrackCount * 4"
                   ]
                 },
                 {
                   "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "EY",
-                    "=",
-                    "CY + sin(ToRad(CA)) * CL"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Terrain3D::Terrain3D::RaiseGroundAlongLine"
+                    "value": "Terrain3D::Terrain3D::MakeHole"
                   },
                   "parameters": [
                     "TropicalIslandTerrain",
                     "CX",
                     "CY",
-                    "EX",
-                    "EY",
-                    "22",
-                    "-26",
+                    "HR",
                     ""
                   ]
                 },
@@ -14846,33 +14869,7 @@
                     "TropicalIslandTerrain",
                     "CX",
                     "CY",
-                    "45",
-                    "\"52;40;55\"",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Terrain3D::Terrain3D::TintGround"
-                  },
-                  "parameters": [
-                    "TropicalIslandTerrain",
-                    "(CX + EX) / 2",
-                    "(CY + EY) / 2",
-                    "45",
-                    "\"52;40;55\"",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Terrain3D::Terrain3D::TintGround"
-                  },
-                  "parameters": [
-                    "TropicalIslandTerrain",
-                    "EX",
-                    "EY",
-                    "45",
+                    "HR + 30",
                     "\"52;40;55\"",
                     ""
                   ]
@@ -14890,6 +14887,50 @@
                   ]
                 }
               ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "CrackCount",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Terrain3D::Terrain3D::MakeHole"
+                      },
+                      "parameters": [
+                        "TropicalIslandTerrain",
+                        "Player.X() + 260",
+                        "Player.Y() - 180",
+                        "90",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Terrain3D::Terrain3D::TintGround"
+                      },
+                      "parameters": [
+                        "TropicalIslandTerrain",
+                        "Player.X() + 260",
+                        "Player.Y() - 180",
+                        "120",
+                        "\"52;40;55\"",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
               "variables": [
                 {
                   "name": "CA",
@@ -14897,7 +14938,7 @@
                   "value": 0
                 },
                 {
-                  "name": "CL",
+                  "name": "CD",
                   "type": "number",
                   "value": 0
                 },
@@ -14912,19 +14953,13 @@
                   "value": 0
                 },
                 {
-                  "name": "EX",
-                  "type": "number",
-                  "value": 0
-                },
-                {
-                  "name": "EY",
+                  "name": "HR",
                   "type": "number",
                   "value": 0
                 }
               ]
             },
             {
-              "aiGeneratedEventId": "01M78SAW17QAWF9MR1FDH74MG1",
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -14964,7 +14999,7 @@
                   "parameters": [
                     "TimerElapsedTime(\"QuakeT\")",
                     ">=",
-                    "5.6"
+                    "7"
                   ]
                 }
               ],
@@ -15044,6 +15079,16 @@
                 },
                 {
                   "type": {
+                    "value": "CameraShake::StopShaking"
+                  },
+                  "parameters": [
+                    "",
+                    "1.2",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "Create"
                   },
                   "parameters": [
@@ -15062,7 +15107,7 @@
                     "Zombie",
                     "Object3D",
                     "=",
-                    "TropicalIslandTerrain.GroundZ(2950, 5150)"
+                    "TropicalIslandTerrain.GroundZWithHoles(2950, 5150, TropicalIslandTerrain.GroundZ(2950, 5150))"
                   ]
                 },
                 {
@@ -15085,7 +15130,7 @@
                     "ZombieGlow",
                     "Object3D",
                     "=",
-                    "TropicalIslandTerrain.GroundZ(2950, 5150) + 110"
+                    "TropicalIslandTerrain.GroundZWithHoles(2950, 5150, TropicalIslandTerrain.GroundZ(2950, 5150)) + 110"
                   ]
                 },
                 {
