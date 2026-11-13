@@ -202,7 +202,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Creature_Animated.glb",
         "originLocation": "ModelOrigin",
-        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.3,\"emissive\":\"255;150;35\",\"emissiveIntensity\":6},\"material\":\"physical\"}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,

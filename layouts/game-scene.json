@@ -21,10 +21,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.25504554733544943,
+    "zoomFactor": 0.32169117647060824,
     "windowMask": false,
     "selectedLayer": "",
-    "gameEditorMode": "embedded-game"
+    "gameEditorMode": "instances-editor"
   },
   "objectsGroups": [
     {
@@ -104,17 +104,25 @@
   ],
   "variables": [
     {
+      "name": "EmberFireDist",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "EndMusicVol",
+      "persistentUuid": "085f95b6-7abd-4a96-ad6c-f4ff55c2fd2a",
       "type": "number",
       "value": 0
     },
     {
       "name": "EndT",
+      "persistentUuid": "55f8c22e-08de-4849-a254-35c641fd1d62",
       "type": "number",
       "value": 0
     },
     {
       "name": "EndPhase",
+      "persistentUuid": "13d3a6fd-7a1e-4476-9c0e-8ebdca9e34e4",
       "type": "number",
       "value": 0
     },
@@ -6011,8 +6019,8 @@
       "name": "NotePrompt",
       "persistentUuid": "48aa5bf0-5903-479c-aa29-dc723519e2e7",
       "width": 0,
-      "x": 490,
-      "y": 620,
+      "x": 530,
+      "y": 558,
       "zOrder": 0,
       "numberProperties": [],
       "stringProperties": [],
@@ -6824,7 +6832,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Creature_Animated.glb",
         "originLocation": "ModelOrigin",
-        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.3,\"emissive\":\"255;150;35\",\"emissiveIntensity\":6},\"material\":\"physical\"}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -8380,7 +8388,7 @@
         "materialType": "StandardWithoutMetalness",
         "modelResourceName": "Creature_Animated.glb",
         "originLocation": "ModelOrigin",
-        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.35,\"emissive\":\"255;130;30\",\"emissiveIntensity\":3.2},\"material\":\"physical\"}",
+        "pbrConfig": "{\"enabled\":true,\"settings\":{\"preset\":\"gold\",\"baseColor\":\"255;200;80\",\"metallic\":0.2,\"roughness\":0.3,\"emissive\":\"255;150;35\",\"emissiveIntensity\":6},\"material\":\"physical\"}",
         "rotationX": 90,
         "rotationY": 0,
         "rotationZ": 90,
@@ -12788,7 +12796,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Shelter Note Quest (Table Note + Three.js Paper)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -17411,6 +17418,17 @@
       ],
       "effects": [
         {
+          "effectType": "Scene3D::Bloom",
+          "name": "Bloom",
+          "doubleParameters": {
+            "radius": 0.6,
+            "strength": 0.55,
+            "threshold": 0.7
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        },
+        {
           "effectType": "Scene3D::ExponentialFog",
           "name": "HorrorFog",
           "doubleParameters": {
@@ -17623,9 +17641,9 @@
           "effectType": "Scene3D::Bloom",
           "name": "Bloom",
           "doubleParameters": {
-            "radius": 0.55,
-            "strength": 1.1,
-            "threshold": 0.45
+            "radius": 0.7,
+            "strength": 0.9,
+            "threshold": 0.55
           },
           "stringParameters": {},
           "booleanParameters": {}

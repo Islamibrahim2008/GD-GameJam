@@ -6255,7 +6255,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Lantern",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -6520,7 +6519,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M6XYNBHKSS2FPFWSQ3TNBPD2",
+          "aiGeneratedEventId": "01M79HQH9A76P5Q378QGBYVNQW",
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -6539,7 +6538,7 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "Strength drains at DrainPerSecond. Within a Fireplace's WarmthRadius it recharges instead: 25% of the fire's RechargePerSecond at the edge of the radius, 100% right at the fire."
+              "comment": "Strength drains at DrainPerSecond. Within WarmthRadius it recharges: 25% at edge, 100% at fire. Far outside = dim ember."
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -6674,7 +6673,6 @@
               "comment": "HUD bar mirrors Strength."
             },
             {
-              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -6699,6 +6697,17 @@
                     "LanternFlame.Strength",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "BrightnessText",
+                    "Text",
+                    "=",
+                    "\"BRIGHTNESS  \" + ToString(round(LanternFlame.Strength)) + \" / \" + ToString(round(LanternFlame.MaxStrength))"
+                  ]
                 }
               ]
             }
@@ -6706,7 +6715,7 @@
           "parameters": []
         },
         {
-          "aiGeneratedEventId": "01M6Y1WBK8BA5NMB11B5BQWWZC",
+          "aiGeneratedEventId": "01M79HNWYD0TCW50R9V58YZ1W4",
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
@@ -6725,7 +6734,7 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "Ember's Fear (0..MaxFear). Each frame a target is built from what scares him: the nearest Zombie (up to +70, from 1200px away to 200px) and a fading light (up to +30 below 40% Strength). Being near a Fireplace lowers the target. Fear climbs toward the target at FearRisePerSecond and settles at FearCalmPerSecond (twice as fast by a fire). A Zombie first coming within 500px adds an instant +15 spike (re-armed once it is back beyond 800px)."
+              "comment": "Fear target = darkness + zombie + DISTANCE from fireplace. Far from fire = lonely = scared."
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -6739,6 +6748,54 @@
                     "EmberFearTarget",
                     "=",
                     "30 * clamp((0.4 - LanternFuel) / 0.4, 0, 1)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFireDist",
+                    "=",
+                    "99999"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PickNearest"
+                  },
+                  "parameters": [
+                    "Fireplace",
+                    "Player.CenterX()",
+                    "Player.CenterY()",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFireDist",
+                    "=",
+                    "Player.Distance(Fireplace)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EmberFearTarget",
+                    "+",
+                    "55 * clamp((Player.Distance(Fireplace) - Fireplace.WarmthRadius) / 1400, 0, 1)"
                   ]
                 }
               ]
@@ -6879,7 +6936,7 @@
                   "parameters": [
                     "EmberFearTarget",
                     "=",
-                    "EmberFearTarget * (1 - 0.6 * LanternWarmth)"
+                    "clamp(EmberFearTarget * (1 - 0.6 * LanternWarmth), 0, 100)"
                   ]
                 }
               ]
@@ -7071,21 +7128,6 @@
               ]
             },
             {
-              "aiGeneratedEventId": "01M6Y2J2JJ7BMY6AVJPHV35368",
-              "type": "BuiltinCommonInstructions::Comment",
-              "color": {
-                "b": 109,
-                "g": 230,
-                "r": 255,
-                "textB": 0,
-                "textG": 0,
-                "textR": 0
-              },
-              "comment": "HUD bar mirrors Fear."
-            },
-            {
-              "aiGeneratedEventId": "01M6Y2J2JJ7BMY6AVJPHV35368",
-              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [],
               "actions": [
@@ -7109,6 +7151,17 @@
                     "=",
                     "LanternFlame.Fear",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "FearText",
+                    "Text",
+                    "=",
+                    "\"FEAR  \" + ToString(round(LanternFlame.Fear)) + \" / \" + ToString(round(LanternFlame.MaxFear))"
                   ]
                 }
               ]
@@ -7183,7 +7236,7 @@
           ]
         },
         {
-          "aiGeneratedEventId": "01M6Y866T06HNSHBPWB6SN3FN7",
+          "aiGeneratedEventId": "01M79HREZC1V6D4ND6744S18J0",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -7204,14 +7257,14 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "\"255;\" + ToString(round(lerp(140 + 55 * LanternFlicker, 40, clamp((EmberFear01 - 0.2) / 0.5, 0, 1)))) + \";\" + ToString(round(lerp(45 + 40 * LanternFlicker, 22, clamp((EmberFear01 - 0.2) / 0.5, 0, 1))))",
+                "\"255;\" + ToString(round(lerp(165 + 45 * LanternFlicker, 60, clamp((EmberFear01 - 0.2) / 0.5, 0, 1)))) + \";\" + ToString(round(lerp(65 + 30 * LanternFlicker, 28, clamp((EmberFear01 - 0.2) / 0.5, 0, 1))))",
                 ""
               ]
             }
           ]
         },
         {
-          "aiGeneratedEventId": "01M6Y8NWBQ9H90CGZY8ECTVD91",
+          "aiGeneratedEventId": "01M79J9CE9SADACW74Q40QFACG",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -7224,7 +7277,7 @@
                 "\"hand\"",
                 "\"Bloom\"",
                 "\"strength\"",
-                "0.25 + 0.85 * LanternFuel * LanternFlicker + EmberFear01 * 0.3"
+                "0.35 + 1.0 * LanternFuel * LanternFlicker + EmberFear01 * 0.2"
               ]
             },
             {
@@ -7236,7 +7289,7 @@
                 "\"hand\"",
                 "\"Bloom\"",
                 "\"threshold\"",
-                "0.65 - 0.2 * LanternFuel * LanternFlicker"
+                "0.6 - 0.18 * LanternFuel * LanternFlicker"
               ]
             }
           ]
@@ -7254,7 +7307,7 @@
           "comment": "Light inside the held lantern (lights the lantern itself on the hand layer)."
         },
         {
-          "aiGeneratedEventId": "01M6Y811ZHYYZS3RCNK746T1MX",
+          "aiGeneratedEventId": "01M79HTYPYEYNANEQND1RHZDC6",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -7300,7 +7353,7 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "(10 * LanternFlicker * (0.35 + 0.65 * LanternFuel) + EmberFear01 * 4)",
+                "(3.2 * LanternFlicker * (0.25 + 0.75 * LanternFuel) + EmberFear01 * 1.2)",
                 ""
               ]
             },
@@ -7311,7 +7364,7 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "220 + 40 * LanternFlicker + EmberFear01 * 80",
+                "160 + 30 * LanternFlicker + EmberFear01 * 40",
                 ""
               ]
             }
@@ -7330,7 +7383,7 @@
           "comment": "Matching light in the world, at the lantern's spot relative to the player camera (lights the scene)."
         },
         {
-          "aiGeneratedEventId": "01M72CWM6JDJS8N05MH3Z68RRQ",
+          "aiGeneratedEventId": "01M79HTYPYEYNANEQND1RHZDC6",
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -7376,7 +7429,7 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "20 * LanternFlicker * LanternFuel",
+                "6 * LanternFlicker * (0.15 + 0.85 * pow(LanternFuel, 1.5))",
                 ""
               ]
             },
@@ -7387,7 +7440,7 @@
               "parameters": [
                 "LanternFlame",
                 "=",
-                "(750 + 150 * LanternFlicker) * (0.35 + 0.65 * LanternFuel)",
+                "(520 + 80 * LanternFlicker) * (0.3 + 0.7 * LanternFuel)",
                 ""
               ]
             }
